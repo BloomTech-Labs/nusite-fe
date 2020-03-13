@@ -4,6 +4,7 @@ import userflow from './images/userflow.gif';
 import Footer from './Footer';
 import Header from './Header';
 
+import './Homepage.css';
 
 const Home = () => {
     

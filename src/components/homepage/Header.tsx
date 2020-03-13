@@ -3,6 +3,7 @@ import React from 'react';
 
 const Header = () => {
     return (
+    <>
     <header>
     <h1>PartNerd</h1>
     <nav>
@@ -13,6 +14,7 @@ const Header = () => {
     </nav>
     <h4>A web development marketplace</h4>
     </header>
+    </>
     )
 };
  
