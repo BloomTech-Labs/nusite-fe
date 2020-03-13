@@ -16,8 +16,8 @@ type FormData = {
 
 export const Registration = () => {
     const { register, handleSubmit, errors } = useForm<FormData>()
-    const onSubmit = (data: any) => {
-        console.log(data)
+    const onSubmit = ({firstName, lastName, username, password, email, company} : FormData) => {
+        console.log({firstName, lastName, username, password, email, company})
     }
 
     return(
