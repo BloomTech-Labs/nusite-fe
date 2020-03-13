@@ -10,10 +10,6 @@ type FormData = {
     company: string;
 }
 
-//this form could be refactored. I'm building it like this for now to get something for our team to look at.
-//in the future, each field of this form could probably be broken down into individual exports and then you can pull in 
-//fields as required.
-
 export const Registration = () => {
     const { register, handleSubmit, errors } = useForm<FormData>()
     const onSubmit = ({firstName, lastName, username, password, email, company} : FormData) => {
