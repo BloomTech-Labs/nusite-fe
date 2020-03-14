@@ -1,12 +1,23 @@
+# PartNerd
+
+![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
+![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
+![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
+[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
+1️⃣ You can find the deployed project at [PartNerd](https://master.d1q97okbcd2s3b.amplifyapp.com/).
+
+## Code Climate Score
+
+[![Maintainability](https://api.codeclimate.com/v1/badges/6cb88c1d56b485753fa4/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/nusite-fe/maintainability)
+[![Test Coverage](https://api.codeclimate.com/v1/badges/6cb88c1d56b485753fa4/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/nusite-fe/test_coverage)
+
 🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
 
 🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
 
 🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
 
-# 1️⃣ Title of project goes here
-
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
 
 ## 4️⃣ Contributors
 
@@ -22,13 +33,6 @@
 <br>
 
 🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
-
-![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
-![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
-![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
-[![Netlify Status](https://api.netlify.com/api/v1/badges/b5c4db1c-b10d-42c3-b157-3746edd9e81d/deploy-status)](netlify link goes in these parenthesis)
-[![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
-
 🚫 more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview

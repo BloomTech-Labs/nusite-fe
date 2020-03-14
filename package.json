@@ -28,7 +28,16 @@
       "build": "react-scripts build",
       "test": "react-scripts test",
       "eject": "react-scripts eject",
-      "format": "prettier \"**/*.{ts,tsx,html}\" --write"
+      "format": "prettier \"**/*.{ts,tsx,html}\" --write",
+      "coverage": "CI=true npm test --coverage || true"
+   },
+   "jest": {
+      "collectCoverageFrom": [
+         "**/*.{js, jsx, ts, tsx}",
+         "!**/node_modules/**",
+         "!**/vendor/**",
+         "!**/__tests__/**"
+      ]
    },
    "eslintConfig": {
       "extends": "react-app"
