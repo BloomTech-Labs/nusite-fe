@@ -388,4 +388,16 @@ body {
     .menu {
       margin-top: 40px;
       color: #66fcf1;
+      cursor: pointer;
+    }
+
+    .start:hover {
+      background: #45a29e;
+      color:white;
+    }
+
+  nav a:hover {
+      background: #45a29e;
+      color:white;
+      border-radius:8px;
     }
