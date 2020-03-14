@@ -14,6 +14,7 @@ return (
         <main className="section-main">
         <br />
         <br />
+        <br />
         <h1 className="tagline">Connecting web developers to people with great ideas. Old website, new website, app, or feature, 
             we've got you covered.
         </h1>
