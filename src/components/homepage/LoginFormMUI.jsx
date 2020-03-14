@@ -5,7 +5,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import './LoginForm.css';
 import Header from './Header';
-import Footer from './Footer';
+
 
 
 const useStyles = makeStyles(theme => ({

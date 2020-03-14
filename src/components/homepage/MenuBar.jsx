@@ -17,7 +17,10 @@ const MenuBar = () => {
 
   return (
     <div>
-      <MenuIcon className="menu" aria-controls="simple-menu" aria-haspopup="true" onClick={handleClick}>
+      <MenuIcon className="menu" 
+      aria-controls="simple-menu" 
+      aria-haspopup="true" 
+      onClick={handleClick}>
       </MenuIcon>
       <Menu
         id="simple-menu"

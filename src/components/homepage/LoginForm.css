@@ -1,15 +1,13 @@
-.login {
-  background: #0e101c;
-  font-family: "Roboto";
-}
 
 form {
   max-width: 500px;
   margin: 0 auto;
-  background:#aaa;
+  background:whitesmoke;
   color:white;
   border-radius: 4px;
   justify-content: center;
+  font-family: "Roboto";
+  justify-content:center;
 }
 
 .button-main {

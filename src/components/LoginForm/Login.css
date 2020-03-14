@@ -1,0 +1,27 @@
+form {
+    display:flex;
+    flex-flow: column wrap;
+    max-width: 500px;
+    margin: 0 auto;
+    background: #45a29e;
+    color:white;
+    border-radius: 4px;
+    justify-content: center;
+    font-family: "Roboto";
+    justify-content: center;
+    align-items:center;
+    text-align: center;
+    padding: 20px;
+    font-size: 1rem;
+  }
+  
+  input {
+    width: 200px;
+    background:#aaa;
+    border-radius:4px;
+    justify-content: center;
+    text-align: center;
+    padding: 16px;
+    margin: 11px;
+    font-size: 1rem;
+  }
