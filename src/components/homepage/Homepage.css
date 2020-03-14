@@ -1,4 +1,4 @@
-.App {
+body {
     text-align: center;
     display: flex;
     flex-flow: column wrap;
@@ -10,30 +10,36 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    font-family:"Roboto";
+    font-family: "Roboto";
+    width: 100%;
+    height: 100%;
   }
   
   header {
     background: #25274D;
     color: #45a29e;
     text-align: center;
+    display:flex;
+    flex-flow:row;
     justify-content: space-around;
     position: -webkit-sticky;
     position: sticky;
     opacity:0.98;
     top: 0;
     z-index: 99;
+    width:100%;
+    box-shadow: 0px 1px 8px #999;
   }
   
   header h1 {
     color:#66fcf1;
-    font-size: 4rem;
+    font-size: 3.1rem;
     text-align: center;
     font-family: "Domine";
   }
   
   .tagline {
-      animation-duration: 1.4s;
+    animation-duration: 1.4s;
     animation-name: slidein;
     display:flex;
     width: 75%;
@@ -59,6 +65,7 @@
   nav {
     background: #25274D;
     color: #45a29e;
+    margin-top: 45px;
     text-align: center;
   }
   
@@ -72,12 +79,23 @@
     justify-content: space-around;
   }
   
-  main {
+.start {
+  background: #25274D;
+  color: #66fcf1;
+  height: 20%;
+  font-size: 1.3rem;
+  padding: 11px;
+  margin-top: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+ main {
     background: white;
     color: #333;
     text-align: center;
     justify-content: center;
-    padding: 35px;
+    padding: 25px;
   }
   
   h2 {
@@ -152,21 +170,21 @@
   }
   
   .google-btn {
-      width: 210px;
+    width: 210px;
     height: 42px;
     margin: 0 auto;
-      background-color: #45a29e;
-      border-radius: 2px;
+    background-color: #45a29e;
+    border-radius: 2px;
     cursor:pointer;
   }
   
   .google-btn .google-icon-wrapper {
-      position: absolute;
-      margin-top: 1px;
+    position: absolute;
+    margin-top: 1px;
     margin-left: 1px;
-      width: 45px;
-      height: 40px;
-      border-radius: 2px;
+    width: 45px;
+    height: 40px;
+    border-radius: 2px;
     background-color: #fff;
     cursor:pointer
   }
@@ -179,28 +197,28 @@
   }
   
   .google-btn .btn-text {
-      float: right;
-      margin: 11px 11px 0 0;
-      color: #fff;
-      font-size: 14px;
-      letter-spacing: 0.2px;
+    float: right;
+    margin: 11px 11px 0 0;
+    color: #fff;
+    font-size: 14px;
+    letter-spacing: 0.2px;
     font-family: "Roboto";
     
   }
   
   .github-btn {
-      width: 210px;
+    width: 210px;
     height: 42px;
     margin: 0 auto;
-      background-color: #333;
-      border-radius: 2px;
+    background-color: #333;
+    border-radius: 2px;
     cursor:pointer;
   }
   
   .github-btn .github-icon-wrapper {
       position: absolute;
       margin-top: 1px;
-    margin-left: 1px;
+      margin-left: 1px;
       width: 45px;
       height: 40px;
       border-radius: 2px;
@@ -221,11 +239,11 @@
       color: #fff;
       font-size: 14px;
       letter-spacing: 0.2px;
-    font-family: "Roboto"; 
+      font-family: "Roboto"; 
   } 
   
   hr {
-    width:55%;
+    width: 55%;
   }
   
   p {
@@ -250,7 +268,7 @@
     display: flex;
     justify-content: space-around;
     flex-flow: row wrap;
-      text-align: center;
+    text-align: center;
     font-size: 30px;
     margin-top: 5px;
   }
@@ -344,10 +362,30 @@
     justify-content: center;
   }
   
-  @media (max-width: 550px) {
+  @media (max-width: 768px) {
       .parallax {
-          display: none;
+        display: none;
+      }
+      header {
+        flex-flow:column wrap;        
+      }
+      header h1 {
+        font-size: 3.3rem;
+      }
+      nav {
+        display: flex;
+        flex-flow: row wrap;
+        justify-content: center;
+      }
+      .start {
+        display: none;
+      }
+      .menu {
+        display: none;
       }
     }
   
-  
+    .menu {
+      margin-top: 40px;
+      color: #66fcf1;
+    }

@@ -13,6 +13,7 @@ return (
     <Header />    
         <main className="section-main">
         <br />
+        <br />
         <h1 className="tagline">Connecting web developers to people with great ideas. Old website, new website, app, or feature, 
             we've got you covered.
         </h1>
@@ -28,11 +29,12 @@ return (
         </div>
         <br />
         <section>
+            <br />
             <h2>Project Builders</h2>
             <br />
             <img src={client} className="avatars" alt="" />
             <br />
-            <p>A marketplace for developers and project owners/clients to 
+            <p>A marketplace for developers and project owners to 
             meet each other and form partnerships. Developers and project owners can offer 
             their services and projects to one another and be matched according to their needs.  
             </p>
@@ -82,8 +84,6 @@ return (
         </div>
         <hr />
         <br />
-        </section>
-        <section>
         <h2>For Developers </h2>
             <br />
             <p>
