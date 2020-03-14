@@ -1,0 +1,22 @@
+.login {
+  background: #0e101c;
+  font-family: "Roboto";
+}
+
+form {
+  max-width: 500px;
+  margin: 0 auto;
+  background:#aaa;
+  color:white;
+  border-radius: 4px;
+  justify-content: center;
+}
+
+.button-main {
+  display: block;
+  appearance: none;
+  border-radius: 4px;
+  width: 400px;
+}
+
+

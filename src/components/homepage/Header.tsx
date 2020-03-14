@@ -1,6 +1,8 @@
 import React from 'react';
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 import MenuBar from './MenuBar';
+import { NavLink, Link } from 'react-router-dom';
+
 
 const Header = () => {
     return (
@@ -8,10 +10,10 @@ const Header = () => {
     <header>
     <h1>PartNerd <LaptopMacIcon /></h1>
     <nav>
-        <a href="https://partnerd.dev">Home</a>
+        <NavLink to="/"><a href="#">Home</a></NavLink>
         <a href="https://partnerd.dev">Developers</a>
-        <a href="https://partnerd.dev">Login</a>
-        <a href="https://partnerd.dev">Register</a>
+        <NavLink to="/login"><a href="#">Login</a></NavLink>
+        <NavLink to="/login"><a href="#">Register</a></NavLink>
     </nav>
     <button className="start">Start Now</button>
     <MenuBar />
