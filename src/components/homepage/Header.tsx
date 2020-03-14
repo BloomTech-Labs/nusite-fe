@@ -1,6 +1,6 @@
 import React from 'react';
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
-import MenuIcon from '@material-ui/icons/Menu';
+import MenuBar from './MenuBar';
 
 const Header = () => {
     return (
@@ -14,7 +14,7 @@ const Header = () => {
         <a href="https://partnerd.dev">Register</a>
     </nav>
     <button className="start">Start Now</button>
-    <MenuIcon className="menu" />
+    <MenuBar />
     </header>
     </>
     )
