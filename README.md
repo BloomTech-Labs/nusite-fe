@@ -6,7 +6,7 @@
 
 # 1️⃣ Title of project goes here
 
-1️⃣ You can find the deployed project at [🚫URL NAME GOES HERE](🚫copy and paste URL here).
+1️⃣ You can find the deployed project at [https://romantic-nightingale-3c2e8a.netlify.com/#/].
 
 ## 4️⃣ Contributors
 
