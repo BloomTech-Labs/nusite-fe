@@ -85,6 +85,7 @@ return (
             <label><div className="button-small"><h3>Get Started</h3></div></label>
             <div className="bg"></div>
         </div>
+        <br />
         </div>
         <hr />
         <br />

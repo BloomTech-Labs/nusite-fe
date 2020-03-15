@@ -11,7 +11,7 @@ const Header = () => {
     <h1>PartNerd <LaptopMacIcon /></h1>
     <nav>
         <NavLink to="/">Home</NavLink>
-        <a href="https://partnerd.dev">Developers</a>
+        <NavLink to="/home">Dashboard</NavLink>
         <NavLink to="/login">Login</NavLink>
         <NavLink to="/register">Register</NavLink>
     </nav>
