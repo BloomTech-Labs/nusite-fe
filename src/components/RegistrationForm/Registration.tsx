@@ -42,6 +42,7 @@ export const Registration = () => {
     return(
         <>
         <Header />
+        <div className="box">
             <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
                 <label>First Name</label>
                 <input ref={register({ required: true, minLength: 2})} 
@@ -89,6 +90,7 @@ export const Registration = () => {
                 
                 <Button variant="contained" color="primary" type="submit">Submit</Button>
             </form>
+            </div>
         </>
     )
 }

@@ -25,3 +25,19 @@ form {
     margin: 11px;
     font-size: 1rem;
   }
+
+  .box {
+    background-color: rgba(41, 39, 39, 0.3);
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+   -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+    height:100%;  
+  }
+
+  .container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height:100%;  
+  }

@@ -40,6 +40,7 @@ export const Login = () => {
     return(
         <>
         <Header />
+        <div className="box">
             <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
      
                 <label>Username</label>
@@ -69,6 +70,7 @@ export const Login = () => {
 
                 <Button variant="contained" color="primary" type="submit">Submit</Button>
             </form>
+            </div>
         </>
     )
 }
