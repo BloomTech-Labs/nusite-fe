@@ -7,7 +7,7 @@
 # Partnerd
 
 You can find the test development version of the currently deployed project at [https://partnerd.dev]().
-
+(https://romantic-nightingale-3c2e8a.netlify.com/#/) currently deployed test page:
 ## Contributors
 
 
