@@ -10,20 +10,17 @@ You can find the test development version of the currently deployed project at [
 
 ## Contributors
 
-🚫Add contributor info below, make sure add images and edit the social links for each member. Add to or delete these place-holders as needed
 
-|                                       [Bradley Pitts](https://github.com/BPitts8019)                                        |                                       [Stephen Tanksley](https://github.com/StephenTanksley)                                        |                                       [Joe Medrano](https://github.com/JoeLorenzo)                                        |                                       [Andrew Speer](https://github.com/nottolivc)                                        |                                       [Tara Sherman](https://github.com/taraSherman)
+
+|[Bradley Pitts](https://github.com/BPitts8019)                                        |                                 [Stephen Tanksley](https://github.com/StephenTanksley)                                        |                             [Joe Medrano](https://github.com/JoeLorenzo)                                        |                                       [Andrew Speer](https://github.com/nottolivc)                                        |                                       [Tara Sherman](https://github.com/taraSherman)
 [Danielle Baxter](https://github.com/danibaxx)  |
 [Raymond Thurman](https://github.com/raythurman2386) 
-| :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------------------------------------------: |
-|                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-female.png" width = "200" />](https://github.com/)                       |                      [<img src="https://www.dalesjewelers.com/wp-content/uploads/2018/10/placeholder-silhouette-male.png" width = "200" />](https://github.com/)                       |
-|                 [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/)                 |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/honda0306)             |           [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/Mister-Corn)            |          [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/NandoTheessen)           |            [<img src="https://github.com/favicon.ico" width="15"> ](https://github.com/wvandolah)             |
-| [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) | [ <img src="https://static.licdn.com/sc/h/al2o9zrvru7aqj8e1x2rzsrca" width="15"> ](https://www.linkedin.com/) |
+
 
 <br>
 <br>
 
-🚫 4️⃣ Optional examples of using images with links for your tech stack, make sure to change these to fit your project
+Optional examples of using images with links for your tech stack, make sure to change these to fit your project
 
 ![MIT](https://img.shields.io/packagist/l/doctrine/orm.svg)
 ![React](https://img.shields.io/badge/react-v16.7.0--alpha.2-blue.svg)
@@ -34,9 +31,9 @@ more info on using badges [here](https://github.com/badges/shields)
 
 ## Project Overview
 
-1️⃣ [Trello Board](https://trello.com/b/21H7zKuh/labspt8-nusite)
+[Trello Board](https://trello.com/b/21H7zKuh/labspt8-nusite)
 
-1️⃣ [Product Canvas](https://www.notion.so/87825689686d4811bc47cb0c935ff97e?v=75519784b4d543ea992186db6baaed48)
+[Product Canvas](https://www.notion.so/87825689686d4811bc47cb0c935ff97e?v=75519784b4d543ea992186db6baaed48)
 
 
 ### 4️⃣ Key Features
@@ -47,12 +44,10 @@ more info on using badges [here](https://github.com/badges/shields)
 -    feature four
 -    feature five
 
-## 1️⃣ Tech Stack
+## Tech Stack
 
 ### Front end built using:
 
-#### _Front end framework goes here_
-Marketing site and Application Design
 ## Tech/framework used
 <b>Built with:</b>
 - [React](https://reactjs.org)
