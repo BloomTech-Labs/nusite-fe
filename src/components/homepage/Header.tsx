@@ -1,7 +1,7 @@
 import React from 'react';
 import LaptopMacIcon from '@material-ui/icons/LaptopMac';
 import MenuBar from './MenuBar';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 
 const Header = () => {
@@ -10,10 +10,10 @@ const Header = () => {
     <header>
     <h1>PartNerd <LaptopMacIcon /></h1>
     <nav>
-        <NavLink to="/"><a href="#">Home</a></NavLink>
+        <NavLink to="/">Home</NavLink>
         <a href="https://partnerd.dev">Developers</a>
-        <NavLink to="/login"><a href="#">Login</a></NavLink>
-        <NavLink to="/register"><a href="#">Register</a></NavLink>
+        <NavLink to="/login">Login</NavLink>
+        <NavLink to="/register">Register</NavLink>
     </nav>
     <button className="start">Start Now</button>
     <MenuBar />

@@ -1,8 +1,8 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import TextField from '@material-ui/core/TextField';
+//import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+//import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Header from '../homepage/Header';
 import './Registration.css';
 
@@ -15,23 +15,23 @@ type FormData = {
     company: string;
 }
 
-const useStyles = makeStyles((theme: Theme) =>
-  createStyles({
-    root: {
-      '& .MuiTextField-root': {
-        margin: theme.spacing(1),
-        width: 200,
-      },
-      container: {
-        display: 'flex',
-        flexWrap: 'wrap',
-      },
-      button: {
-        margin: theme.spacing(1),
-      },
-    },
-  }),
-);
+// const useStyles = makeStyles((theme: Theme) =>
+//   createStyles({
+//     root: {
+//       '& .MuiTextField-root': {
+//         margin: theme.spacing(1),
+//         width: 200,
+//       },
+//       container: {
+//         display: 'flex',
+//         flexWrap: 'wrap',
+//       },
+//       button: {
+//         margin: theme.spacing(1),
+//       },
+//     },
+//   }),
+// );
 
 export const Registration = () => {
     const { register, handleSubmit, errors } = useForm<FormData>()
