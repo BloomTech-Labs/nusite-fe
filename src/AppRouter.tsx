@@ -3,7 +3,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import {Login} from './components/LoginForm/Login';
 import {Registration} from './components/RegistrationForm/Registration';
 import Home from './components/homepage/Home';
-import { PrivateRoute } from './components/routes/PrivateRoute';
+import PrivateRoute from './components/routes/PrivateRoute';
 import Dashboard from './components/homepage/Dashboard';
 
 const AppRouter = () => (
