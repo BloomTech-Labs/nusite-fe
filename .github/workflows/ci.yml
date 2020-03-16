@@ -16,6 +16,7 @@ jobs:
 
       - uses: paambaati/codeclimate-action@v2.4.0
         env:
+          CI: true
           CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
         with:
           coverageCommand: npm run coverage 
