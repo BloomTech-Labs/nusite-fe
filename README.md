@@ -7,9 +7,9 @@
 # Partnerd
 
 You can find the test development version of the currently deployed project at [https://partnerd.dev]().
-(https://romantic-nightingale-3c2e8a.netlify.com/#/) currently deployed test page:
-## Contributors
 
+
+## Contributors
 
 
 |[Bradley Pitts](https://github.com/BPitts8019)| [Stephen Tanksley](https://github.com/StephenTanksley)                      | [Joe Medrano](https://github.com/JoeLorenzo) | [Andrew Speer](https://github.com/nottolivc)                               | [Tara Sherman](https://github.com/taraSherman)| [Danielle Baxter](https://github.com/danibaxx)| [Raymond Thurman](https://github.com/raythurman2386)|
