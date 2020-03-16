@@ -29,7 +29,7 @@ return (
         <div className="parallax">
             <br />
             <br />
-            <h2>Comprehensive recommendation based on advanced data analysis.</h2>
+            <h2 className="tagline-2">Comprehensive recommendation based on advanced data analysis.</h2>
         </div>
         <br />
         <section>
