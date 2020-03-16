@@ -29,11 +29,11 @@
       "test": "react-scripts test",
       "eject": "react-scripts eject",
       "format": "prettier \"**/*.{ts,tsx,html}\" --write",
-      "coverage": "CI=true npm test --coverage || true"
+      "coverage": "CI=true npm run test -- --coverage || true"
    },
    "jest": {
       "collectCoverageFrom": [
-         "**/*.{js, jsx, ts, tsx}",
+         "**/*.{js, jsx, ts, tsx, test.tsx}",
          "!**/node_modules/**",
          "!**/vendor/**",
          "!**/__tests__/**"
