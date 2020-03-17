@@ -66,6 +66,7 @@ return (
         <br />
         <h4 className="tagline">
         PartNerd™ provides users a comprehensive recommendation generation based on advanced data analysis.
+        <br />
         <Button variant="contained" className="start-main"><NavLink to="/register">Get Started</NavLink></Button>
         </h4>
         <br />

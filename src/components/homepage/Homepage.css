@@ -423,6 +423,15 @@ body {
       .menu {
         display: none;
       }
+      .tagline .start-main {
+        display: none;
+      }
+      .tagline {
+        text-align:center;
+      }
+      section p {
+        width:70%;
+      }
     }
   
     .menu {
