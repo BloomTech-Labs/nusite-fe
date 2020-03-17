@@ -11,12 +11,11 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: "12"
-      - name: Install dependencies
-        run: npm install
-
+      - run: npm install
       - uses: paambaati/codeclimate-action@v2.4.0
         env:
           CI: true
           CC_TEST_REPORTER_ID: ${{ secrets.CodeClimateReporterId }}
         with:
-          coverageCommand: npm run coverage 
+          coverageCommand: npm run coverage
+          debug: true

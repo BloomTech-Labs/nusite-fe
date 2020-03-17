@@ -26,10 +26,10 @@
    "scripts": {
       "start": "react-scripts start",
       "build": "react-scripts build",
-      "test": "react-scripts test",
+      "test": "react-scripts test --coverage --watchAll=false",
       "eject": "react-scripts eject",
       "format": "prettier \"**/*.{ts,tsx,html}\" --write",
-      "coverage": "CI=true npm run test -- --coverage || true"
+      "coverage": "CI=true npm run test || true"
    },
    "jest": {
       "collectCoverageFrom": [
