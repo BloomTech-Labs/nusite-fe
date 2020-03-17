@@ -1,12 +1,24 @@
-import React from "react";
-import "./App.css";
+import React from 'react';
+import AppRouter from './AppRouter';
+import './App.css';
+import { ApolloProvider } from '@apollo/react-hooks';
+import ApolloClient from 'apollo-boost';
 
-function App() {
+const client = new ApolloClient({
+  uri: 'https://localhost:4000',
+});
+
+
+const App = () => {
    return (
+      <>
+      <ApolloProvider client={client}>
       <div className="App">
-         <h1>Hello You!!</h1>
+         <AppRouter/>
       </div>
-   );
-}
+      </ApolloProvider>
+      </>
+   )};
+
 
 export default App;
