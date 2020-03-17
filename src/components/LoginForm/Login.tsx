@@ -69,8 +69,18 @@ export const Login = () => {
                 {errors.email && errors.email.type === "required" && <p>This field is required.</p>}
 
                 <Button variant="contained" color="primary" type="submit">Submit</Button>
-            </form>
-            </div>
+                <br />
+        </form>
+        <br />
+        <div className="google-btn">
+        <div className="google-icon-wrapper">
+        <img className="google-icon" src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg" alt="" />
+        </div>
+         <p className="btn-text"><b>Sign in with google</b></p>
+        </div>
+        <br />
+        <br />
+        </div>
         </>
     )
 }

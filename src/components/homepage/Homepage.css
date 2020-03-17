@@ -1,5 +1,5 @@
 body {
-    text-align: center;
+    text-align: left;
     display: flex;
     flex-flow: column wrap;
     margin: 0 auto;
@@ -42,15 +42,15 @@ body {
     animation-duration: 1.4s;
     animation-name: slidein;
     display:flex;
-    width: 75%;
-    text-align: center;
+    width: 55%;
+    text-align: left;
     justify-content: center;
     margin: 0 auto;
     color: #333;
   }
 
   .tagline-2 {
-  color:#45a29e;
+  color:#66fcf1;;
   font-size: 2.1rem;
   text-align: center;
   font-family: "Roboto";
@@ -86,20 +86,46 @@ body {
     justify-content: space-around;
   }
   
-.start {
-  background: #25274D;
-  color: #66fcf1;
+.start-main {
+  background: #45a29e;
+  color: white;
   height: 20%;
-  font-size: 1.3rem;
+  font-size: 1.4rem;
   padding: 11px;
   margin-top: 32px;
   border-radius: 8px;
   cursor: pointer;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-main:hover {
+  background: #25274D;
+  color: #66fcf1;
+}
+
+.start {
+  background: #25274D;
+  color: #66fcf1;
+  height: 20%;
+  font-size: 1.4rem;
+  padding: 11px;
+  margin-top: 32px;
+  border-radius: 8px;
+  cursor: pointer;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
 }
 
 .start a {
   color: #66fcf1;
   text-decoration:none;
+  cursor: pointer;
+  text-align:center;
+  justify-content: center;
+  align-items: center;
 }
 
  main {
@@ -124,21 +150,21 @@ body {
   .section-main {
     background: white;
     color: #333;
-    text-align: center;
+    text-align: left;
     justify-content: center;
   }
   
   section {
     background: white;
     color: #1f2833;
-    text-align: center;
+    text-align: left;
     justify-content: center;
   }
   
   section p {
     display:flex;
-    width: 75%;
-    text-align: center;
+    width: 55%;
+    text-align: left;
     justify-content: center;
     margin: 0 auto;
   }
@@ -255,7 +281,7 @@ body {
   } 
   
   hr {
-    width: 55%;
+    width: 59%;
   }
   
   p {
@@ -272,8 +298,8 @@ body {
     flex-flow: row;
     height: 16vh;
     background: #25274D;
-      width: 100%;
-      margin: 0 auto;
+    width: 100%;
+    margin: 0 auto;
   }
   
   #social-test {
@@ -363,9 +389,9 @@ body {
   
   /* center gif */
   .user-flow {
-    width:55%;
+    width:48%;
     justify-content: center;
-    height:55vh;
+    height:45vh;
   }
   
   .gif-wrapper {
