@@ -1,107 +1,107 @@
 form {
-    display:flex;
-    flex-flow: column wrap;
-    max-width: 500px;
-    margin: 0 auto;
-    background: #45a29e;
-    color:white;
-    border-radius: 4px;
-    justify-content: center;
-    font-family: "Roboto";
-    justify-content: center;
-    align-items:center;
-    text-align: left;
-    padding: 20px;
-    font-size: 1rem;
-  }
-  
-  input {
-    width: 200px;
-    background:#aaa;
-    border-radius:4px;
-    justify-content: center;
-    text-align: left;
-    padding: 16px;
-    margin: 11px;
-    font-size: 1rem;
-  }
+   display: flex;
+   flex-flow: column wrap;
+   max-width: 500px;
+   margin: 0 auto;
+   background: #45a29e;
+   color: white;
+   border-radius: 4px;
+   justify-content: center;
+   font-family: "Roboto";
+   justify-content: center;
+   align-items: center;
+   text-align: left;
+   padding: 20px;
+   font-size: 1rem;
+}
 
-  .box {
-    background-color: rgba(41, 39, 39, 0.3);
-    font-family: "Roboto", sans-serif;
-    text-align: center;
+input {
+   width: 200px;
+   background: #aaa;
+   border-radius: 4px;
+   justify-content: center;
+   text-align: left;
+   padding: 16px;
+   margin: 11px;
+   font-size: 1rem;
+}
+
+.box {
+   background-color: rgba(41, 39, 39, 0.3);
+   font-family: "Roboto", sans-serif;
+   text-align: center;
    -webkit-backdrop-filter: blur(10px);
-    backdrop-filter: blur(10px);
-    height:100%;  
-  }
+   backdrop-filter: blur(10px);
+   height: 100%;
+}
 
-  .google-btn {
-    width: 210px;
-    height: 42px;
-    text-align: center;
-    margin: 0 auto;
-    border-radius: 2px;
-    cursor:pointer;
-  }
-  
-  .google-btn .google-icon-wrapper {
-    position: absolute;
-    margin-top: 1px;
-    margin-left: 1px;
-    width: 45px;
-    height: 40px;
-    border-radius: 2px;
-    cursor:pointer
-  }
-  
-  .google-btn .google-icon {
-      position: absolute;
-      margin-top: 11px;
-      width: 17px;
-      height: 20px;
-  }
-  
-  .google-btn .btn-text {
-    float: right;
-    margin: 11px 11px 0 0;
-    font-size: 14px;
-    letter-spacing: 0.2px;
-    font-family: "Roboto";
-  }
-  
-  .github-btn {
-    width: 210px;
-    height: 42px;
-    margin: 0 auto;
-    background-color: #222;
-    border-radius: 2px;
-    cursor:pointer;
-    text-align: center;
-  }
-  
-  .github-btn .github-icon-wrapper {
-      position: absolute;
-      margin-top: 1px;
-      margin-left: 1px;
-      width: 45px;
-      height: 40px;
-      border-radius: 2px;
-      background-color: #fff;
-      cursor:pointer
-  }
-  
-  .github-btn .github-icon {
-      position: absolute;
-      margin-top: 11px;
-      width: 17px;
-      height: 20px;
-  }
-  
-  .github-btn .btn-text {
-      float: right;
-      margin: 11px 11px 0 0;
-      color: #fff;
-      font-size: 14px;
-      letter-spacing: 0.2px;
-      font-family: "Roboto"; 
-  } 
+.google-btn {
+   width: 210px;
+   height: 42px;
+   text-align: center;
+   margin: 0 auto;
+   border-radius: 2px;
+   cursor: pointer;
+}
+
+.google-btn .google-icon-wrapper {
+   position: absolute;
+   margin-top: 1px;
+   margin-left: 1px;
+   width: 45px;
+   height: 40px;
+   border-radius: 2px;
+   cursor: pointer;
+}
+
+.google-btn .google-icon {
+   position: absolute;
+   margin-top: 11px;
+   width: 17px;
+   height: 20px;
+}
+
+.google-btn .btn-text {
+   float: right;
+   margin: 11px 11px 0 0;
+   font-size: 14px;
+   letter-spacing: 0.2px;
+   font-family: "Roboto";
+}
+
+.github-btn {
+   width: 210px;
+   height: 42px;
+   margin: 0 auto;
+   background-color: #222;
+   border-radius: 2px;
+   cursor: pointer;
+   text-align: center;
+}
+
+.github-btn .github-icon-wrapper {
+   position: absolute;
+   margin-top: 1px;
+   margin-left: 1px;
+   width: 45px;
+   height: 40px;
+   border-radius: 2px;
+   background-color: #fff;
+   cursor: pointer;
+}
+
+.github-btn .github-icon {
+   position: absolute;
+   margin-top: 11px;
+   width: 17px;
+   height: 20px;
+}
+
+.github-btn .btn-text {
+   float: right;
+   margin: 11px 11px 0 0;
+   color: #fff;
+   font-size: 14px;
+   letter-spacing: 0.2px;
+   font-family: "Roboto";
+}
