@@ -13,9 +13,7 @@ const App = () => {
       <>
          <ApolloProvider client={client}>
             <div className="App">
-               header usermenu drawer
                <AppRouter />
-               footer
             </div>
          </ApolloProvider>
       </>

@@ -3,7 +3,7 @@ import client from "../images/client.jpg";
 import userflow from "../images/userflow.gif";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
-import "./Homepage.css";
+import "./Home.css";
 import { NavLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 
