@@ -1,16 +1,62 @@
 html {
-  box-sizing: border-box;
+   box-sizing: border-box;
 }
 
 .App_dark {
-  background:#111;
-  color: whitesmoke;
+   background-color: #111;
+   color: whitesmoke;
+}
+
+.App_dark main {
+   background-color: #111;
+   color: whitesmoke;
+}
+
+.App_dark section {
+   background-color: #111;
+   color: whitesmoke;
+}
+
+.App_dark header {
+   background-color: #25274d;
+   color: #66fcf1;
+   box-shadow: none;
 }
 
 .App_dark nav {
-  color: #aaa;
-  background:whitesmoke;
-  color:#45a29e;
-  box-shadow:none;
+   background-color: #25274d;
+   color: #66fcf1;
 }
 
+.App_dark footer {
+   background-color: #25274d;
+   color: #66fcf1;
+}
+
+.App_dark nav a {
+   background-color: #25274d;
+   color: #66fcf1;
+}
+
+.App_dark {
+   text-align: left;
+   display: flex;
+   flex-flow: column wrap;
+   margin: 0 auto;
+   justify-content: center;
+   background-image: url("https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260");
+   /* Create the parallax scrolling */
+   background-attachment: fixed;
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   font-family: "Roboto";
+   width: 100%;
+   height: 100%;
+}
+
+.App_dark .parallax {
+   height: 400px;
+   z-index: 99;
+   display: block;
+}

@@ -10,18 +10,18 @@ import Footer from "./Footer";
 import Header from "./Header";
 
 const Home = (props: any) => {
-   const [darkMode, setDarkMode] = useState(false);
-   const theme = {
-      darkMode,
-      // can even pass the setter function so children can
-      // trigger changes
-      setDarkMode,
-   };
+   //    const [darkMode, setDarkMode] = useState(false);
+   //    const theme = {
+   //       darkMode,
+   //       // can even pass the setter function so children can
+   //       // trigger changes
+   //       setDarkMode,
+   //    };
 
    return (
-      <ThemeContext.Provider value={theme}>
+      <div className="App">
          <Header />
-         <main className={`App${theme.darkMode ? "_dark" : ""}`}>
+         <main>
             <br />
             <DarkMode />
             <br />
@@ -49,7 +49,7 @@ const Home = (props: any) => {
             </h2>
          </div>
          <br />
-         <section className={`App${theme.darkMode ? "_dark" : ""}`}>
+         <section>
             <br />
             <h2>Project Builders</h2>
             <br />
@@ -160,7 +160,7 @@ const Home = (props: any) => {
             </div>
          </section>
          <Footer />
-      </ThemeContext.Provider>
+      </div>
    );
 };
 
