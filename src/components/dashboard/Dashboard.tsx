@@ -1,8 +1,8 @@
 import React from "react";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
-import "../homepage/Homepage.css";
-import client from "../homepage/images/client.jpg";
+import "../marketing-page/Homepage.css";
+import client from "../marketing-page/images/client.jpg";
 
 const Dashboard = (props: any) => {
    return (

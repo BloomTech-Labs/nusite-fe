@@ -3,7 +3,7 @@ import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
 import MenuIcon from "@material-ui/icons/Menu";
 
-const MenuBar = () => {
+const UserMenu = () => {
    const [anchorEl, setAnchorEl] = React.useState(null);
 
    const handleClick = (event: any) => {
@@ -37,4 +37,4 @@ const MenuBar = () => {
    );
 };
 
-export default MenuBar;
+export default UserMenu;

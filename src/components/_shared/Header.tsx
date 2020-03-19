@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
-import MenuBar from "./MenuBar";
+import UserMenu from "./UserMenu";
 import { NavLink } from "react-router-dom";
 import { ThemeContext } from "../context/contexts";
 
@@ -25,7 +25,7 @@ const Header = (props: any) => {
                <NavLink to="/login">Login</NavLink>
                <NavLink to="/register">Register</NavLink>
             </nav>
-            <MenuBar />
+            <UserMenu />
          </header>
       </ThemeContext.Provider>
    );
