@@ -1,7 +1,7 @@
 import React from "react";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
-import "./Homepage.css";
+import "../marketing-page/Home.css";
 import client from "../images/client.jpg";
 
 const Dashboard = () => {
