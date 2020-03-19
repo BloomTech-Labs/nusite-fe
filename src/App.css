@@ -23,6 +23,10 @@ html {
    box-shadow: none;
 }
 
+.darkMode {
+   color: #444;
+}
+
 .App_dark nav {
    background-color: #25274d;
    color: #66fcf1;

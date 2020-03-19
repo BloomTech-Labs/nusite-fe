@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
 import MenuBar from "./MenuBar";
 import { NavLink } from "react-router-dom";
-import { ThemeContext } from "../darkmode/contexts";
+import { ThemeContext } from "../context/contexts";
 
 const Header = (props: any) => {
    const [darkMode, setDarkMode] = useState(false);
