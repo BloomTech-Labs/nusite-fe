@@ -1,23 +1,14 @@
-import React, { useState } from "react";
+import React from "react";
 import client from "./images/client.jpg";
 import userflow from "./images/userflow.gif";
 import "./Homepage.css";
 import { NavLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import { ThemeContext } from "../darkmode/contexts";
 import DarkMode from "../darkmode/DarkMode";
-import Footer from "./Footer";
-import Header from "./Header";
+import Footer from "../_shared/Footer";
+import Header from "../_shared/Header";
 
 const Home = (props: any) => {
-   //    const [darkMode, setDarkMode] = useState(false);
-   //    const theme = {
-   //       darkMode,
-   //       // can even pass the setter function so children can
-   //       // trigger changes
-   //       setDarkMode,
-   //    };
-
    return (
       <div className="App">
          <Header />

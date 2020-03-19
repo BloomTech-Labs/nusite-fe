@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 //import TextField from '@material-ui/core/TextField';
 import Button from "@material-ui/core/Button";
 //import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import Header from "../homepage/Header";
+import Header from "../_shared/Header";
 import "./Registration.css";
 
 type FormData = {

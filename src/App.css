@@ -55,6 +55,10 @@ html {
    height: 100%;
 }
 
+.App_dark .tagline {
+   color: whitesmoke;
+}
+
 .App_dark .parallax {
    height: 400px;
    z-index: 99;
