@@ -93,7 +93,7 @@ const Home = (props: any) => {
                </div>
                <a href="https://google.com/">
                   <p className="btn-text">
-                     <b>Google Register</b>
+                     <b>Google Signup </b>
                   </p>
                </a>
             </div>
@@ -108,7 +108,7 @@ const Home = (props: any) => {
                </div>
                <a href="https://github.com/">
                   <p className="btn-text">
-                     <b>Github Register</b>
+                     <b>Github Signup </b>
                   </p>
                </a>
             </div>

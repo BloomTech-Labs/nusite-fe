@@ -6,7 +6,7 @@ import MenuIcon from "@material-ui/icons/Menu";
 const MenuBar = () => {
    const [anchorEl, setAnchorEl] = React.useState(null);
 
-   const handleClick = event => {
+   const handleClick = (event: any) => {
       setAnchorEl(event.currentTarget);
    };
 

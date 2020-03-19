@@ -60,11 +60,17 @@ html {
 }
 
 .App_dark .tagline {
-   color: whitesmoke;
+   color: #aaa;
 }
 
 .App_dark .parallax {
    height: 400px;
    z-index: 99;
    display: block;
+}
+
+.App_dark nav a:hover {
+   background: #45a29e;
+   color: white;
+   border-radius: 8px;
 }

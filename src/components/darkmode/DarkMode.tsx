@@ -3,7 +3,7 @@ import { ThemeContext } from "../context/contexts";
 import Checkbox from "@material-ui/core/Checkbox";
 
 function DarkMode() {
-   const theme = useContext(ThemeContext);
+   const theme: any = useContext(ThemeContext);
 
    return (
       <>
