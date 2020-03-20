@@ -33,7 +33,7 @@ type FormData = {
 //   }),
 // );
 
-export const Registration = () => {
+export const Registration = (props: any) => {
    const { register, handleSubmit, errors } = useForm<FormData>();
    const onSubmit = ({
       firstName,

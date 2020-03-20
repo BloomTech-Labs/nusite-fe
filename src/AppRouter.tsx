@@ -1,10 +1,10 @@
 import * as React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
-import { Login } from "./components/login/Login";
-import { Registration } from "./components/registration/Registration";
-import Home from "./components/marketing-page/Home";
-import PrivateRoute from "./components/util/PrivateRoute";
-import Dashboard from "./components/dashboard/Dashboard";
+import { Login } from "./views/login/Login";
+import { Registration } from "./views/registration/Registration";
+import Home from "./views/marketing-page/Home";
+import PrivateRoute from "./views/util/PrivateRoute";
+import Dashboard from "./views/dashboard/Dashboard";
 
 const AppRouter = () => (
    <Router>

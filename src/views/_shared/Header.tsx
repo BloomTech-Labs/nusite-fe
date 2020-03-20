@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
 import UserMenu from "./UserMenu";
 import { NavLink } from "react-router-dom";
-import Button from "@material-ui/core/Button";
+import { ThemeContext } from "../context/contexts";
 
-const Header = () => {
+const Header = (props: any) => {
+   const [darkMode, setDarkMode] = useState(false);
+   const theme = {
+      darkMode,
+      // can even pass the setter function so children can
+      // trigger changes
+      setDarkMode,
+   };
+
    return (
-      <>
-         <header>
+      <ThemeContext.Provider value={theme}>
+         <header className={`App${theme.darkMode ? "_dark" : ""}`}>
             <h1>
                PartNerd <LaptopMacIcon />
             </h1>
@@ -17,10 +25,9 @@ const Header = () => {
                <NavLink to="/login">Login</NavLink>
                <NavLink to="/register">Register</NavLink>
             </nav>
-            {/*<button className="start"><NavLink to="/register">Start Now</NavLink></button>*/}
             <UserMenu />
          </header>
-      </>
+      </ThemeContext.Provider>
    );
 };
 

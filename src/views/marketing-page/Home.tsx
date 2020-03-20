@@ -1,18 +1,20 @@
 import React from "react";
-import client from "../images/client.jpg";
-import userflow from "../images/userflow.gif";
-import Footer from "../_shared/Footer";
-import Header from "../_shared/Header";
-import "./Home.css";
+import client from "./images/client.jpg";
+import userflow from "./images/userflow.gif";
+import "./Homepage.css";
 import { NavLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
+import DarkMode from "../darkmode/DarkMode";
+import Footer from "../_shared/Footer";
+import Header from "../_shared/Header";
 
-const Home = () => {
+const Home = (props: any) => {
    return (
-      <>
+      <div className="App">
          <Header />
-         <main className="section-main">
+         <main>
             <br />
+            <DarkMode />
             <br />
             <br />
             <h1 className="tagline">
@@ -90,7 +92,7 @@ const Home = () => {
                </div>
                <a href="https://google.com/">
                   <p className="btn-text">
-                     <b>Google Register</b>
+                     <b>Google Signup </b>
                   </p>
                </a>
             </div>
@@ -105,7 +107,7 @@ const Home = () => {
                </div>
                <a href="https://github.com/">
                   <p className="btn-text">
-                     <b>Github Register</b>
+                     <b>Github Signup </b>
                   </p>
                </a>
             </div>
@@ -148,7 +150,7 @@ const Home = () => {
             </div>
          </section>
          <Footer />
-      </>
+      </div>
    );
 };
 

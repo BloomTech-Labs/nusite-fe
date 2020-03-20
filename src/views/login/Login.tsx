@@ -30,7 +30,7 @@ type FormData = {
 //   }),
 // );
 
-export const Login = () => {
+export const Login = (props: any) => {
    const { register, handleSubmit, errors } = useForm<FormData>();
    const onSubmit = ({ username, password, email }: FormData) => {
       console.log({ username, password, email });

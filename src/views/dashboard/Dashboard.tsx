@@ -1,12 +1,12 @@
 import React from "react";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
-import "../marketing-page/Home.css";
-import client from "../images/client.jpg";
+import "../marketing-page/Homepage.css";
+import client from "../marketing-page/images/client.jpg";
 
-const Dashboard = () => {
+const Dashboard = (props: any) => {
    return (
-      <>
+      <div className="App">
          <Header />
          <main className="section-main">
             <h1>Welcome to Your Dashboard</h1>
@@ -49,7 +49,7 @@ const Dashboard = () => {
             </div>
          </section>
          <Footer />
-      </>
+      </div>
    );
 };
 
