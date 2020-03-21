@@ -6,7 +6,7 @@ import { ThemeContext } from "../context/contexts";
 
 const Header = (props: any) => {
    const [darkMode, setDarkMode] = useState(false);
-   const theme = {
+   const globalTheme = {
       darkMode,
       // can even pass the setter function so children can
       // trigger changes
@@ -14,12 +14,12 @@ const Header = (props: any) => {
    };
 
    return (
-      <ThemeContext.Provider value={theme}>
-         <header className={`App${theme.darkMode ? "_dark" : ""}`}>
+      <ThemeContext.Provider value={globalTheme}>
+         <header className={`App${globalTheme.darkMode ? "_dark" : ""}`}>
             <h1>
                PartNerd <LaptopMacIcon />
             </h1>
-            <nav>
+            <nav color='white'>
                <NavLink to="/">Home</NavLink>
                <NavLink to="/home">Dashboard</NavLink>
                <NavLink to="/login">Login</NavLink>

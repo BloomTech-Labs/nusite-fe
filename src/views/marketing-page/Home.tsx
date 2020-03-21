@@ -78,7 +78,7 @@ const Home = (props: any) => {
                PartNerd™ provides users a comprehensive recommendation
                generation based on advanced data analysis.
                <br />
-               <Button variant="contained" className="start-main">
+               <Button variant="contained" className="start-main" color="secondary">
                   <NavLink to="/register">Get Started</NavLink>
                </Button>
             </h4>
