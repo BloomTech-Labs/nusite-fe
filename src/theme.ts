@@ -1,22 +1,24 @@
-import { createMuiTheme } from "@material-ui/core/styles"
-import { whitesmoke } from "color-name";
+import { createMuiTheme } from "@material-ui/core/styles";
 
-const primaryColor = "#25274d"
-const secondaryColor = "#45a29e"
-const white = "whitesmoke"
+const primaryColor = "#25274d";
+const secondaryColor = "#45a29e";
+const white = "whitesmoke";
+const black = "#111";
+
 export default createMuiTheme({
-    palette: {
-        common: {
-            white: `${white}`
-        },
-        primary: {
-            main: `${primaryColor}`
-        },
-        secondary: {
-            main: `${secondaryColor}`
-        }
-    },
-    typography: {
-        fontSize: 14
-    }
-})
+   palette: {
+      common: {
+         white: `${white}`,
+         black: `${black}`
+      },
+      primary: {
+         main: `${primaryColor}`,
+      },
+      secondary: {
+         main: `${secondaryColor}`,
+      },
+   },
+   typography: {
+      fontSize: 14,
+   },
+});
