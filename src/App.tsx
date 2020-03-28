@@ -5,7 +5,7 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./theme"
-import { ThemeContext } from "./views/context/contexts";
+import { ThemeContext } from "./context/contexts";
 
 const client = new ApolloClient({
     uri: "https://localhost:4000",

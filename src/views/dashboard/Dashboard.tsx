@@ -1,8 +1,8 @@
 import React from "react";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
-import "../marketing-page/Homepage.css";
-import client from "../marketing-page/images/client.jpg";
+import "../marketing-page/Home"; //Create a css for this componnt
+import client from "../../images/client.jpg";
 
 const Dashboard = (props: any) => {
    return (

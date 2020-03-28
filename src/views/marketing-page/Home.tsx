@@ -1,10 +1,10 @@
 import React from "react";
-import client from "./images/client.jpg";
-import userflow from "./images/userflow.gif";
-import "./Homepage.css";
+import client from "../../images/client.jpg";
+import userflow from "../../images/userflow.gif";
+import "./Home.css";
 import { NavLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import DarkMode from "../darkmode/DarkMode";
+import DarkMode from "../_shared/DarkMode";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
 
@@ -22,7 +22,6 @@ const Home = (props: any) => {
                website, new website, app, or feature, we've got you covered.
             </h1>
             <br />
-
             <p>
                We are creating a marketplace for developers and project
                owners/clients to meet each other and form partnerships.

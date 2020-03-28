@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../context/contexts";
+import { ThemeContext } from "../../context/contexts";
 import Checkbox from "@material-ui/core/Checkbox";
 
 function DarkMode() {
