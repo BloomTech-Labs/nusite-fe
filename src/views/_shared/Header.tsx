@@ -19,7 +19,7 @@ const Header = (props: any) => {
             <h1>
                PartNerd <LaptopMacIcon />
             </h1>
-            <nav color='white'>
+            <nav color="white">
                <NavLink to="/">Home</NavLink>
                <NavLink to="/home">Dashboard</NavLink>
                <NavLink to="/login">Login</NavLink>
