@@ -3,7 +3,7 @@ import { ThemeContext } from "../../context/contexts";
 import Checkbox from "@material-ui/core/Checkbox";
 
 function DarkMode() {
-   const theme: any = useContext(ThemeContext);
+   const globalTheme: any = useContext(ThemeContext);
 
    return (
       <>
@@ -11,9 +11,9 @@ function DarkMode() {
          <br />
          <Checkbox
             className="darkMode"
-            value={theme.darkMode}
+            value={globalTheme.darkMode}
             // we can use the darkMode setter provided through the context
-            onChange={e => theme.setDarkMode(e.target.checked)}
+            onChange={e => globalTheme.setDarkMode(e.target.checked)}
          />
       </>
    );
