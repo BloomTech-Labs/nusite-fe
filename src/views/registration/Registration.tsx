@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 import { useForm } from "react-hook-form";
-//import TextField from '@material-ui/core/TextField';
+import axios from "axios";
 import Button from "@material-ui/core/Button";
-//import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import Header from "../_shared/Header";
 import "./Registration.css";
+// import gql from "graphql-tag";
+// import { Mutation } from "react-apollo";
+//import { gql } from "apollo-boost";
 
 type FormData = {
    firstName: string;
@@ -15,48 +17,89 @@ type FormData = {
    company: string;
 };
 
-// const useStyles = makeStyles((theme: Theme) =>
-//   createStyles({
-//     root: {
-//       '& .MuiTextField-root': {
-//         margin: theme.spacing(1),
-//         width: 200,
-//       },
-//       container: {
-//         display: 'flex',
-//         flexWrap: 'wrap',
-//       },
-//       button: {
-//         margin: theme.spacing(1),
-//       },
-//     },
-//   }),
-// );
+// export const SIGNUP_MUTATION = gql`
+//    mutation ($username: String!, $first_name: String!, $last_name: $email: String!, $password: String!) {
+//       signup(username: $username, first_name: $first_name, last_name: $last_name, email: $email, password: $password) {
+//          token
+//          users {
+//             username
+//             email
+//          }
+//       }
+//    }
+// `;
+//
+// export const LOGIN_MUTATION = gql`
+//   mutation login($email: String!, $password: String!) {
+//     login(email: $email, password: $password) {
+//       token
+//       users {
+//         username
+//       }
+//     }
+//   }
+// `;
+//
+// JUST AN AXIOS TEST for sending data to API, GQL mutations need to be intgrated
 
 export const Registration = (props: any) => {
-   const { register, handleSubmit, errors } = useForm<FormData>();
-   const onSubmit = ({
-      firstName,
-      lastName,
-      username,
-      password,
-      email,
-      company,
-   }: FormData) => {
-      console.log({ firstName, lastName, username, password, email, company });
+   const { register, errors } = useForm<FormData>();
+   const [users, setUsers] = useState({
+      username: "",
+      first_name: "",
+      last_name: "",
+      email: "",
+      password: "",
+      company: "",
+   });
+
+   const handleChange = (event: any) => {
+      setUsers({
+         ...users,
+         [event.target.name]: event.target.value,
+      });
+   };
+
+   const registration = (event: any) => {
+      event.preventDefault();
+
+      axios
+         .post("http://localhost:4000", users, {
+            withCredentials: true,
+         })
+         .then(result => {
+            console.log(result.data);
+            localStorage.setItem("token", result.data.token);
+            props.history.push("/");
+         })
+         .catch(error => {
+            if (error.response) {
+               // The request was made, but the server responded with a status code
+               // that falls out of the range of 2xx
+               console.log(error.response.data);
+               console.log(error.response.status);
+               console.log(error.response.headers);
+            } else {
+               // Something happened in setting up the request that triggered an Error
+               console.log("Error", error.message);
+            }
+            console.log(error.config);
+         });
    };
 
    return (
       <>
          <Header />
          <div className="box">
-            <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
+            <form className="register-form" onSubmit={registration}>
                <label>First Name</label>
                <input
                   ref={register({ required: true, minLength: 2 })}
                   type="text"
-                  name="firstName"
+                  name="first_name"
                   placeholder="First Name"
+                  value={users.first_name}
+                  onChange={handleChange}
                />
                {errors.firstName && errors.firstName.type === "required" && (
                   <p>This field is required.</p>
@@ -66,8 +109,10 @@ export const Registration = (props: any) => {
                <input
                   ref={register({ required: true })}
                   type="text"
-                  name="lastName"
+                  name="last_name"
                   placeholder="Last Name"
+                  value={users.last_name}
+                  onChange={handleChange}
                />
                {errors.lastName && errors.lastName.type === "required" && (
                   <p>This field is required.</p>
@@ -80,6 +125,8 @@ export const Registration = (props: any) => {
                   name="username"
                   placeholder="Username"
                   autoComplete="username"
+                  value={users.username}
+                  onChange={handleChange}
                />
                {errors.username && errors.username.type === "required" && (
                   <p>This field is required.</p>
@@ -92,6 +139,8 @@ export const Registration = (props: any) => {
                   name="password"
                   placeholder="Password"
                   autoComplete="current-password"
+                  value={users.password}
+                  onChange={handleChange}
                />
                {errors.password && errors.password.type === "required" && (
                   <p>This field is required.</p>
@@ -106,6 +155,8 @@ export const Registration = (props: any) => {
                   type="email"
                   name="email"
                   placeholder="Email"
+                  value={users.email}
+                  onChange={handleChange}
                />
                {errors.email && errors.email.type === "required" && (
                   <p>This field is required.</p>
@@ -116,7 +167,9 @@ export const Registration = (props: any) => {
                   ref={register({ required: true })}
                   type="text"
                   name="company"
-                  placeholder="Company (not required)"
+                  placeholder="Company (*not required)"
+                  value={users.company}
+                  onChange={handleChange}
                />
 
                <Button variant="contained" color="primary" type="submit">

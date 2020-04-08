@@ -9,7 +9,7 @@ const Dashboard = (props: any) => {
       <div className="App">
          <Header />
          <main className="section-main">
-            <h1>Welcome to Your Dashboard</h1>
+            <h2>Welcome to Your Dashboard</h2>
          </main>
          <section>
             <br />
