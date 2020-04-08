@@ -53,6 +53,15 @@ Why did you choose this framework?
 
 #### Front end deployed to `AWS` (https://partnerd.dev)
 
+## Client Installation
+
+```
+git clone [repo]
+cd [repo]
+npm install
+npm start
+```
+
 #### [Back end](https://partnerd-staging.herokuapp.com/) built using:
 
 -  [Express](https://expressjs.com/)
