@@ -3,12 +3,16 @@ import AppRouter from "./AppRouter";
 import "./App.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
+import { InMemoryCache } from 'apollo-cache-inmemory'
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./theme/theme";
 import { ThemeContext } from "./context/contexts";
 
+const cache = new InMemoryCache();
+
 const client = new ApolloClient({
-   uri: "https://localhost:4000",
+   uri: process.env.STAGING_LINK || "https://localhost:4000",
+   cache
 });
 
 const App: React.FC = () => {
