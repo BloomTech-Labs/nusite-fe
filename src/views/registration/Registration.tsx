@@ -50,7 +50,6 @@ export const Registration = (props: any) => {
       last_name: "",
       email: "",
       password: "",
-      company: "",
    });
 
    const handleChange = (event: any) => {
@@ -161,16 +160,6 @@ export const Registration = (props: any) => {
                {errors.email && errors.email.type === "required" && (
                   <p>This field is required.</p>
                )}
-
-               <label>Company</label>
-               <input
-                  ref={register({ required: true })}
-                  type="text"
-                  name="company"
-                  placeholder="Company (*not required)"
-                  value={users.company}
-                  onChange={handleChange}
-               />
 
                <Button variant="contained" color="primary" type="submit">
                   Submit
