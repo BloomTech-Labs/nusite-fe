@@ -32,8 +32,6 @@ You can find the official version of this deployed project at [PartNerd](https:/
 
 ### Key Features
 
-## Tech Stack
-
 ### Front end built using:
 
 ## Tech/framework used
