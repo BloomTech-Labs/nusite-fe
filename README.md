@@ -4,7 +4,14 @@
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-You can find the deployed project at [PartNerd](https://partnerd.dev).
+You can find the official version of this deployed project at [PartNerd](https://partnerd.dev).
+
+---
+
+**PartNerd** is an application that allows **project owners** and people with great ideas to add new projects to a database, an algorithmic controlled marketplace in order to match them with registered **web developers** who've built their matching profiles.
+
+[Deployed Front End Test](https://partnerd-project.now.sh) via Zeit
+<br />
 
 ## Code Climate Score
 
@@ -24,12 +31,6 @@ You can find the deployed project at [PartNerd](https://partnerd.dev).
 [Product Canvas](https://www.notion.so/87825689686d4811bc47cb0c935ff97e?v=75519784b4d543ea992186db6baaed48)
 
 ### Key Features
-
--  feature one
--  feature two
--  feature three
--  feature four
--  feature five
 
 ## Tech Stack
 
