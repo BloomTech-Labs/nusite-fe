@@ -12,18 +12,11 @@
 [![Maintainability](https://api.codeclimate.com/v1/badges/6cb88c1d56b485753fa4/maintainability)](https://codeclimate.com/github/Lambda-School-Labs/nusite-fe/maintainability)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/6cb88c1d56b485753fa4/test_coverage)](https://codeclimate.com/github/Lambda-School-Labs/nusite-fe/test_coverage)
 
-🚫 Note: All lines that start with 🚫 are instructions and should be deleted before this is posted to your portfolio. This is intended to be a guideline, feel free to add your own flare to it.
-
-🚫 The numbers 1️⃣ through 5️⃣ next to each item represent the week that part of the docs needs to be comepleted by.  Make sure to delete the numbers by the end of Labs.
-
-🚫 Each student has a required minimum number of meaningful PRs each week per the rubric. Contributing to docs does NOT count as a PR to meet your weekly requirements.
-
 ## Contributors
 
-|[Bradley Pitts](https://github.com/BPitts8019)| [Stephen Tanksley](https://github.com/StephenTanksley)                      | [Joe Medrano](https://github.com/JoeLorenzo) | [Andrew Speer](https://github.com/nottolivc)                               | [Tara Sherman](https://github.com/taraSherman)| [Danielle Baxter](https://github.com/danibaxx)| [Raymond Thurman](https://github.com/raythurman2386)|
+|[Bradley Pitts](https://github.com/BPitts8019)| [Stephen Tanksley](https://github.com/StephenTanksley) | [Joe Medrano](https://github.com/JoeLorenzo) | [Andrew Speer](https://github.com/nottolivc) | [Tara Sherman](https://github.com/taraSherman)| [Danielle Baxter](https://github.com/danibaxx)| [Raymond Thurman](https://github.com/raythurman2386)|
 <br>
 <br>
-
 
 ## Project Overview
 
@@ -31,62 +24,58 @@
 
 [Product Canvas](https://www.notion.so/87825689686d4811bc47cb0c935ff97e?v=75519784b4d543ea992186db6baaed48)
 
-
 ### 4️⃣ Key Features
 
--    feature one
--    feature two
--    feature three
--    feature four
--    feature five
+-  feature one
+-  feature two
+-  feature three
+-  feature four
+-  feature five
 
 ## Tech Stack
 
 ### Front end built using:
 
 ## Tech/framework used
+
 <b>Built with:</b>
-- [React](https://reactjs.org)
-- [Typescript](https://www.typescriptlang.org/)
-- [ContextAPI](https://reactjs.org/docs/context.html)
-- [Material UI](https://material-ui.com/)
+
+-  [React](https://reactjs.org)
+-  [Typescript](https://www.typescriptlang.org/)
+-  [ContextAPI](https://reactjs.org/docs/context.html)
+-  [Material UI](https://material-ui.com/)
 
 🚫 Why did you choose this framework?
 
--    point one
--    point two
--    point three
--    point four
-
+-  point one
+-  point two
+-  point three
+-  point four
 
 #### Front end deployed to `AWS`
 
-#### [Back end](🚫link to back end repo here) built using:
-- [Express](https://expressjs.com/)
-- [PostgreSQL](https://postgresql.com/)
-- [GraphQL](https://graphql.org)
-- [Node.js](https://nodejs.org)
+#### [Back end](https://partnerd-staging.herokuapp.com/) built using:
 
-#### 🚫 back end framework goes here
+-  [Express](https://expressjs.com/)
+-  [PostgreSQL](https://postgresql.com/)
+-  [GraphQL](https://graphql.org)
+-  [Node.js](https://nodejs.org)
 
--    point one
--    point two
--    point three
+#### GraphQL framework goes here
 
-🚫 List the rest of the back end end features and libraries in the same format as the framework above
+-  point one
+-  point two
+-  point three
 
 # APIs
 
 ## 2️⃣ Authentication API here
 
-🚫Replace text below with a description of the API
+GraphQL API, refer to nusite-be readme for documentation.
 
-Water's like me. It's laaazy ... Boy, it always looks for the easiest way to do things A little happy sunlight shining through there. Let all these little things happen. Don't fight them. Learn to use them. Even the worst thing we can do here is good.
+## Payment API
 
-## Payment API 
-
-[Stripe API](https://stripe.com/) 
-
+[Stripe API](https://stripe.com/)
 
 ## 3️⃣ Misc API here
 
@@ -144,12 +133,13 @@ When contributing to this repository, please first discuss the change you wish t
 Please note we have a [code of conduct](./CODE_OF_CONDUCT.md). Please follow it in all your interactions with the project.
 
 ## Issue/Bug Request
-   
- **If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
- - Check first to see if your issue has already been reported.
- - Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
- - Create a live example of the problem.
- - Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes,  where you believe the issue is originating from, and any potential solutions you have considered.
+
+**If you are having an issue with the existing project code, please submit a bug report under the following guidelines:**
+
+-  Check first to see if your issue has already been reported.
+-  Check to see if the issue has recently been fixed by attempting to reproduce the issue using the latest master branch in the repository.
+-  Create a live example of the problem.
+-  Submit a detailed bug report including your environment & browser, steps to reproduce the issue, actual and expected outcomes, where you believe the issue is originating from, and any potential solutions you have considered.
 
 ### Feature Requests
 
@@ -163,11 +153,11 @@ Remember that this project is licensed under the MIT license, and by submitting 
 
 #### Pull Request Guidelines
 
-- Ensure any install or build dependencies are removed before the end of the layer when doing a build.
-- Update the README.md with details of changes to the interface, including new plist variables, exposed ports, useful file locations and container parameters.
-- Ensure that your code conforms to our existing code conventions and test coverage.
-- Include the relevant issue number, if applicable.
-- You may merge the Pull Request in once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
+-  Ensure any install or build dependencies are removed before the end of the layer when doing a build.
+-  Update the README.md with details of changes to the interface, including new plist variables, exposed ports, useful file locations and container parameters.
+-  Ensure that your code conforms to our existing code conventions and test coverage.
+-  Include the relevant issue number, if applicable.
+-  You may merge the Pull Request in once you have the sign-off of two other developers, or if you do not have permission to do that, you may request the second reviewer to merge it for you.
 
 ### Attribution
 
@@ -175,4 +165,4 @@ These contribution guidelines have been adapted from [this good-Contributing.md-
 
 ## Documentation
 
-See [Backend Documentation](🚫_link to your backend readme here_) for details on the backend of our project.
+See nusite-be repository README for details on the backend of our project.
