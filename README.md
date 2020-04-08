@@ -32,9 +32,7 @@ You can find the official version of this deployed project at [PartNerd](https:/
 
 ### Key Features
 
-### Front end built using:
-
-## Tech/framework used
+## Tech/frameworks used:
 
 <b>Built with:</b>
 
