@@ -4,6 +4,7 @@
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit/)
 You can find the official version of this deployed project at [PartNerd](https://partnerd.dev).
 
 ---
