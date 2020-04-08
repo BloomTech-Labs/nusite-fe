@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 //import TextField from '@material-ui/core/TextField';
 import Button from "@material-ui/core/Button";
 //import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { SIGN_UP } from '../../queries/queries'
+import { SIGNUP } from '../../graphql-requests/mutations'
 import { useMutation } from '@apollo/react-hooks'
 import Header from "../_shared/Header";
 import "./Registration.css";
@@ -14,50 +14,27 @@ type FormData = {
    first_name: string;
    last_name: string;
    email: string;
-   company: string;
 };
 
-// const useStyles = makeStyles((theme: Theme) =>
-//   createStyles({
-//     root: {
-//       '& .MuiTextField-root': {
-//         margin: theme.spacing(1),
-//         width: 200,
-//       },
-//       container: {
-//         display: 'flex',
-//         flexWrap: 'wrap',
-//       },
-//       button: {
-//         margin: theme.spacing(1),
-//       },
-//     },
-//   }),
-// );
-
-export const Registration = (props: any) => {
+export const Registration = () => {
    const { register, handleSubmit, errors } = useForm<FormData>();
-   const [registration] = useMutation(SIGN_UP)
-   const onSubmit = ({
-      first_name,
-      last_name,
-      username,
-      password,
-      email,
-      company,
-   }: FormData) => {
-      console.log({ first_name, last_name, username, password, email, company });
-      registration({ variables: { first_name: first_name, last_name: last_name, username: username, password: password, email: email, company: company } })
-      .then(res => {
-        localStorage.setItem('token', res.data.register.token);
-        localStorage.setItem('name', res.data.register.user.name);
-      })
-      .then(data => {
-        props.history.push('/dashboard');
-      })
-      .catch(err => alert(err.message));
+   const [signup] = useMutation(SIGNUP)
+   const onSubmit = ({ first_name, last_name, username, password, email }: FormData) => {
+      console.log({ first_name, last_name, username, password, email});
+      signup({ variables: { first_name, last_name, username, password, email } })
+         .then(res => {
+         localStorage.setItem('token', res.data.register.token);
+         localStorage.setItem('username', res.data.register.user.username);
+         })
+         .then(data => {
+            // props.history.push('/dashboard');
+            console.log(data)
+         })
+         .catch(err => {
+            alert(err.message)
+            console.log(err)
+         });
   };
-
 
    return (
       <>
@@ -123,14 +100,6 @@ export const Registration = (props: any) => {
                {errors.email && errors.email.type === "required" && (
                   <p>This field is required.</p>
                )}
-
-               <label>Company</label>
-               <input
-                  ref={register({ required: true })}
-                  type="text"
-                  name="company"
-                  placeholder="Company (not required)"
-               />
 
                <Button variant="contained" color="primary" type="submit">
                   Submit
