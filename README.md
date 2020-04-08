@@ -4,7 +4,7 @@
 ![Typescript](https://img.shields.io/npm/types/typescript.svg?style=flat)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-1️⃣ You can find the deployed project at [PartNerd](https://partnerd.dev).
+You can find the deployed project at [PartNerd](https://partnerd.dev).
 
 ## Code Climate Score
 
@@ -23,7 +23,7 @@
 
 [Product Canvas](https://www.notion.so/87825689686d4811bc47cb0c935ff97e?v=75519784b4d543ea992186db6baaed48)
 
-### 4️⃣ Key Features
+### Key Features
 
 -  feature one
 -  feature two
@@ -44,14 +44,14 @@
 -  [ContextAPI](https://reactjs.org/docs/context.html)
 -  [Material UI](https://material-ui.com/)
 
-🚫 Why did you choose this framework?
+Why did you choose this framework?
 
--  point one
--  point two
--  point three
--  point four
+-  Scalability
+-  TS Forces clean DRY code
+-  Agile scalable components with MUI
+-  Agile dev environment works well with React
 
-#### Front end deployed to `AWS`
+#### Front end deployed to `AWS` (https://partnerd.dev)
 
 #### [Back end](https://partnerd-staging.herokuapp.com/) built using:
 
@@ -60,48 +60,209 @@
 -  [GraphQL](https://graphql.org)
 -  [Node.js](https://nodejs.org)
 
-#### GraphQL framework goes here
+#### GraphQL framework and API
 
--  point one
--  point two
--  point three
+#### Staging Backend delpoyed at [Heroku](https://partnerd-staging.herokuapp.com/) <br>
 
-# APIs
+#### Master Backend delpoyed at [Heroku](https://partnerd-master.herokuapp.com/) <br>
 
-## 2️⃣ Authentication API here
+## Getting started
 
-GraphQL API, refer to nusite-be readme for documentation.
+To get the server running locally:
+
+-  Clone this repo
+-  **npm install** to install all required dependencies
+-  \*\*npm run build to build only if you would like to run the start script, otherwise:
+
+-  **npm run server** to start the local server
+-  **npm test** to start server using testing environment
+-  **npm run coverage** to see test coverage
+
+### Backend frameworks
+
+Node, Express, TypeScript, GraphQL, Apollo-Server
+
+-  TypeScript to make a theoretically less error prone backend
+-  GraphQL for it's performance
+-  Apollo-Server is used to help communicate with the frontend of the application
+
+## Endpoints
+
+With the nature of GraphQL, you will only have one endpoint, with the exception of the welcome route
+
+| Method | Endpoint   | Description                           |
+| ------ | ---------- | ------------------------------------- |
+| GET    | `/`        | all users                             | Welcome route to the API |
+| POST   | `/graphql` | graphql endpoint to test your queries |
+
+# Data Model
+
+#### USERS
+
+---
+
+```
+{
+  id: INT
+  username: STRING (unique)
+  first_name: STRING
+  last_name: STRING
+  company: STRING (optional)
+  password: STRING
+  email: STRING (unique)
+  dev_experience: INT (optional)
+  dev_education: INT (optional)
+}
+```
+
+---
+
+#### PROJECTS
+
+---
+
+```
+{
+  id: INT
+  project_name: STRING
+  project_avatar: STRING
+  project_description: STRING
+  project_owner: INT (optional)
+  project_developer: INT (optional)
+  completed: BOOLEAN
+  marketplace: BOOLEAN
+  showcase: BOOLEAN
+}
+```
+
+---
+
+## Queries
+
+---
+
+```
+query {
+  users {
+    first_name
+    last_name
+    username
+    email
+  }
+}
+
+query {
+  projects {
+    project_name
+    project_avatar
+    project_description
+  }
+}
+
+query {
+  user(id: 1) {
+    first_name
+    last_name
+    username
+    email
+  }
+}
+
+query {
+  project(id: 1) {
+    project_name
+    project_avatar
+    project_description
+  }
+}
+
+query {
+  users {
+    username
+    projects {
+      project_name
+    }
+  }
+}
+
+query {
+  projects {
+    project_name
+    project_owner {
+      username
+    }
+  }
+}
+
+query {
+  projects {
+    project_name
+    project_developer {
+      username
+    }
+  }
+}
+```
+
+---
+
+#### Mutations
+
+---
+
+```
+mutation {
+  signup(
+    username: "test"
+    first_name: "test"
+    last_name: "test"
+    email: "test@partnerd.com"
+    password: "test"
+  ) {
+    token
+    user {
+      username
+      first_name
+      last_name
+      email
+    }
+  }
+}
+
+mutation {
+  login(
+    email: "test@partnerd.com"
+    password: "test"
+  ) {
+    token
+    user {
+      username
+      first_name
+      last_name
+      email
+    }
+  }
+}
+```
+
+---
 
 ## Payment API
 
 [Stripe API](https://stripe.com/)
 
-## 3️⃣ Misc API here
+## Environment Variables
 
-🚫Replace text below with a description of the API
+_ DB_HOST - typically set to localhost for your localdb
+_ DB_NAME - name specified when creating your
 
-You can do anything your heart can imagine. In life you need colors. This is where you take out all your hostilities and frustrations. It's better than kicking the puppy dog around and all that so. I'm sort of a softy, I couldn't shoot Bambi except with a camera. Trees get lonely too, so we'll give him a little friend. We'll lay all these little funky little things in there.
+-  DB_USER - set to postgres unless otherwise specified
+-  DB_PASS - set to your local db password
+-  JWT_SECRET - secret key for JWT hashing
 
-# 3️⃣ Environment Variables
+# Content Licenses
 
-In order for the app to function correctly, the user must set up their own environment variables. There should be a .env file containing the following:
-
-🚫These are just examples, replace them with the specifics for your app
-
-    *  REACT_APP_apiKey - this is your Google API key, which can be generated in the Google Cloud Console
-    *  REACT_APP_authDomain - when you set up your Firebase project, this information will be in the dashboard
-    *  REACT_APP_databaseURL - in the Firebase dashboard
-    *  REACT_APP_projectID - in the Firebase dashboard
-    *  REACT_APP_storageBucket - in the Firebase dashboard
-    *  REACT_APP_messagingSenderId - in the Firebase dashboard
-    *  REACT_APP_stripe_API - this is your public Stripe API key, generated in the Stripe dashboard
-    *  REACT_APP_backendURL - optional for your local development server
-    *  REACT_APP_clientid - this is the Stripe_connect clientID, generated in Stripe_connect settings
-    *  REACT_APP_stripe_plan - this is the ID for a second Stripe subscription plan, generated under Stripe products
-
-# 5️⃣ Content Licenses
-
-🚫For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
+For all content - images, icons, etc, use this table to document permission of use. Remove the two placeholders and add you content to this table
 
 | Image Filename | Source / Creator | License                                                                      |
 | -------------- | ---------------- | ---------------------------------------------------------------------------- |
