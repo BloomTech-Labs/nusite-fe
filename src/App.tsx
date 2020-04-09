@@ -9,9 +9,8 @@ import theme from "./theme/theme";
 import { ThemeContext } from "./context/contexts";
 
 const cache = new InMemoryCache();
-
 const client = new ApolloClient({
-   uri: process.env.STAGING_LINK || "https://localhost:4000",
+   uri: process.env.STAGING_LINK || "https://partnerd-staging.herokuapp.com/",
    cache
 });
 
