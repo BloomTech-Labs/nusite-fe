@@ -119,8 +119,8 @@ const Header = (props: any) => {
    if (getToken()) {
       routes = [
          { name: "Home", link: "/", activeIndex: 0 },
-         { name: "Logout", link: "/login", activeIndex: 1 },
-         { name: "Dashboard", link: "/home", activeIndex: 2 },
+         { name: "Dashboard", link: "/home", activeIndex: 1 },
+         { name: "Logout", link: "/logout", activeIndex: 2 },
       ];
    }
    const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
