@@ -1,18 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
-import { render, cleanup, RenderResult } from "../test-utils";
+import { render } from "@testing-library/react";
 import "@testing-library/jest-dom/extend-expect";
 
 import App from "../App";
-afterEach(cleanup);
 
-test("App renders without crashing", (): void => {
-   const div: HTMLDivElement = document.createElement("div");
-   ReactDOM.render(<App />, div);
-   ReactDOM.unmountComponentAtNode(div);
-});
-
-test("Home page renders correctly", (): void => {
-   const app: RenderResult = render(<App />);
-   expect(app).toMatchSnapshot();
+test("renders learn react link", () => {
+   const { getByText } = render(<App />);
+   const welcome = getByText(/Hello You!!/i);
+   expect(welcome).toBeInTheDocument();
 });
