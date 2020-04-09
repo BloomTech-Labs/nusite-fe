@@ -16,7 +16,7 @@ export const SIGNUP = gql`
          password: $password
       ) {
          token
-         users {
+         user {
             username
             email
          }
@@ -28,8 +28,8 @@ export const LOGIN = gql`
    mutation login($email: String!, $password: String!) {
       login(email: $email, password: $password) {
          token
-         users {
-            id
+         user {
+            email
          }
       }
    }

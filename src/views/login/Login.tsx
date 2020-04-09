@@ -27,10 +27,11 @@ export const Login = (props: any) => {
          },
       })
          .then(res => {
-            localStorage.setItem("token", res.data.register.token);
+            localStorage.setItem("token", res.data.login.token);
          })
          .then(data => {
             props.history.push("/home");
+            console.log("Success");
          })
          .catch(err => err.message);
    };

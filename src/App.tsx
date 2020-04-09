@@ -11,7 +11,7 @@ import { ThemeContext } from "./context/contexts";
 const cache = new InMemoryCache();
 
 const client = new ApolloClient({
-   uri: "https://partnerd-staging.herokuapp.com/",
+   uri: "https://partnerd-staging.herokuapp.com/graphql",
    cache,
 });
 

@@ -7,6 +7,7 @@ import { SIGNUP } from "../graphql/Mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Header from "../_shared/Header";
 import "./Registration.css";
+import { History } from "history";
 
 type FormData = {
    username: string;
@@ -15,6 +16,10 @@ type FormData = {
    last_name: string;
    email: string;
 };
+
+interface ChildComponentProps {
+   history: History;
+}
 
 // const useStyles = makeStyles((theme: Theme) =>
 //   createStyles({
@@ -61,8 +66,7 @@ export const Registration = (props: any) => {
          },
       })
          .then(res => {
-            localStorage.setItem("token", res.data.register.token);
-            localStorage.setItem("username", res.data.register.user.username);
+            localStorage.setItem("token", res.data.signup.token);
          })
          .then(data => {
             props.history.push("/home");
