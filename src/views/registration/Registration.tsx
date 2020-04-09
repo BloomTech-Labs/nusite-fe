@@ -7,7 +7,7 @@ import { SIGNUP } from "../graphql/Mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Header from "../_shared/Header";
 import "./Registration.css";
-import { History } from "history";
+//import { History } from "history";
 
 type FormData = {
    username: string;
@@ -17,9 +17,9 @@ type FormData = {
    email: string;
 };
 
-interface ChildComponentProps {
-   history: History;
-}
+// interface ChildComponentProps {
+//    history: History;
+// }
 
 // const useStyles = makeStyles((theme: Theme) =>
 //   createStyles({
