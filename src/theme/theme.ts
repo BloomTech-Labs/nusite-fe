@@ -17,8 +17,18 @@ export default createMuiTheme({
       secondary: {
          main: `${secondaryColor}`,
       },
+      background: {
+         paper: `${white}`,
+      },
    },
+
    typography: {
       fontSize: 14,
+      tab: {
+         //fontFamily: "",
+         textTransform: "none",
+         fontWeight: 700,
+         fontSize: "1rem",
+      },
    },
 });
