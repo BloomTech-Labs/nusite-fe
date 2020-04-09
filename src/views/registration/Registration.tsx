@@ -23,8 +23,9 @@ export const Registration = () => {
       console.log({ first_name, last_name, username, password, email});
       signup({ variables: { first_name, last_name, username, password, email } })
          .then(res => {
-         localStorage.setItem('token', res.data.register.token);
-         localStorage.setItem('username', res.data.register.user.username);
+            console.log(res.data)
+         localStorage.setItem('token', res.data.signup.token);
+         localStorage.setItem('username', res.data.signup.user.username);
          })
          .then(data => {
             // props.history.push('/dashboard');
