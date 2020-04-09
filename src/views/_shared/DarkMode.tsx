@@ -7,7 +7,7 @@ function DarkMode() {
 
    return (
       <>
-         <span className="darkMode">Click for Dark Mode</span>
+         <span className="darkMode">Click for Night Mode</span>
          <br />
          <Checkbox
             className="darkMode"

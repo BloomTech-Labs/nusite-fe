@@ -3,8 +3,8 @@ import { useForm } from "react-hook-form";
 //import TextField from '@material-ui/core/TextField';
 import Button from "@material-ui/core/Button";
 //import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { SIGNUP } from '../../graphql-requests/mutations'
-import { useMutation } from '@apollo/react-hooks'
+import { SIGNUP } from "../../graphql-requests/mutations";
+import { useMutation } from "@apollo/react-hooks";
 import Header from "../_shared/Header";
 import "./Registration.css";
 
@@ -16,26 +16,34 @@ type FormData = {
    email: string;
 };
 
-export const Registration = () => {
+export const Registration = (props: any) => {
    const { register, handleSubmit, errors } = useForm<FormData>();
-   const [signup] = useMutation(SIGNUP)
-   const onSubmit = ({ first_name, last_name, username, password, email }: FormData) => {
-      console.log({ first_name, last_name, username, password, email});
-      signup({ variables: { first_name, last_name, username, password, email } })
+   const [signup] = useMutation(SIGNUP);
+   const onSubmit = ({
+      first_name,
+      last_name,
+      username,
+      password,
+      email,
+   }: FormData) => {
+      console.log({ first_name, last_name, username, password, email });
+      signup({
+         variables: { first_name, last_name, username, password, email },
+      })
          .then(res => {
-            console.log(res.data)
-         localStorage.setItem('token', res.data.signup.token);
-         localStorage.setItem('username', res.data.signup.user.username);
+            console.log(res.data);
+            localStorage.setItem("token", res.data.signup.token);
+            localStorage.setItem("username", res.data.signup.user.username);
          })
          .then(data => {
-            // props.history.push('/dashboard');
-            console.log(data)
+            props.history.push("/home");
+            console.log(data);
          })
          .catch(err => {
-            alert(err.message)
-            console.log(err)
+            alert(err.message);
+            console.log(err);
          });
-  };
+   };
 
    return (
       <>

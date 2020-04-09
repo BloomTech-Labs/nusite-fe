@@ -3,15 +3,18 @@ import AppRouter from "./AppRouter";
 import "./App.css";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
-import { InMemoryCache } from 'apollo-cache-inmemory'
+import { InMemoryCache } from "apollo-cache-inmemory";
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./theme/theme";
 import { ThemeContext } from "./context/contexts";
 
 const cache = new InMemoryCache();
+
 const client = new ApolloClient({
-   uri: process.env.STAGING_LINK || "https://partnerd-staging.herokuapp.com/graphql",
-   cache
+   uri:
+      process.env.STAGING_LINK ||
+      "https://partnerd-staging.herokuapp.com/graphql",
+   cache,
 });
 
 const App: React.FC = () => {
