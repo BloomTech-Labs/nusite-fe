@@ -8,7 +8,7 @@ afterEach(cleanup);
 describe("DarkMode Component Tests", () => {
    test("It renders correctly", (): void => {
       const { container } = render(<DarkMode />);
-      expect(container.innerHTML).toMatch(/Click for Dark Mode/);
+      expect(container.innerHTML).toMatch(/Click for Night Mode/);
    });
 
    test("It updates darkmode context onChange ", (): void => {
