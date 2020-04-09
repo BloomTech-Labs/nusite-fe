@@ -29,6 +29,7 @@
       "start": "react-scripts start",
       "build": "react-scripts build",
       "test": "react-scripts test --coverage --watchAll=false",
+      "testDev": "react-scripts test --verbose --watch",
       "eject": "react-scripts eject",
       "format": "prettier \"**/*.{ts,tsx,html}\" --write",
       "coverage": "CI=true npm run test || true"
