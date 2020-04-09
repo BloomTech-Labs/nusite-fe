@@ -16,7 +16,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { Link, withRouter } from "react-router-dom";
 import logo from "../../images/cover.png";
-
+import  { getToken }  from "../util/TokenHelpers"
 //import { ThemeContext } from "../../context/contexts";
 
 //This component makes the navagation bar flat when at the very top
@@ -108,6 +108,13 @@ const Header = (props: any) => {
    const theme = useTheme();
    const matches = useMediaQuery(theme.breakpoints.down("md"));
 
+   const token = getToken()
+   console.log(token)
+   if (token) {
+      console.log(true)
+   }
+   else console.log(false)
+   // console.log(getToken())
    // this gives us a bolean value that checks if the device is iOS to make drawer to be swipeable
    const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
