@@ -1,17 +1,18 @@
 import React from "react";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
-import "../marketing-page/Home"; //Create a css for this componnt
+import "../marketing-page/Home";
 import client from "../../images/client.jpg";
+import Logout from "../util/Logout";
 
 const Dashboard = (props: any) => {
    return (
       <div className="App">
          <Header />
          <main className="section-main">
-            <h1>Welcome to Your Dashboard</h1>
+            <h2>Welcome to Your Dashboard</h2>
          </main>
-         <section>
+         <section className="section-main">
             <br />
             <h2>Project Builders</h2>
             <br />
@@ -23,6 +24,20 @@ const Dashboard = (props: any) => {
             </p>
             <br />
             <br />
+            <br />
+            <h2>Web Developers</h2>
+            <br />
+            <p>
+               Register as a developer, set up a brief profile, show off your
+               skills and portfolio as they continue to grow, and get paid
+               projects now. It's that simple, no hiring managers, pick projects
+               and let the projects you want get matched with you today.
+            </p>
+            <br />
+            <br />
+            <h4 className="logout" onClick={Logout}>
+               Logout
+            </h4>
             <br />
          </section>
          <section className="center">
