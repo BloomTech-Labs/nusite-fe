@@ -3,11 +3,10 @@ import { useForm } from "react-hook-form";
 //import TextField from '@material-ui/core/TextField';
 import Button from "@material-ui/core/Button";
 //import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
-import { SIGNUP } from "../graphql/Mutations";
+import { SIGNUP } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Header from "../_shared/Header";
 import "./Registration.css";
-//import { History } from "history";
 
 type FormData = {
    username: string;
@@ -16,28 +15,6 @@ type FormData = {
    last_name: string;
    email: string;
 };
-
-// interface ChildComponentProps {
-//    history: History;
-// }
-
-// const useStyles = makeStyles((theme: Theme) =>
-//   createStyles({
-//     root: {
-//       '& .MuiTextField-root': {
-//         margin: theme.spacing(1),
-//         width: 200,
-//       },
-//       container: {
-//         display: 'flex',
-//         flexWrap: 'wrap',
-//       },
-//       button: {
-//         margin: theme.spacing(1),
-//       },
-//     },
-//   }),
-// );
 
 export const Registration = (props: any) => {
    const { register, handleSubmit, errors } = useForm<FormData>();
@@ -49,29 +26,23 @@ export const Registration = (props: any) => {
       password,
       email,
    }: FormData) => {
-      console.log({
-         first_name,
-         last_name,
-         username,
-         password,
-         email,
-      });
+      console.log({ first_name, last_name, username, password, email });
       signup({
-         variables: {
-            first_name: first_name,
-            last_name: last_name,
-            username: username,
-            password: password,
-            email: email,
-         },
+         variables: { first_name, last_name, username, password, email },
       })
          .then(res => {
+            console.log(res.data);
             localStorage.setItem("token", res.data.signup.token);
+            localStorage.setItem("username", res.data.signup.user.username);
          })
          .then(data => {
             props.history.push("/home");
+            console.log(data);
          })
-         .catch(err => err.message);
+         .catch(err => {
+            alert(err.message);
+            console.log(err);
+         });
    };
 
    return (
