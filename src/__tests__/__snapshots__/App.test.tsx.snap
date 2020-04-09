@@ -759,6 +759,9 @@ Object {
   "getByTestId": [Function],
   "getByText": [Function],
   "getByTitle": [Function],
+  "mockSpies": Object {
+    "setDarkMode": [MockFunction],
+  },
   "queryAllByAltText": [Function],
   "queryAllByDisplayValue": [Function],
   "queryAllByLabelText": [Function],

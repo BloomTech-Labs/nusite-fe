@@ -1,10 +1,5 @@
 import React from "react";
-import {
-   render,
-   cleanup,
-   fireEvent,
-   RenderWithSpiesResult,
-} from "../test-utils";
+import { render, cleanup, fireEvent, RenderResult } from "../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 
 import DarkMode from "../views/_shared/DarkMode";
@@ -20,7 +15,7 @@ describe("DarkMode Component Tests", () => {
       const {
          container,
          mockSpies: { setDarkMode },
-      }: RenderWithSpiesResult = render(<DarkMode />);
+      }: RenderResult = render(<DarkMode />);
 
       const darkMode: HTMLInputElement | null = container.querySelector(
          ".darkMode input"

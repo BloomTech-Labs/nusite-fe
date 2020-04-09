@@ -31,4 +31,4 @@ const customRender = (ui: React.ReactElement, options?: Object | undefined) => {
 };
 
 export * from "@testing-library/react";
-export { customRender as render, RenderWithSpiesResult };
+export { customRender as render, RenderWithSpiesResult as RenderResult };

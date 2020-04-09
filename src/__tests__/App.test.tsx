@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { render, cleanup, RenderResult } from "@testing-library/react";
+import { render, cleanup, RenderResult } from "../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 
 import App from "../App";
