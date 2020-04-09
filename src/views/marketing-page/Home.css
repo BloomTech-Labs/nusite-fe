@@ -146,9 +146,9 @@ h2 {
    font-weight: 800;
    font-size: 2.4rem;
    text-align: center;
-   transition: all 1s ease-in;
+   /*transition: all 1s ease-in;
    animation-duration: 1s;
-   animation-name: slidein;
+   animation-name: slidein;*/
    font-family: "Domine";
 }
 
@@ -156,6 +156,12 @@ h2 {
    background: white;
    color: #333;
    text-align: left;
+   justify-content: center;
+}
+
+.section-main h1 {
+   color: #444;
+   text-align: center;
    justify-content: center;
 }
 
@@ -396,9 +402,9 @@ a {
 
 /* center gif */
 .user-flow {
-   width: 48%;
+   width: 54%;
    justify-content: center;
-   height: 45vh;
+   height: 54vh;
 }
 
 .gif-wrapper {
@@ -409,10 +415,12 @@ a {
 
 @media (max-width: 768px) {
    .parallax {
-      display: none;
+      display: block;
+      z-index: 99;
    }
    header {
       flex-flow: column wrap;
+      box-shadow: none;
    }
    header h1 {
       font-size: 3.3rem;
@@ -432,12 +440,27 @@ a {
    }
    .tagline .start-main {
       display: none;
+      width: 90%;
+      text-align: left;
    }
    .tagline {
-      text-align: center;
+      text-align: left;
+      width: 75%;
    }
    section p {
-      width: 70%;
+      width: 90%;
+      text-align: left;
+   }
+   .user-flow {
+      width: 90%;
+      justify-content: center;
+      height: 44vh;
+   }
+   .tagline p {
+      text-align: left;
+   }
+   .userMenu {
+      padding: 20px;
    }
 }
 
@@ -456,4 +479,15 @@ nav a:hover {
    background: #45a29e;
    color: white;
    border-radius: 8px;
+}
+
+.logout {
+   text-align: center;
+   justify-content: center;
+   cursor: pointer;
+}
+
+.logout:hover {
+   color: #45a29e;
+   cursor: pointer;
 }
