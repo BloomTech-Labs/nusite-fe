@@ -16,7 +16,7 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { Link, withRouter } from "react-router-dom";
 import logo from "../../images/cover.png";
-import  { getToken }  from "../util/TokenHelpers"
+import { getToken } from "../util/TokenHelpers";
 //import { ThemeContext } from "../../context/contexts";
 
 //This component makes the navagation bar flat when at the very top
@@ -103,23 +103,28 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Header = (props: any) => {
+   // const [token, setToken] = useState<null | string>(getToken())
+   const [value, setValue] = useState(0);
+   const [openDrawer, setOpenDrawer] = useState(false);
    //material ui hooks
    const classes = useStyles();
    const theme = useTheme();
    const matches = useMediaQuery(theme.breakpoints.down("md"));
 
-   const token = getToken()
-   console.log(token)
-   if (token) {
-      console.log(true)
+   let routes = [
+      { name: "Home", link: "/", activeIndex: 0 },
+      { name: "Login", link: "/login", activeIndex: 1 },
+      { name: "Register", link: "/register", activeIndex: 2 },
+   ];
+   if (getToken()) {
+      routes = [
+         { name: "Home", link: "/", activeIndex: 0 },
+         { name: "Logout", link: "/login", activeIndex: 1 },
+         { name: "Dashboard", link: "/home", activeIndex: 2 },
+      ];
    }
-   else console.log(false)
-   // console.log(getToken())
-   // this gives us a bolean value that checks if the device is iOS to make drawer to be swipeable
    const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-   const [value, setValue] = useState(0);
-   const [openDrawer, setOpenDrawer] = useState(false);
    //useContext Proof of concept
    // const [darkMode, setDarkMode] = useState(false);
    // const globalTheme = {
@@ -128,20 +133,23 @@ const Header = (props: any) => {
    //    // trigger changes
    //    setDarkMode,
    // };
-
    const handleChange = (e: any, value: number) => {
       setValue(value);
    };
 
    useEffect(() => {
-      if (props.location.pathname === "/" && value !== 0) {
-         setValue(0);
-      } else if (props.location.pathname === "/login" && value !== 1) {
-         setValue(1);
-      } else if (props.location.pathname === "/register" && value !== 2) {
-         setValue(2);
-      }
-   }, [value, props.location.pathname]);
+      routes.forEach(route => {
+         switch (props.location.pathname) {
+            case `${route.link}`:
+               if (value !== route.activeIndex) {
+                  setValue(route.activeIndex);
+               }
+               break;
+            default:
+               break;
+         }
+      });
+   }, [routes, value, props.location.pathname]);
 
    const tabs = (
       <>
@@ -150,19 +158,15 @@ const Header = (props: any) => {
             value={value}
             onChange={handleChange}
          >
-            <Tab className={classes.tab} component={Link} to="/" label="Home" />
-            <Tab
-               className={classes.tab}
-               component={Link}
-               to="/login"
-               label="Login"
-            />
-            <Tab
-               className={classes.tab}
-               component={Link}
-               to="/register"
-               label="Register"
-            />
+            {routes.map(route => (
+               <Tab
+                  key={`${route.activeIndex}`}
+                  className={classes.tab}
+                  component={Link}
+                  to={route.link}
+                  label={route.name}
+               />
+            ))}
          </Tabs>
       </>
    );
@@ -179,55 +183,26 @@ const Header = (props: any) => {
          >
             <div className={classes.toolbarMargin} />
 
-            <List>
-               <ListItem
-                  classes={{ selected: classes.drawerItemSelected }}
-                  divider
-                  button
-                  component={Link}
-                  to="/"
-                  selected={value === 0}
-                  onClick={() => {
-                     setOpenDrawer(false);
-                     setValue(0);
-                  }}
-               >
-                  <ListItemText className={classes.drawerItem}>
-                     Home
-                  </ListItemText>
-               </ListItem>
-               <ListItem
-                  classes={{ selected: classes.drawerItemSelected }}
-                  divider
-                  button
-                  component={Link}
-                  to="/login"
-                  selected={value === 1}
-                  onClick={() => {
-                     setOpenDrawer(false);
-                     setValue(1);
-                  }}
-               >
-                  <ListItemText className={classes.drawerItem}>
-                     Login
-                  </ListItemText>
-               </ListItem>
-               <ListItem
-                  classes={{ selected: classes.drawerItemSelected }}
-                  divider
-                  button
-                  component={Link}
-                  to="/register"
-                  selected={value === 2}
-                  onClick={() => {
-                     setOpenDrawer(false);
-                     setValue(2);
-                  }}
-               >
-                  <ListItemText className={classes.drawerItem}>
-                     Register
-                  </ListItemText>
-               </ListItem>
+            <List disablePadding>
+               {routes.map(route => (
+                  <ListItem
+                     key={`${route.activeIndex}`}
+                     classes={{ selected: classes.drawerItemSelected }}
+                     divider
+                     button
+                     component={Link}
+                     to={route.link}
+                     selected={value === route.activeIndex}
+                     onClick={() => {
+                        setOpenDrawer(false);
+                        setValue(route.activeIndex);
+                     }}
+                  >
+                     <ListItemText className={classes.drawerItem}>
+                        {route.name}
+                     </ListItemText>
+                  </ListItem>
+               ))}
             </List>
          </SwipeableDrawer>
          <IconButton
