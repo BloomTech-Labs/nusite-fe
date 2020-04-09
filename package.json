@@ -27,8 +27,8 @@
    "scripts": {
       "start": "react-scripts start",
       "build": "react-scripts build",
-      "test": "react-scripts test --coverage --watch",
-      "test-noCov": "react-scripts test --watchAll=false",
+      "test": "react-scripts test --verbose --watch",
+      "testCoverage": "react-scripts test --coverage --watchAll=false",
       "eject": "react-scripts eject",
       "format": "prettier \"**/*.{ts,tsx,html}\" --write",
       "coverage": "CI=true npm run test || true"
