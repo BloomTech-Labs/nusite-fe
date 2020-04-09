@@ -15,10 +15,6 @@ export const Login = (props: any) => {
    const { register, handleSubmit, errors } = useForm<FormData>();
    const [login] = useMutation(LOGIN);
    const onSubmit = ({ email, password }: FormData) => {
-      console.log({
-         email,
-         password,
-      });
       login({
          variables: {
             email: email,
