@@ -11,8 +11,7 @@ You can find the official version of this deployed project at [PartNerd](https:/
 
 **PartNerd** is an application that allows **project owners** and people with great ideas to add new projects to a database, an algorithmic controlled marketplace in order to match them with registered **web developers** who've built their matching profiles.
 
-[Deployed Front End Test](https://partnerd-project.now.sh) via Zeit
---as well as-- [deployed netlify testing](https://heuristic-aryabhata-7edf28.netlify.com)
+[Deployed Front End Test][deployed netlify staging branch](https://heuristic-aryabhata-7edf28.netlify.com)
 <br />
 
 ## Code Climate Score
