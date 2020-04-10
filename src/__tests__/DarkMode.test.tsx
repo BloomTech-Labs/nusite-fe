@@ -1,5 +1,10 @@
 import React from "react";
-import { render, cleanup, fireEvent, RenderResult } from "../test-utils";
+import {
+   render,
+   cleanup,
+   fireEvent,
+   RenderWithSpiesResult,
+} from "../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 
 import DarkMode from "../views/_shared/DarkMode";
@@ -7,7 +12,7 @@ afterEach(cleanup);
 
 describe("DarkMode Component Tests", () => {
    test("It renders correctly", (): void => {
-      const { container } = render(<DarkMode />);
+      const { container }: RenderWithSpiesResult = render(<DarkMode />);
       expect(container.innerHTML).toMatch(/Click for Night Mode/);
    });
 
@@ -15,7 +20,7 @@ describe("DarkMode Component Tests", () => {
       const {
          container,
          mockSpies: { setDarkMode },
-      }: RenderResult = render(<DarkMode />);
+      }: RenderWithSpiesResult = render(<DarkMode />);
 
       const darkMode: HTMLInputElement | null = container.querySelector(
          ".darkMode input"
