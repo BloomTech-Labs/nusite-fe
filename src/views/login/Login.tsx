@@ -23,6 +23,7 @@ export const Login = (props: any) => {
       })
          .then(res => {
             localStorage.setItem("token", res.data.login.token);
+            localStorage.setItem("username", res.data.login.user.username);
          })
          .then(data => {
             props.history.push("/home");
