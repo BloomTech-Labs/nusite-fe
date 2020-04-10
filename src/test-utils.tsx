@@ -3,11 +3,11 @@ import { render, RenderResult } from "@testing-library/react";
 
 import { ThemeContext } from "./context/contexts";
 
-interface SpiesMap {
+export interface SpiesMap {
    setDarkMode: jest.Mock;
 }
 
-interface RenderWithSpiesResult extends RenderResult {
+export interface RenderWithSpiesResult extends RenderResult {
    mockSpies: SpiesMap;
 }
 
@@ -23,7 +23,10 @@ const AllTheProviders: React.FC = ({ children }) => (
    </ThemeContext.Provider>
 );
 
-const customRender = (ui: React.ReactElement, options?: Object | undefined) => {
+const customRender = (
+   ui: React.ReactElement,
+   options?: Object | undefined
+): RenderWithSpiesResult => {
    return {
       ...render(ui, { wrapper: AllTheProviders, ...options }),
       mockSpies,
@@ -31,4 +34,4 @@ const customRender = (ui: React.ReactElement, options?: Object | undefined) => {
 };
 
 export * from "@testing-library/react";
-//export { customRender as render, RenderWithSpiesResult as RenderResult };
+export { customRender as render };

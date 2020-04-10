@@ -1,6 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
-import { render, cleanup, RenderResult } from "../test-utils";
+import { render, cleanup, RenderWithSpiesResult } from "../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 
 import App from "../App";
@@ -13,6 +13,6 @@ test("App renders without crashing", (): void => {
 });
 
 test("Home page renders correctly", (): void => {
-   const app: RenderResult = render(<App />);
+   const app: RenderWithSpiesResult = render(<App />);
    expect(app).toMatchSnapshot();
 });
