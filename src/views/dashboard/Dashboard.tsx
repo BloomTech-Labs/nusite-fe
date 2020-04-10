@@ -5,12 +5,14 @@ import "../marketing-page/Home";
 import client from "../../images/client.jpg";
 import Logout from "../util/Logout";
 
+let name = localStorage.username;
+
 const Dashboard = (props: any) => {
    return (
       <div className="App">
          <Header />
          <main className="section-main">
-            <h2>Welcome to Your Dashboard</h2>
+            <h2>Welcome to Your Dashboard {name}</h2>
          </main>
          <section className="section-main">
             <br />

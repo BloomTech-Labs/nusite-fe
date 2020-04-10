@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import Button from "@material-ui/core/Button";
 import Header from "../_shared/Header";
 import "./Login.css";
-import { LOGIN } from "../graphql/Mutations";
+import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 
 type FormData = {
