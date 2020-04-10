@@ -12,7 +12,7 @@ test("App renders without crashing", (): void => {
    ReactDOM.unmountComponentAtNode(div);
 });
 
-test("Home page renders correctly", (): void => {
+test.skip("Home page renders correctly", (): void => {
    const app: RenderWithSpiesResult = render(<App />);
    expect(app).toMatchSnapshot();
 });
