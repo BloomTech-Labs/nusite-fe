@@ -26,7 +26,6 @@ export const Registration = (props: any) => {
       password,
       email,
    }: FormData) => {
-      console.log({ first_name, last_name, username, password, email });
       signup({
          variables: { first_name, last_name, username, password, email },
       })

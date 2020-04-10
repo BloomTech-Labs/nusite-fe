@@ -29,6 +29,7 @@
       "start": "react-scripts start",
       "build": "react-scripts build",
       "test": "react-scripts test --coverage --watchAll=false",
+      "testDev": "react-scripts test --verbose --watch",
       "eject": "react-scripts eject",
       "format": "prettier \"**/*.{ts,tsx,html}\" --write",
       "coverage": "CI=true npm run test || true"
@@ -69,6 +70,7 @@
       "@types/react-dom": "^16.9.5",
       "@types/react-router-dom": "^5.1.3",
       "prettier": "1.19.1",
+      "dotenv": "^8.2.0",
       "typescript": "^3.8.3"
    }
 }
