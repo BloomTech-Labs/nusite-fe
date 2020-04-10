@@ -2,7 +2,7 @@ import * as React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
 import { Login } from "./views/login/Login";
 import { Registration } from "./views/registration/Registration";
-import  Logout  from "./views/util/Logout"
+import Logout from "./views/_shared/Logout";
 import Home from "./views/marketing-page/Home";
 import PrivateRoute from "./views/util/PrivateRoute";
 import Dashboard from "./views/dashboard/Dashboard";

@@ -1,13 +1,21 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
 import "../marketing-page/Home";
 import client from "../../images/client.jpg";
-import Logout from "../util/Logout";
-
-let name = localStorage.username;
+import Logout from "../_shared/Logout";
 
 const Dashboard = (props: any) => {
+   const [name, setName] = useState("Anonymous");
+
+   useEffect(() => {
+      const username: string | null = localStorage.getItem("username");
+
+      if (username) {
+         setName(username);
+      }
+   }, []);
+
    return (
       <div className="App">
          <Header />
