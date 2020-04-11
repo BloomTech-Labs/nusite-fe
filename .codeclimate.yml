@@ -1,0 +1,18 @@
+exclude_patterns:
+- "**/vendor/"
+- "**/node_modules/"
+- "config/"
+- "dist/"
+- "features/"
+- "script/"
+- "**/spec/"
+- "**/test/"
+- "**/tests/"
+- "**/__tests__/"
+- "Tests/"
+- "**/*.d.ts"
+- "**/*.spec.js"
+- "**/*.test.js"
+- "**/*.spec.ts"
+- "**/*.test.ts"
+

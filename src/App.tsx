@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import AppRouter from "./AppRouter";
+import "./App.css";
+import { ApolloProvider } from "@apollo/react-hooks";
+import ApolloClient from "apollo-boost";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { ThemeProvider } from "@material-ui/styles";
+import theme from "./theme/theme";
+import { ThemeContext } from "./context/contexts";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
-}
+const cache = new InMemoryCache();
+
+const client = new ApolloClient({
+   uri:
+      process.env.STAGING_LINK ||
+      "https://partnerd-staging.herokuapp.com/graphql",
+   cache,
+});
+
+const App: React.FC = () => {
+   const [darkMode, setDarkMode] = useState(false);
+   const globalTheme = {
+      darkMode,
+      // can even pass the setter function so children can
+      // trigger changes
+      setDarkMode,
+   };
+
+   return (
+      <ApolloProvider client={client}>
+         <ThemeContext.Provider value={globalTheme}>
+            <ThemeProvider theme={theme}>
+               <div className={`App${globalTheme.darkMode ? "_dark" : ""}`}>
+                  <AppRouter />
+               </div>
+            </ThemeProvider>
+         </ThemeContext.Provider>
+      </ApolloProvider>
+   );
+};
 
 export default App;
