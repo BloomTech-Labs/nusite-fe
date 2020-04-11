@@ -4,7 +4,7 @@ import "./App.css";
 import { Login } from "./views/login/Login";
 import { Registration } from "./views/registration/Registration";
 import Logout from "./views/_shared/Logout";
-import Home from "./views/marketing-page/Home";
+import Home from "./views/home/Home";
 import PrivateRoute from "./views/util/PrivateRoute";
 import Dashboard from "./views/dashboard/Dashboard";
 
