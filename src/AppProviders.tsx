@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import AppRouter from "./AppRouter";
-import "./App.css";
+import App from "./App";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
 import { InMemoryCache } from "apollo-cache-inmemory";
@@ -17,7 +16,7 @@ const client = new ApolloClient({
    cache,
 });
 
-const App: React.FC = () => {
+const AppProviders: React.FC = () => {
    const [darkMode, setDarkMode] = useState(false);
    const globalTheme = {
       darkMode,
@@ -31,7 +30,7 @@ const App: React.FC = () => {
          <ThemeContext.Provider value={globalTheme}>
             <ThemeProvider theme={theme}>
                <div className={`App${globalTheme.darkMode ? "_dark" : ""}`}>
-                  <AppRouter />
+                  <App />
                </div>
             </ThemeProvider>
          </ThemeContext.Provider>
@@ -39,4 +38,4 @@ const App: React.FC = () => {
    );
 };
 
-export default App;
+export default AppProviders;

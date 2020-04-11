@@ -1,5 +1,6 @@
 import * as React from "react";
 import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import "./App.css";
 import { Login } from "./views/login/Login";
 import { Registration } from "./views/registration/Registration";
 import Logout from "./views/_shared/Logout";
@@ -7,7 +8,7 @@ import Home from "./views/marketing-page/Home";
 import PrivateRoute from "./views/util/PrivateRoute";
 import Dashboard from "./views/dashboard/Dashboard";
 
-const AppRouter = () => (
+const App = () => (
    <Router>
       <Switch>
          <Route exact path="/" component={Home} />
@@ -19,4 +20,4 @@ const AppRouter = () => (
    </Router>
 );
 
-export default AppRouter;
+export default App;
