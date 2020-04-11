@@ -1,5 +1,5 @@
 import * as React from "react";
-import { HashRouter as Router, Route, Switch } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import "./App.css";
 import { Login } from "./views/login/Login";
 import { Registration } from "./views/registration/Registration";
@@ -9,15 +9,13 @@ import PrivateRoute from "./views/util/PrivateRoute";
 import Dashboard from "./views/dashboard/Dashboard";
 
 const App = () => (
-   <Router>
-      <Switch>
-         <Route exact path="/" component={Home} />
-         <Route exact path="/login" component={Login} />
-         <Route exact path="/register" component={Registration} />
-         <Route exact path="/logout" component={Logout} />
-         <PrivateRoute exact path="/home" component={Dashboard} />
-      </Switch>
-   </Router>
+   <Switch>
+      <Route exact path="/" component={Home} />
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/register" component={Registration} />
+      <Route exact path="/logout" component={Logout} />
+      <PrivateRoute exact path="/home" component={Dashboard} />
+   </Switch>
 );
 
 export default App;

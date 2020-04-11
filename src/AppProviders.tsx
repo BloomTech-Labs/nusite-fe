@@ -6,6 +6,7 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./theme/theme";
 import { ThemeContext } from "./context/contexts";
+import { BrowserRouter as Router } from "react-router-dom";
 
 const cache = new InMemoryCache();
 
@@ -30,7 +31,9 @@ const AppProviders: React.FC = () => {
          <ThemeContext.Provider value={globalTheme}>
             <ThemeProvider theme={theme}>
                <div className={`App${globalTheme.darkMode ? "_dark" : ""}`}>
-                  <App />
+                  <Router>
+                     <App />
+                  </Router>
                </div>
             </ThemeProvider>
          </ThemeContext.Provider>
