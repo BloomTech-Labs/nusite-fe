@@ -22,7 +22,7 @@ test("It renders 'Home' component when URL is '/'", (): void => {
    expect(tagLine.classList.contains("tagline")).toBeTruthy();
 });
 
-test("It renders 'Login' component when URL is '/login'", (): void => {
+test.skip("It renders 'Login' component when URL is '/login'", (): void => {
    const mocks = [
       {
          request: {
