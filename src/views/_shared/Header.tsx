@@ -10,28 +10,16 @@ import Button from "@material-ui/core/Button";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import MeunuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
+//import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from "@material-ui/core/styles";
 import useTheme from "@material-ui/core/styles/useTheme";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
-import useScrollTrigger from "@material-ui/core/useScrollTrigger";
 import { Link, withRouter } from "react-router-dom";
 import logo from "../../images/cover.png";
 import { getToken } from "../util/TokenHelpers";
+import ElevationScroll  from "./ElevationScroll"
+import ProfileAvatar from "./ProfileAvatar"
 //import { ThemeContext } from "../../context/contexts";
-
-//This component makes the navagation bar flat when at the very top
-//of the page but hovers the navagation bar when scrolling down.
-function ElevationScroll(props: any) {
-   const { children } = props;
-   const trigger = useScrollTrigger({
-      disableHysteresis: true,
-      threshold: 0,
-   });
-
-   return React.cloneElement(children, {
-      elevation: trigger ? 4 : 0,
-   });
-}
 
 //styling
 const useStyles = makeStyles(theme => ({
@@ -100,6 +88,10 @@ const useStyles = makeStyles(theme => ({
          opacity: 1,
       },
    },
+   avatar: {
+      color: theme.palette.getContrastText(theme.palette.warning.main),
+      backgroundColor: theme.palette.warning.main
+   }
 }));
 
 const Header = (props: any) => {
@@ -111,31 +103,25 @@ const Header = (props: any) => {
    const theme = useTheme();
    const matches = useMediaQuery(theme.breakpoints.down("md"));
 
-   let routes = [
-      { name: "Home", link: "/", activeIndex: 0 },
+   let routes = [{ name: "Home", link: "/", activeIndex: 0 }];
+   const publicRoutes = [
       { name: "Login", link: "/login", activeIndex: 1 },
-      { name: "Register", link: "/register", activeIndex: 2 },
-   ];
+      { name: "Register", link: "/register", activeIndex: 2 }
+   ]
+   const PrivateRoutes = [
+      { name: "Dashboard", link: "/home", activeIndex: 1 },
+      { name: "Logout", link: "/logout", activeIndex: 2 },
+   ]
    if (getToken()) {
-      routes = [
-         { name: "Home", link: "/", activeIndex: 0 },
-         { name: "Dashboard", link: "/home", activeIndex: 1 },
-         { name: "Logout", link: "/logout", activeIndex: 2 },
-      ];
+      routes.push(...PrivateRoutes)
    }
+   else routes.push(...publicRoutes)
+   
    const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-   //useContext Proof of concept
-   // const [darkMode, setDarkMode] = useState(false);
-   // const globalTheme = {
-   //    darkMode,
-   //    // can even pass the setter function so children can
-   //    // trigger changes
-   //    setDarkMode,
-   // };
    const handleChange = (e: any, value: number) => {
       setValue(value);
-   };
+   }
 
    useEffect(() => {
       routes.forEach(route => {
@@ -214,6 +200,7 @@ const Header = (props: any) => {
          </IconButton>
       </>
    );
+ 
    return (
       <>
          <ElevationScroll>
@@ -233,6 +220,7 @@ const Header = (props: any) => {
                      />
                   </Button>
                   {matches ? drawer : tabs}
+                  {getToken() ? <ProfileAvatar/> : null}
                </Toolbar>
             </AppBar>
          </ElevationScroll>
