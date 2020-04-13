@@ -17,8 +17,8 @@ import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { Link, withRouter } from "react-router-dom";
 import logo from "../../images/cover.png";
 import { getToken } from "../util/TokenHelpers";
-import ElevationScroll  from "./ElevationScroll"
-import ProfileAvatar from "./ProfileAvatar"
+import ElevationScroll from "./ElevationScroll";
+import ProfileAvatar from "./ProfileAvatar";
 //import { ThemeContext } from "../../context/contexts";
 
 //styling
@@ -90,8 +90,8 @@ const useStyles = makeStyles(theme => ({
    },
    avatar: {
       color: theme.palette.getContrastText(theme.palette.warning.main),
-      backgroundColor: theme.palette.warning.main
-   }
+      backgroundColor: theme.palette.warning.main,
+   },
 }));
 
 const Header = (props: any) => {
@@ -105,22 +105,21 @@ const Header = (props: any) => {
    let routes = [{ name: "Home", link: "/", activeIndex: 0 }];
    const publicRoutes = [
       { name: "Login", link: "/login", activeIndex: 1 },
-      { name: "Register", link: "/register", activeIndex: 2 }
-   ]
+      { name: "Register", link: "/register", activeIndex: 2 },
+   ];
    const PrivateRoutes = [
       { name: "Dashboard", link: "/home", activeIndex: 1 },
       { name: "Logout", link: "/logout", activeIndex: 2 },
-   ]
+   ];
    if (getToken()) {
-      routes.push(...PrivateRoutes)
-   }
-   else routes.push(...publicRoutes)
-   
+      routes.push(...PrivateRoutes);
+   } else routes.push(...publicRoutes);
+
    const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
    const handleChange = (e: any, value: number) => {
       setValue(value);
-   }
+   };
 
    useEffect(() => {
       routes.forEach(route => {
@@ -199,7 +198,7 @@ const Header = (props: any) => {
          </IconButton>
       </>
    );
- 
+
    return (
       <>
          <ElevationScroll>
@@ -219,7 +218,7 @@ const Header = (props: any) => {
                      />
                   </Button>
                   {matches ? drawer : tabs}
-                  {getToken() ? <ProfileAvatar/> : null}
+                  {getToken() ? <ProfileAvatar /> : null}
                </Toolbar>
             </AppBar>
          </ElevationScroll>

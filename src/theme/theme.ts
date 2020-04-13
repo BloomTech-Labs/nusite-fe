@@ -1,5 +1,5 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import { deepOrange, green } from '@material-ui/core/colors';
+import { deepOrange, green } from "@material-ui/core/colors";
 
 const primaryColor = "#25274d";
 const secondaryColor = "#66fcf1";
@@ -18,18 +18,17 @@ export default createMuiTheme({
       },
       secondary: {
          main: `${secondaryColor}`,
-         dark: `${secondaryColorDark}`
+         dark: `${secondaryColorDark}`,
       },
       background: {
          paper: `${white}`,
       },
       success: {
-         main:green[500]
+         main: green[500],
       },
       warning: {
-         main:deepOrange[500]
-      }
-      
+         main: deepOrange[500],
+      },
    },
 
    typography: {

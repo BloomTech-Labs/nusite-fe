@@ -116,7 +116,7 @@ export const Registration = (props: any) => {
                <br />
             </form>
             <br />
-            
+
             <br />
          </div>
       </>

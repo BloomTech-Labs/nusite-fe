@@ -6,7 +6,7 @@ import userflow from "../../images/userflow.gif";
 import "./Home.css";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
-import SubHeader from "./SubHeader"
+import SubHeader from "./SubHeader";
 //import taglineImage from "../../images/tagline.jpeg"
 
 const Home = (props: any) => {
@@ -14,7 +14,7 @@ const Home = (props: any) => {
    return (
       <div className="App">
          <Header />
-         <SubHeader/>
+         <SubHeader />
          <main>
             <br />
             <br />
