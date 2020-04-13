@@ -11,7 +11,7 @@ avatar: {
 }));
 
 const ProfileAvatar = (props: any) => {
-   const username =  localStorage.getItem("username")
+const username =  localStorage.getItem("username")
 const classes = useStyles()
 return (
     <>

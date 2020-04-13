@@ -95,7 +95,6 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const Header = (props: any) => {
-   // const [token, setToken] = useState<null | string>(getToken())
    const [value, setValue] = useState(0);
    const [openDrawer, setOpenDrawer] = useState(false);
    //material ui hooks
