@@ -91,18 +91,14 @@ nav a {
    justify-content: space-around;
 }
 
-.start-main {
-   background: #45a29e;
+.start-main a {
    color: white;
-   height: 20%;
-   font-size: 1.4rem;
-   padding: 11px;
-   margin-top: 32px;
-   border-radius: 8px;
+   font-size: 1rem;
    cursor: pointer;
    text-align: center;
    justify-content: center;
    align-items: center;
+   text-decoration: none;
 }
 
 .start-main:hover {
@@ -159,8 +155,8 @@ h2 {
    text-align: center;
    /*transition: all 1s ease-in;
    animation-duration: 1s;
-   animation-name: slidein;*/
-   font-family: "Domine";
+   animation-name: slidein;
+   font-family: "Domine";*/
 }
 
 .section-main {
