@@ -74,3 +74,11 @@ html {
    color: white;
    border-radius: 8px;
 }
+
+.App_dark .gif-wrapper {
+   display: flex;
+   background: #111;
+   justify-content: center;
+   align-items: center;
+   width: 100%;
+}
