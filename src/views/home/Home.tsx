@@ -1,12 +1,13 @@
 import React from "react";
-import client from "../../images/client.jpg";
+import SocialIcons from "../_shared/SocialIcons";
 import userflow from "../../images/userflow.gif";
 import "./Home.css";
 import { NavLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
-import DarkMode from "../_shared/DarkMode";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
+import coder from "../../images/coder.svg";
+import developers from "../../images/developers.svg";
 
 const Home = (props: any) => {
    return (
@@ -14,7 +15,6 @@ const Home = (props: any) => {
          <Header />
          <main>
             <br />
-            <DarkMode />
             <br />
             <br />
             <h1 className="tagline">
@@ -22,28 +22,20 @@ const Home = (props: any) => {
                website, new website, app, or feature, we've got you covered.
             </h1>
             <br />
-            <p>
+            <p className="about">
                We are creating a marketplace for developers and project
                owners/clients to meet each other and form partnerships.
                Developers and project owners can offer their services and
                projects to one another and be matched according to their needs.
             </p>
-            <br />
+            <img src={developers} alt="" className="developers" />
             <br />
          </main>
-         <div className="parallax">
-            <br />
-            <br />
-            <h2 className="tagline-2">
-               Comprehensive recommendation based on advanced data analysis.
-            </h2>
-         </div>
-         <br />
          <section>
             <br />
-            <h2>Project Builders</h2>
+            <h2>Project Owners</h2>
             <br />
-            <img src={client} className="avatars" alt="" />
+            {/*<img src={client} className="avatars" alt="" />*/}
             <br />
             <p>
                A marketplace for developers and project owners to meet each
@@ -51,12 +43,6 @@ const Home = (props: any) => {
                offer their services and projects to one another and be matched
                according to their needs.
             </p>
-            <br />
-            <br />
-            <br />
-            <div className="gif-wrapper">
-               <img src={userflow} className="user-flow" alt="" />
-            </div>
             <br />
             <br />
             <br />
@@ -69,6 +55,37 @@ const Home = (props: any) => {
                started today. It's easy.
             </p>
             <br />
+            <br />
+            <hr />
+            <br />
+            <h2>For Developers </h2>
+            <br />
+            <br />
+         </section>
+         <div className="parallax"></div>
+         <br />
+         <div className="tagline-2">
+            <h4>Realtime matching based on advanced data analysis.</h4>
+         </div>
+         <br />
+         <section>
+            <br />
+            <img src={coder} alt="" className="coder" />
+            <br />
+            <br />
+            <br />
+            <p>
+               Register as a developer, set up a brief profile, show off your
+               skills and portfolio as they continue to grow, and get paid
+               projects now. It's that simple, no hiring managers, pick projects
+               and let the projects you want get matched with you today.{" "}
+            </p>
+            <br />
+            <br />
+            <br />
+            <div className="gif-wrapper">
+               <img src={userflow} className="user-flow" alt="" />
+            </div>
             <br />
             <br />
             <hr />
@@ -117,42 +134,8 @@ const Home = (props: any) => {
             </div>
             <br />
             <br />
-            <hr />
-            <br />
-            <h2>For Developers </h2>
-            <br />
-            <p>
-               Register as a developer, set up a brief profile, show off your
-               skills and portfolio as they continue to grow, and get paid
-               projects now. It's that simple, no hiring managers, pick projects
-               and let the projects you want get matched with you today.{" "}
-            </p>
-            <br />
-            <br />
          </section>
-         <section className="center">
-            <div id="social-test">
-               <div className="social">
-                  <div>
-                     <li>
-                        <i className="fa fa-facebook" aria-hidden="true"></i>
-                     </li>
-                     <li>
-                        <i className="fa fa-twitter" aria-hidden="true"></i>
-                     </li>
-                     <li>
-                        <i className="fa fa-github" aria-hidden="true"></i>
-                     </li>
-                     <li>
-                        <i
-                           className="fa fa-linkedin-square"
-                           aria-hidden="true"
-                        ></i>
-                     </li>
-                  </div>
-               </div>
-            </div>
-         </section>
+         <SocialIcons />
          <Footer />
       </div>
    );

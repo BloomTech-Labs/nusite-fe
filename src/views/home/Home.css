@@ -56,7 +56,7 @@ header h1 {
 }
 
 .tagline-2 {
-   color: #66fcf1;
+   color: #aaa;
    font-size: 2.1rem;
    text-align: center;
    font-family: "Roboto";
@@ -134,11 +134,22 @@ nav a {
 }
 
 main {
+   display: flex;
+   flex-flow: column wrap;
    background: white;
    color: #333;
-   text-align: center;
+   text-align: left;
    justify-content: center;
+   align-items: center;
    padding: 25px;
+}
+
+.about {
+   display: flex;
+   width: 55%;
+   text-align: left;
+   justify-content: center;
+   align-items: center;
 }
 
 h2 {
@@ -292,7 +303,7 @@ footer a {
 }
 
 hr {
-   width: 59%;
+   width: 55%;
 }
 
 p {
@@ -401,16 +412,20 @@ a {
 }
 
 /* center gif */
-.user-flow {
+section .user-flow {
+   display: flex;
    width: 54%;
    justify-content: center;
+   align-items: center;
    height: 54vh;
 }
 
 .gif-wrapper {
    display: flex;
-   background: #25274d;
+   background: white;
    justify-content: center;
+   align-items: center;
+   width: 100%;
 }
 
 @media (max-width: 768px) {

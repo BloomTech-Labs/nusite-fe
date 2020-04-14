@@ -4,6 +4,8 @@ import Header from "../_shared/Header";
 import "../home/Home";
 import client from "../../images/client.jpg";
 import Logout from "../_shared/Logout";
+import DarkMode from "../_shared/DarkMode";
+import SocialIcons from "../_shared/SocialIcons";
 
 const Dashboard = (props: any) => {
    const [name, setName] = useState("Anonymous");
@@ -20,11 +22,14 @@ const Dashboard = (props: any) => {
       <div className="App">
          <Header />
          <main className="section-main">
+            <br />
+            <DarkMode />
+            <br />
             <h2>Welcome to Your Dashboard {name}</h2>
          </main>
          <section className="section-main">
             <br />
-            <h2>Project Builders</h2>
+            <h2>Build Your Profile Now</h2>
             <br />
             <img src={client} className="avatars" alt="" />
             <br />
@@ -34,45 +39,12 @@ const Dashboard = (props: any) => {
             </p>
             <br />
             <br />
-            <br />
-            <h2>Web Developers</h2>
-            <br />
-            <p>
-               Register as a developer, set up a brief profile, show off your
-               skills and portfolio as they continue to grow, and get paid
-               projects now. It's that simple, no hiring managers, pick projects
-               and let the projects you want get matched with you today.
-            </p>
-            <br />
-            <br />
             <h4 className="logout" onClick={Logout}>
                Logout
             </h4>
             <br />
          </section>
-         <section className="center">
-            <div id="social-test">
-               <div className="social">
-                  <div>
-                     <li>
-                        <i className="fa fa-facebook" aria-hidden="true"></i>
-                     </li>
-                     <li>
-                        <i className="fa fa-twitter" aria-hidden="true"></i>
-                     </li>
-                     <li>
-                        <i className="fa fa-github" aria-hidden="true"></i>
-                     </li>
-                     <li>
-                        <i
-                           className="fa fa-linkedin-square"
-                           aria-hidden="true"
-                        ></i>
-                     </li>
-                  </div>
-               </div>
-            </div>
-         </section>
+         <SocialIcons />
          <Footer />
       </div>
    );
