@@ -8,7 +8,6 @@ import coder from "../../images/coder.svg";
 import developers from "../../images/developers.svg";
 //import { makeStyles } from "@material-ui/core/styles";
 //import Grid from "@material-ui/core/Grid"
-import client from "../../images/client.jpg";
 import "./Home.css";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
