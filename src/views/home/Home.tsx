@@ -13,6 +13,8 @@ import Footer from "../_shared/Footer";
 import Header from "../_shared/Header";
 import SubHeader from "./SubHeader";
 //import taglineImage from "../../images/tagline.jpeg"
+import realtime2 from "../../images/reatime2.svg";
+import myapp2 from "../../images/myapp2.svg";
 
 const Home = (props: any) => {
    //const classes = useStyles();
@@ -22,11 +24,6 @@ const Home = (props: any) => {
          <SubHeader />
          <main>
             <br />
-            <br />
-            {/* <h1 className="tagline">
-               Connecting web developers to people with great ideas. Old
-               website, new website, app, or feature, we've got you covered.
-            </h1> */}
             <p className="about">
                We are creating a marketplace for developers and project
                owners/clients to meet each other and form partnerships.
@@ -34,7 +31,6 @@ const Home = (props: any) => {
                projects to one another and be matched according to their needs.
             </p>
             <img src={developers} alt="" className="developers" />
-            <br />
          </main>
          <section>
             <br />
@@ -47,6 +43,7 @@ const Home = (props: any) => {
                according to their needs.
             </p>
             <br />
+            <img src={realtime2} alt="" className="realtime" />
             <br />
             <p>
                Find someone to build, fix, or add on to your existing site or
@@ -62,6 +59,7 @@ const Home = (props: any) => {
             <br />
             <h2>For Developers </h2>
             <br />
+            <img src={myapp2} alt="" className="myapp" />
             <br />
          </section>
          <div className="parallax"></div>

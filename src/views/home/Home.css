@@ -228,7 +228,7 @@ footer a {
 }
 
 .parallax {
-   height: 250px;
+   height: 210px;
    z-index: -1;
 }
 
@@ -516,13 +516,31 @@ nav a:hover {
 }
 
 .developers {
-   width: 53vh;
-   height: 53vh;
+   width: 45vh;
+   height: 45vh;
 }
 
 .coder {
    width: 75vh;
    height: 58vh;
+}
+
+section .realtime {
+   width: 31vh;
+   height: 31vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+}
+
+section .myapp {
+   width: 31vh;
+   height: 31vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
 }
 
 .terms {

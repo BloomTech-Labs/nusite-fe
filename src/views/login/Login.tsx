@@ -5,6 +5,7 @@ import Header from "../_shared/Header";
 import "./Login.css";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
+//import {TextField}from "@material-ui/core/";
 
 type FormData = {
    email: string;
@@ -22,6 +23,7 @@ export const Login = (props: any) => {
          },
       })
          .then(res => {
+            console.log(res.data);
             localStorage.setItem("token", res.data.login.token);
             localStorage.setItem("username", res.data.login.user.username);
          })
