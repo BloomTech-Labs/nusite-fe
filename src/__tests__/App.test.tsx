@@ -15,34 +15,29 @@ test("It renders 'Home' component when URL is '/'", (): void => {
       </MemoryRouter>
    );
 
-   const tagLine: HTMLElement = getByText(
-      /Connecting web developers to people with great ideas./i
-   );
-   expect(tagLine.tagName).toMatch(/h1/i);
-   expect(tagLine.classList.contains("tagline")).toBeTruthy();
+   const tagLine: HTMLElement = getByText(/We are creating a marketplace/i);
+   expect(tagLine.tagName).toMatch(/p/i);
 });
 
 test.skip("It renders 'Login' component when URL is '/login'", (): void => {
-   const mocks = [
-      {
-         request: {
-            query: LOGIN,
-            variables: { email: "Test01", password: "yourMum1234" },
-         },
-         result: {
-            data: {
-               login: { token: "test01-token", user: { username: "Test01" } },
-            },
+   const mockLogin = {
+      request: {
+         query: LOGIN,
+         variables: { email: "Test01@email.com", password: "yourMum1234" },
+      },
+      result: {
+         data: {
+            login: { token: "test01-token", user: { username: "Test01" } },
          },
       },
-   ];
+   };
 
    const { getByLabelText }: RenderWithSpiesResult = render(
-      <MemoryRouter initialEntries={["/login"]}>
-         <MockedProvider mocks={mocks} addTypename={false}>
+      <MockedProvider mocks={[mockLogin]} addTypename={false}>
+         <MemoryRouter initialEntries={["/login"]}>
             <App />
-         </MockedProvider>
-      </MemoryRouter>
+         </MemoryRouter>
+      </MockedProvider>
    );
 
    expect(true).toBe(false);
