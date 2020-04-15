@@ -1,6 +1,6 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
-import { render, cleanup, RenderWithSpiesResult } from "../test-utils";
+import { render, cleanup } from "../test-utils";
 import { LOGIN } from "../graphql-requests/mutations";
 import { MockedProvider } from "@apollo/react-testing";
 import "@testing-library/jest-dom/extend-expect";
@@ -8,18 +8,18 @@ import "@testing-library/jest-dom/extend-expect";
 import App from "../App";
 afterEach(cleanup);
 
-test("It renders 'Home' component when URL is '/'", (): void => {
-   const { getByText }: RenderWithSpiesResult = render(
+test("It renders 'Home' component when URL is '/'", () => {
+   const { getByText } = render(
       <MemoryRouter>
          <App />
       </MemoryRouter>
    );
 
-   const tagLine: HTMLElement = getByText(/We are creating a marketplace/i);
+   const tagLine = getByText(/We are creating a marketplace/i);
    expect(tagLine.tagName).toMatch(/p/i);
 });
 
-test.skip("It renders 'Login' component when URL is '/login'", (): void => {
+test.skip("It renders 'Login' component when URL is '/login'", () => {
    const mockLogin = {
       request: {
          query: LOGIN,
@@ -32,7 +32,7 @@ test.skip("It renders 'Login' component when URL is '/login'", (): void => {
       },
    };
 
-   const { getByLabelText }: RenderWithSpiesResult = render(
+   const { getByLabelText } = render(
       <MockedProvider mocks={[mockLogin]} addTypename={false}>
          <MemoryRouter initialEntries={["/login"]}>
             <App />
@@ -50,6 +50,6 @@ test.skip("It renders 'Login' component when URL is '/login'", (): void => {
    // }
 });
 
-test.skip("Renders 'Registration' component when URL is '/register'", (): void => {});
+test.skip("Renders 'Registration' component when URL is '/register'", () => {});
 
-test.skip("Renders 'Dashboard' component when URL is '/home'", (): void => {});
+test.skip("Renders 'Dashboard' component when URL is '/home'", () => {});
