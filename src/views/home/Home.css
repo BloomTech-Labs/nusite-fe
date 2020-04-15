@@ -56,10 +56,11 @@ header h1 {
 }
 
 .tagline-2 {
-   color: whitesmoke;
-   font-size: 2rem;
-   text-align: center;
+   color: #aaa;
+   font-size: 1.6rem;
+   text-align: left;
    font-family: "Roboto";
+   margin-left: 25px;
 }
 
 @keyframes slidein {
@@ -516,4 +517,8 @@ nav a:hover {
 .coder {
    width: 75vh;
    height: 58vh;
+}
+
+.terms {
+   font-size: 0.9rem;
 }

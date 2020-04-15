@@ -105,6 +105,12 @@ const Home = (props: any) => {
                </Button>
             </h4>
             <br />
+            <p className="terms">
+               By registering you are agreeing to our
+               <a href="https://www.websitepolicies.com/blog/sample-terms-service-template">
+                  * terms of service.
+               </a>
+            </p>
             <br />
             <br />
             <br />
