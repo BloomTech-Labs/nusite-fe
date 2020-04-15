@@ -44,7 +44,7 @@ header h1 {
    font-family: "Domine";
 }
 
-.tagline {
+.tagline-3 {
    animation-duration: 1.4s;
    animation-name: slidein;
    display: flex;
@@ -53,6 +53,7 @@ header h1 {
    justify-content: center;
    margin: 0 auto;
    color: #333;
+   padding: 20px;
 }
 
 .tagline-2 {
@@ -432,7 +433,7 @@ section .user-flow {
 
 @media (max-width: 768px) {
    .parallax {
-      display: block;
+      display: none;
       z-index: 99;
    }
    header {
@@ -449,27 +450,28 @@ section .user-flow {
       padding: 0;
       margin: 0;
    }
-   .start {
+   section .start-main {
+      display: block;
+   }
+   main .tagline {
       display: none;
    }
-   .menu {
-      display: none;
-   }
-   .tagline .start-main {
-      display: none;
+   section .tagline-3 {
       width: 90%;
-      text-align: left;
+      text-align: center;
+      padding: 20px;
+      flex-flow: column;
    }
-   .tagline {
+   .about {
       text-align: left;
-      width: 75%;
+      width: 90%;
    }
    section p {
       width: 90%;
       text-align: left;
    }
-   .user-flow {
-      width: 90%;
+   section .user-flow {
+      width: 100%;
       justify-content: center;
       height: 44vh;
    }
@@ -477,8 +479,11 @@ section .user-flow {
       text-align: left;
       margin: 15px;
    }
-   .userMenu {
-      padding: 20px;
+   section .developers {
+      width: 90%;
+   }
+   section .coder {
+      width: 90%;
    }
 }
 

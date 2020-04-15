@@ -92,7 +92,7 @@ const Home = (props: any) => {
             <br />
             <hr />
             <br />
-            <h4 className="tagline">
+            <h4 className="tagline-3">
                PartNerd™ provides users a comprehensive recommendation
                generation based on advanced data analysis.
                <br />
