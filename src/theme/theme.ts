@@ -27,7 +27,7 @@ export default createMuiTheme({
          main: `${secondaryColorDark}`,
       },
       warning: {
-         main: deepOrange[500],
+         main: deepOrange[400],
       },
    },
 
