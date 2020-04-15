@@ -34,3 +34,19 @@ export const LOGIN = gql`
       }
    }
 `;
+
+export const PROJECT = gql`
+   mutation project(
+   $project_name: String!, 
+   $project_developer: User, 
+   $project_description: String!,
+   $completed: Boolean!) {
+      project(
+      project_name: $project_name, 
+      project_developer: $user, 
+      project_description: $project_description, 
+      completed: $completed) {
+            project_name
+         }
+   }
+`;

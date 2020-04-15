@@ -24,7 +24,7 @@ export default createMuiTheme({
          paper: `${white}`,
       },
       success: {
-         main: green[500],
+         main: `${secondaryColorDark}`,
       },
       warning: {
          main: deepOrange[500],
