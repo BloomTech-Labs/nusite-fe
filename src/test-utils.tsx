@@ -15,6 +15,13 @@ const mockSpies: SpiesMap = {
    setDarkMode: jest.fn(),
 };
 
+// const mockMutationObserver: MutationObserver = {
+//    disconnect: jest.fn(),
+//    observe: jest.fn(),
+//    takeRecords: jest.fn(),
+// };
+// global.MutationObserver = mockMutationObserver;
+
 const AllTheProviders: React.FC = ({ children }) => (
    <ThemeContext.Provider
       value={{ darkMode: false, setDarkMode: mockSpies.setDarkMode }}
