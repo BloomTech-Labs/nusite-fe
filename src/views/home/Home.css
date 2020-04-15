@@ -56,8 +56,8 @@ header h1 {
 }
 
 .tagline-2 {
-   color: #aaa;
-   font-size: 2.1rem;
+   color: whitesmoke;
+   font-size: 2rem;
    text-align: center;
    font-family: "Roboto";
 }
@@ -89,6 +89,10 @@ nav a {
    padding: 25px;
    text-align: center;
    justify-content: space-around;
+}
+
+.start-main {
+   margin: 11px;
 }
 
 .start-main a {
@@ -222,7 +226,7 @@ footer a {
 }
 
 .parallax {
-   height: 400px;
+   height: 250px;
    z-index: -1;
 }
 
@@ -469,6 +473,7 @@ section .user-flow {
    }
    .tagline p {
       text-align: left;
+      margin: 15px;
    }
    .userMenu {
       padding: 20px;
@@ -501,4 +506,14 @@ nav a:hover {
 .logout:hover {
    color: #45a29e;
    cursor: pointer;
+}
+
+.developers {
+   width: 53vh;
+   height: 53vh;
+}
+
+.coder {
+   width: 75vh;
+   height: 58vh;
 }

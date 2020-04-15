@@ -23,12 +23,10 @@ const Home = (props: any) => {
          <main>
             <br />
             <br />
-            <br />
             {/* <h1 className="tagline">
                Connecting web developers to people with great ideas. Old
                website, new website, app, or feature, we've got you covered.
             </h1> */}
-            <br />
             <p className="about">
                We are creating a marketplace for developers and project
                owners/clients to meet each other and form partnerships.
@@ -42,15 +40,12 @@ const Home = (props: any) => {
             <br />
             <h2>Project Owners</h2>
             <br />
-            {/*<img src={client} className="avatars" alt="" />*/}
-            <br />
             <p>
                A marketplace for developers and project owners to meet each
                other and form partnerships. Developers and project owners can
                offer their services and projects to one another and be matched
                according to their needs.
             </p>
-            <br />
             <br />
             <br />
             <p>

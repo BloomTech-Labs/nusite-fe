@@ -20,7 +20,8 @@ const useStyles = makeStyles(theme => ({
       color: theme.palette.secondary.dark,
       position: "absolute",
       left: "60%",
-      // font:theme.typography.h1
+      fontSize: "2.6rem",
+      // font:theme.typography.h1,
    },
 }));
 
