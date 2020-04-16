@@ -29,7 +29,9 @@ const User = props => (
                <div>
                   {data.users.map(user => (
                      <div key={user.id} value={user.username}>
-                        {user.username}
+                        {user.id === `${user_id}`
+                           ? console.log(user)
+                           : console.log("user not found")}
                      </div>
                   ))}
                </div>
