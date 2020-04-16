@@ -27,7 +27,6 @@ const Dashboard = (props: any) => {
          <div className="App">
             <Header />
             <main className="section-main">
-               <br />
                <DarkMode />
                <br />
                <h2>Welcome to Your Dashboard {name}</h2>
@@ -35,17 +34,12 @@ const Dashboard = (props: any) => {
             </main>
             <section className="section-main">
                <br />
-               <h2>Build Your Profile Now</h2>
-               <br />
-               <img src={client} className="avatars" alt="" />
-               <br />
                <p>
                   Get started searching the marketplace of developers and
                   project owners to meet each other and form partnerships. Enter
                   your project details below, or just browse projects as a
                   developer, and start building up your profile.
                </p>
-               <br />
                <br />
             </section>
             <Project />

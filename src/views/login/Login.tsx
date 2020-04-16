@@ -40,6 +40,7 @@ export const Login = (props: any) => {
    return (
       <>
          <Header />
+
          <div className="box">
             <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
                <label>Email</label>

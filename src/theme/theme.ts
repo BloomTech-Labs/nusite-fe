@@ -1,13 +1,24 @@
 import { createMuiTheme } from "@material-ui/core/styles";
 import { deepOrange } from "@material-ui/core/colors";
+//import { useTheme } from "@material-ui/core/styles";
+//import useMediaQuery from "@material-ui/core/useMediaQuery";
+//import { responsiveFontSizes } from "@material-ui/core/styles";
 
 const primaryColor = "#25274d";
 const secondaryColor = "#66fcf1";
 const secondaryColorDark = "#45a29e";
 const white = "#f5f5f5";
 const black = "#111";
+const breakpointValues = {
+   xs: 0,
+   sm: 576,
+   md: 768,
+   lg: 992,
+   xl: 1200,
+};
 
 export default createMuiTheme({
+   breakpoints: { values: breakpointValues },
    palette: {
       common: {
          white: `${white}`,
