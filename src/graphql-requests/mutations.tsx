@@ -36,6 +36,7 @@ export const LOGIN = gql`
    }
 `;
 
+//setting up a mutation for the API when ready to store projects
 export const PROJECT = gql`
    mutation project(
       $project_name: String!
