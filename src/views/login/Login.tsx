@@ -1,77 +1,39 @@
 import React from "react";
-import { useForm } from "react-hook-form";
+import { Form } from "../_shared/Form";
+import { Input } from "../_shared/Input";
 import Button from "@material-ui/core/Button";
-import Header from "../_shared/Header";
 import "./Login.css";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
-
 type FormData = {
    email: string;
    password: string;
 };
 
 export const Login = (props: any) => {
-   const { register, handleSubmit, errors } = useForm<FormData>();
+   console.log(props);
    const [login] = useMutation(LOGIN);
    const onSubmit = ({ email, password }: FormData) => {
-      login({
-         variables: {
-            email: email,
-            password: password,
-         },
-      })
+      login({ variables: { email: email, password: password } })
          .then(res => {
             localStorage.setItem("token", res.data.login.token);
             localStorage.setItem("username", res.data.login.user.username);
-         })
-         .then(data => {
             props.history.push("/home");
-            console.log("Success");
+            console.log("Success: ", res.data);
          })
          .catch(err => err.message);
    };
 
    return (
       <>
-         <Header />
-         <div className="box">
-            <form className="login-form" onSubmit={handleSubmit(onSubmit)}>
-               <label>Email</label>
-               <input
-                  ref={register({ required: true })}
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-               />
-               {errors.email && errors.email.type === "required" && (
-                  <p>This field is required.</p>
-               )}
-
-               <label>Password</label>
-               <input
-                  ref={register({ required: true, minLength: 9 })}
-                  type="password"
-                  name="password"
-                  placeholder="Password"
-                  autoComplete="current-password"
-               />
-               {errors.password && errors.password.type === "required" && (
-                  <p>This field is required.</p>
-               )}
-               {errors.password && errors.password.type === "minLength" && (
-                  <p>Password must be at least 9 characters.</p>
-               )}
-
-               <Button variant="contained" color="primary" type="submit">
-                  Submit
-               </Button>
-
-               <br />
-            </form>
-            <br />
-            <br />
-         </div>
+         <h2> Login </h2>
+         <Form className="login-form" onSubmit={onSubmit}>
+            <Input name="email" placeholder="Email" />
+            <Input name="password" placeholder="Password" autoComplete="current-password" type="password" minLength={9}/>
+            <Button variant="contained" color="primary" type="submit" value="submit" >
+               Submit
+            </Button>
+         </Form>
       </>
    );
 };
