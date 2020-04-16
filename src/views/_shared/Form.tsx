@@ -11,12 +11,10 @@ export const Form = ({ defaultValues, children, onSubmit }: any) => {
             ? children.map(child => {
                  return child.props.name
                     ? React.createElement(child.type, {
-                         ...{
                             ...child.props,
                             register: methods.register,
                             errors: methods.errors,
-                            key: child.props.name,
-                         },
+                            key: child.props.name,            
                       })
                     : child;
               })
