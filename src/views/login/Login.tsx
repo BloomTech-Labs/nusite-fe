@@ -5,7 +5,8 @@ import Button from "@material-ui/core/Button";
 import "./Login.css";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
-type LoginFormData = {
+
+interface LoginFormData {
    email: string;
    password: string;
 };
