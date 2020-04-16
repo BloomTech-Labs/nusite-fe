@@ -1,24 +1,16 @@
-import React from 'react'
+import React from "react";
 
-export type FormInput = {
-    ref: HTMLInputElement
-    type: string;
-    name: string;
-    placeholder: string;
-    autoComplete?: string;
-    minLength?: number;
- };
-
-export const Input = (props: FormInput | any) => {
-    console.log(props)
-    return (
-        <>
-        <label>{props.placeholder}</label>
-            <input
-                type={props.type}
-                name={props.name}
-                placeholder={props.placeholder}
-               />
-        </>
-    )
-}
+export const Input = ({ register, errors, name, ...rest }: any) => {
+   console.log("Rest: ", rest);
+   console.log("Errors: ", errors);
+   return (
+      <>
+         <label>{rest.placeholder}</label>
+           <input
+               name={name}
+               ref={register({ required: true, minLength: rest.minLength || null})}
+               errors={errors}
+               {...rest} />
+      </>
+   );
+};
