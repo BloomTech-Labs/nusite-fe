@@ -2,6 +2,7 @@ import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import taglineImage from "../../images/tagline.jpeg";
+//import { createMuiTheme } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
    taglineImage: {
@@ -20,7 +21,8 @@ const useStyles = makeStyles(theme => ({
       color: theme.palette.secondary.dark,
       position: "absolute",
       left: "60%",
-      // font:theme.typography.h1
+      fontSize: "2.6rem",
+      // font:theme.typography.h1,
    },
 }));
 
@@ -33,10 +35,10 @@ const SubHeader = (props: any) => {
             src={taglineImage}
             alt="tagline"
          />
-         <h1 className={classes.tagline}>
+         <h3 className={classes.tagline}>
             Connecting web developers to people with great ideas. Old website,
             new website, app, or feature, we've got you covered.
-         </h1>
+         </h3>
       </Grid>
    );
 };

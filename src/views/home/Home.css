@@ -44,7 +44,7 @@ header h1 {
    font-family: "Domine";
 }
 
-.tagline {
+.tagline-3 {
    animation-duration: 1.4s;
    animation-name: slidein;
    display: flex;
@@ -53,13 +53,15 @@ header h1 {
    justify-content: center;
    margin: 0 auto;
    color: #333;
+   padding: 20px;
 }
 
 .tagline-2 {
-   color: #66fcf1;
-   font-size: 2.1rem;
-   text-align: center;
+   color: #aaa;
+   font-size: 1.6rem;
+   text-align: left;
    font-family: "Roboto";
+   margin-left: 25px;
 }
 
 @keyframes slidein {
@@ -92,17 +94,17 @@ nav a {
 }
 
 .start-main {
-   background: #45a29e;
+   margin: 11px;
+}
+
+.start-main a {
    color: white;
-   height: 20%;
-   font-size: 1.4rem;
-   padding: 11px;
-   margin-top: 32px;
-   border-radius: 8px;
+   font-size: 1rem;
    cursor: pointer;
    text-align: center;
    justify-content: center;
    align-items: center;
+   text-decoration: none;
 }
 
 .start-main:hover {
@@ -134,11 +136,22 @@ nav a {
 }
 
 main {
+   display: flex;
+   flex-flow: column wrap;
    background: white;
    color: #333;
-   text-align: center;
+   text-align: left;
    justify-content: center;
+   align-items: center;
    padding: 25px;
+}
+
+.about {
+   display: flex;
+   width: 55%;
+   text-align: left;
+   justify-content: center;
+   align-items: center;
 }
 
 h2 {
@@ -148,8 +161,8 @@ h2 {
    text-align: center;
    /*transition: all 1s ease-in;
    animation-duration: 1s;
-   animation-name: slidein;*/
-   font-family: "Domine";
+   animation-name: slidein;
+   font-family: "Domine";*/
 }
 
 .section-main {
@@ -215,7 +228,7 @@ footer a {
 }
 
 .parallax {
-   height: 400px;
+   height: 250px;
    z-index: -1;
 }
 
@@ -292,11 +305,12 @@ footer a {
 }
 
 hr {
-   width: 59%;
+   width: 55%;
 }
 
 p {
    font-size: 1.35rem;
+   font-weight: 450;
 }
 
 .imgcenter {
@@ -401,21 +415,25 @@ a {
 }
 
 /* center gif */
-.user-flow {
+section .user-flow {
+   display: flex;
    width: 54%;
    justify-content: center;
+   align-items: center;
    height: 54vh;
 }
 
 .gif-wrapper {
    display: flex;
-   background: #25274d;
+   background: white;
    justify-content: center;
+   align-items: center;
+   width: 100%;
 }
 
 @media (max-width: 768px) {
    .parallax {
-      display: block;
+      display: none;
       z-index: 99;
    }
    header {
@@ -432,35 +450,40 @@ a {
       padding: 0;
       margin: 0;
    }
-   .start {
+   section .start-main {
+      display: block;
+   }
+   main .tagline {
       display: none;
    }
-   .menu {
-      display: none;
-   }
-   .tagline .start-main {
-      display: none;
+   section .tagline-3 {
       width: 90%;
-      text-align: left;
+      text-align: center;
+      padding: 20px;
+      flex-flow: column;
    }
-   .tagline {
+   .about {
       text-align: left;
-      width: 75%;
+      width: 90%;
    }
    section p {
       width: 90%;
       text-align: left;
    }
-   .user-flow {
-      width: 90%;
+   section .user-flow {
+      width: 100%;
       justify-content: center;
       height: 44vh;
    }
    .tagline p {
       text-align: left;
+      margin: 15px;
    }
-   .userMenu {
-      padding: 20px;
+   section .developers {
+      width: 90%;
+   }
+   section .coder {
+      width: 90%;
    }
 }
 
@@ -490,4 +513,18 @@ nav a:hover {
 .logout:hover {
    color: #45a29e;
    cursor: pointer;
+}
+
+.developers {
+   width: 53vh;
+   height: 53vh;
+}
+
+.coder {
+   width: 75vh;
+   height: 58vh;
+}
+
+.terms {
+   font-size: 0.9rem;
 }

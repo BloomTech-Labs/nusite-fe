@@ -17,8 +17,12 @@ const Dashboard = (props: any) => {
       <div className="App">
          <Header />
          <main className="section-main">
+            <br />
+            <DarkMode />
+            <br />
             <h2>Welcome to Your Dashboard {name}</h2>
          </main>
+
          <Footer />
       </div>
    );

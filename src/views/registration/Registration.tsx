@@ -5,8 +5,7 @@ import { SIGNUP } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Button from "@material-ui/core/Button";
 import "./Registration.css";
-//import TextField from '@material-ui/core/TextField';
-//import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+//import { Loading } from "../_shared/Loading";
 
 type RegistrationFormData = {
    username: string;
