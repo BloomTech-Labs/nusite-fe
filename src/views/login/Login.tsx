@@ -5,15 +5,15 @@ import Button from "@material-ui/core/Button";
 import "./Login.css";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
-type FormData = {
+type LoginFormData = {
    email: string;
    password: string;
 };
 
-export const Login = (props: any) => {
+export const Login = (props: LoginFormData | any) => {
    console.log(props);
    const [login] = useMutation(LOGIN);
-   const onSubmit = ({ email, password }: FormData) => {
+   const onSubmit = ({ email, password }: LoginFormData) => {
       login({ variables: { email: email, password: password } })
          .then(res => {
             localStorage.setItem("token", res.data.login.token);
@@ -29,8 +29,19 @@ export const Login = (props: any) => {
          <h2> Login </h2>
          <Form className="login-form" onSubmit={onSubmit}>
             <Input name="email" placeholder="Email" />
-            <Input name="password" placeholder="Password" autoComplete="current-password" type="password" minLength={9}/>
-            <Button variant="contained" color="primary" type="submit" value="submit" >
+            <Input
+               name="password"
+               placeholder="Password"
+               autoComplete="current-password"
+               type="password"
+               minLength={9}
+            />
+            <Button
+               variant="contained"
+               color="primary"
+               type="submit"
+               value="submit"
+            >
                Submit
             </Button>
          </Form>
