@@ -19,6 +19,7 @@ describe("DarkMode Component Tests", () => {
 
       const darkMode = container.querySelector(".darkMode input");
       expect(darkMode).toBeDefined();
+      expect(darkMode).not.toBeNull();
       if (darkMode) {
          expect(darkMode.checked).toBe(false);
          expect(setDarkMode).not.toHaveBeenCalled();
