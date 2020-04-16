@@ -3,16 +3,16 @@ import { render } from "@testing-library/react";
 
 import { ThemeContext } from "./context/contexts";
 
+function MutationObserver(callback) {
+   this.observe = jest.fn();
+   this.disconnect = jest.fn();
+   this.takeRecords = jest.fn();
+}
+global.MutationObserver = jest.fn(MutationObserver);
+
 const mockSpies = {
    setDarkMode: jest.fn(),
 };
-
-// const mockMutationObserver: MutationObserver = {
-//    disconnect: jest.fn(),
-//    observe: jest.fn(),
-//    takeRecords: jest.fn(),
-// };
-// global.MutationObserver = mockMutationObserver;
 
 const AllTheProviders = ({ children }) => (
    <ThemeContext.Provider
