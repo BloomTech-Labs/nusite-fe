@@ -1,31 +1,25 @@
 import React from "react";
-import {
-   render,
-   cleanup,
-   fireEvent,
-   RenderWithSpiesResult,
-} from "../test-utils";
+import { render, cleanup, fireEvent } from "../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 
 import DarkMode from "../views/_shared/DarkMode";
 afterEach(cleanup);
 
 describe("DarkMode Component Tests", () => {
-   test("It renders correctly", (): void => {
-      const { container }: RenderWithSpiesResult = render(<DarkMode />);
+   test("It renders correctly", () => {
+      const { container } = render(<DarkMode />);
       expect(container.innerHTML).toMatch(/Click for Night Mode/);
    });
 
-   test("It updates darkmode context onChange ", (): void => {
+   test("It updates darkmode context onChange ", () => {
       const {
          container,
          mockSpies: { setDarkMode },
-      }: RenderWithSpiesResult = render(<DarkMode />);
+      } = render(<DarkMode />);
 
-      const darkMode: HTMLInputElement | null = container.querySelector(
-         ".darkMode input"
-      );
+      const darkMode = container.querySelector(".darkMode input");
       expect(darkMode).toBeDefined();
+      expect(darkMode).not.toBeNull();
       if (darkMode) {
          expect(darkMode.checked).toBe(false);
          expect(setDarkMode).not.toHaveBeenCalled();
