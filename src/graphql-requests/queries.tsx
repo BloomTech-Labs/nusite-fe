@@ -1,9 +1,10 @@
-import { gql } from "apollo-boost";
-import { Query } from "react-apollo";
+import gql from "graphql-tag";
+//import { useQuery } from "@apollo/react-hooks";
 
-export const USER_QUERY = gql`
-   query UserQuery {
+export const GET_USER = gql`
+   {
       user(id: id) {
+         id
          username
          email
          first_name

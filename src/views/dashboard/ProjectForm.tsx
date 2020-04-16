@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Button from "@material-ui/core/Button";
-import Header from "../_shared/Header";
 import { PROJECT } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 //import {TextField}from "@material-ui/core/";
@@ -14,7 +13,7 @@ type FormData = {
 };
 
 export const Project = (props: any) => {
-   const { register, handleSubmit, errors } = useForm<FormData>();
+   const { register, handleSubmit } = useForm<FormData>();
    const [project] = useMutation(PROJECT);
    const onSubmit = ({
       project_name,
@@ -43,7 +42,6 @@ export const Project = (props: any) => {
 
    return (
       <>
-         <Header />
          <div className="box">
             <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
                <label>Project Name</label>
@@ -53,10 +51,10 @@ export const Project = (props: any) => {
                   name="project_name"
                   placeholder="project_name"
                />
-               {errors.project_name &&
+               {/*errors.project_name &&
                   errors.project_name.type === "required" && (
                      <p>This field is required.</p>
-                  )}
+                  )*/}
 
                <label>Project</label>
                <input
@@ -87,7 +85,7 @@ export const Project = (props: any) => {
                   ref={register({ required: true })}
                   //type={false}
                   name="completed"
-                  placeholder="completed"
+                  placeholder="false"
                />
 
                <Button variant="contained" color="primary" type="submit">

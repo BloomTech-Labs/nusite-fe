@@ -26,6 +26,7 @@ export const Login = (props: any) => {
             console.log(res.data);
             localStorage.setItem("token", res.data.login.token);
             localStorage.setItem("username", res.data.login.user.username);
+            localStorage.setItem("user_id", res.data.login.user.id);
          })
          .then(data => {
             props.history.push("/home");
@@ -33,6 +34,8 @@ export const Login = (props: any) => {
          })
          .catch(err => err.message);
    };
+
+   //if (loading) return <h4>Loading...</h4>;
 
    return (
       <>
