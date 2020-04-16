@@ -6,6 +6,7 @@ import { MockedProvider } from "@apollo/react-testing";
 import "@testing-library/jest-dom/extend-expect";
 
 import App from "../App";
+
 afterEach(cleanup);
 
 test("It renders 'Home' component when URL is '/'", () => {
@@ -19,7 +20,7 @@ test("It renders 'Home' component when URL is '/'", () => {
    expect(tagLine.tagName).toMatch(/p/i);
 });
 
-test.skip("It renders 'Login' component when URL is '/login'", () => {
+test("It renders 'Login' component when URL is '/login'", () => {
    const mockLogin = {
       request: {
          query: LOGIN,
@@ -40,14 +41,13 @@ test.skip("It renders 'Login' component when URL is '/login'", () => {
       </MockedProvider>
    );
 
-   expect(true).toBe(false);
-   // const usrNameLabel: HTMLElement = getByLabelText(/Username/);
-   // const loginForm: HTMLElement | null = usrNameLabel.parentElement;
+   const usrNameLabel = getByLabelText(/Username/);
+   const loginForm = usrNameLabel.parentElement;
 
-   // if (loginForm) {
-   //    expect(loginForm.tagName).toMatch(/form/i);
-   //    expect(loginForm.classList.contains("login-form")).toBe(true);
-   // }
+   if (loginForm) {
+      expect(loginForm.tagName).toMatch(/form/i);
+      expect(loginForm.classList.contains("login-form")).toBe(true);
+   }
 });
 
 test.skip("Renders 'Registration' component when URL is '/register'", () => {});
