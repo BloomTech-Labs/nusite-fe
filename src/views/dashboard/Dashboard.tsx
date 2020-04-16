@@ -13,7 +13,7 @@ import User from "./User";
 
 const Dashboard = (props: any) => {
    const [name, setName] = useState("Anonymous");
-
+   const user_id = localStorage.getItem("user_id");
    useEffect(() => {
       const username = localStorage.getItem("username");
 
@@ -41,7 +41,9 @@ const Dashboard = (props: any) => {
                <br />
                <p>
                   Get started searching the marketplace of developers and
-                  project owners to meet each other and form partnerships.
+                  project owners to meet each other and form partnerships. Enter
+                  your project details below, or just browse projects as a
+                  developer, and start building up your profile.
                </p>
                <br />
                <br />
