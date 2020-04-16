@@ -7,6 +7,7 @@ import { SIGNUP } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Header from "../_shared/Header";
 import "./Registration.css";
+//import { Loading } from "../_shared/Loading";
 
 type FormData = {
    username: string;
