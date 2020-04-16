@@ -25,13 +25,22 @@ const User = props => (
          if (loading) return <p>Loading...</p>;
          return (
             <>
-               {console.log(data.username)}
+               {console.log(data)}
                <div>
                   {data.users.map(user => (
                      <div key={user.id} value={user.username}>
-                        {user.id === `${user_id}`
-                           ? console.log(user)
-                           : console.log("user not found")}
+                        {user.id === `${user_id}` ? (
+                           <>
+                              <div>
+                                 <p>username:{user.username}</p>
+                                 <p>email:{user.email}</p>
+                                 <p>first_name:{user.first_name}</p>
+                                 <p>last_name:{user.last_name}</p>
+                              </div>
+                           </>
+                        ) : (
+                           console.log("user not found")
+                        )}
                      </div>
                   ))}
                </div>
