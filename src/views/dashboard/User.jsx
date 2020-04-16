@@ -32,10 +32,10 @@ const User = props => (
                         {user.id === `${user_id}` ? (
                            <>
                               <div>
-                                 <p>username:{user.username}</p>
-                                 <p>email:{user.email}</p>
-                                 <p>first_name:{user.first_name}</p>
-                                 <p>last_name:{user.last_name}</p>
+                                 <p>username: {user.username}</p>
+                                 <p>email: {user.email}</p>
+                                 <p>first_name: {user.first_name}</p>
+                                 <p>last_name: {user.last_name}</p>
                               </div>
                            </>
                         ) : (
