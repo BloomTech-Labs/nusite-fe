@@ -6,10 +6,7 @@ import { ThemeContext } from "./context/contexts";
 function MutationObserver(callback) {
    this.observe = jest.fn();
    this.disconnect = jest.fn();
-   // Optionally add a trigger() method to manually trigger a change
-   this.trigger = mockedMutationsList => {
-      callback(mockedMutationsList, this);
-   };
+   this.takeRecords = jest.fn();
 }
 global.MutationObserver = jest.fn(MutationObserver);
 
