@@ -1,6 +1,6 @@
 import React from "react";
 import { MemoryRouter } from "react-router-dom";
-import { render, cleanup } from "../test-utils";
+import { render, cleanup, testLinkArray } from "../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 
 import Header from "../views/_shared/Header";
@@ -20,11 +20,10 @@ describe("Header Component Tests", () => {
       expect(companyLogo.getAttribute("href")).toBe("/");
 
       const headerTabs = getAllByRole("tab");
-      const tabRefs = ["/login", "/register", "/"];
+      const NUM_TABS = 3;
+      const TAB_REFS = ["/login", "/register", "/"];
       expect(headerTabs.length).toBe(3);
-      headerTabs.forEach(tab => {
-         expect(tabRefs).toContain(tab.getAttribute("href"));
-      });
+      testLinkArray(headerTabs, NUM_TABS, TAB_REFS);
    });
 
    test("It renders Company Logo, Home, Dashboard, and Logout tabs when logged in", () => {
