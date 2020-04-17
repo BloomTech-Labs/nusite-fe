@@ -12,7 +12,7 @@ import ElevationScroll from "../ElevationScroll";
 import HeaderAvatar from "./HeaderAvatar";
 import HeaderTabs from "./HeaderTabs";
 import HeaderDrawer from "./HeaderDrawer";
-import { useRoutes } from "../../util/routes"
+import { useRoutes } from "../../util/routes";
 //import { ThemeContext } from "../../context/contexts";
 
 //styling
@@ -49,9 +49,9 @@ const Header = (props: any) => {
    const classes = useStyles();
    const theme = useTheme();
    const matches = useMediaQuery(theme.breakpoints.down("md"));
-   // custom hooks 
-   const routes = useRoutes()
-   const token = getToken()
+   // custom hooks
+   const routes = useRoutes();
+   const token = getToken();
 
    useEffect(() => {
       routes.forEach(route => {
