@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Footer from "../_shared/Footer";
-import Header from "../_shared/Header";
+import Header from "../_shared/header/Header";
 import "../home/Home";
 import client from "../../images/client.jpg";
 import Logout from "../_shared/Logout";

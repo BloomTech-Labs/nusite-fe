@@ -5,7 +5,7 @@ import Button from "@material-ui/core/Button";
 //import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
 import { SIGNUP } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
-import Header from "../_shared/Header";
+import Header from "../_shared/header/Header";
 import "./Registration.css";
 //import { Loading } from "../_shared/Loading";
 

@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import Button from "@material-ui/core/Button";
-import Header from "../_shared/Header";
+import Header from "../_shared/header/Header";
 import "./Login.css";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";

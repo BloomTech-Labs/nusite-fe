@@ -1,8 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import Toolbar from "@material-ui/core/Toolbar"
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
 import ListItemText from "@material-ui/core/ListItemText";
@@ -10,15 +8,15 @@ import Button from "@material-ui/core/Button";
 import SwipeableDrawer from "@material-ui/core/SwipeableDrawer";
 import MeunuIcon from "@material-ui/icons/Menu";
 import IconButton from "@material-ui/core/IconButton";
-//import Avatar from '@material-ui/core/Avatar';
 import { makeStyles } from "@material-ui/core/styles";
 import useTheme from "@material-ui/core/styles/useTheme";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { Link, withRouter } from "react-router-dom";
-import logo from "../../images/cover.png";
-import { getToken } from "../util/TokenHelpers";
-import ElevationScroll from "./ElevationScroll";
-import ProfileAvatar from "./ProfileAvatar";
+import logo from "../../../images/cover.png";
+import { getToken } from "../../util/TokenHelpers";
+import ElevationScroll from "../ElevationScroll";
+import HeaderAvatar from "./HeaderAvatar";
+import HeaderTabs from "./HeaderTabs"
 //import { ThemeContext } from "../../context/contexts";
 
 //styling
@@ -53,15 +51,6 @@ const useStyles = makeStyles(theme => ({
          height: "5.5",
       },
    },
-   tabContainer: {
-      marginLeft: "auto",
-      padding: 0,
-   },
-   tab: {
-      ...theme.typography.tab,
-      minWidth: "10",
-      marginLeft: "25px",
-   },
    drawerIconContainer: {
       "marginLeft": "auto",
       "&:hover": {
@@ -88,10 +77,6 @@ const useStyles = makeStyles(theme => ({
          opacity: 1,
       },
    },
-   avatar: {
-      color: theme.palette.getContrastText(theme.palette.warning.main),
-      backgroundColor: theme.palette.warning.main,
-   },
 }));
 
 const Header = (props: any) => {
@@ -117,9 +102,6 @@ const Header = (props: any) => {
 
    const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-   const handleChange = (e: any, value: number) => {
-      setValue(value);
-   };
 
    useEffect(() => {
       routes.forEach(route => {
@@ -134,26 +116,6 @@ const Header = (props: any) => {
          }
       });
    }, [routes, value, props.location.pathname]);
-
-   const tabs = (
-      <>
-         <Tabs
-            className={classes.tabContainer}
-            value={value}
-            onChange={handleChange}
-         >
-            {routes.map(route => (
-               <Tab
-                  key={`${route.activeIndex}`}
-                  className={classes.tab}
-                  component={Link}
-                  to={route.link}
-                  label={route.name}
-               />
-            ))}
-         </Tabs>
-      </>
-   );
 
    const drawer = (
       <>
@@ -217,8 +179,8 @@ const Header = (props: any) => {
                         alt="company logo"
                      />
                   </Button>
-                  {matches ? drawer : tabs}
-                  {getToken() ? <ProfileAvatar /> : null}
+                  {matches ? drawer : <HeaderTabs value={value} routes={routes} />}
+                  {getToken() ? <HeaderAvatar /> : null}
                </Toolbar>
             </AppBar>
          </ElevationScroll>
