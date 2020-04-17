@@ -50,57 +50,56 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const HeaderDrawer = (props: any) => {
-    const [openDrawer, setOpenDrawer] = useState(false);
-    const classes = useStyles()
-     const { value, routes} = props 
-     const [ drawerTabValue, SetDrawerTabValue ] = useState(value)
-     //this checks if device is iOS to make the drawer swipable
-     const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+   const [openDrawer, setOpenDrawer] = useState(false);
+   const classes = useStyles();
+   const { value, routes } = props;
+   const [drawerTabValue, SetDrawerTabValue] = useState(value);
+   //this checks if device is iOS to make the drawer swipable
+   const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
-    return (
-<>
-<SwipeableDrawer
-   classes={{ paper: classes.drawer }}
-   disableBackdropTransition={!iOS}
-   disableDiscovery={iOS}
-   open={openDrawer}
-   onClose={() => setOpenDrawer(false)}
-   onOpen={() => setOpenDrawer(true)}
->
-   <div className={classes.toolbarMargin} />
-
-   <List disablePadding>
-      {routes.map((route:any) => (
-         <ListItem
-            key={`${route.activeIndex}`}
-            classes={{ selected: classes.drawerItemSelected }}
-            divider
-            button
-            component={Link}
-            to={route.link}
-            selected={drawerTabValue === route.activeIndex}
-            onClick={() => {
-               setOpenDrawer(false);
-               SetDrawerTabValue(route.activeIndex);
-            }}
+   return (
+      <>
+         <SwipeableDrawer
+            classes={{ paper: classes.drawer }}
+            disableBackdropTransition={!iOS}
+            disableDiscovery={iOS}
+            open={openDrawer}
+            onClose={() => setOpenDrawer(false)}
+            onOpen={() => setOpenDrawer(true)}
          >
-            <ListItemText className={classes.drawerItem}>
-               {route.name}
-            </ListItemText>
-         </ListItem>
-      ))}
-   </List>
-</SwipeableDrawer>
-<IconButton
-   className={classes.drawerIconContainer}
-   onClick={() => setOpenDrawer(!openDrawer)}
-   disableRipple
->
-   <MeunuIcon className={classes.drawerIcon} />
-</IconButton>
-</>
-);
+            <div className={classes.toolbarMargin} />
 
- };
- 
- export default HeaderDrawer;
+            <List disablePadding>
+               {routes.map((route: any) => (
+                  <ListItem
+                     key={`${route.activeIndex}`}
+                     classes={{ selected: classes.drawerItemSelected }}
+                     divider
+                     button
+                     component={Link}
+                     to={route.link}
+                     selected={drawerTabValue === route.activeIndex}
+                     onClick={() => {
+                        setOpenDrawer(false);
+                        SetDrawerTabValue(route.activeIndex);
+                     }}
+                  >
+                     <ListItemText className={classes.drawerItem}>
+                        {route.name}
+                     </ListItemText>
+                  </ListItem>
+               ))}
+            </List>
+         </SwipeableDrawer>
+         <IconButton
+            className={classes.drawerIconContainer}
+            onClick={() => setOpenDrawer(!openDrawer)}
+            disableRipple
+         >
+            <MeunuIcon className={classes.drawerIcon} />
+         </IconButton>
+      </>
+   );
+};
+
+export default HeaderDrawer;

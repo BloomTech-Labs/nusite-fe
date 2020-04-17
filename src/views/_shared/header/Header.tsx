@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar"
+import Toolbar from "@material-ui/core/Toolbar";
 import Button from "@material-ui/core/Button";
 import { makeStyles } from "@material-ui/core/styles";
 import useTheme from "@material-ui/core/styles/useTheme";
@@ -10,7 +10,7 @@ import logo from "../../../images/cover.png";
 import { getToken } from "../../util/TokenHelpers";
 import ElevationScroll from "../ElevationScroll";
 import HeaderAvatar from "./HeaderAvatar";
-import HeaderTabs from "./HeaderTabs"
+import HeaderTabs from "./HeaderTabs";
 import HeaderDrawer from "./HeaderDrawer";
 //import { ThemeContext } from "../../context/contexts";
 
@@ -62,7 +62,6 @@ const Header = (props: any) => {
       routes.push(...PrivateRoutes);
    } else routes.push(...publicRoutes);
 
-
    useEffect(() => {
       routes.forEach(route => {
          switch (props.location.pathname) {
@@ -76,7 +75,7 @@ const Header = (props: any) => {
          }
       });
    }, [routes, value, props.location.pathname]);
-   
+
    return (
       <>
          <ElevationScroll>
@@ -95,7 +94,11 @@ const Header = (props: any) => {
                         alt="company logo"
                      />
                   </Button>
-                  {matches ? <HeaderDrawer value={value} routes={routes} />: <HeaderTabs value={value} routes={routes} />}
+                  {matches ? (
+                     <HeaderDrawer value={value} routes={routes} />
+                  ) : (
+                     <HeaderTabs value={value} routes={routes} />
+                  )}
                   {getToken() ? <HeaderAvatar /> : null}
                </Toolbar>
             </AppBar>

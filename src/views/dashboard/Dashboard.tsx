@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import DarkMode from '../_shared/DarkMode'
+import DarkMode from "../_shared/DarkMode";
 import Footer from "../_shared/Footer";
 import Header from "../_shared/header/Header";
 import "../home/Home";
