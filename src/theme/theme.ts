@@ -8,6 +8,11 @@ const white = "#f5f5f5";
 const black = "#111";
 
 export default createMuiTheme({
+   mixins:{
+      toolbar:{
+         minHeight:48
+      }
+   },
    palette: {
       common: {
          white: `${white}`,

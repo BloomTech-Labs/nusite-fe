@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
 const HeaderTabs = (props: any) => {
    const classes = useStyles()
     const { value, routes} = props 
-  
+
    return (
     <>
     <Tabs
