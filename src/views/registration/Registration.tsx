@@ -1,15 +1,13 @@
 import React from "react";
-import { useForm } from "react-hook-form";
-//import TextField from '@material-ui/core/TextField';
-import Button from "@material-ui/core/Button";
-//import { createStyles, makeStyles, Theme } from '@material-ui/core/styles';
+import { Form } from "../_shared/Form";
+import { Input } from "../_shared/Input";
 import { SIGNUP } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
-import Header from "../_shared/header/Header";
+import Button from "@material-ui/core/Button";
 import "./Registration.css";
 //import { Loading } from "../_shared/Loading";
 
-type FormData = {
+interface RegistrationFormData {
    username: string;
    password: string;
    first_name: string;
@@ -17,8 +15,7 @@ type FormData = {
    email: string;
 };
 
-export const Registration = (props: any) => {
-   const { register, handleSubmit, errors } = useForm<FormData>();
+export const Registration = (props: RegistrationFormData | any) => {
    const [signup] = useMutation(SIGNUP);
    const onSubmit = ({
       first_name,
@@ -26,18 +23,15 @@ export const Registration = (props: any) => {
       username,
       password,
       email,
-   }: FormData) => {
+   }: RegistrationFormData) => {
       signup({
          variables: { first_name, last_name, username, password, email },
       })
          .then(res => {
-            console.log(res.data);
             localStorage.setItem("token", res.data.signup.token);
             localStorage.setItem("username", res.data.signup.user.username);
-         })
-         .then(data => {
             props.history.push("/home");
-            console.log(data);
+            console.log("Success: ", res);
          })
          .catch(err => {
             alert(err.message);
@@ -47,78 +41,29 @@ export const Registration = (props: any) => {
 
    return (
       <>
-         <Header />
+         <h2> Registration </h2>
          <div className="box">
-            <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
-               <label>First Name</label>
-               <input
-                  ref={register({ required: true, minLength: 2 })}
-                  type="text"
-                  name="first_name"
-                  placeholder="First Name"
-               />
-               {errors.first_name && errors.first_name.type === "required" && (
-                  <p>This field is required.</p>
-               )}
-
-               <label>Last Name</label>
-               <input
-                  ref={register({ required: true })}
-                  type="text"
-                  name="last_name"
-                  placeholder="Last Name"
-               />
-               {errors.last_name && errors.last_name.type === "required" && (
-                  <p>This field is required.</p>
-               )}
-
-               <label>Username</label>
-               <input
-                  ref={register({ required: true })}
+            <Form className="register-form" onSubmit={onSubmit}>
+               <Input type="text" name="first_name" placeholder="First Name" />
+               <Input type="text" name="last_name" placeholder="Last Name" />
+               <Input
                   type="text"
                   name="username"
                   placeholder="Username"
                   autoComplete="username"
                />
-               {errors.username && errors.username.type === "required" && (
-                  <p>This field is required.</p>
-               )}
-
-               <label>Password</label>
-               <input
-                  ref={register({ required: true, minLength: 9 })}
-                  type="password"
+               <Input
                   name="password"
                   placeholder="Password"
                   autoComplete="current-password"
+                  type="password"
+                  minLength={9}
                />
-               {errors.password && errors.password.type === "required" && (
-                  <p>This field is required.</p>
-               )}
-               {errors.password && errors.password.type === "minLength" && (
-                  <p>Password must be at least 9 characters.</p>
-               )}
-
-               <label>Email</label>
-               <input
-                  ref={register({ required: true })}
-                  type="email"
-                  name="email"
-                  placeholder="Email"
-               />
-               {errors.email && errors.email.type === "required" && (
-                  <p>This field is required.</p>
-               )}
-
+               <Input name="email" placeholder="Email" type="text" />
                <Button variant="contained" color="primary" type="submit">
                   Submit
                </Button>
-
-               <br />
-            </form>
-            <br />
-
-            <br />
+            </Form>
          </div>
       </>
    );
