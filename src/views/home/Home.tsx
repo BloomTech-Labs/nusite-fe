@@ -7,10 +7,8 @@ import Button from "@material-ui/core/Button";
 import coder from "../../images/coder.svg";
 import developers from "../../images/developers.svg";
 //import { makeStyles } from "@material-ui/core/styles";
-//import Grid from "@material-ui/core/Grid"
 import "./Home.css";
 import Footer from "../_shared/Footer";
-import Header from "../_shared/Header";
 import SubHeader from "./SubHeader";
 //import taglineImage from "../../images/tagline.jpeg"
 import realtime2 from "../../images/reatime2.svg";
@@ -20,7 +18,6 @@ const Home = (props: any) => {
    //const classes = useStyles();
    return (
       <div className="App">
-         <Header />
          <SubHeader />
          <main>
             <br />
