@@ -12,6 +12,7 @@ import ElevationScroll from "../ElevationScroll";
 import HeaderAvatar from "./HeaderAvatar";
 import HeaderTabs from "./HeaderTabs";
 import HeaderDrawer from "./HeaderDrawer";
+import { useRoutes } from "../../util/routes"
 //import { ThemeContext } from "../../context/contexts";
 
 //styling
@@ -48,19 +49,9 @@ const Header = (props: any) => {
    const classes = useStyles();
    const theme = useTheme();
    const matches = useMediaQuery(theme.breakpoints.down("md"));
-
-   let routes = [{ name: "Home", link: "/", activeIndex: 0 }];
-   const publicRoutes = [
-      { name: "Login", link: "/login", activeIndex: 1 },
-      { name: "Register", link: "/register", activeIndex: 2 },
-   ];
-   const PrivateRoutes = [
-      { name: "Dashboard", link: "/home", activeIndex: 1 },
-      { name: "Logout", link: "/logout", activeIndex: 2 },
-   ];
-   if (getToken()) {
-      routes.push(...PrivateRoutes);
-   } else routes.push(...publicRoutes);
+   // custom hooks 
+   const routes = useRoutes()
+   const token = getToken()
 
    useEffect(() => {
       routes.forEach(route => {
@@ -99,7 +90,7 @@ const Header = (props: any) => {
                   ) : (
                      <HeaderTabs value={value} routes={routes} />
                   )}
-                  {getToken() ? <HeaderAvatar /> : null}
+                  {token ? <HeaderAvatar /> : null}
                </Toolbar>
             </AppBar>
          </ElevationScroll>
