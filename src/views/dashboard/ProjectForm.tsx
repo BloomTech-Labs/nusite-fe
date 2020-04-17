@@ -51,10 +51,6 @@ export const Project = (props: any) => {
                   name="project_name"
                   placeholder="project_name"
                />
-               {/*errors.project_name &&
-                  errors.project_name.type === "required" && (
-                     <p>This field is required.</p>
-                  )*/}
 
                <label>Project</label>
                <input

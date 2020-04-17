@@ -30,7 +30,7 @@ export const Login = (props: LoginFormData | any) => {
          .catch(err => err.message);
    };
 
-   //if (loading) return <h4>Loading...</h4>;
+   // if (loading) return <p>Loading...</p>;
 
    return (
       <>
