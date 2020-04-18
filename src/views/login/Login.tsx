@@ -9,7 +9,7 @@ import { useMutation } from "@apollo/react-hooks";
 interface LoginFormData {
    email: string;
    password: string;
-};
+}
 
 export const Login = (props: LoginFormData | any) => {
    console.log(props);
