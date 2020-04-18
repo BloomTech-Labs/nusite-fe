@@ -10,7 +10,7 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-const ProfileAvatar = (props: any) => {
+const HeaderAvatar = (props: any) => {
    const username = localStorage.getItem("username");
    const classes = useStyles();
    return (
@@ -22,4 +22,4 @@ const ProfileAvatar = (props: any) => {
    );
 };
 
-export default ProfileAvatar;
+export default HeaderAvatar;
