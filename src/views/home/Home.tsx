@@ -17,16 +17,10 @@ import SubHeader from "./SubHeader";
 const Home = (props: any) => {
    //const classes = useStyles();
    return (
-      <div className="App">
+      <>
          <Header />
          <SubHeader />
          <main>
-            <br />
-            <br />
-            {/* <h1 className="tagline">
-               Connecting web developers to people with great ideas. Old
-               website, new website, app, or feature, we've got you covered.
-            </h1> */}
             <p className="about">
                We are creating a marketplace for developers and project
                owners/clients to meet each other and form partnerships.
@@ -117,7 +111,7 @@ const Home = (props: any) => {
          </section>
          <SocialIcons />
          <Footer />
-      </div>
+      </>
    );
 };
 

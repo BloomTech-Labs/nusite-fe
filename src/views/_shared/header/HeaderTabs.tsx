@@ -7,12 +7,14 @@ import { Link } from "react-router-dom";
 const useStyles = makeStyles(theme => ({
    tabContainer: {
       marginLeft: "auto",
+      marginRight: "40px",
       padding: 0,
    },
    tab: {
       ...theme.typography.tab,
-      minWidth: "10",
-      marginLeft: "25px",
+      minWidth: 75,
+      width: 90,
+      marginLeft: "40px",
    },
 }));
 

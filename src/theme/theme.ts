@@ -2,15 +2,14 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { deepOrange, green } from "@material-ui/core/colors";
 
 const primaryColor = "#25274d";
-const secondaryColor = "#66fcf1";
-const secondaryColorDark = "#45a29e";
+const secondaryColor = "#22C4D6";
 const white = "#f5f5f5";
 const black = "#111";
 
 export default createMuiTheme({
    mixins: {
       toolbar: {
-         minHeight: 48,
+         minHeight: 42,
       },
    },
    palette: {
@@ -23,7 +22,6 @@ export default createMuiTheme({
       },
       secondary: {
          main: `${secondaryColor}`,
-         dark: `${secondaryColorDark}`,
       },
       background: {
          paper: `${white}`,

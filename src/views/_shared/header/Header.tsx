@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import useTheme from "@material-ui/core/styles/useTheme";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { Link, withRouter } from "react-router-dom";
-import logo from "../../../images/cover.png";
+import logo from "../../../images/logo.svg";
 import { getToken } from "../../util/TokenHelpers";
 import ElevationScroll from "../ElevationScroll";
 import HeaderAvatar from "./HeaderAvatar";
@@ -32,7 +32,7 @@ const useStyles = makeStyles(theme => ({
    },
    //This will set a height for the logo
    logo: {
-      height: "7em",
+      height: "6em",
       [theme.breakpoints.down("md")]: {
          height: "7em",
       },
