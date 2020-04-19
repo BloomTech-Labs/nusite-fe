@@ -1,24 +1,10 @@
 import React from "react";
 import { Query } from "react-apollo";
-import { gql } from "apollo-boost";
-//import { useQuery } from "react-apollo";
-//import { USER_QUERY } from "../../graphql-requests/queries";
+import { GET_USERS } from "../../graphql-requests/queries";
 import "../home/Home.css";
 
 const user_id = localStorage.getItem("user_id");
-console.log(user_id);
-
-const GET_USERS = gql`
-   {
-      users {
-         id
-         username
-         email
-         first_name
-         last_name
-      }
-   }
-`;
+//console.log(user_id);
 
 const User = props => (
    <Query query={GET_USERS}>
@@ -26,7 +12,7 @@ const User = props => (
          if (loading) return <p>Loading...</p>;
          return (
             <>
-               {console.log(data)}
+               {/*console.log(data)*/}
                <div>
                   {data.users.map(user => (
                      <div key={user.id} value={user.username}>

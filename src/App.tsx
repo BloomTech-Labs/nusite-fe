@@ -11,14 +11,14 @@ import Header from "./views/_shared/Header";
 
 const App = () => (
    <>
-   <Header />
-   <Switch>
-      <Route exact path="/" component={Home} />
-      <Route exact path="/login" component={Login} />
-      <Route exact path="/register" component={Registration} />
-      <Route exact path="/logout" component={Logout} />
-      <PrivateRoute exact path="/home" component={Dashboard} />
-   </Switch>
+      <Header />
+      <Switch>
+         <Route exact path="/" component={Home} />
+         <Route exact path="/login" component={Login} />
+         <Route exact path="/register" component={Registration} />
+         <Route exact path="/logout" component={Logout} />
+         <PrivateRoute exact path="/home" component={Dashboard} />
+      </Switch>
    </>
 );
 

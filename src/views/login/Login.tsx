@@ -5,7 +5,6 @@ import Button from "@material-ui/core/Button";
 import "./Login.css";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
-//import {TextField}from "@material-ui/core/";
 
 interface LoginFormData {
    email: string;
@@ -13,7 +12,7 @@ interface LoginFormData {
 }
 
 export const Login = (props: LoginFormData | any) => {
-   console.log(props);
+   //console.log(props);
    const [login] = useMutation(LOGIN);
    const onSubmit = ({ email, password }: LoginFormData) => {
       login({ variables: { email: email, password: password } })
@@ -25,9 +24,9 @@ export const Login = (props: LoginFormData | any) => {
          })
          .then(data => {
             props.history.push("/home");
-            console.log("Success: ");
+            console.log(`Welcome {user}`);
          })
-         .catch(err => err.message);
+         .catch(err => alert(err.message));
    };
 
    // if (loading) return <p>Loading...</p>;

@@ -3,7 +3,6 @@ import { useForm } from "react-hook-form";
 import Button from "@material-ui/core/Button";
 import { PROJECT } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
-//import {TextField}from "@material-ui/core/";
 
 type FormData = {
    project_name: String;
@@ -30,7 +29,7 @@ export const Project = (props: any) => {
          },
       })
          .then(res => {
-            console.log(res.data);
+            //console.log(res.data);
             localStorage.setItem("project_name", res.data.project.project_name);
          })
          .then(data => {
@@ -42,57 +41,54 @@ export const Project = (props: any) => {
 
    return (
       <>
-         <div className="box">
-            <form className="register-form" onSubmit={handleSubmit(onSubmit)}>
-               <label>Project Name</label>
-               <input
-                  ref={register({ required: true })}
-                  type="text"
-                  name="project_name"
-                  placeholder="project_name"
-               />
+         <form onSubmit={handleSubmit(onSubmit)}>
+            <label>Project Name</label>
+            <input
+               ref={register({ required: true })}
+               type="text"
+               name="project_name"
+               placeholder="project_name"
+            />
 
-               <label>Project</label>
-               <input
-                  ref={register({ required: true })}
-                  type="text"
-                  name="project_owner"
-                  placeholder="project_owner"
-               />
+            <label>Project</label>
+            <input
+               ref={register({ required: true })}
+               type="text"
+               name="project_owner"
+               placeholder="project_owner"
+            />
 
-               <label>Project Owner</label>
-               <input
-                  ref={register({ required: true })}
-                  type="text"
-                  name="project_owner"
-                  placeholder="project_owner"
-               />
+            <label>Project Owner</label>
+            <input
+               ref={register({ required: true })}
+               type="text"
+               name="project_owner"
+               placeholder="project_owner"
+            />
 
-               <label>Project Description</label>
-               <input
-                  ref={register({ required: true })}
-                  type="textfield"
-                  name="project_description"
-                  placeholder="project_description"
-               />
+            <label>Project Description</label>
+            <input
+               ref={register({ required: true })}
+               type="textfield"
+               name="project_description"
+               placeholder="project_description"
+            />
 
-               <label>Completed?</label>
-               <input
-                  ref={register({ required: true })}
-                  //type={false}
-                  name="completed"
-                  placeholder="false"
-               />
+            <label>Completed?</label>
+            <input
+               ref={register({ required: true })}
+               //type={false}
+               name="completed"
+               placeholder="false"
+            />
 
-               <Button variant="contained" color="primary" type="submit">
-                  Submit
-               </Button>
+            <Button variant="contained" color="primary" type="submit">
+               Submit
+            </Button>
 
-               <br />
-            </form>
             <br />
-            <br />
-         </div>
+         </form>
+         <br />
       </>
    );
 };
