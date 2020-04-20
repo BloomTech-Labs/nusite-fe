@@ -1,5 +1,5 @@
 import React from "react";
-import SocialIcons from "../_shared/SocialIcons";
+import SocialIcons from "../_shared/footer/SocialIcons";
 import userflow from "../../images/userflow.gif";
 import "./Home.css";
 import { NavLink } from "react-router-dom";
@@ -9,7 +9,6 @@ import developers from "../../images/developers.svg";
 //import { makeStyles } from "@material-ui/core/styles";
 //import Grid from "@material-ui/core/Grid"
 import "./Home.css";
-import Footer from "../_shared/Footer";
 import SubHeader from "./SubHeader";
 
 const Home = (props: any) => {
@@ -55,7 +54,7 @@ const Home = (props: any) => {
             <br />
             <br />
          </section>
-         {/* paralax scrolling is making mobile version have a horizonatl scroll bar. On inital
+         {/* paralax scrolling is making mobile version have a horizontal scroll bar. On inital
           load of the page the parallax background is flashed for a split second which is probably
          unfavorable visually.  This feature may need to be removed in the future*/}
          <div className="parallax"></div>
@@ -109,8 +108,6 @@ const Home = (props: any) => {
             <br />
             <br />
          </section>
-         <SocialIcons />
-         <Footer />
       </>
    );
 };
