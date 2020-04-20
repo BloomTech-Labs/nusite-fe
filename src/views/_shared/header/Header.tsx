@@ -44,7 +44,6 @@ const useStyles = makeStyles(theme => ({
 
 const Header = (props: any) => {
    const [value, setValue] = useState(0);
-   // const [openDrawer, setOpenDrawer] = useState(false);
    //material ui hooks
    const classes = useStyles();
    const theme = useTheme();
@@ -83,6 +82,7 @@ const Header = (props: any) => {
                         className={classes.logo}
                         src={logo}
                         alt="company logo"
+                        data-testid="header-logo"
                      />
                   </Button>
                   {matches ? (

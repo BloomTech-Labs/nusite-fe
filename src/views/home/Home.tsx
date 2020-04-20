@@ -9,7 +9,6 @@ import developers from "../../images/developers.svg";
 //import { makeStyles } from "@material-ui/core/styles";
 //import Grid from "@material-ui/core/Grid"
 import "./Home.css";
-import Footer from "../_shared/Footer";
 import SubHeader from "./SubHeader";
 
 const Home = (props: any) => {
@@ -109,8 +108,8 @@ const Home = (props: any) => {
             <br />
             <br />
          </section>
+         {/* These social icons will become part of the footer instead*/}
          <SocialIcons />
-         <Footer />
       </>
    );
 };
