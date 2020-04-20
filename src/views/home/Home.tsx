@@ -10,15 +10,12 @@ import developers from "../../images/developers.svg";
 //import Grid from "@material-ui/core/Grid"
 import "./Home.css";
 import Footer from "../_shared/Footer";
-import Header from "../_shared/header/Header";
 import SubHeader from "./SubHeader";
-//import taglineImage from "../../images/tagline.jpeg"
 
 const Home = (props: any) => {
    //const classes = useStyles();
    return (
       <>
-         <Header />
          <SubHeader />
          <main>
             <p className="about">
