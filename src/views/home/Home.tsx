@@ -55,6 +55,9 @@ const Home = (props: any) => {
             <br />
             <br />
          </section>
+         {/* paralax scrolling is making mobile version have a horizonatl scroll bar. On inital
+          load of the page the parallax background is flashed for a split second which is probably
+         unfavorable visually.  This feature may need to be removed in the future*/}
          <div className="parallax"></div>
          <br />
          <div className="tagline-2">

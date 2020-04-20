@@ -9,7 +9,7 @@ const black = "#111";
 export default createMuiTheme({
    mixins: {
       toolbar: {
-         minHeight: 42,
+         minHeight: 78,
       },
    },
    palette: {

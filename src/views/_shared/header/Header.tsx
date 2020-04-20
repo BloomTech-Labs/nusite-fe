@@ -34,10 +34,10 @@ const useStyles = makeStyles(theme => ({
    logo: {
       height: "6em",
       [theme.breakpoints.down("md")]: {
-         height: "7em",
+         height: "5.5em",
       },
       [theme.breakpoints.down("xs")]: {
-         height: "5.5",
+         height: "5.0",
       },
    },
 }));
