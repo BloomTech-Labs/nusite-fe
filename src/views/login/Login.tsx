@@ -5,6 +5,7 @@ import Button from "@material-ui/core/Button";
 import "./Login.css";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
+//import Loading from "../_shared/Loading";
 
 interface LoginFormData {
    email: string;
@@ -24,7 +25,7 @@ export const Login = (props: LoginFormData | any) => {
          })
          .then(data => {
             props.history.push("/home");
-            console.log(`Welcome {user}`);
+            console.log(`Welcome {username}`);
          })
          .catch(err => alert(err.message));
    };
