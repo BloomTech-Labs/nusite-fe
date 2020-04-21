@@ -7,6 +7,7 @@ import User from "./User";
 import Button from "@material-ui/core/Button";
 
 const Dashboard = (props: any) => {
+   //const classes = useStyles();
    const [name, setName] = useState("Anonymous");
    const [user_id, setUser] = useState("");
 

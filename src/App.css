@@ -82,3 +82,9 @@ html {
    align-items: center;
    width: 100%;
 }
+
+.App_dark .edit {
+   background: #aaa;
+   color: #111;
+   border-radius: 2px;
+}

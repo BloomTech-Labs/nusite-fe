@@ -515,3 +515,13 @@ section .myapp {
 .terms {
    font-size: 0.9rem;
 }
+
+.boxedit {
+   display: flex;
+   flex-flow: column wrap;
+   margin-bottom: 11px;
+   text-align: center;
+   -webkit-backdrop-filter: blur(10px);
+   backdrop-filter: blur(10px);
+   height: 100%;
+}
