@@ -12,7 +12,7 @@ interface LoginFormData {
 }
 
 export const Login = (props: LoginFormData | any) => {
-   console.log(props);
+   // console.log(props);
    const [login] = useMutation(LOGIN);
    const onSubmit = ({ email, password }: LoginFormData) => {
       login({ variables: { email: email, password: password } })
@@ -28,7 +28,11 @@ export const Login = (props: LoginFormData | any) => {
    return (
       <>
          <h2> Login </h2>
-         <Form className="login-form" onSubmit={onSubmit}>
+         <Form
+            className="login-form"
+            data-testid="login-form"
+            onSubmit={onSubmit}
+         >
             <Input name="email" placeholder="Email" />
             <Input
                name="password"

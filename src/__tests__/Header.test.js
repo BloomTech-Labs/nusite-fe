@@ -3,7 +3,7 @@ import { MemoryRouter } from "react-router-dom";
 import { render, cleanup, testLinkArray } from "../test-utils";
 import "@testing-library/jest-dom/extend-expect";
 
-import Header from "../views/_shared/Header";
+import Header from "../views/_shared/header/Header";
 afterEach(cleanup);
 
 describe("Header Component Tests", () => {

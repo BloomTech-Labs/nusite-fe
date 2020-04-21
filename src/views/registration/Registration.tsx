@@ -43,7 +43,11 @@ export const Registration = (props: RegistrationFormData | any) => {
       <>
          <h2> Registration </h2>
          <div className="box">
-            <Form className="register-form" onSubmit={onSubmit}>
+            <Form
+               className="register-form"
+               data-testid="register-form"
+               onSubmit={onSubmit}
+            >
                <Input type="text" name="first_name" placeholder="First Name" />
                <Input type="text" name="last_name" placeholder="Last Name" />
                <Input

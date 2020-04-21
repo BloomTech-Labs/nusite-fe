@@ -15,7 +15,7 @@ describe("Footer Component Tests", () => {
          "/",
          "/login",
          "/register",
-         "mailto:dev-team@email.com",
+         "mailto:[placeholder-email]",
       ];
 
       testLinkArray(footerLinks, NUM_LINKS, LINK_REFS);
