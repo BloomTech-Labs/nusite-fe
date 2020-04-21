@@ -29,7 +29,6 @@ export const Project = (props: any) => {
          },
       })
          .then(res => {
-            //console.log(res.data);
             localStorage.setItem("project_name", res.data.project.project_name);
          })
          .then(data => {
