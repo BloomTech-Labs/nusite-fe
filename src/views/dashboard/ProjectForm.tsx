@@ -77,7 +77,6 @@ export const Project = (props: any) => {
             <label>Completed?</label>
             <input
                ref={register({ required: true })}
-               //type={false}
                name="completed"
                placeholder="false"
             />

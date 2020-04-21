@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import DarkMode from "../_shared/DarkMode";
 import "../home/Home";
-//import Logout from "../_shared/Logout";
 //import { Project } from "./ProjectForm";
 import User from "./User";
 import Button from "@material-ui/core/Button";

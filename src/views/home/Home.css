@@ -187,9 +187,8 @@ footer a {
    color: #168995;
    cursor: pointer;
    text-decoration: none;
-   padding: 20px;
    text-align: center;
-   justify-content: space-between;
+   padding: 0 20px 0 20px;
 }
 
 .parallax {
@@ -339,7 +338,7 @@ p {
    position: relative;
 }
 
-.button-big {
+/* .button-big {
    width: 200px;
    height: 100px;
    border-radius: 50px;
@@ -347,9 +346,9 @@ p {
    position: relative;
    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4),
       inset 2px 4px 4px rgba(255, 255, 255, 0.4);
-}
+} */
 
-.button-small {
+/* .button-small {
    cursor: pointer;
    position: absolute;
    top: 50%;
@@ -361,9 +360,9 @@ p {
    box-shadow: inset 2px 4px 4px -2px rgba(255, 255, 255, 0.6),
       0px 4px 4px rgba(0, 0, 0, 0.2);
    background-image: linear-gradient(to right bottom, #dadfe1, #abb7b7);
-}
+} */
 
-.bg {
+/* .bg {
    width: 50px;
    height: 50px;
    position: absolute;
@@ -373,7 +372,7 @@ p {
    border-radius: 50%;
    transition: 0.4s;
    z-index: -1;
-}
+} */
 
 a {
    color: #444;
@@ -514,14 +513,4 @@ section .myapp {
 
 .terms {
    font-size: 0.9rem;
-}
-
-.boxedit {
-   display: flex;
-   flex-flow: column wrap;
-   margin-bottom: 11px;
-   text-align: center;
-   -webkit-backdrop-filter: blur(10px);
-   backdrop-filter: blur(10px);
-   height: 100%;
 }
