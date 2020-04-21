@@ -66,7 +66,7 @@ export const Registration: React.FC = (props: RegistrationFormData | any) => {
                <Input name="email" placeholder="Email" type="text" />
                <Button
                   variant="contained"
-                  color="primary"
+                  color="secondary"
                   type="submit"
                   onClick={submitForm}
                >

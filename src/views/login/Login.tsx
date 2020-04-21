@@ -29,7 +29,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
          })
          .then(data => {
             props.history.push("/home");
-            console.log(`Welcome!`);
+            console.log(`Welcome `);
          })
          .catch(err => alert(err.message));
    };
@@ -47,7 +47,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
             />
             <Button
                variant="contained"
-               color="primary"
+               color="secondary"
                type="submit"
                value="submit"
                onClick={submitForm}

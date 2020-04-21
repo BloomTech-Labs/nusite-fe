@@ -2,6 +2,7 @@ import React from "react";
 import { Query } from "react-apollo";
 import { GET_USERS } from "../../graphql-requests/queries";
 import "../home/Home.css";
+//
 
 const user_id = localStorage.getItem("user_id");
 

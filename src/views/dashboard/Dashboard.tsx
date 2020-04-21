@@ -1,17 +1,23 @@
 import React, { useEffect, useState } from "react";
 import DarkMode from "../_shared/DarkMode";
 import "../home/Home";
-import Logout from "../_shared/Logout";
+//import Logout from "../_shared/Logout";
 //import { Project } from "./ProjectForm";
 import User from "./User";
+import Button from "@material-ui/core/Button";
 
 const Dashboard = (props: any) => {
    const [name, setName] = useState("Anonymous");
+   const [user_id, setUser] = useState("");
 
    useEffect(() => {
-      const username: string | null = localStorage.getItem("username");
+      let username: string | null = localStorage.getItem("username");
       if (username) {
          setName(username);
+      }
+      let user_id: string | null = localStorage.getItem("user_id");
+      if (user_id) {
+         setUser(user_id);
       }
    }, []);
 
@@ -25,9 +31,9 @@ const Dashboard = (props: any) => {
             <br />
             <User />
             <br />
-            <h3 className="logout" onClick={Logout}>
-               Logout
-            </h3>
+            <Button variant="contained" color="primary" type="submit">
+               Edit Profile
+            </Button>
             <br />
          </main>
       </div>
