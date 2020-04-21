@@ -36,26 +36,28 @@ export const Login: React.FC = (props: LoginFormData | any) => {
 
    return (
       <>
-         <Form className="login-form" onSubmit={onSubmit}>
-            <Input name="email" placeholder="Email" />
-            <Input
-               name="password"
-               placeholder="Password"
-               autoComplete="current-password"
-               type="password"
-               minLength={9}
-            />
-            <Button
-               variant="contained"
-               color="secondary"
-               type="submit"
-               value="submit"
-               onClick={submitForm}
-            >
-               {!state.loading && "Login"}
-               {state.loading && <Loader />}
-            </Button>
-         </Form>
+         <div className="box">
+            <Form className="login-form" onSubmit={onSubmit}>
+               <Input name="email" placeholder="Email" />
+               <Input
+                  name="password"
+                  placeholder="Password"
+                  autoComplete="current-password"
+                  type="password"
+                  minLength={9}
+               />
+               <Button
+                  variant="contained"
+                  color="secondary"
+                  type="submit"
+                  value="submit"
+                  onClick={submitForm}
+               >
+                  {!state.loading && "Login"}
+                  {state.loading && <Loader />}
+               </Button>
+            </Form>
+         </div>
       </>
    );
 };
