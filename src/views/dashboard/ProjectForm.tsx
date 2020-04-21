@@ -36,7 +36,7 @@ export const Project = (props: any) => {
             props.history.push("/home");
             console.log("Registered Project");
          })
-         .catch(err => err.message);
+         .catch(err => alert(err.message));
    };
 
    return (
@@ -85,7 +85,6 @@ export const Project = (props: any) => {
             <Button variant="contained" color="primary" type="submit">
                Submit
             </Button>
-
             <br />
          </form>
          <br />

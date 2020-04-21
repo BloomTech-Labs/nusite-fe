@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
 import { SIGNUP } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Button from "@material-ui/core/Button";
 import "./Registration.css";
+import Loader from "../_shared/Loader";
 
 interface RegistrationFormData {
    username: string;
@@ -14,7 +15,12 @@ interface RegistrationFormData {
    email: string;
 }
 
-export const Registration = (props: RegistrationFormData | any) => {
+export const Registration: React.FC = (props: RegistrationFormData | any) => {
+   const [state, setState] = useState({ loading: false });
+   function submitForm() {
+      setState({ ...state, loading: true });
+   }
+
    const [signup] = useMutation(SIGNUP);
    const onSubmit = ({
       first_name,
@@ -58,8 +64,14 @@ export const Registration = (props: RegistrationFormData | any) => {
                   minLength={9}
                />
                <Input name="email" placeholder="Email" type="text" />
-               <Button variant="contained" color="primary" type="submit">
-                  Submit
+               <Button
+                  variant="contained"
+                  color="primary"
+                  type="submit"
+                  onClick={submitForm}
+               >
+                  {!state.loading && "Register"}
+                  {state.loading && <Loader />}
                </Button>
             </Form>
          </div>
