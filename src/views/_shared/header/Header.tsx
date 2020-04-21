@@ -6,7 +6,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import useTheme from "@material-ui/core/styles/useTheme";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { Link, withRouter } from "react-router-dom";
-import logo from "../../../images/cover.png";
+import logo from "../../../images/logo.svg";
 import { getToken } from "../../util/TokenHelpers";
 import ElevationScroll from "../ElevationScroll";
 import HeaderAvatar from "./HeaderAvatar";
@@ -32,19 +32,18 @@ const useStyles = makeStyles(theme => ({
    },
    //This will set a height for the logo
    logo: {
-      height: "7em",
+      height: "6em",
       [theme.breakpoints.down("md")]: {
-         height: "7em",
+         height: "5.5em",
       },
       [theme.breakpoints.down("xs")]: {
-         height: "5.5",
+         height: "5.0",
       },
    },
 }));
 
 const Header = (props: any) => {
    const [value, setValue] = useState(0);
-   // const [openDrawer, setOpenDrawer] = useState(false);
    //material ui hooks
    const classes = useStyles();
    const theme = useTheme();
@@ -83,6 +82,7 @@ const Header = (props: any) => {
                         className={classes.logo}
                         src={logo}
                         alt="company logo"
+                        data-testid="header-logo"
                      />
                   </Button>
                   {matches ? (

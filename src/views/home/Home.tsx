@@ -9,24 +9,14 @@ import developers from "../../images/developers.svg";
 //import { makeStyles } from "@material-ui/core/styles";
 //import Grid from "@material-ui/core/Grid"
 import "./Home.css";
-import Footer from "../_shared/Footer";
-import Header from "../_shared/header/Header";
 import SubHeader from "./SubHeader";
-//import taglineImage from "../../images/tagline.jpeg"
 
 const Home = (props: any) => {
    //const classes = useStyles();
    return (
-      <div className="App">
-         <Header />
+      <>
          <SubHeader />
          <main>
-            <br />
-            <br />
-            {/* <h1 className="tagline">
-               Connecting web developers to people with great ideas. Old
-               website, new website, app, or feature, we've got you covered.
-            </h1> */}
             <p className="about">
                We are creating a marketplace for developers and project
                owners/clients to meet each other and form partnerships.
@@ -64,6 +54,9 @@ const Home = (props: any) => {
             <br />
             <br />
          </section>
+         {/* paralax scrolling is making mobile version have a horizonatl scroll bar. On inital
+          load of the page the parallax background is flashed for a split second which is probably
+         unfavorable visually.  This feature may need to be removed in the future*/}
          <div className="parallax"></div>
          <br />
          <div className="tagline-2">
@@ -115,9 +108,9 @@ const Home = (props: any) => {
             <br />
             <br />
          </section>
+         {/* These social icons will become part of the footer instead*/}
          <SocialIcons />
-         <Footer />
-      </div>
+      </>
    );
 };
 
