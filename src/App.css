@@ -92,3 +92,8 @@ body {
    color: #111;
    border-radius: 2px;
 }
+
+.boxedit {
+   display: flex;
+   flex-flow: column wrap;
+}
