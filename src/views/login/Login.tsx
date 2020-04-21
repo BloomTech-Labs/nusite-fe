@@ -17,7 +17,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
    function submitForm() {
       setState({ ...state, loading: true });
    }
-
+   localStorage.clear();
    const [login] = useMutation(LOGIN);
    const onSubmit = ({ email, password }: LoginFormData) => {
       login({ variables: { email: email, password: password } })
@@ -29,7 +29,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
          })
          .then(data => {
             props.history.push("/home");
-            console.log(`Welcome {username}`);
+            console.log(`Welcome!`);
          })
          .catch(err => alert(err.message));
    };

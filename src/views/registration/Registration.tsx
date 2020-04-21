@@ -20,7 +20,7 @@ export const Registration: React.FC = (props: RegistrationFormData | any) => {
    function submitForm() {
       setState({ ...state, loading: true });
    }
-
+   localStorage.clear();
    const [signup] = useMutation(SIGNUP);
    const onSubmit = ({
       first_name,
