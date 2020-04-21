@@ -19,6 +19,9 @@ const Home = (props: any) => {
       <>
          <SubHeader className="subheader" />
          <main>
+            <br />
+            <br />
+            <br />
             <p className="about">
                We are creating a marketplace for developers and project
                owners/clients to meet each other and form partnerships.
