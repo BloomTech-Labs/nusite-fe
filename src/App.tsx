@@ -7,7 +7,7 @@ import Logout from "./views/_shared/Logout";
 import Home from "./views/home/Home";
 import PrivateRoute from "./views/util/PrivateRoute";
 import Dashboard from "./views/dashboard/Dashboard";
-import Header from "./views/_shared/Header";
+import Header from "./views/_shared/header/Header";
 
 const App = () => (
    <>

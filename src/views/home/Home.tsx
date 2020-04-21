@@ -9,6 +9,10 @@ import developers from "../../images/developers.svg";
 //import { makeStyles } from "@material-ui/core/styles";
 import "./Home.css";
 import Footer from "../_shared/Footer";
+<<<<<<< HEAD
+=======
+import Header from "../_shared/header/Header";
+>>>>>>> cdc7fe0f88288ff887401f9c17394a59ad4126d9
 import SubHeader from "./SubHeader";
 //import taglineImage from "../../images/tagline.jpeg"
 import realtime2 from "../../images/reatime2.svg";

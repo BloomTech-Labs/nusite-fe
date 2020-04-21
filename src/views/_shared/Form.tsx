@@ -4,7 +4,8 @@ import { useForm } from "react-hook-form";
 export const Form = ({ defaultValues, children, onSubmit }: any) => {
    const methods = useForm({ defaultValues });
    const { handleSubmit } = methods;
-   //console.log("Methods: ", methods)
+   console.log("Methods: ", methods);
+
    return (
       <form onSubmit={handleSubmit(onSubmit)}>
          {Array.isArray(children)

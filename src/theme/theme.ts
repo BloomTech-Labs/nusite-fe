@@ -9,16 +9,20 @@ const secondaryColor = "#66fcf1";
 const secondaryColorDark = "#45a29e";
 const white = "#f5f5f5";
 const black = "#111";
-const breakpointValues = {
-   xs: 0,
-   sm: 576,
-   md: 768,
-   lg: 992,
-   xl: 1200,
-};
+// const breakpointValues = {
+//    xs: 0,
+//    sm: 576,
+//    md: 768,
+//    lg: 992,
+//    xl: 1200,
+// };
 
 export default createMuiTheme({
-   breakpoints: { values: breakpointValues },
+   mixins: {
+      toolbar: {
+         minHeight: 48,
+      },
+   },
    palette: {
       common: {
          white: `${white}`,
