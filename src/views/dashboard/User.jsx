@@ -21,8 +21,8 @@ const User = props => (
                                  <ul>
                                     <li>username: {user.username}</li>
                                     <li>email: {user.email}</li>
-                                    <li>first_name: {user.first_name}</li>
-                                    <li>last_name: {user.last_name}</li>
+                                    <li>firstname: {user.first_name}</li>
+                                    <li>lastname: {user.last_name}</li>
                                  </ul>
                               </div>
                            </>
