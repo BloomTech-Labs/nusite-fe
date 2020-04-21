@@ -1,9 +1,10 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import Button from "@material-ui/core/Button";
 import logo from "../../../images/logo.svg";
+
 const useStyles = makeStyles(theme => ({
    logoContainer: {
       "padding": 0,
@@ -13,12 +14,12 @@ const useStyles = makeStyles(theme => ({
       },
    },
    logo: {
-      height: "4em",
+      height: "3.5em",
       [theme.breakpoints.down("md")]: {
-         height: "3.5em",
+         height: "3.0em",
       },
       [theme.breakpoints.down("xs")]: {
-         height: "3.0",
+         height: "2.5",
       },
    },
    footerText: {
@@ -32,7 +33,13 @@ const useStyles = makeStyles(theme => ({
 const CopyRight = (props: any) => {
    const classes = useStyles();
    return (
-      <Grid container direction="column" alignContent="center" justify="center">
+      <Grid
+         container
+         lg={4}
+         direction="column"
+         alignContent="center"
+         justify="center"
+      >
          <Grid item>
             <Button
                className={classes.logoContainer}

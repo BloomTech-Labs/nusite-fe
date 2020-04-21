@@ -8,7 +8,7 @@ const useStyles = makeStyles(theme => ({
       fontFamily: "Arial",
       fontWeight: "bold",
       fontSize: "1rem",
-      color: theme.palette.secondary.main,
+      color: theme.palette.common.white,
       textDecoration: "none",
    },
 }));
@@ -16,9 +16,16 @@ const useStyles = makeStyles(theme => ({
 const FooterNav = (props: any) => {
    const classes = useStyles();
    const routes = useRoutes();
+   useEffect(() => {}, [routes]);
 
    return (
-      <Grid container justify="center" alignContent="center" direction="column">
+      <Grid
+         container
+         lg={4}
+         justify="center"
+         alignContent="center"
+         direction="column"
+      >
          {routes.map((route: any) => (
             <Grid
                item

@@ -174,7 +174,7 @@ section p {
    margin: auto; /*optional centering of image*/
 }
 
-footer {
+/* footer {
    background: #25274d;
    color: #168995;
    cursor: pointer;
@@ -182,8 +182,8 @@ footer {
    text-align: center;
    justify-content: space-between;
    padding-top: 15px;
-}
-
+} */
+/* 
 footer a {
    background: #25274d;
    color: #168995;
@@ -192,7 +192,7 @@ footer a {
    padding: 20px;
    text-align: center;
    justify-content: space-between;
-}
+} */
 
 .parallax {
    height: 250px;

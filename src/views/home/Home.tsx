@@ -1,5 +1,4 @@
 import React from "react";
-import SocialIcons from "../_shared/footer/SocialIcons";
 import userflow from "../../images/userflow.gif";
 import "./Home.css";
 import { NavLink } from "react-router-dom";

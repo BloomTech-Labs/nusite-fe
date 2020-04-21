@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
-import { useRoutes } from "../../util/routes";
 import CopyRight from "./CopyRight";
 import FooterNav from "./FooterNav";
 import About from "./About";
@@ -12,35 +10,33 @@ const useStyles = makeStyles(theme => ({
       background: theme.palette.primary.main,
       width: "100%",
       height: "300px",
-      justifyContent: "center",
-      justifyItems: "center",
-      display: "flex",
-      alignContent: "center",
+      // justifyContent: "center",
+      // justifyItems: "center",
+      // display: "flex",
+      // alignContent: "center",
       // position: "relative",
       // zIndex: 1302,
    },
    footerGridContainer: {
-      position: "absolute",
+      // position: "absolute",
    },
 }));
 
 const Footer = (props: any) => {
    const classes = useStyles();
-   const routes = useRoutes();
-   useEffect(() => {}, [routes]);
 
    return (
       <footer className={classes.footer}>
          <Grid
             container
+            lg={12}
             className={classes.footerGridContainer}
             direction="row"
             justify="center"
-            lg={3}
          >
-            <CopyRight />
             <FooterNav />
             <About />
+            <CopyRight />
             {/* <SocialIcons /> */}
          </Grid>
       </footer>
