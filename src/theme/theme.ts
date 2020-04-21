@@ -5,8 +5,7 @@ import { deepOrange } from "@material-ui/core/colors";
 //import { responsiveFontSizes } from "@material-ui/core/styles";
 
 const primaryColor = "#25274d";
-const secondaryColor = "#66fcf1";
-const secondaryColorDark = "#45a29e";
+const secondaryColor = "#22C4D6";
 const white = "#f5f5f5";
 const black = "#111";
 // const breakpointValues = {
@@ -20,7 +19,7 @@ const black = "#111";
 export default createMuiTheme({
    mixins: {
       toolbar: {
-         minHeight: 48,
+         minHeight: 78,
       },
    },
    palette: {
@@ -33,7 +32,6 @@ export default createMuiTheme({
       },
       secondary: {
          main: `${secondaryColor}`,
-         dark: `${secondaryColorDark}`,
       },
       background: {
          paper: `${white}`,

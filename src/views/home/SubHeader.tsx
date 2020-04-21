@@ -21,8 +21,15 @@ const useStyles = makeStyles(theme => ({
       color: theme.palette.secondary.dark,
       position: "absolute",
       left: "60%",
-      fontSize: "2.6rem",
-      // font:theme.typography.h1,
+      fontSize: "2.5rem",
+      [theme.breakpoints.down("md")]: {
+         fontSize: "1.5rem",
+      },
+      [theme.breakpoints.down("xs")]: {
+         height: ".7rem",
+         width: "50%",
+         fontWeight: 500,
+      },
    },
 }));
 

@@ -15,25 +15,9 @@ body {
    height: 100%;
 }
 
-header {
-   background: #25274d;
-   color: #45a29e;
-   text-align: center;
-   display: flex;
-   flex-flow: row;
-   justify-content: space-around;
-   position: -webkit-sticky;
-   position: sticky;
-   opacity: 0.98;
-   top: 0;
-   z-index: 99;
-   width: 100%;
-   box-shadow: 0px 1px 8px #999;
-}
-
 .header_dark {
    background: whitesmoke;
-   color: #45a29e;
+   color: #168995;
    box-shadow: none;
 }
 
@@ -74,23 +58,6 @@ header h1 {
       margin-left: 0%;
       width: 100%;
    }
-}
-
-nav {
-   background: #25274d;
-   color: #45a29e;
-   margin-top: 45px;
-   text-align: center;
-}
-
-nav a {
-   background: #25274d;
-   color: #66fcf1;
-   cursor: pointer;
-   text-decoration: none;
-   padding: 25px;
-   text-align: center;
-   justify-content: space-around;
 }
 
 .start-main {
@@ -178,7 +145,7 @@ main {
 }
 
 h2 {
-   color: #45a29e;
+   color: #168995;
    font-weight: 800;
    font-size: 2.4rem;
    text-align: center;
@@ -232,7 +199,7 @@ section p {
 
 footer {
    background: #25274d;
-   color: #45a29e;
+   color: #168995;
    cursor: pointer;
    text-decoration: none;
    text-align: center;
@@ -242,7 +209,7 @@ footer {
 
 footer a {
    background: #25274d;
-   color: #45a29e;
+   color: #168995;
    cursor: pointer;
    text-decoration: none;
    padding: 20px;
@@ -259,7 +226,7 @@ footer a {
    width: 210px;
    height: 42px;
    margin: 0 auto;
-   background-color: #45a29e;
+   background-color: #168995;
    border-radius: 2px;
    cursor: pointer;
 }
@@ -517,12 +484,12 @@ section .user-flow {
 }
 
 .start:hover {
-   background: #45a29e;
+   background: #168995;
    color: white;
 }
 
 nav a:hover {
-   background: #45a29e;
+   background: #168995;
    color: white;
    border-radius: 8px;
 }
@@ -535,7 +502,7 @@ nav a:hover {
 }
 
 .logout:hover {
-   color: #45a29e;
+   color: #168995;
    cursor: pointer;
 }
 

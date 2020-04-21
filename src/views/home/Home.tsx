@@ -8,23 +8,17 @@ import coder from "../../images/coder.svg";
 import developers from "../../images/developers.svg";
 //import { makeStyles } from "@material-ui/core/styles";
 import "./Home.css";
-import Footer from "../_shared/Footer";
-<<<<<<< HEAD
-=======
-import Header from "../_shared/header/Header";
->>>>>>> cdc7fe0f88288ff887401f9c17394a59ad4126d9
-import SubHeader from "./SubHeader";
 //import taglineImage from "../../images/tagline.jpeg"
 import realtime2 from "../../images/reatime2.svg";
 import myapp2 from "../../images/myapp2.svg";
+import SubHeader from "./SubHeader";
 
 const Home = (props: any) => {
    //const classes = useStyles();
    return (
-      <div className="App">
+      <>
          <SubHeader />
          <main>
-            <br />
             <p className="about">
                We are creating a marketplace for developers and project
                owners/clients to meet each other and form partnerships.
@@ -63,6 +57,9 @@ const Home = (props: any) => {
             <img src={myapp2} alt="" className="myapp" />
             <br />
          </section>
+         {/* paralax scrolling is making mobile version have a horizonatl scroll bar. On inital
+          load of the page the parallax background is flashed for a split second which is probably
+         unfavorable visually.  This feature may need to be removed in the future*/}
          <div className="parallax"></div>
          <br />
          <div className="tagline-2">
@@ -114,9 +111,9 @@ const Home = (props: any) => {
             <br />
             <br />
          </section>
+         {/* These social icons will become part of the footer instead*/}
          <SocialIcons />
-         <Footer />
-      </div>
+      </>
    );
 };
 
