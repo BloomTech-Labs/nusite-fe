@@ -1,21 +1,20 @@
 import React from "react";
-import { render, RenderResult } from "@testing-library/react";
+import { render } from "@testing-library/react";
 
 import { ThemeContext } from "./context/contexts";
 
-export interface SpiesMap {
-   setDarkMode: jest.Mock;
+function MutationObserver(callback) {
+   this.observe = jest.fn();
+   this.disconnect = jest.fn();
+   this.takeRecords = jest.fn();
 }
+global.MutationObserver = jest.fn(MutationObserver);
 
-export interface RenderWithSpiesResult extends RenderResult {
-   mockSpies: SpiesMap;
-}
-
-const mockSpies: SpiesMap = {
+const mockSpies = {
    setDarkMode: jest.fn(),
 };
 
-const AllTheProviders: React.FC = ({ children }) => (
+const AllTheProviders = ({ children }) => (
    <ThemeContext.Provider
       value={{ darkMode: false, setDarkMode: mockSpies.setDarkMode }}
    >
@@ -23,10 +22,7 @@ const AllTheProviders: React.FC = ({ children }) => (
    </ThemeContext.Provider>
 );
 
-const customRender = (
-   ui: React.ReactElement,
-   options?: Object | undefined
-): RenderWithSpiesResult => {
+const customRender = (ui, options) => {
    return {
       ...render(ui, { wrapper: AllTheProviders, ...options }),
       mockSpies,
