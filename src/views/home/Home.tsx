@@ -17,7 +17,7 @@ const Home = (props: any) => {
    //const classes = useStyles();
    return (
       <>
-         <SubHeader />
+         <SubHeader className="subheader" />
          <main>
             <p className="about">
                We are creating a marketplace for developers and project
