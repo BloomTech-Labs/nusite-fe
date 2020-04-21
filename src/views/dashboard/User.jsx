@@ -4,7 +4,6 @@ import { GET_USERS } from "../../graphql-requests/queries";
 import "../home/Home.css";
 
 const user_id = localStorage.getItem("user_id");
-//console.log(user_id);
 
 const User = props => (
    <Query query={GET_USERS}>
