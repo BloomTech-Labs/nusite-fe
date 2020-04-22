@@ -1,8 +1,8 @@
-import gql from "graphql-tag";
+import { gql } from "apollo-boost";
 
 export const GET_USER = gql`
-   {
-      user(id: id) {
+   query user($user_id: ID!) {
+      user(id: $user_id) {
          id
          username
          email
