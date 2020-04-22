@@ -6,7 +6,7 @@ import "./Login.css";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
-//import GoogleLoginButton from "../_shared/GoogleLoginButton";
+//import { GoogleLoginButton } from "../_shared/GoogleLoginButton";
 
 interface LoginFormData {
    email: string;
@@ -57,6 +57,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   {!state.loading && "Login"}
                   {state.loading && <Loader />}
                </Button>
+               <br />
             </Form>
          </div>
       </>

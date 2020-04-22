@@ -6,10 +6,10 @@ const useStyles = makeStyles(theme =>
       button: {
          "margin": theme.spacing(0, 0, 1),
          "display": "flex",
-         "backgroundColor": "#DD4B39",
+         "backgroundColor": "#22C4D6",
          "borderRadius": theme.shape.borderRadius,
          "boxShadow": theme.shadows[1],
-         "height": "36px",
+         "height": "35px",
          "cursor": "pointer",
          "textDecoration": "none",
          "&:hover": {
@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme =>
          height: "18px",
       },
       text: {
-         margin: "0 34px 0 0",
+         margin: "0 20px 0 11px",
          color: "#fff",
          fontSize: "14px",
          fontWeight: "bold",
@@ -79,7 +79,7 @@ const GoogleLoginButton = () => {
                />
             </svg>
          </div>
-         <p className={classes.text}>Login with Google</p>
+         <p className={classes.text}> Login with Google </p>
       </a>
    );
 };
