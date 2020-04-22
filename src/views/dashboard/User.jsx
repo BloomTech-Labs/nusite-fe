@@ -20,10 +20,11 @@ const User = props => (
    <Query query={GET_USERS}>
       {({ loading, data }) => {
          if (loading) return <p>Loading...</p>;
+         console.log(data);
          return (
             <>
                <div className="edit">
-                  {data.users.map(user => (
+                  {data.user.map(user => (
                      <div key={user.id} value={user.username}>
                         {user.id === `${user_id}` ? (
                            <>
