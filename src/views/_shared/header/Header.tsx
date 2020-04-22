@@ -32,12 +32,12 @@ const useStyles = makeStyles(theme => ({
    },
    //This will set a height for the logo
    logo: {
-      height: "6em",
+      height: "4em",
       [theme.breakpoints.down("md")]: {
-         height: "5.5em",
+         height: "4em",
       },
       [theme.breakpoints.down("xs")]: {
-         height: "5.0",
+         height: "3.5",
       },
    },
 }));
