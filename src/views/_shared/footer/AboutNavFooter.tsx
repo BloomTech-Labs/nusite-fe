@@ -3,16 +3,26 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles(theme => ({
-   link: {
+   mainContainer: {
+      padding: "0 0 20px 0",
+   },
+   text: {
       fontFamily: "Arial",
       fontWeight: "bold",
       fontSize: "1rem",
       color: theme.palette.common.white,
+      paddingBottom: "16px",
+   },
+   link: {
+      fontFamily: "Arial",
+      fontSize: "1rem",
+      color: theme.palette.common.white,
+      marginBottom: "8px",
       textDecoration: "none",
    },
 }));
 
-const About = (props: any) => {
+const AboutNavFooter = (props: any) => {
    const classes = useStyles();
 
    const aboutRoutes = [
@@ -21,12 +31,22 @@ const About = (props: any) => {
       { name: "About", link: "/" },
       { name: "Our Services", link: "/" },
       { name: "Contact Us", link: "/" },
-      { name: "Terms of Service", link: "/" },
+      { name: "Terms of Use", link: "/" },
       { name: "Privacy Policy", link: "/" },
    ];
 
    return (
-      <Grid lg={4} container direction="column" justify="center">
+      <Grid
+         container
+         lg={4}
+         xs={6}
+         className={classes.mainContainer}
+         direction="column"
+         justify="flex-start"
+      >
+         <Grid item className={classes.text}>
+            Company
+         </Grid>
          {aboutRoutes.map((route: any) => (
             <Grid
                className={classes.link}
@@ -41,4 +61,4 @@ const About = (props: any) => {
    );
 };
 
-export default About;
+export default AboutNavFooter;
