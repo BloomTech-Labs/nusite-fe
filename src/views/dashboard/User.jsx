@@ -1,66 +1,63 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Query } from "react-apollo";
-import { GET_USERS } from "../../graphql-requests/queries";
+import { GET_USER } from "../../graphql-requests/queries";
 import "../home/Home.css";
 import TextField from "@material-ui/core/TextField";
 //import { makeStyles } from "@material-ui/core/styles";
 
-// const useStyles = makeStyles(theme => ({
-//    root: {
-//       "& > *": {
-//          margin: theme.spacing(1),
-//          width: "35ch",
-//       },
-//    },
-// }));
+const User = props => {
+   const [name, setName] = useState("Anonymous");
+   const [user_id, setUser] = useState("");
+   useEffect(() => {
+      let username = localStorage.getItem("username");
+      if (username) {
+         setName(username);
+      }
+      let user_id = localStorage.getItem("user_id");
+      if (user_id) {
+         setUser(user_id);
+      }
+   }, [user_id]);
 
-const user_id = localStorage.getItem("user_id");
+   return (
+      <Query query={GET_USER} variables={{ user_id }} displayName="GET_USER">
+         {({ error, data, loading }) => {
+            if (error) {
+               // console.error(error);
+               console.error(error.response);
+               return console.log(error);
+            }
 
-const User = props => (
-   <Query query={GET_USERS}>
-      {({ loading, data }) => {
-         if (loading) return <p>Loading...</p>;
-         console.log(data);
-         return (
-            <>
-               <div className="edit">
-                  {data.user.map(user => (
-                     <div key={user.id} value={user.username}>
-                        {user.id === `${user_id}` ? (
-                           <>
-                              <div className="boxedit">
-                                 <TextField
-                                    label="username:"
-                                    defaultValue={user.username}
-                                    variant="filled"
-                                 />
-                                 <TextField
-                                    label="email:"
-                                    defaultValue={user.email}
-                                    variant="filled"
-                                 />
-                                 <TextField
-                                    label="first name"
-                                    defaultValue={user.first_name}
-                                    variant="filled"
-                                 />
-                                 <TextField
-                                    label="last name"
-                                    defaultValue={user.last_name}
-                                    variant="filled"
-                                 />
-                              </div>
-                           </>
-                        ) : (
-                           console.log("user not found")
-                        )}
-                     </div>
-                  ))}
-               </div>
-            </>
-         );
-      }}
-   </Query>
-);
+            if (loading) return <p>Loading...</p>;
+            return (
+               <>
+                  <div className="boxedit">
+                     <TextField
+                        label="username:"
+                        defaultValue={data.user.username}
+                        variant="filled"
+                     />
+                     <TextField
+                        label="email:"
+                        defaultValue={data.user.email}
+                        variant="filled"
+                     />
+                     <TextField
+                        label="first name"
+                        defaultValue={data.user.first_name}
+                        variant="filled"
+                     />
+                     <TextField
+                        label="last name"
+                        defaultValue={data.user.last_name}
+                        variant="filled"
+                     />
+                  </div>
+               </>
+            );
+         }}
+      </Query>
+   );
+};
 
 export default User;
