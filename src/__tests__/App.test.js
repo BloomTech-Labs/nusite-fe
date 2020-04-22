@@ -2,6 +2,7 @@ import React from "react";
 import { MemoryRouter } from "react-router-dom";
 import { render, cleanup, screen } from "../test-utils";
 import { LOGIN, SIGNUP } from "../graphql-requests/mutations";
+import { GET_USER } from "../graphql-requests/queries";
 import { MockedProvider } from "@apollo/react-testing";
 import "@testing-library/jest-dom/extend-expect";
 
@@ -83,11 +84,33 @@ test("Renders 'Registration' component when URL is '/register'", () => {
 test("Renders 'Dashboard' component when URL is '/home'", () => {
    //set a test token to trick private route into rendering the component
    localStorage.setItem("token", "test-token");
+   const mockGetUsers = {
+      request: {
+         query: GET_USER,
+         variables: {
+            id: 10,
+         },
+      },
+      result: {
+         data: {
+            user: {
+               id: "10",
+               username: "johnwick",
+               email: "johnwick@johnwick.com",
+               first_name: "John",
+               last_name: "Wick",
+            },
+         },
+      },
+   };
+
    //render the component
    const { getByText } = render(
-      <MemoryRouter initialEntries={["/home"]}>
-         <App />
-      </MemoryRouter>
+      <MockedProvider mocks={[mockGetUsers]} addTypename={false}>
+         <MemoryRouter initialEntries={["/home"]}>
+            <App />
+         </MemoryRouter>
+      </MockedProvider>
    );
 
    //run the tests
@@ -97,5 +120,5 @@ test("Renders 'Dashboard' component when URL is '/home'", () => {
    expect(welcomeText.tagName).toMatch(/h2/i);
 
    //remove test token
-   localStorage.clear("token");
+   localStorage.clear();
 });
