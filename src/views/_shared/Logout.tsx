@@ -6,6 +6,9 @@ const Logout = (props: any) => {
    // just delete the token
    localStorage.removeItem("token");
    localStorage.removeItem("username");
+   localStorage.removeItem("user_id");
+   localStorage.clear();
    return <Redirect to="/login" />;
 };
+
 export default Logout;

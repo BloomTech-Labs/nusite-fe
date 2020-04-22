@@ -9,7 +9,6 @@ import PrivateRoute from "./views/util/PrivateRoute";
 import Dashboard from "./views/dashboard/Dashboard";
 import Header from "./views/_shared/header/Header";
 import Footer from "./views/_shared/Footer";
-
 const App = () => (
    <>
       <Header />
