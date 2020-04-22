@@ -33,9 +33,11 @@ export const Registration: React.FC = (props: RegistrationFormData | any) => {
          variables: { first_name, last_name, username, password, email },
       })
          .then(res => {
+            //console.log(res.data);
             localStorage.setItem("token", res.data.signup.token);
             localStorage.setItem("username", res.data.signup.user.username);
-            props.history.push("/home");
+            localStorage.setItem("user_id", res.data.signup.user.id);
+            props.history.push("/");
             console.log("Success: ", res);
          })
          .catch(err => {
