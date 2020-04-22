@@ -8,18 +8,13 @@ import Button from "@material-ui/core/Button";
 const Dashboard = (props: any) => {
    //const classes = useStyles();
    const [name, setName] = useState("Anonymous");
-   const [user_id, setUser] = useState("");
 
    useEffect(() => {
       let username: string | null = localStorage.getItem("username");
       if (username) {
          setName(username);
       }
-      let user_id: string | null = localStorage.getItem("user_id");
-      if (user_id) {
-         setUser(user_id);
-      }
-   }, [user_id]);
+   }, [name]);
 
    return (
       <div className="App">

@@ -6,13 +6,8 @@ import TextField from "@material-ui/core/TextField";
 //import { makeStyles } from "@material-ui/core/styles";
 
 const User = props => {
-   const [name, setName] = useState("Anonymous");
    const [user_id, setUser] = useState("");
    useEffect(() => {
-      let username = localStorage.getItem("username");
-      if (username) {
-         setName(username);
-      }
       let user_id = localStorage.getItem("user_id");
       if (user_id) {
          setUser(user_id);
