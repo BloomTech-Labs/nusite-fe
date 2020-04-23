@@ -103,7 +103,7 @@ describe("Test App Routes", () => {
       expect(registerForm.tagName).toMatch(/form/i);
    });
 
-   test("Renders 'Dashboard' component when URL is '/home'", () => {
+   test.skip("Renders 'Dashboard' component when URL is '/home'", () => {
       //set a test token to trick private route into rendering the component
       localStorage.setItem("token", "test-token");
 
