@@ -6,7 +6,7 @@ import "./Login.css";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
-import { LoginFormData } from '../../types/FormTypes'
+import { LoginFormData } from "../../types/FormTypes";
 
 export const Login: React.FC = (props: LoginFormData | any) => {
    const [state, setState] = useState({ loading: false });
@@ -18,7 +18,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
    const onSubmit = ({ email, password }: LoginFormData) => {
       login({ variables: { email: email, password: password } })
          .then(res => {
-            console.log(res.data);
+            //console.log(res.data);
             localStorage.setItem("token", res.data.login.token);
             localStorage.setItem("username", res.data.login.user.username);
             localStorage.setItem("user_id", res.data.login.user.id);
@@ -52,6 +52,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   {!state.loading && "Login"}
                   {state.loading && <Loader />}
                </Button>
+               <br />
             </Form>
          </div>
       </>

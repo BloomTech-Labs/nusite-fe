@@ -26,10 +26,12 @@ export const Registration: React.FC<RegistrationFormData> = (props: Registration
          variables: { first_name, last_name, username, password, email },
       })
          .then(res => {
+            //console.log(res.data);
             localStorage.setItem("token", res.data.signup.token);
             localStorage.setItem("username", res.data.signup.user.username);
+            localStorage.setItem("user_id", res.data.signup.user.id);
             props.history.push("/home");
-            console.log("Success: ", res);
+            console.log("Successfully registered... ");
          })
          .catch(err => {
             alert(err.message);

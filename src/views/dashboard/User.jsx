@@ -1,24 +1,17 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Query } from "react-apollo";
 import { GET_USER } from "../../graphql-requests/queries";
 import "../home/Home.css";
 import TextField from "@material-ui/core/TextField";
 //import { makeStyles } from "@material-ui/core/styles";
 
-// const useStyles = makeStyles(theme => ({
-//    root: {
-//       "& > *": {
-//          margin: theme.spacing(1),
-//          width: "35ch",
-//       },
-//    },
-// }));
-
-const user_id = localStorage.getItem("user_id");
-
 const User = props => {
+   const [user_id, setUser] = useState("");
    useEffect(() => {
-      console.log(GET_USER);
+      let user_id = localStorage.getItem("user_id");
+      if (user_id) {
+         setUser(user_id);
+      }
    }, []);
 
    return (
@@ -27,7 +20,7 @@ const User = props => {
             if (error) {
                // console.error(error);
                console.error(error.response);
-               return <p>Something went wrong!</p>;
+               return console.log(error);
             }
 
             if (loading) return <p>Loading...</p>;
