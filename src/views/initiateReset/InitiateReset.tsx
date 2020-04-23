@@ -1,4 +1,6 @@
-import React from "react";
+import React, { useState } from "react";
+import Button from "@material-ui/core/Button";
+import Loader from "../_shared/Loader";
 import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
 import { useMutation } from "@apollo/react-hooks";
@@ -8,21 +10,28 @@ import { ResetFormData } from "../../types/FormTypes";
 export const InitiateReset: React.FC<ResetFormData> = (
    props: ResetFormData
 ) => {
-   //    const [reset] = useMutation(INITIATE_RESET);
+   const [state, setState] = useState({ loading: false });
+   function submitForm() {
+      setState({ ...state, loading: true });
+   }
+   localStorage.clear();
+   const [reset] = useMutation(INITIATE_RESET);
    const onSubmit = ({ email }: ResetFormData) => {
-      console.log(email);
-      //   reset({
-      //      variables: { email },
-      //   })
-      //      .then(res => {
-      //         console.log(res);
-      //         props.history.push("/login");
-      //      })
-      //      .catch(err => alert(err.message));
+      reset({
+         variables: { email },
+      })
+         .then(res => {
+            console.log(res);
+            props.history.push("/login");
+         })
+         .catch(err => {
+            alert(err.message);
+            console.log(err);
+         });
    };
 
    return (
-      <div className="reset-form-container">
+      <div className="box">
          <h2>Forgot your password?</h2>
          <Form
             className="reset-form"
@@ -30,6 +39,15 @@ export const InitiateReset: React.FC<ResetFormData> = (
             onSubmit={onSubmit}
          >
             <Input name="email" placeholder="Email" type="email" />
+            <Button
+               variant="contained"
+               color="secondary"
+               type="submit"
+               onClick={submitForm}
+            >
+               {!state.loading && "Reset Password"}
+               {state.loading && <Loader />}
+            </Button>
          </Form>
       </div>
    );
