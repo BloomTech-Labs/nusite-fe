@@ -1,11 +1,12 @@
+import "@testing-library/jest-dom/extend-expect";
+
 import React from "react";
+import { render, cleanup, screen } from "../test-utils";
 import { MemoryRouter, Router } from "react-router-dom";
 import { createMemoryHistory } from "history";
-import { render, cleanup, screen } from "../test-utils";
 import { LOGIN, SIGNUP } from "../graphql-requests/mutations";
 import { GET_USER } from "../graphql-requests/queries";
 import { MockedProvider } from "@apollo/react-testing";
-import "@testing-library/jest-dom/extend-expect";
 
 import App from "../App";
 
