@@ -6,16 +6,9 @@ import { useMutation } from "@apollo/react-hooks";
 import Button from "@material-ui/core/Button";
 import "./Registration.css";
 import Loader from "../_shared/Loader";
+import { RegistrationFormData } from '../../types/FormTypes'
 
-interface RegistrationFormData {
-   username: string;
-   password: string;
-   first_name: string;
-   last_name: string;
-   email: string;
-}
-
-export const Registration: React.FC = (props: RegistrationFormData | any) => {
+export const Registration: React.FC<RegistrationFormData> = (props: RegistrationFormData | any) => {
    const [state, setState] = useState({ loading: false });
    function submitForm() {
       setState({ ...state, loading: true });

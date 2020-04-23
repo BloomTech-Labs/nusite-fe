@@ -6,11 +6,7 @@ import "./Login.css";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
-
-interface LoginFormData {
-   email: string;
-   password: string;
-}
+import { LoginFormData } from '../../types/FormTypes'
 
 export const Login: React.FC = (props: LoginFormData | any) => {
    const [state, setState] = useState({ loading: false });
