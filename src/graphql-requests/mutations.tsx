@@ -57,12 +57,9 @@ export const PROJECT = gql`
 
 export const INITIATE_RESET = gql`
    mutation initiateReset($email: String!) {
-      login(email: $email) {
+      initiateReset(email: $email) {
          token
-         user {
-            id
-            username
-         }
+         message
       }
    }
 `;
