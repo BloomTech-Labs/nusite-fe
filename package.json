@@ -8,7 +8,6 @@
       "@material-ui/styles": "^4.9.6",
       "apollo-boost": "^0.4.7",
       "axios": "^0.19.2",
-      "git-mob": "^1.1.0",
       "graphql": "^14.6.0",
       "react": "^16.13.0",
       "react-apollo": "^3.1.3",
