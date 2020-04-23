@@ -7,11 +7,6 @@ import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
 
-interface LoginFormData {
-   email: string;
-   password: string;
-}
-
 export const Login: React.FC = (props: LoginFormData | any) => {
    const [state, setState] = useState({ loading: false });
    function submitForm() {
