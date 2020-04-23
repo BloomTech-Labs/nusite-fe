@@ -14,7 +14,7 @@ const Dashboard = (props: any) => {
       if (username) {
          setName(username);
       }
-   }, [name]);
+   }, []);
 
    return (
       <div className="App">

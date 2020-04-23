@@ -12,7 +12,7 @@ const User = props => {
       if (user_id) {
          setUser(user_id);
       }
-   }, [user_id]);
+   }, []);
 
    return (
       <Query query={GET_USER} variables={{ user_id }} displayName="GET_USER">
