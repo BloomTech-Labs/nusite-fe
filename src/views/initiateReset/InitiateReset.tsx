@@ -8,16 +8,17 @@ import { ResetFormData } from "../../types/FormTypes";
 export const InitiateReset: React.FC<ResetFormData> = (
    props: ResetFormData
 ) => {
-   const [reset] = useMutation(INITIATE_RESET);
+   //    const [reset] = useMutation(INITIATE_RESET);
    const onSubmit = ({ email }: ResetFormData) => {
-      reset({
-         variables: { email: email },
-      })
-         .then(res => {
-            console.log(res);
-            props.history.push("/login");
-         })
-         .catch(err => alert(err.message));
+      console.log(email);
+      //   reset({
+      //      variables: { email },
+      //   })
+      //      .then(res => {
+      //         console.log(res);
+      //         props.history.push("/login");
+      //      })
+      //      .catch(err => alert(err.message));
    };
 
    return (
@@ -28,7 +29,7 @@ export const InitiateReset: React.FC<ResetFormData> = (
             data-testid="reset-form"
             onSubmit={onSubmit}
          >
-            <Input name="email" type="email" placeholder="Email" />
+            <Input name="email" placeholder="Email" type="email" />
          </Form>
       </div>
    );
