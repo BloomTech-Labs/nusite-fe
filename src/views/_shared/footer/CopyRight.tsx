@@ -28,6 +28,12 @@ const useStyles = makeStyles(theme => ({
       color: theme.palette.common.white,
       padding: "0 0 8px 0",
    },
+   copyrightText: {
+      fontFamily: "Arial",
+      fontSize: ".7rem",
+      color: theme.palette.common.white,
+      padding: "0 0 8px 0",
+   },
 }));
 
 const CopyRight = (props: any) => {
@@ -38,8 +44,9 @@ const CopyRight = (props: any) => {
          lg={4}
          md={4}
          direction="column"
-         alignContent="center"
-         justify="center"
+         alignContent="flex-start"
+         justify="flex-start"
+         alignItems="center"
       >
          <Grid item>
             <Button
@@ -54,8 +61,11 @@ const CopyRight = (props: any) => {
          <Grid item className={classes.footerText}>
             A web development marketplace
          </Grid>
-         <Grid item className={classes.footerText}>
+         <Grid item className={classes.copyrightText}>
             © PartNerd 2020
+         </Grid>
+         <Grid item className={classes.footerText}>
+            Follow us on
          </Grid>
          <Grid item>
             <SocialIcons />

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 const useStyles = makeStyles(theme => ({
    mainContainer: {
-      padding: "0 0 20px 0",
+      padding: "0 0 40px 0",
    },
    text: {
       fontFamily: "Arial",

@@ -3,7 +3,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
 import IconButton from "@material-ui/core/IconButton";
 
-import "./SocialIcons.css";
 const useStyles = makeStyles(theme => ({
    mainContainer: {
       backgroundColor: theme.palette.common.black,
@@ -56,7 +55,7 @@ const socialIcons = [
 const SocialIcons = (props: any) => {
    const classes = useStyles();
    return (
-      <Grid container justify="center">
+      <Grid container spacing={2} justify="center">
          {socialIcons.map((socialIcon, index) => (
             <Grid item key={index}>
                <IconButton
