@@ -42,7 +42,11 @@ export const Registration: React.FC<RegistrationFormData> = (
    return (
       <>
          <div className="box">
-            <Form className="register-form" onSubmit={onSubmit}>
+            <Form
+               className="register-form"
+               data-testid="register-form"
+               onSubmit={onSubmit}
+            >
                <Input type="text" name="first_name" placeholder="First Name" />
                <Input type="text" name="last_name" placeholder="Last Name" />
                <Input
