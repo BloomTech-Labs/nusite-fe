@@ -18,7 +18,8 @@ const App = () => (
          <Route exact path="/login" component={Login} />
          <Route exact path="/register" component={Registration} />
          <Route exact path="/logout" component={Logout} />
-         <Route exact path="/reset" component={InitiateReset} />
+         <Route exact path="/initiate" component={InitiateReset} />
+         {/* <PrivateRoute exact path="/_reset" component={CompleteReset} /> */}
          <PrivateRoute exact path="/home" component={Dashboard} />
       </Switch>
       <Footer />

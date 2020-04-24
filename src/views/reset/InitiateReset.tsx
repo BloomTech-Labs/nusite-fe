@@ -31,6 +31,8 @@ export const InitiateReset: React.FC<ResetFormData> = (
          });
    };
 
+   //use a pop-up alert to tell the user to check the email they used for sign-up for instructions to reset their password.
+
    return (
       <div className="box">
          <h2>Forgot your password?</h2>

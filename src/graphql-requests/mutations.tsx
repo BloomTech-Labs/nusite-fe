@@ -63,3 +63,5 @@ export const INITIATE_RESET = gql`
       }
    }
 `;
+
+//finish_reset needs to take email and a new password.
