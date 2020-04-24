@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-const CopyRight = (props: any) => {
+const Copyright = (props: any) => {
    const classes = useStyles();
    return (
       <Grid item lg={4} md={6}>
@@ -54,7 +54,12 @@ const CopyRight = (props: any) => {
                   to="/"
                   disableRipple
                >
-                  <img className={classes.logo} src={logo} alt="company logo" />
+                  <img
+                     className={classes.logo}
+                     src={logo}
+                     alt="company logo"
+                     data-testid="logo-footer"
+                  />
                </Button>
             </Grid>
             <Grid item className={classes.footerText}>
@@ -74,4 +79,4 @@ const CopyRight = (props: any) => {
    );
 };
 
-export default CopyRight;
+export default Copyright;

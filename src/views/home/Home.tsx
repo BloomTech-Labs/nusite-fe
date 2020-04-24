@@ -1,6 +1,5 @@
 import React from "react";
 import userflow from "../../images/userflow.gif";
-import "./Home.css";
 import { NavLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import coder from "../../images/coder.svg";
