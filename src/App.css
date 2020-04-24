@@ -96,4 +96,6 @@ body {
 .boxedit {
    display: flex;
    flex-flow: column wrap;
+   background: rgb(197, 197, 197);
+   color: #111;
 }
