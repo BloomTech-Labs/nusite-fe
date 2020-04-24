@@ -29,5 +29,12 @@ const customRender = (ui, options) => {
    };
 };
 
+const testLinkArray = (linkArray, expected_length, expected_refs) => {
+   expect(linkArray.length).toBe(expected_length);
+   linkArray.forEach(element => {
+      expect(expected_refs).toContain(element.getAttribute("href"));
+   });
+};
+
 export * from "@testing-library/react";
-export { customRender as render };
+export { customRender as render, testLinkArray };
