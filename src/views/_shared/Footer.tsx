@@ -1,6 +1,6 @@
 import React from "react";
 //import { makeStyles } from "@material-ui/core/styles";
-//import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 //const useStyles = makeStyles(theme => ({}));
 
@@ -8,10 +8,10 @@ const Footer = (props: any) => {
    return (
       <footer>
          <nav>
-            <a href="https://partnerd.dev">Home</a>
-            <a href="https://partnerd.dev">Contact</a>
-            <a href="https://partnerd.dev/login">Login</a>
-            <a href="https://partnerd.dev/register">Register</a>
+            <Link to="/">Home</Link>
+            <Link to="/contact-us">Contact</Link>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
          </nav>
          <br />
          <h4>A web development marketplace</h4>
