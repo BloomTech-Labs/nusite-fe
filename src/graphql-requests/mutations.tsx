@@ -17,6 +17,7 @@ export const SIGNUP = gql`
       ) {
          token
          user {
+            id
             username
             email
          }
