@@ -13,6 +13,7 @@ import HeaderAvatar from "./HeaderAvatar";
 import HeaderTabs from "./HeaderTabs";
 import HeaderDrawer from "./HeaderDrawer";
 import { useRoutes } from "../../util/routes";
+import DynamicScrollToTop from "../DynamicScrollToTop";
 //import { ThemeContext } from "../../context/contexts";
 
 //styling
@@ -69,6 +70,7 @@ const Header = (props: any) => {
 
    return (
       <>
+         <DynamicScrollToTop />
          <ElevationScroll>
             <AppBar className={classes.appBar} position="fixed">
                <Toolbar disableGutters>
