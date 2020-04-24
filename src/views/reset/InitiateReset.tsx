@@ -22,6 +22,7 @@ export const InitiateReset: React.FC<ResetFormData> = (
       })
          .then(res => {
             console.log(res);
+            //one-time use cookie gets set here.
             props.history.push("/login");
          })
          .catch(err => {

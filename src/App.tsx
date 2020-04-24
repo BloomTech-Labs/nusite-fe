@@ -9,7 +9,7 @@ import PrivateRoute from "./views/util/PrivateRoute";
 import Dashboard from "./views/dashboard/Dashboard";
 import Header from "./views/_shared/header/Header";
 import Footer from "./views/_shared/Footer";
-import { InitiateReset } from "./views/initiateReset/InitiateReset";
+import { InitiateReset } from "./views/reset/InitiateReset";
 const App = () => (
    <>
       <Header />
