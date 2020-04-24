@@ -24,11 +24,9 @@ const User: React.FC = (props: any) => {
    return (
       <Query query={GET_USER} variables={{ user_id }} displayName="GET_USER">
          {({ error, data, loading }: QueryResult) => {
-            // if (error) {
-            //    // console.error(error);
-            //    console.error(error.response);
-            //    return console.log(error);
-            // }
+            if (error) {
+               console.log(error);
+            }
 
             if (loading) return <p>Loading...</p>;
             return (
