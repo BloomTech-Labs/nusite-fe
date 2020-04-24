@@ -26,8 +26,8 @@ const AboutNavFooter = (props: any) => {
    const classes = useStyles();
 
    const aboutRoutes = [
-      // These links are currently only place holders for the time being.  These componets are not built out.
-      //This array will likely have an active index property in the future for a pull down menu in the header
+      //hese links are currently only place holders for the time being.  These componets are not built out.
+      //This a Trray will likely have an active index property in the future for a pull down menu in the header
       { name: "About", link: "/" },
       { name: "Our Services", link: "/" },
       { name: "Contact Us", link: "/" },
@@ -36,27 +36,23 @@ const AboutNavFooter = (props: any) => {
    ];
 
    return (
-      <Grid
-         container
-         lg={4}
-         xs={6}
-         className={classes.mainContainer}
-         direction="column"
-         justify="flex-start"
-      >
-         <Grid item className={classes.text}>
-            Company
-         </Grid>
-         {aboutRoutes.map((route: any) => (
-            <Grid
-               className={classes.link}
-               item
-               to={route.link}
-               component={Link}
-            >
-               {route.name}
+      <Grid item lg={4} xs={6} className={classes.mainContainer}>
+         <Grid container direction="column" justify="flex-start">
+            <Grid item className={classes.text}>
+               Company
             </Grid>
-         ))}
+            {aboutRoutes.map((route: any, index) => (
+               <Grid
+                  className={classes.link}
+                  item
+                  key={index}
+                  to={route.link}
+                  component={Link}
+               >
+                  {route.name}
+               </Grid>
+            ))}
+         </Grid>
       </Grid>
    );
 };

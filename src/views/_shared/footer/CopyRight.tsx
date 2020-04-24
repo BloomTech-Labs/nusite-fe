@@ -39,36 +39,36 @@ const useStyles = makeStyles(theme => ({
 const CopyRight = (props: any) => {
    const classes = useStyles();
    return (
-      <Grid
-         container
-         lg={4}
-         md={4}
-         direction="column"
-         alignContent="flex-start"
-         justify="flex-start"
-         alignItems="center"
-      >
-         <Grid item>
-            <Button
-               className={classes.logoContainer}
-               component={Link}
-               to="/"
-               disableRipple
-            >
-               <img className={classes.logo} src={logo} alt="company logo" />
-            </Button>
-         </Grid>
-         <Grid item className={classes.footerText}>
-            A web development marketplace
-         </Grid>
-         <Grid item className={classes.copyrightText}>
-            © PartNerd 2020
-         </Grid>
-         <Grid item className={classes.footerText}>
-            Follow us on
-         </Grid>
-         <Grid item>
-            <SocialIcons />
+      <Grid item lg={4} md={6}>
+         <Grid
+            container
+            direction="column"
+            alignContent="flex-start"
+            justify="flex-start"
+            alignItems="center"
+         >
+            <Grid item>
+               <Button
+                  className={classes.logoContainer}
+                  component={Link}
+                  to="/"
+                  disableRipple
+               >
+                  <img className={classes.logo} src={logo} alt="company logo" />
+               </Button>
+            </Grid>
+            <Grid item className={classes.footerText}>
+               A web development marketplace
+            </Grid>
+            <Grid item className={classes.copyrightText}>
+               © PartNerd 2020
+            </Grid>
+            <Grid item className={classes.footerText}>
+               Follow us on
+            </Grid>
+            <Grid item>
+               <SocialIcons />
+            </Grid>
          </Grid>
       </Grid>
    );

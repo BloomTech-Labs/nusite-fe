@@ -20,7 +20,7 @@ const Footer = (props: any) => {
 
    return (
       <footer className={classes.footer}>
-         <Grid container lg={12} direction="row" justify="center">
+         <Grid container direction="row" justify="center">
             <MainNavFooter />
             <AboutNavFooter />
             <CopyRight />
