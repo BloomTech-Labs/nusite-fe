@@ -16,3 +16,8 @@ export interface LoginFormData extends RouterProps {
 export interface ResetFormData extends RouterProps {
    email: string;
 }
+
+export interface PasswordResetData extends RouterProps {
+   email: string;
+   password: string;
+}
