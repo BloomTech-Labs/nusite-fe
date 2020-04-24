@@ -2,6 +2,10 @@ html {
    box-sizing: border-box;
 }
 
+body {
+   height: 100%;
+}
+
 .App_dark {
    background-color: #111;
    color: whitesmoke;
@@ -81,4 +85,15 @@ html {
    justify-content: center;
    align-items: center;
    width: 100%;
+}
+
+.App_dark .edit {
+   background: #aaa;
+   color: #111;
+   border-radius: 2px;
+}
+
+.boxedit {
+   display: flex;
+   flex-flow: column wrap;
 }

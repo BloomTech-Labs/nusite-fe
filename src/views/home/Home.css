@@ -127,8 +127,6 @@ h2 {
    font-size: 2.4rem;
    text-align: center;
    /*transition: all 1s ease-in;
-   animation-duration: 1s;
-   animation-name: slidein;
    font-family: "Domine";*/
 }
 
@@ -174,28 +172,8 @@ section p {
    margin: auto; /*optional centering of image*/
 }
 
-/* footer {
-   background: #25274d;
-   color: #168995;
-   cursor: pointer;
-   text-decoration: none;
-   text-align: center;
-   justify-content: space-between;
-   padding-top: 15px;
-} */
-/* 
-footer a {
-   background: #25274d;
-   color: #168995;
-   cursor: pointer;
-   text-decoration: none;
-   padding: 20px;
-   text-align: center;
-   justify-content: space-between;
-} */
-
 .parallax {
-   height: 250px;
+   height: 240px;
    z-index: -1;
 }
 
@@ -304,7 +282,7 @@ p {
    position: relative;
 }
 
-.button-big {
+/* .button-big {
    width: 200px;
    height: 100px;
    border-radius: 50px;
@@ -312,9 +290,9 @@ p {
    position: relative;
    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.4),
       inset 2px 4px 4px rgba(255, 255, 255, 0.4);
-}
+} */
 
-.button-small {
+/* .button-small {
    cursor: pointer;
    position: absolute;
    top: 50%;
@@ -326,9 +304,9 @@ p {
    box-shadow: inset 2px 4px 4px -2px rgba(255, 255, 255, 0.6),
       0px 4px 4px rgba(0, 0, 0, 0.2);
    background-image: linear-gradient(to right bottom, #dadfe1, #abb7b7);
-}
+} */
 
-.bg {
+/* .bg {
    width: 50px;
    height: 50px;
    position: absolute;
@@ -338,7 +316,7 @@ p {
    border-radius: 50%;
    transition: 0.4s;
    z-index: -1;
-}
+} */
 
 a {
    color: #444;
@@ -415,6 +393,9 @@ section .user-flow {
    section .coder {
       width: 90%;
    }
+   .subheader {
+      display: none;
+   }
 }
 
 .menu {
@@ -438,6 +419,7 @@ nav a:hover {
    text-align: center;
    justify-content: center;
    cursor: pointer;
+   color: #aaa;
 }
 
 .logout:hover {
@@ -446,13 +428,31 @@ nav a:hover {
 }
 
 .developers {
-   width: 53vh;
-   height: 53vh;
+   width: 45vh;
+   height: 45vh;
 }
 
 .coder {
    width: 75vh;
    height: 58vh;
+}
+
+section .realtime {
+   width: 31vh;
+   height: 31vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
+}
+
+section .myapp {
+   width: 31vh;
+   height: 31vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   margin: 0 auto;
 }
 
 .terms {

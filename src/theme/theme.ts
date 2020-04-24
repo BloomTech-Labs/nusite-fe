@@ -1,10 +1,20 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import { deepOrange, green } from "@material-ui/core/colors";
+import { deepOrange } from "@material-ui/core/colors";
+//import { useTheme } from "@material-ui/core/styles";
+//import useMediaQuery from "@material-ui/core/useMediaQuery";
+//import { responsiveFontSizes } from "@material-ui/core/styles";
 
 const primaryColor = "#25274d";
 const secondaryColor = "#22C4D6";
 const white = "#f5f5f5";
 const black = "#111";
+// const breakpointValues = {
+//    xs: 0,
+//    sm: 576,
+//    md: 768,
+//    lg: 992,
+//    xl: 1200,
+// };
 
 export default createMuiTheme({
    mixins: {
@@ -27,10 +37,10 @@ export default createMuiTheme({
          paper: `${white}`,
       },
       success: {
-         main: green[500],
+         main: `${secondaryColor}`,
       },
       warning: {
-         main: deepOrange[500],
+         main: deepOrange[400],
       },
    },
 

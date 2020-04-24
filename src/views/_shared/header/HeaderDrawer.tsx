@@ -8,15 +8,14 @@ import IconButton from "@material-ui/core/IconButton";
 import { makeStyles } from "@material-ui/core/styles";
 import { Link } from "react-router-dom";
 
-
 const useStyles = makeStyles(theme => ({
    toolbarMargin: {
       ...theme.mixins.toolbar,
       [theme.breakpoints.down("md")]: {
-         marginBottom: "3em",
+         marginBottom: "4.5em",
       },
       [theme.breakpoints.down("xs")]: {
-         marginBottom: "3em",
+         marginBottom: "2.5em",
       },
    },
    drawerIconContainer: {

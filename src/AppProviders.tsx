@@ -17,7 +17,7 @@ const client = new ApolloClient({
    cache,
 });
 
-const AppProviders: React.FC = () => {
+const AppProviders = () => {
    const [darkMode, setDarkMode] = useState(false);
    const globalTheme = {
       darkMode,
