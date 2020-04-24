@@ -4,6 +4,7 @@ import Grid from "@material-ui/core/Grid";
 import CopyRight from "./CopyRight";
 import MainNavFooter from "./MainNavFooter";
 import AboutNavFooter from "./AboutNavFooter";
+
 const useStyles = makeStyles(theme => ({
    footer: {
       background: theme.palette.primary.main,
@@ -17,7 +18,6 @@ const useStyles = makeStyles(theme => ({
 
 const Footer = (props: any) => {
    const classes = useStyles();
-
    return (
       <footer className={classes.footer}>
          <Grid container direction="row" justify="center">

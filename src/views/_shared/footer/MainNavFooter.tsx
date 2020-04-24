@@ -1,6 +1,6 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
-import { Link } from "react-router-dom";
+import { Link, withRouter } from "react-router-dom";
 import Grid from "@material-ui/core/Grid";
 import { useRoutes } from "../../util/routes";
 const useStyles = makeStyles(theme => ({
@@ -28,8 +28,6 @@ const MainNavFooter = (props: any) => {
    const classes = useStyles();
    const routes = useRoutes();
 
-   useEffect(() => {}, [routes]);
-
    return (
       <Grid item lg={4} xs={6} className={classes.mainContainer}>
          <Grid
@@ -41,7 +39,7 @@ const MainNavFooter = (props: any) => {
             <Grid item className={classes.text}>
                Main Navigation
             </Grid>
-            {routes.map((route: any, index) => (
+            {routes.map((route: any, index: number) => (
                <Grid
                   key={index}
                   item
@@ -57,4 +55,4 @@ const MainNavFooter = (props: any) => {
    );
 };
 
-export default MainNavFooter;
+export default withRouter(MainNavFooter);
