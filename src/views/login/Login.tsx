@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
 import Button from "@material-ui/core/Button";
@@ -46,6 +47,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   type="password"
                   minLength={9}
                />
+               <Link to="/initiate">Forgot your password?</Link>
                <Button
                   variant="contained"
                   color="secondary"
