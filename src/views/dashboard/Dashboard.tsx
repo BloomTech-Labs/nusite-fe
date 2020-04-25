@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import DarkMode from "../_shared/DarkMode";
 import "../home/Home";
 //import { Project } from "./ProjectForm";
 import User from "./User";
@@ -19,8 +18,6 @@ const Dashboard = (props: any) => {
    return (
       <div className="App">
          <main className="section-main">
-            <br />
-            <DarkMode />
             <br />
             <h2>Welcome to Your Dashboard {name}</h2>
             <br />

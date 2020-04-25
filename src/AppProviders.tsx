@@ -18,25 +18,13 @@ const client = new ApolloClient({
 });
 
 const AppProviders = () => {
-   const [darkMode, setDarkMode] = useState(false);
-   const globalTheme = {
-      darkMode,
-      // can even pass the setter function so children can
-      // trigger changes
-      setDarkMode,
-   };
-
    return (
       <ApolloProvider client={client}>
-         <ThemeContext.Provider value={globalTheme}>
-            <ThemeProvider theme={theme}>
-               <div className={`App${globalTheme.darkMode ? "_dark" : ""}`}>
-                  <Router>
-                     <App />
-                  </Router>
-               </div>
-            </ThemeProvider>
-         </ThemeContext.Provider>
+         <ThemeProvider theme={theme}>
+            <Router>
+               <App />
+            </Router>
+         </ThemeProvider>
       </ApolloProvider>
    );
 };

@@ -10,7 +10,7 @@ import Dashboard from "./views/dashboard/Dashboard";
 import Header from "./views/_shared/header/Header";
 import Footer from "./views/_shared/Footer";
 const App = () => (
-   <>
+   <div className="App">
       <Header />
       <Switch>
          <Route exact path="/" component={Home} />
@@ -20,7 +20,7 @@ const App = () => (
          <PrivateRoute exact path="/home" component={Dashboard} />
       </Switch>
       <Footer />
-   </>
+   </div>
 );
 
 export default App;
