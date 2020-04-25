@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { Query } from "react-apollo";
+import { Query, QueryResult } from "react-apollo";
 import { GET_USER } from "../../graphql-requests/queries";
 import "../home/Home.css";
 import TextField from "@material-ui/core/TextField";
 //import { makeStyles } from "@material-ui/core/styles";
 
-const User = props => {
+const User: React.FC = (props: any) => {
    const [user_id, setUser] = useState("");
    useEffect(() => {
       let user_id = localStorage.getItem("user_id");
@@ -16,11 +16,9 @@ const User = props => {
 
    return (
       <Query query={GET_USER} variables={{ user_id }} displayName="GET_USER">
-         {({ error, data, loading }) => {
+         {({ error, data, loading }: QueryResult) => {
             if (error) {
-               // console.error(error);
-               console.error(error.response);
-               return console.log(error);
+               console.log(error);
             }
 
             if (loading) return <p>Loading...</p>;
