@@ -36,7 +36,7 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-const Copyright = (props: any) => {
+const CopyrightFooter = (props: any) => {
    const classes = useStyles();
    return (
       <Grid item lg={4} md={6}>
@@ -79,4 +79,4 @@ const Copyright = (props: any) => {
    );
 };
 
-export default Copyright;
+export default CopyrightFooter;

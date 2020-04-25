@@ -1,7 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Grid from "@material-ui/core/Grid";
-import Copyright from "./Copyright";
+import CopyrightFooter from "./CopyrightFooter";
 import MainNavFooter from "./MainNavFooter";
 import AboutNavFooter from "./AboutNavFooter";
 
@@ -22,7 +22,7 @@ const Footer = (props: any) => {
          <Grid container direction="row" justify="center">
             <MainNavFooter data-testid="footer-main-links" />
             <AboutNavFooter data-testid="footer-about-links" />
-            <Copyright data-testid="footer-copyright" />
+            <CopyrightFooter data-testid="footer-copyright" />
          </Grid>
       </footer>
    );
