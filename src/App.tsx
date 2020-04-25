@@ -10,6 +10,7 @@ import Dashboard from "./views/dashboard/Dashboard";
 import Header from "./views/_shared/header/Header";
 import Footer from "./views/_shared/Footer";
 import { InitiateReset } from "./views/reset/InitiateReset";
+import { FinalizeReset } from "./views/reset/FinalizeReset";
 const App = () => (
    <>
       <Header />
@@ -19,7 +20,7 @@ const App = () => (
          <Route exact path="/register" component={Registration} />
          <Route exact path="/logout" component={Logout} />
          <Route exact path="/initiate" component={InitiateReset} />
-         {/* <PrivateRoute exact path="/_reset" component={CompleteReset} /> */}
+         <PrivateRoute exact path="/_reset" component={FinalizeReset} />
          <PrivateRoute exact path="/home" component={Dashboard} />
       </Switch>
       <Footer />
