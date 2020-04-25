@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { PasswordResetData } from "../../types/FormTypes";
+import Button from "@material-ui/core/Button";
+import Loader from "../_shared/Loader";
 import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
 import { useMutation } from "@apollo/react-hooks";
 import { FINALIZE_RESET } from "../../graphql-requests/mutations";
+import { PasswordResetData } from "../../types/FormTypes";
 
 export const FinalizeReset: React.FC<PasswordResetData> = (
    props: PasswordResetData
@@ -35,10 +37,18 @@ export const FinalizeReset: React.FC<PasswordResetData> = (
             data-testid="finalize-reset-form"
             onSubmit={onSubmit}
          >
+            <Input name="email" placeholder="Email" type="email" />
             <Input name="password" placeholder="Password" type="password" />
+            <Button
+               variant="contained"
+               color="secondary"
+               type="submit"
+               onClick={submitForm}
+            >
+               {!state.loading && "Confirm New Password"}
+               {state.loading && <Loader />}
+            </Button>
          </Form>
       </div>
    );
 };
-
-// create a form - (email, newPassword) => change password in the back end, and redirect the user to login with the new password.
