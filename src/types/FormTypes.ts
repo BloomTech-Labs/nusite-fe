@@ -13,11 +13,11 @@ export interface LoginFormData extends RouterProps {
    password: string;
 }
 
-export interface ResetFormData extends RouterProps {
+export interface InitiateResetData extends RouterProps {
    email: string;
 }
 
-export interface PasswordResetData extends RouterProps {
+export interface FinalizeResetData extends RouterProps {
    email: string;
    password: string;
 }

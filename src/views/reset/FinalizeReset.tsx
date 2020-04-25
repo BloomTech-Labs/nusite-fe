@@ -5,10 +5,10 @@ import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
 import { useMutation } from "@apollo/react-hooks";
 import { FINALIZE_RESET } from "../../graphql-requests/mutations";
-import { PasswordResetData } from "../../types/FormTypes";
+import { FinalizeResetData } from "../../types/FormTypes";
 
-export const FinalizeReset: React.FC<PasswordResetData> = (
-   props: PasswordResetData
+export const FinalizeReset: React.FC<FinalizeResetData> = (
+   props: FinalizeResetData
 ) => {
    const [state, setState] = useState({ loading: false });
    function submitForm() {
@@ -16,7 +16,7 @@ export const FinalizeReset: React.FC<PasswordResetData> = (
    }
    localStorage.clear();
    const [finalize] = useMutation(FINALIZE_RESET);
-   const onSubmit = ({ email, password }: PasswordResetData) => {
+   const onSubmit = ({ email, password }: FinalizeResetData) => {
       finalize({
          variables: { email, password },
       })

@@ -5,10 +5,10 @@ import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
 import { useMutation } from "@apollo/react-hooks";
 import { INITIATE_RESET } from "../../graphql-requests/mutations";
-import { ResetFormData } from "../../types/FormTypes";
+import { InitiateResetData } from "../../types/FormTypes";
 
-export const InitiateReset: React.FC<ResetFormData> = (
-   props: ResetFormData
+export const InitiateReset: React.FC<InitiateResetData> = (
+   props: InitiateResetData
 ) => {
    const [state, setState] = useState({ loading: false });
    function submitForm() {
@@ -16,7 +16,7 @@ export const InitiateReset: React.FC<ResetFormData> = (
    }
    localStorage.clear();
    const [reset] = useMutation(INITIATE_RESET);
-   const onSubmit = ({ email }: ResetFormData) => {
+   const onSubmit = ({ email }: InitiateResetData) => {
       reset({
          variables: { email },
       })
