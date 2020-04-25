@@ -43,8 +43,8 @@ const AboutNavFooter = (props: any) => {
             </Grid>
             {aboutRoutes.map((route: any, index) => (
                <Grid
-                  className={classes.link}
                   item
+                  className={classes.link}
                   key={index}
                   to={route.link}
                   component={Link}
