@@ -1,13 +1,4 @@
-export interface UserState {
-   user: {
-      id: number;
-      username: string;
-   };
-   isAuthorizing: boolean;
-   error: Object | null;
-}
-
-export const initialState: UserState = {
+export const initialState = {
    user: {
       id: -1,
       username: "",
@@ -15,3 +6,5 @@ export const initialState: UserState = {
    isAuthorizing: false,
    error: null,
 };
+
+export type UserState = typeof initialState;
