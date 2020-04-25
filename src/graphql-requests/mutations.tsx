@@ -65,4 +65,12 @@ export const INITIATE_RESET = gql`
    }
 `;
 
-//finish_reset needs to take email and a new password.
+export const FINALIZE_RESET = gql`
+   mutation updateUser($email: String!, $password: String!) {
+      updateUser(email: $email, password: $password) {
+         id
+         username
+         email
+      }
+   }
+`;
