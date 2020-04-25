@@ -7,7 +7,7 @@ import logo from "../../../images/footer-logo.svg";
 import SocialIcons from "./SocialIcons";
 const useStyles = makeStyles(theme => ({
    logoContainer: {
-      "padding": 0,
+      "padding": "0 0 0 0",
       "marginBottom": "10px",
       "&:hover": {
          backgroundColor: "transparent",
