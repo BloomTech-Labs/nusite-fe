@@ -37,11 +37,24 @@ export const LOGIN = gql`
    }
 `;
 
+export const UPDATE_USER = gql`
+   mutation updateUser($user_id: ID!) {
+      updateUser(id: $user_id) {
+         user(
+            username: $username
+            first_name: $first_name
+            last_name: $last_name
+            email: $email
+         )
+      }
+   }
+`;
+
 //setting up a mutation for the API when ready to store projects
 export const PROJECT = gql`
    mutation project(
       $project_name: String!
-      $project_developer: User
+      $project_developer: String!
       $project_description: String!
       $completed: Boolean!
    ) {
