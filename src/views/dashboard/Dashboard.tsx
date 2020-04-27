@@ -4,6 +4,7 @@ import "../home/Home";
 //import { Project } from "./ProjectForm";
 import User from "./User";
 import Button from "@material-ui/core/Button";
+//import ProfileDrawer from "./ProfileDrawer";
 
 const Dashboard = (props: any) => {
    //const classes = useStyles();
@@ -17,12 +18,12 @@ const Dashboard = (props: any) => {
    }, []);
 
    return (
-      <div className="App">
-         <main className="section-main">
+      <>
+         <main className="dashboard">
             <br />
             <DarkMode />
             <br />
-            <h2>Welcome to Your Dashboard {name}</h2>
+            <h1 className="dashboard">Welcome to Your Dashboard {name}</h1>
             <br />
             <User />
             <br />
@@ -30,8 +31,10 @@ const Dashboard = (props: any) => {
                Edit Profile
             </Button>
             <br />
+            <br />
+            <br />
          </main>
-      </div>
+      </>
    );
 };
 

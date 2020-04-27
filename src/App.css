@@ -98,4 +98,15 @@ body {
    flex-flow: column wrap;
    background: rgb(197, 197, 197);
    color: #111;
+   justify-content: left;
+   align-items: left;
+   text-align: left;
+}
+
+.dashboard {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: left;
+   width: 100%;
 }
