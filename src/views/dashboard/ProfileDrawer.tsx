@@ -12,7 +12,7 @@ import CssBaseline from "@material-ui/core/CssBaseline";
 
 const drawerWidth = 160;
 
-const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
+//const iOS = process.browser && /iPad|iPhone|iPod/.test(navigator.userAgent);
 
 const useStyles = makeStyles((theme: Theme) =>
    createStyles({
