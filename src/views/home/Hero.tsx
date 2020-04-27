@@ -33,7 +33,7 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-const SubHeader = (props: any) => {
+const Hero = (props: any) => {
    const classes = useStyles();
    return (
       <Grid container direction="column">
@@ -49,4 +49,4 @@ const SubHeader = (props: any) => {
       </Grid>
    );
 };
-export default SubHeader;
+export default Hero;

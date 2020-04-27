@@ -8,13 +8,13 @@ import developers from "../../images/developers.svg";
 import "./Home.css";
 import realtime2 from "../../images/reatime2.svg";
 import myapp2 from "../../images/myapp2.svg";
-import SubHeader from "./SubHeader";
+import Hero from "./Hero";
 
 const Home = (props: any) => {
    //const classes = useStyles();
    return (
       <>
-         <SubHeader className="subheader" />
+         <Hero className="hero" />
          <main>
             <br />
             <br />
