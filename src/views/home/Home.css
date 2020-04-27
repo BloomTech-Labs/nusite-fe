@@ -172,7 +172,7 @@ section p {
    height: auto; /* maintain aspect ratio*/
    margin: auto; /*optional centering of image*/
 }
-
+/* 
 footer {
    background: #25274d;
    color: #168995;
@@ -182,16 +182,16 @@ footer {
    justify-content: space-between;
    padding-top: 15px;
    z-index: 99;
-}
+} */
 
-footer a {
+/* footer a {
    background: #25274d;
    color: #168995;
    cursor: pointer;
    text-decoration: none;
    text-align: center;
    padding: 0 20px 0 20px;
-}
+} */
 
 .parallax {
    height: 240px;
@@ -291,43 +291,6 @@ p {
    background: #25274d;
    width: 100%;
    margin: 0 auto;
-}
-
-#social-test {
-   display: flex;
-   justify-content: space-around;
-   flex-flow: row wrap;
-   text-align: center;
-   font-size: 30px;
-   margin-top: 5px;
-}
-
-#social-test li {
-   color: rgba(167, 146, 129, 0.6);
-   list-style-type: none;
-   display: inline-block;
-   width: 50px;
-   height: 50px;
-   line-height: 50px;
-   padding: 1%;
-   border: 1px solid rgba(167, 146, 129, 0.4);
-   cursor: pointer;
-   margin-left: 11px;
-   margin-bottom: 11px;
-   transition: ease 0.4s;
-}
-
-#social-test li:hover {
-   color: #a79281;
-   border: 1px solid #a79281;
-}
-
-.social:hover > li {
-   opacity: 0.5;
-}
-
-.social:hover > li:hover {
-   opacity: 1;
 }
 
 /* main button */
