@@ -1,4 +1,4 @@
-import React, { useState, useContext } from "react";
+import React, { useContext } from "react";
 import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
 import Button from "@material-ui/core/Button";
@@ -16,14 +16,9 @@ import {
 import UserContext from "../../context/user/context";
 
 export const Login: React.FC = (props: LoginFormData | any) => {
-   // const [state, setState] = useState({ loading: false });
    const { userData, userDispatch } = useContext(UserContext);
-
-   // function submitForm() {
-   //    setState({ ...state, loading: true });
-   // }
-   // localStorage.clear();
    const [login] = useMutation(LOGIN);
+
    const onSubmit = ({ email, password }: LoginFormData) => {
       userDispatch({ type: LOGIN_START, payload: null });
 
@@ -31,9 +26,8 @@ export const Login: React.FC = (props: LoginFormData | any) => {
          .then(res => {
             userDispatch({ type: LOGIN_SUCCESS, payload: res.data.login.user });
 
-            //console.log(res.data);
             localStorage.setItem("token", res.data.login.token);
-            localStorage.setItem("userData", res.data.login.user.username);
+            localStorage.setItem("username", res.data.login.user.username);
             localStorage.setItem("user_id", res.data.login.user.id);
          })
          .then(data => {
@@ -63,16 +57,18 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   type="password"
                   minLength={9}
                />
-               <Button
-                  variant="contained"
-                  color="secondary"
-                  type="submit"
-                  value="submit"
-                  // onClick={submitForm}
-               >
-                  {/* {!state.loading && "Login"} */}
-                  {userData.isAuthorizing ? <Loader /> : "Login"}
-               </Button>
+               {userData.isAuthorizing ? (
+                  <Loader />
+               ) : (
+                  <Button
+                     variant="contained"
+                     color="secondary"
+                     type="submit"
+                     value="submit"
+                  >
+                     Login
+                  </Button>
+               )}
                <br />
             </Form>
          </div>
