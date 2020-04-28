@@ -383,9 +383,14 @@ section .user-flow {
    }
    .dashboard h1 {
       width: 70%;
+      text-align: left;
    }
    .boxedit {
-      width: 90%;
+      width: 70%;
+      text-align: left;
+   }
+   main .darkMode {
+      text-align: left;
    }
 }
 
