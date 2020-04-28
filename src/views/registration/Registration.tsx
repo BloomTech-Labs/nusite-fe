@@ -6,14 +6,16 @@ import { useMutation } from "@apollo/react-hooks";
 import Button from "@material-ui/core/Button";
 import "./Registration.css";
 import Loader from "../_shared/Loader";
-import { RegistrationFormData } from '../../types/FormTypes'
+import { RegistrationFormData } from "../../types/FormTypes";
 
-export const Registration: React.FC<RegistrationFormData> = (props: RegistrationFormData | any) => {
+export const Registration: React.FC<RegistrationFormData> = (
+   props: RegistrationFormData | any
+) => {
    const [state, setState] = useState({ loading: false });
    function submitForm() {
       setState({ ...state, loading: true });
    }
-   localStorage.clear();
+   //localStorage.clear();
    const [signup] = useMutation(SIGNUP);
    const onSubmit = ({
       first_name,

@@ -3,7 +3,7 @@ import React from "react";
 export class GoogleLogin extends React.Component {
    componentDidMount() {
       this.googleSDK();
-      console.log("sfsfd");
+      console.log("googleSDK");
    }
 
    prepareLoginButton = () => {

@@ -4,15 +4,15 @@ import { GET_USER } from "../../graphql-requests/queries";
 import "../home/Home.css";
 import TextField from "@material-ui/core/TextField";
 //import { makeStyles } from "@material-ui/core/styles";
+let user_id = localStorage.getItem("user_id");
 
 const User: React.FC = (props: any) => {
-   const [user_id, setUser] = useState("");
+   const [usersid, setUser] = useState("");
    useEffect(() => {
-      let user_id = localStorage.getItem("user_id");
       if (user_id) {
-         setUser(user_id);
+         setUser(usersid);
       }
-   }, []);
+   }, [usersid]);
 
    return (
       <Query query={GET_USER} variables={{ user_id }} displayName="GET_USER">
