@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
 import Button from "@material-ui/core/Button";
@@ -13,7 +13,9 @@ export const Login: React.FC = (props: LoginFormData | any) => {
    const [state, setState] = useState({ loading: false });
    function submitForm() {
       setState({ ...state, loading: true });
+      setTimeout(() => setState({ ...state, loading: false }), 4500);
    }
+
    const [login] = useMutation(LOGIN);
    const onSubmit = ({ email, password }: LoginFormData) => {
       login({ variables: { email: email, password: password } })

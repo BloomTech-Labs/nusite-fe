@@ -9,13 +9,13 @@ import TextField from "@material-ui/core/TextField";
 import AddButton from "./AddButton";
 
 const Dashboard: React.FC = (props: any) => {
-   let user_id = localStorage.getItem("user_id");
+   //let user_id = localStorage.getItem("user_id");
    const [name, setName] = useState("");
 
    useEffect(() => {
-      let name = localStorage.getItem("username");
-      if (name) {
-         setName(name);
+      let username = localStorage.getItem("username");
+      if (username) {
+         setName(username);
       }
    }, []);
 
