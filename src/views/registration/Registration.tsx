@@ -65,7 +65,7 @@ export const Registration: React.FC<RegistrationFormData> = (
                   type="password"
                   minLength={9}
                />
-               <Input name="email" placeholder="Email" type="text" />
+               <Input name="email" placeholder="Email" type="email" />
                <Button
                   variant="contained"
                   color="secondary"

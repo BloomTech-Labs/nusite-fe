@@ -99,3 +99,18 @@ export const PROJECT = gql`
       }
    }
 `;
+
+export const INITIATE_RESET = gql`
+   mutation initiateReset($email: String!) {
+      initiateReset(email: $email) {
+         token
+         message
+      }
+   }
+`;
+
+export const FINALIZE_RESET = gql`
+   mutation resetPassword($email: String!, $password: String!) {
+      resetPassword(email: $email, password: $password)
+   }
+`;
