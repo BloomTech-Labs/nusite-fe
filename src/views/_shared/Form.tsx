@@ -1,13 +1,12 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-export const Form = ({ defaultValues, children, onSubmit }: any) => {
+export const Form = ({ defaultValues, children, onSubmit, ...props }: any) => {
    const methods = useForm({ defaultValues });
    const { handleSubmit } = methods;
-   console.log("Methods: ", methods);
-
+   // console.log("Methods: ", methods);
    return (
-      <form onSubmit={handleSubmit(onSubmit)}>
+      <form onSubmit={handleSubmit(onSubmit)} {...props}>
          {Array.isArray(children)
             ? children.map(child => {
                  return child.props.name

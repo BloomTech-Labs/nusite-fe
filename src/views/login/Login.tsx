@@ -50,7 +50,11 @@ export const Login: React.FC = (props: LoginFormData | any) => {
    return (
       <>
          <div className="box">
-            <Form className="login-form" onSubmit={onSubmit}>
+            <Form
+               className="login-form"
+               data-testid="login-form"
+               onSubmit={onSubmit}
+            >
                <Input name="email" placeholder="Email" />
                <Input
                   name="password"
