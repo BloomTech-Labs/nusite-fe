@@ -96,11 +96,13 @@ body {
 .boxedit {
    display: flex;
    flex-flow: column wrap;
-   background: rgb(197, 197, 197);
+   background: whitesmoke;
+   border-radius: 2px;
    color: #111;
    justify-content: left;
    align-items: left;
    text-align: left;
+   padding: 11px;
 }
 
 .dashboard {
