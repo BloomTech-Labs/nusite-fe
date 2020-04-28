@@ -1,12 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import App from "./App";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./theme/theme";
-import { ThemeContext } from "./context/contexts";
 import { BrowserRouter as Router } from "react-router-dom";
+import UserContext, { ANONYMOUS_USER } from "./context/user/context";
 
 const cache = new InMemoryCache();
 
@@ -21,9 +21,11 @@ const AppProviders = () => {
    return (
       <ApolloProvider client={client}>
          <ThemeProvider theme={theme}>
-            <Router>
-               <App />
-            </Router>
+            <UserContext.Provider value={ANONYMOUS_USER}>
+               <Router>
+                  <App />
+               </Router>
+            </UserContext.Provider>
          </ThemeProvider>
       </ApolloProvider>
    );
