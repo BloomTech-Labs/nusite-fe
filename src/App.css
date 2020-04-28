@@ -109,6 +109,9 @@ body {
    display: flex;
    justify-content: center;
    align-items: center;
+   background: whitesmoke;
+   border-radius: 2px;
+   color: #111;
    text-align: left;
    width: 100%;
 }

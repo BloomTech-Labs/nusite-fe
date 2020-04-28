@@ -66,40 +66,42 @@ const Dashboard: React.FC = (props: any) => {
                <br />
                <DarkMode />
                <br />
-               <h1 className="dashboard">Welcome to Your Dashboard {name}</h1>
+               <h1>Welcome to Your Dashboard {name}</h1>
                <br />
                <User />
                <br />
                <p>Update/Change </p>
                <br />
-               <TextField
-                  label="username:"
-                  name="username"
-                  variant="filled"
-                  value={users.username}
-                  onChange={handleChange}
-               />
-               <TextField
-                  label="email:"
-                  name="email"
-                  variant="filled"
-                  value={users.email}
-                  onChange={handleChange}
-               />
-               <TextField
-                  label="first name"
-                  name="first_name"
-                  variant="filled"
-                  value={users.first_name}
-                  onChange={handleChange}
-               />
-               <TextField
-                  label="last name"
-                  name="last_name"
-                  variant="filled"
-                  value={users.last_name}
-                  onChange={handleChange}
-               />
+               <div className="boxedit">
+                  <TextField
+                     label="username:"
+                     name="username"
+                     variant="filled"
+                     value={users.username}
+                     onChange={handleChange}
+                  />
+                  <TextField
+                     label="email:"
+                     name="email"
+                     variant="filled"
+                     value={users.email}
+                     onChange={handleChange}
+                  />
+                  <TextField
+                     label="first name"
+                     name="first_name"
+                     variant="filled"
+                     value={users.first_name}
+                     onChange={handleChange}
+                  />
+                  <TextField
+                     label="last name"
+                     name="last_name"
+                     variant="filled"
+                     value={users.last_name}
+                     onChange={handleChange}
+                  />
+               </div>
                <br />
                <Button
                   variant="contained"
@@ -109,7 +111,6 @@ const Dashboard: React.FC = (props: any) => {
                >
                   Edit Profile
                </Button>
-               <br />
                <br />
             </main>
          </>
