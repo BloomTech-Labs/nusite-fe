@@ -1,6 +1,6 @@
 import { Reducer } from "react";
 import { createReducer, ReducerAction } from "../create-reducer";
-import { initialState, UserState } from "./initial-state";
+import { UserState, ANONYMOUS_USER } from "./context";
 import {
    LOGIN_START,
    LOGIN_SUCCESS,
@@ -62,7 +62,7 @@ const error: Reducer<UserState, ReducerAction> = (
    };
 };
 
-export default createReducer(initialState, {
+export default createReducer(ANONYMOUS_USER, {
    [LOGIN_START]: start,
    [LOGIN_SUCCESS]: success,
    [LOGIN_END]: end,
