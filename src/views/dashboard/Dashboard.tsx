@@ -6,6 +6,7 @@ import User from "./User";
 import Button from "@material-ui/core/Button";
 import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
+import AddButton from "./AddButton";
 
 const Dashboard: React.FC = (props: any) => {
    const [name, setName] = useState("");
@@ -74,28 +75,28 @@ const Dashboard: React.FC = (props: any) => {
                <br />
                <div className="boxedit">
                   <TextField
-                     label="username:"
+                     label="username: "
                      name="username"
                      variant="filled"
                      value={users.username}
                      onChange={handleChange}
                   />
                   <TextField
-                     label="email:"
+                     label="email: "
                      name="email"
                      variant="filled"
                      value={users.email}
                      onChange={handleChange}
                   />
                   <TextField
-                     label="first name"
+                     label="first name: "
                      name="first_name"
                      variant="filled"
                      value={users.first_name}
                      onChange={handleChange}
                   />
                   <TextField
-                     label="last name"
+                     label="last name: "
                      name="last_name"
                      variant="filled"
                      value={users.last_name}
@@ -111,6 +112,9 @@ const Dashboard: React.FC = (props: any) => {
                >
                   Edit Profile
                </Button>
+               <br />
+               <p>Add Project to Dashboard</p>
+               <AddButton />
                <br />
             </main>
          </>
