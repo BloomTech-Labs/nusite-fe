@@ -11,6 +11,7 @@ import Header from "./views/_shared/header/Header";
 import Footer from "./views/_shared/Footer";
 import { InitiateReset } from "./views/reset/InitiateReset";
 import { FinalizeReset } from "./views/reset/FinalizeReset";
+
 const App = () => (
    <>
       <Header />
