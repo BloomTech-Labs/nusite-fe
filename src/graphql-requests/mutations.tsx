@@ -71,7 +71,7 @@ export const DELETE_USER = gql`
 
 //setting up a mutation for the application when ready to store projects
 export const ADD_PROJECT = gql`
-   mutation($project_name: String, project_owner: Int){
+   mutation addProject($project_name: String, $project_owner: Int) {
       project
    }
 `;
