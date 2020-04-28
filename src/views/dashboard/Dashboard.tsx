@@ -45,7 +45,7 @@ const Dashboard: React.FC = (props: any) => {
          email,
       }: any) => {
          console.log(user_id);
-         console.log(users);
+         //console.log(users);
          updateUser({
             variables: { user_id, ...users },
          })
