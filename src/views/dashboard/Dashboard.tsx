@@ -8,6 +8,7 @@ import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
 import AddButton from "./AddButton";
 
+let user = localStorage.getItem("username");
 const Dashboard: React.FC = (props: any) => {
    const [name, setName] = useState("");
    useEffect(() => {
@@ -71,7 +72,7 @@ const Dashboard: React.FC = (props: any) => {
                <br />
                <User />
                <br />
-               <p>Update/Change </p>
+               <p>Update/Change Your Profile</p>
                <br />
                <div className="boxedit">
                   <TextField
@@ -110,7 +111,7 @@ const Dashboard: React.FC = (props: any) => {
                   type="submit"
                   onClick={onSubmit}
                >
-                  Edit Profile
+                  Change Profile
                </Button>
                <br />
                <p>Add Project to Dashboard</p>
