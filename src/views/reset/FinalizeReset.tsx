@@ -14,7 +14,6 @@ export const FinalizeReset: React.FC<FinalizeResetData> = (
    function submitForm() {
       setState({ ...state, loading: true });
    }
-   localStorage.clear();
    const [finalize] = useMutation(FINALIZE_RESET);
    const onSubmit = ({ email, password }: FinalizeResetData) => {
       finalize({

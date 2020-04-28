@@ -14,15 +14,15 @@ export const InitiateReset: React.FC<InitiateResetData> = (
    function submitForm() {
       setState({ ...state, loading: true });
    }
-   localStorage.clear();
    const [reset] = useMutation(INITIATE_RESET);
    const onSubmit = ({ email }: InitiateResetData) => {
       reset({
          variables: { email },
       })
          .then(res => {
-            console.log(res);
-            //one-time use cookie gets set here.
+            localStorage.setItem("resetToken", res.data.initiateReset.token);
+            alert(res.data.initiateReset.message);
+            console.log("token: ", res.data.initiateReset.token);
             props.history.push("/login");
          })
          .catch(err => {
@@ -30,8 +30,6 @@ export const InitiateReset: React.FC<InitiateResetData> = (
             console.log(err);
          });
    };
-
-   //use a pop-up alert to tell the user to check the email they used for sign-up for instructions to reset their password.
 
    return (
       <div className="box">
