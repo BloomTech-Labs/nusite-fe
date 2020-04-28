@@ -32,7 +32,7 @@ const Dashboard: React.FC = (props: any) => {
    };
 
    let user_id = localStorage.getItem("user_id");
-   console.log(user_id);
+   //console.log(user_id);
    {
       const [updateUser] = useMutation(UPDATE_USER);
       //let user_id = localStorage.getItem("user_id");
@@ -49,7 +49,7 @@ const Dashboard: React.FC = (props: any) => {
             variables: { user_id, ...users },
          })
             .then(res => {
-               console.log(updateUser);
+               //console.log(updateUser);
                console.log(res.data);
                localStorage.setItem("username", res.data.updateUser.username);
                props.history.push("/home");

@@ -61,19 +61,39 @@ export const UPDATE_USER = gql`
    }
 `;
 
-//setting up a mutation for the API when ready to store projects
+export const DELETE_USER = gql`
+   mutation updateUser($user_id: ID!) {
+      updateUser(id: $user_id) {
+         id
+      }
+   }
+`;
+
+//setting up a mutation for the application when ready to store projects
+export const ADD_PROJECT = gql`
+   mutation($project_name: String, project_owner: Int){
+      project
+   }
+`;
+
 export const PROJECT = gql`
    mutation project(
+      $project_id: ID!
       $project_name: String!
       $project_developer: String!
       $project_description: String!
       $completed: Boolean!
+      $marketplace: Boolean!
+      $showcase: Boolean!
    ) {
       project(
+         id: $project_id
          project_name: $project_name
          project_developer: $user
          project_description: $project_description
          completed: $completed
+         marketplace: $marketplace
+         showcase: $showcase
       ) {
          project_name
       }
