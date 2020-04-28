@@ -14,7 +14,7 @@ export const Registration: React.FC<RegistrationFormData> = (
    const [state, setState] = useState({ loading: false });
    function submitForm() {
       setState({ ...state, loading: true });
-      setTimeout(() => setState({ ...state, loading: false }), 4500);
+      //setTimeout(() => setState({ ...state, loading: false }), 2500);
    }
    //localStorage.clear();
    const [signup] = useMutation(SIGNUP);
