@@ -20,9 +20,8 @@ export const InitiateReset: React.FC<InitiateResetData> = (
          variables: { email },
       })
          .then(res => {
-            localStorage.setItem("resetToken", res.data.initiateReset.token);
+            localStorage.setItem("token", res.data.initiateReset.token);
             alert(res.data.initiateReset.message);
-            console.log("token: ", res.data.initiateReset.token);
             props.history.push("/login");
          })
          .catch(err => {

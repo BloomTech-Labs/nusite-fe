@@ -7,9 +7,10 @@ import { useMutation } from "@apollo/react-hooks";
 import { FINALIZE_RESET } from "../../graphql-requests/mutations";
 import { FinalizeResetData } from "../../types/FormTypes";
 
-export const FinalizeReset: React.FC<FinalizeResetData> = (
-   props: FinalizeResetData
-) => {
+export const FinalizeReset: React.FC<FinalizeResetData> = ({
+   email,
+   password,
+}: FinalizeResetData) => {
    const [state, setState] = useState({ loading: false });
    function submitForm() {
       setState({ ...state, loading: true });
@@ -24,10 +25,11 @@ export const FinalizeReset: React.FC<FinalizeResetData> = (
             alert("Password successfully changed. Please log in.");
          })
          .catch(err => {
-            alert(err.message);
-            console.log(err);
+            // alert(err.message);
+            console.log(err.message);
          });
    };
+
    return (
       <div className="box finalize-reset-form">
          <h2>Choose a new password</h2>
