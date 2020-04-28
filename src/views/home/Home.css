@@ -381,6 +381,12 @@ section .user-flow {
    .subheader {
       display: none;
    }
+   .dashboard h1 {
+      width: 70%;
+   }
+   .boxedit {
+      width: 90%;
+   }
 }
 
 .menu {

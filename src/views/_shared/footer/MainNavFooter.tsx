@@ -37,7 +37,7 @@ const MainNavFooter = (props: any) => {
             direction="column"
          >
             <Grid item className={classes.text}>
-               Main Navigation
+               Main
             </Grid>
             {routes.map((route: any, index: number) => (
                <Grid
