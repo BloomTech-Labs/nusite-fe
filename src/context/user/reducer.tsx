@@ -8,7 +8,7 @@ import {
    SIGNUP_START,
    SIGNUP_SUCCESS,
    AUTH_ERROR,
-} from "./action-types";
+} from "./actions";
 
 const NO_ERRORS = null;
 const start: Reducer<UserState, ReducerAction> = (
