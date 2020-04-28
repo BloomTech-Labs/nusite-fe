@@ -66,11 +66,7 @@ export const INITIATE_RESET = gql`
 `;
 
 export const FINALIZE_RESET = gql`
-   mutation updateUser($email: String!, $password: String!) {
-      updateUser(email: $email, password: $password) {
-         id
-         username
-         email
-      }
+   mutation resetPassword($email: String!, $password: String!) {
+      resetPassword(email: $email, password: $password)
    }
 `;
