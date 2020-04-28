@@ -1,4 +1,4 @@
-import { createContext, Context, Dispatch, ReducerAction } from "react";
+import { createContext, Context, Dispatch } from "react";
 
 export interface UserState {
    user: {
@@ -23,21 +23,22 @@ export const ANONYMOUS_USER: UserState = {
    error: null,
 };
 
-const NO_USER_PROVIDER: UserState = {
-   ...ANONYMOUS_USER,
-   error: new Error("You probably forgot to put <MyProvider>."),
+const NO_PROVIDER: {
+   userData: UserState;
+   userDispatch: Dispatch<UserAction>;
+} = {
+   userData: {
+      ...ANONYMOUS_USER,
+      error: new Error("You probably forgot to put <MyProvider>."),
+   },
+   userDispatch: (action: UserAction) => {
+      throw new Error(
+         `There was a problem dispatching ${action.type}. You probably forgot to put <MyProvider>.`
+      );
+   },
 };
 
-export const UserData: Context<UserState> = createContext(NO_USER_PROVIDER);
-UserData.displayName = "UserInfo";
+const UserContext: Context<typeof NO_PROVIDER> = createContext(NO_PROVIDER);
+UserContext.displayName = "UserContext";
 
-const NO_PROVIDER: Dispatch<UserAction> = (action: UserAction) => {
-   throw new Error(
-      `There was a problem dispatching ${action.type}. You probably forgot to put <MyProvider>.`
-   );
-};
-
-export const UserDispatch: Context<typeof NO_PROVIDER> = createContext(
-   NO_PROVIDER
-);
-UserDispatch.displayName = "UserDispatch";
+export default UserContext;

@@ -6,8 +6,8 @@ import { InMemoryCache } from "apollo-cache-inmemory";
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./theme/theme";
 import { BrowserRouter as Router } from "react-router-dom";
-import User_Data_Reducer from "./context/user/reducer";
-import { UserData, UserDispatch } from "./context/user/context";
+import UserReducer from "./context/user/reducer";
+import UserContext, { ANONYMOUS_USER } from "./context/user/context";
 
 const cache = new InMemoryCache();
 
@@ -19,16 +19,16 @@ const client = new ApolloClient({
 });
 
 const AppProviders = () => {
-   const [userData, userDispatch] = useReducer(User_Data_Reducer, null);
+   const [userData, userDispatch] = useReducer(UserReducer, ANONYMOUS_USER);
 
    return (
       <ApolloProvider client={client}>
          <ThemeProvider theme={theme}>
-            <UserDispatch.Provider value={userDispatch}>
+            <UserContext.Provider value={{ userData, userDispatch }}>
                <Router>
                   <App />
                </Router>
-            </UserDispatch.Provider>
+            </UserContext.Provider>
          </ThemeProvider>
       </ApolloProvider>
    );
