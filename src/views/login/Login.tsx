@@ -48,6 +48,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   type="password"
                   minLength={9}
                />
+               <br />
                <Link to="/initiate">Forgot your password?</Link>
                <Button
                   variant="contained"
