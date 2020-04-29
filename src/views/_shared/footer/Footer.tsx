@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
       minheight: "300px",
       maxHeight: "100%",
       padding: "5% 20% 2.5% 20%",
-      backgroundColor: "#25274d",
+      backgroundColor: theme.palette.grey[800],
    },
 }));
 
