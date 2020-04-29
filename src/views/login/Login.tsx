@@ -1,4 +1,5 @@
 import React, { useContext } from "react";
+import { Link } from "react-router-dom";
 import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
 import Button from "@material-ui/core/Button";
@@ -49,7 +50,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                data-testid="login-form"
                onSubmit={onSubmit}
             >
-               <Input name="email" placeholder="Email" />
+               <Input name="email" placeholder="Email" type="email" />
                <Input
                   name="password"
                   placeholder="Password"
@@ -57,6 +58,8 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   type="password"
                   minLength={9}
                />
+               <Link to="/initiate">Forgot your password?</Link>
+
                {userData.isAuthorizing ? (
                   <Loader />
                ) : (
