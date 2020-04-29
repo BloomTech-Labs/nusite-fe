@@ -50,6 +50,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                />
                <br />
                <Link to="/initiate">Forgot your password?</Link>
+               <br />
                <Button
                   variant="contained"
                   color="secondary"
