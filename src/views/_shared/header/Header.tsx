@@ -33,9 +33,9 @@ const useStyles = makeStyles(theme => ({
    },
    //This will set a height for the logo
    logo: {
-      height: "4em",
+      height: "3.8em",
       [theme.breakpoints.down("md")]: {
-         height: "4em",
+         height: "3.8em",
       },
       [theme.breakpoints.down("xs")]: {
          height: "3.5",

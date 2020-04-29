@@ -11,7 +11,7 @@ type FormData = {
    completed: Boolean;
 };
 
-export const Project = (props: any) => {
+export const ProjectForm = (props: any) => {
    const { register, handleSubmit } = useForm<FormData>();
    const [project] = useMutation(PROJECT);
    const onSubmit = ({

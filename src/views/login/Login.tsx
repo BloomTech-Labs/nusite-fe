@@ -8,11 +8,13 @@ import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
 import { LoginFormData } from "../../types/FormTypes";
+import GoogleLogin from "../_shared/GoogleLogin.jsx";
 
 export const Login: React.FC = (props: LoginFormData | any) => {
    const [state, setState] = useState({ loading: false });
    function submitForm() {
       setState({ ...state, loading: true });
+      //setTimeout(() => setState({ ...state, loading: false }), 2500);
    }
    const [login] = useMutation(LOGIN);
    const onSubmit = ({ email, password }: LoginFormData) => {
@@ -46,7 +48,9 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   type="password"
                   minLength={9}
                />
+               <br />
                <Link to="/initiate">Forgot your password?</Link>
+               <br />
                <Button
                   variant="contained"
                   color="secondary"
@@ -59,6 +63,8 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                </Button>
                <br />
             </Form>
+            <GoogleLogin />
+            <br />
          </div>
       </>
    );
