@@ -13,7 +13,7 @@ import { InitiateReset } from "./views/reset/InitiateReset";
 import { FinalizeReset } from "./views/reset/FinalizeReset";
 
 const App = () => (
-   <>
+   <div className="App">
       <Header />
       <Switch>
          <Route exact path="/" component={Home} />
@@ -25,7 +25,7 @@ const App = () => (
          <PrivateRoute exact path="/home" component={Dashboard} />
       </Switch>
       <Footer />
-   </>
+   </div>
 );
 
 export default App;

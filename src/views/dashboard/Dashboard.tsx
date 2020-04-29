@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import DarkMode from "../_shared/DarkMode";
 import "../home/Home";
 import { useMutation } from "@apollo/react-hooks";
 import User from "./User";
@@ -49,6 +48,7 @@ const Dashboard: React.FC = (props: any) => {
          })
             .then(res => {
                console.log(res.data);
+               setName(res.data.updateUser.username);
                localStorage.setItem("username", res.data.updateUser.username);
                props.history.push("/home");
                console.log("Successfully updated.");
@@ -61,8 +61,6 @@ const Dashboard: React.FC = (props: any) => {
       return (
          <>
             <main className="dashboard">
-               <br />
-               <DarkMode />
                <br />
                <h1>Welcome to Your Dashboard {name}</h1>
                <br />
