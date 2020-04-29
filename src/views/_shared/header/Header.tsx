@@ -13,6 +13,7 @@ import HeaderAvatar from "./HeaderAvatar";
 import HeaderTabs from "./HeaderTabs";
 import HeaderDrawer from "./HeaderDrawer";
 import { useRoutes } from "../../util/routes";
+import DynamicScrollToTop from "../DynamicScrollToTop";
 //import { ThemeContext } from "../../context/contexts";
 
 //styling
@@ -32,12 +33,12 @@ const useStyles = makeStyles(theme => ({
    },
    //This will set a height for the logo
    logo: {
-      height: "6em",
+      height: "3.8em",
       [theme.breakpoints.down("md")]: {
-         height: "5.5em",
+         height: "3.8em",
       },
       [theme.breakpoints.down("xs")]: {
-         height: "5.0",
+         height: "3.5",
       },
    },
 }));
@@ -68,6 +69,7 @@ const Header = (props: any) => {
 
    return (
       <>
+         <DynamicScrollToTop />
          <ElevationScroll>
             <AppBar className={classes.appBar} position="fixed">
                <Toolbar disableGutters>

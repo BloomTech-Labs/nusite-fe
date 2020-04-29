@@ -1,18 +1,27 @@
+version: "2"
+checks:
+   # Disable checks for similar code.
+   # Because this creates too many false positives.
+   similar-code:
+      enabled: false
+   # Increase the number of lines allowed for a method.
+   # Because this is more reasonable for JavaScript.
+   method-lines:
+      config:
+         threshold: 50
 exclude_patterns:
-- "**/vendor/"
-- "**/node_modules/"
-- "config/"
-- "dist/"
-- "features/"
-- "script/"
-- "**/spec/"
-- "**/test/"
-- "**/tests/"
-- "**/__tests__/"
-- "Tests/"
-- "**/*.d.ts"
-- "**/*.spec.js"
-- "**/*.test.js"
-- "**/*.spec.ts"
-- "**/*.test.ts"
-
+   - "tests/"
+   - "**/__tests__/"
+   - "spec/"
+   - "**/*.spec.js"
+   - "**/*.spec.jsx"
+   - "**/*.spec.ts"
+   - "**/*.spec.tsx"
+   - "**/*.test.js"
+   - "**/*.test.jsx"
+   - "**/*.test.ts"
+   - "**/*.test.tsx"
+   - "**/vendor/"
+   - "**/node_modules/"
+   - "**/*.d.ts"
+   - "src/test-utils.js"

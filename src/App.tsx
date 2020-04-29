@@ -8,20 +8,24 @@ import Home from "./views/home/Home";
 import PrivateRoute from "./views/util/PrivateRoute";
 import Dashboard from "./views/dashboard/Dashboard";
 import Header from "./views/_shared/header/Header";
-import Footer from "./views/_shared/Footer";
+import Footer from "./views/_shared/footer/Footer";
+import { InitiateReset } from "./views/reset/InitiateReset";
+import { FinalizeReset } from "./views/reset/FinalizeReset";
 
 const App = () => (
-   <>
+   <div className="App">
       <Header />
       <Switch>
          <Route exact path="/" component={Home} />
          <Route exact path="/login" component={Login} />
          <Route exact path="/register" component={Registration} />
          <Route exact path="/logout" component={Logout} />
+         <Route exact path="/initiate" component={InitiateReset} />
+         <PrivateRoute exact path="/_reset" component={FinalizeReset} />
          <PrivateRoute exact path="/home" component={Dashboard} />
       </Switch>
       <Footer />
-   </>
+   </div>
 );
 
 export default App;
