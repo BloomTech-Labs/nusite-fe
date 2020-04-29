@@ -14,7 +14,7 @@ const User: React.FC = (props: any) => {
       if (user_id) {
          setUser(user_id);
       }
-   }, [user_id]);
+   }, []);
 
    return (
       <>
