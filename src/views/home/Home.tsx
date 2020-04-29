@@ -4,14 +4,13 @@ import { NavLink } from "react-router-dom";
 import Button from "@material-ui/core/Button";
 import coder from "../../images/coder.svg";
 import developers from "../../images/developers.svg";
-//import { makeStyles } from "@material-ui/core/styles";
+//import makeStyles from "@material-ui/core/styles";
 import "./Home.css";
 import realtime2 from "../../images/reatime2.svg";
 import myapp2 from "../../images/myapp2.svg";
 import Hero from "./Hero";
 
 const Home = (props: any) => {
-   //const classes = useStyles();
    return (
       <>
          <Hero className="hero" />
