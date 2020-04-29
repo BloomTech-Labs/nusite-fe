@@ -48,6 +48,7 @@ const Dashboard: React.FC = (props: any) => {
          })
             .then(res => {
                console.log(res.data);
+               setName(res.data.updateUser.username);
                localStorage.setItem("username", res.data.updateUser.username);
                props.history.push("/home");
                console.log("Successfully updated.");
