@@ -8,6 +8,7 @@ import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
 import { LoginFormData } from "../../types/FormTypes";
+import GoogleLogin from "../_shared/GoogleLogin.jsx";
 import {
    LOGIN_END,
    LOGIN_START,
@@ -58,8 +59,9 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   type="password"
                   minLength={9}
                />
+               <br />
                <Link to="/initiate">Forgot your password?</Link>
-
+               <br />
                {userData.isAuthorizing ? (
                   <Loader />
                ) : (
@@ -74,6 +76,8 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                )}
                <br />
             </Form>
+            <GoogleLogin />
+            <br />
          </div>
       </>
    );
