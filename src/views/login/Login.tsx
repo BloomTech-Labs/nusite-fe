@@ -14,7 +14,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
    const [state, setState] = useState({ loading: false });
    function submitForm() {
       setState({ ...state, loading: true });
-      setTimeout(() => setState({ ...state, loading: false }), 2500);
+      //setTimeout(() => setState({ ...state, loading: false }), 2500);
    }
    const [login] = useMutation(LOGIN);
    const onSubmit = ({ email, password }: LoginFormData) => {

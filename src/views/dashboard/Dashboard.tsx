@@ -107,7 +107,7 @@ const Dashboard: React.FC = (props: any) => {
                   type="submit"
                   onClick={onSubmit}
                >
-                  Change Profile
+                  Edit Profile
                </Button>
                <br />
                <p>Add Project to Dashboard</p>
