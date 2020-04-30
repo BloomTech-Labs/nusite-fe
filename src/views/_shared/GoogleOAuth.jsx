@@ -14,13 +14,11 @@ class GoogleOAuth extends Component {
          first_name: res.profileObj.name,
          last_name: res.profileObj.name,
          email: res.profileObj.email,
-         token: res.googleId,
          Image: res.profileObj.imageUrl,
          ProviderId: "Google",
       };
       //debugger;
-
-      let [signup] = useMutation(SIGNUP);
+      const [signup] = useMutation(SIGNUP);
 
       const OAuthSubmit = props => ({
          email = localStorage.getItem("email"),
@@ -67,6 +65,7 @@ class GoogleOAuth extends Component {
                         onSuccess={responseGoogle}
                         onFailure={responseGoogle}
                      ></GoogleLogin>
+                     {/*<OAuthSubmit />*/}
                   </form>
                   <div className="col-sm-4"></div>
                </div>
