@@ -15,45 +15,6 @@ body {
    box-shadow: none;
 }
 
-header h1 {
-   color: #66fcf1;
-   font-size: 3.1rem;
-   text-align: center;
-   font-family: "Domine";
-}
-
-.tagline-3 {
-   animation-duration: 1.4s;
-   animation-name: slidein;
-   display: flex;
-   width: 55%;
-   text-align: left;
-   justify-content: center;
-   margin: 0 auto;
-   color: #333;
-   padding: 20px;
-}
-
-.tagline-2 {
-   color: #aaa;
-   font-size: 1.6rem;
-   text-align: left;
-   font-family: "Roboto";
-   margin-left: 25px;
-}
-
-@keyframes slidein {
-   from {
-      margin-left: 100%;
-      width: 300%;
-   }
-
-   to {
-      margin-left: 0%;
-      width: 100%;
-   }
-}
-
 .start-main {
    margin: 11px;
 }
@@ -338,20 +299,7 @@ section .user-flow {
       display: none;
       z-index: 99;
    }
-   header {
-      flex-flow: column wrap;
-      box-shadow: none;
-   }
-   header h1 {
-      font-size: 3.3rem;
-   }
-   nav {
-      display: flex;
-      flex-flow: row wrap;
-      justify-content: center;
-      padding: 0;
-      margin: 0;
-   }
+
    section .start-main {
       display: block;
    }
@@ -377,10 +325,6 @@ section .user-flow {
       justify-content: center;
       height: 44vh;
    }
-   .tagline p {
-      text-align: left;
-      margin: 15px;
-   }
    section .developers {
       width: 90%;
    }
@@ -401,24 +345,6 @@ section .user-flow {
 .start:hover {
    background: #168995;
    color: white;
-}
-
-nav a:hover {
-   background: #168995;
-   color: white;
-   border-radius: 8px;
-}
-
-.logout {
-   text-align: center;
-   justify-content: center;
-   cursor: pointer;
-   color: #aaa;
-}
-
-.logout:hover {
-   color: #168995;
-   cursor: pointer;
 }
 
 .developers {
