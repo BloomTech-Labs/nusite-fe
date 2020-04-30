@@ -10,7 +10,6 @@ import Loader from "../_shared/Loader";
 import { LoginFormData } from "../../types/FormTypes";
 import GoogleLogin from "../_shared/GoogleLogin.jsx";
 import {
-   LOGIN_END,
    LOGIN_START,
    LOGIN_SUCCESS,
    AUTH_ERROR,
@@ -33,7 +32,6 @@ export const Login: React.FC = (props: LoginFormData | any) => {
             localStorage.setItem("user_id", res.data.login.user.id);
          })
          .then(data => {
-            userDispatch({ type: LOGIN_END, payload: null });
             props.history.push("/home");
             console.log(`Welcome `);
          })
