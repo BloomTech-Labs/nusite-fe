@@ -8,7 +8,7 @@ import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
 import { LoginFormData } from "../../types/FormTypes";
-import GoogleLogin from "../_shared/GoogleLogin.jsx";
+import GoogleOAuth from "../_shared/GoogleOAuth.jsx";
 
 export const Login: React.FC = (props: LoginFormData | any) => {
    const [state, setState] = useState({ loading: false });
@@ -63,7 +63,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                </Button>
                <br />
             </Form>
-            <GoogleLogin />
+            <GoogleOAuth />
             <br />
          </div>
       </>
