@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext } from "react";
 import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
 import { SIGNUP } from "../../graphql-requests/mutations";
@@ -7,15 +7,18 @@ import Button from "@material-ui/core/Button";
 import "./Registration.css";
 import Loader from "../_shared/Loader";
 import { RegistrationFormData } from "../../types/FormTypes";
+import {
+   SIGNUP_START,
+   SIGNUP_SUCCESS,
+   AUTH_ERROR,
+} from "../../context/user/actions";
+import UserContext from "../../context/user/context";
 
 export const Registration: React.FC<RegistrationFormData> = (
    props: RegistrationFormData | any
 ) => {
-   const [state, setState] = useState({ loading: false });
-   function submitForm() {
-      setState({ ...state, loading: true });
-      //setTimeout(() => setState({ ...state, loading: false }), 2500);
-   }
+   const { userData, userDispatch } = useContext(UserContext);
+
    //localStorage.clear();
    const [signup] = useMutation(SIGNUP);
    const onSubmit = ({
@@ -25,11 +28,17 @@ export const Registration: React.FC<RegistrationFormData> = (
       password,
       email,
    }: RegistrationFormData) => {
+      userDispatch({ type: SIGNUP_START, payload: null });
+
       signup({
          variables: { first_name, last_name, username, password, email },
       })
          .then(res => {
-            //console.log(res.data);
+            userDispatch({
+               type: SIGNUP_SUCCESS,
+               payload: res.data.signup.user,
+            });
+
             localStorage.setItem("token", res.data.signup.token);
             localStorage.setItem("username", res.data.signup.user.username);
             localStorage.setItem("user_id", res.data.signup.user.id);
@@ -37,6 +46,7 @@ export const Registration: React.FC<RegistrationFormData> = (
             console.log("Successfully registered... ");
          })
          .catch(err => {
+            userDispatch({ type: AUTH_ERROR, payload: err });
             alert(err.message);
             console.log(err);
          });
@@ -66,15 +76,13 @@ export const Registration: React.FC<RegistrationFormData> = (
                   minLength={9}
                />
                <Input name="email" placeholder="Email" type="email" />
-               <Button
-                  variant="contained"
-                  color="secondary"
-                  type="submit"
-                  onClick={submitForm}
-               >
-                  {!state.loading && "Register"}
-                  {state.loading && <Loader />}
-               </Button>
+               {userData.isAuthorizing ? (
+                  <Loader />
+               ) : (
+                  <Button variant="contained" color="secondary" type="submit">
+                     Register
+                  </Button>
+               )}
             </Form>
          </div>
       </>
