@@ -5,34 +5,44 @@ import taglineImage from "../../images/tagline.jpeg";
 
 const useStyles = makeStyles(theme => ({
    mainContainer: {
+      padding: 0,
       maxWidth: "100%",
    },
    taglineImage: {
       maxWidth: "100%",
-      display: "block",
    },
    tagline: {
       ...theme.typography.h3,
-      fontWeight: 500,
-      animationDuration: "2s",
-      animationName: "slidein",
-      display: "flex",
-      width: "35%",
-      textAlign: "left",
-      justifyContent: "left",
-      margin: "0 auto",
-      color: theme.palette.secondary.dark,
-      position: "absolute",
-      left: "60%",
-      fontSize: "2.5rem",
+      "fontWeight": 500,
+      "animationDuration": "7s",
+      "animationName": "slidein",
+      "display": "flex",
+      "width": "35%",
+      "textAlign": "left",
+      "justifyContent": "left",
+      "margin": "0 auto",
+      "color": theme.palette.secondary.dark,
+      "position": "absolute",
+      "left": "60%",
+      "fontSize": "2.5em",
+      "maxHeight": "80%",
+
+      "@KeyframeEffect & slidein": {
+         from: {
+            marginLeft: "100%",
+            width: "300%",
+         },
+         to: {
+            marginLeft: "0%",
+            width: "100%",
+         },
+      },
 
       [theme.breakpoints.down("md")]: {
          fontSize: "2.0rem",
       },
       [theme.breakpoints.down("sm")]: {
          fontSize: "1.5rem",
-         //width: "50%",
-         fontWeight: 500,
       },
    },
 }));
@@ -43,25 +53,27 @@ const Hero = (props: any) => {
    const matches = useMediaQuery(theme.breakpoints.down("xs"));
 
    const tagline = (
-      <h3 className={classes.tagline}>
+      <h3>
          Connecting web developers to people with great ideas. Old website, new
          website, app, or feature, we've got you covered.
       </h3>
    );
    const mobileTagline = (
-      <h3 className={classes.tagline}>
-         Connecting developers to people with great ideas.
-      </h3>
+      <h3>Connecting developers to people with great ideas.</h3>
    );
    return (
       <Grid item>
          <Grid container>
-            <img
-               className={classes.taglineImage}
-               src={taglineImage}
-               alt="tagline"
-            />
-            {matches ? mobileTagline : tagline}
+            <Grid item>
+               <img
+                  className={classes.taglineImage}
+                  src={taglineImage}
+                  alt="tagline"
+               />
+            </Grid>
+            <Grid item className={classes.tagline}>
+               {matches ? mobileTagline : tagline}
+            </Grid>
          </Grid>
       </Grid>
    );
