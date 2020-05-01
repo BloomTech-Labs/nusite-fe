@@ -7,15 +7,8 @@ import myapp2 from "../../images/myapp2.svg";
 import userflow from "../../images/userflow.gif";
 
 const useStyles = makeStyles(theme => ({
-   mainContainer: {
-      backgroundImage:
-         "url('https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')",
-      backgroundAttachment: "fixed",
-      backgroundPosition: "center",
-      backgroundRepeat: "no-repeat",
-      backgroundSize: "cover",
-   },
-   myapp: {
+   mainContainer: {},
+   image: {
       maxWidth: "100px",
    },
 }));
@@ -30,7 +23,7 @@ const DevelopersSection = (props: any) => {
          <Grid container direction="column" className={classes.mainContainer}>
             <h2>For Developers </h2>
             <br />
-            <img className={classes.myapp} src={myapp2} alt="" />
+            <img className={classes.image} src={myapp2} alt="" />
             <br />
             <br />
             <br />
@@ -44,7 +37,12 @@ const DevelopersSection = (props: any) => {
             <br />
             <section>
                <br />
-               <img src={coder} alt="" className="coder" />
+               <img
+                  src={coder}
+                  alt=""
+                  // className="coder"
+                  className={classes.image}
+               />
                <br />
                <br />
                <br />
@@ -59,7 +57,12 @@ const DevelopersSection = (props: any) => {
                <br />
                <br />
                <div className="gif-wrapper">
-                  <img src={userflow} className="user-flow" alt="" />
+                  <img
+                     src={userflow}
+                     className={classes.image}
+                     // className="user-flow"
+                     alt=""
+                  />
                </div>
                <br />
                <br />

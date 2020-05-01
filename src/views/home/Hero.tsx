@@ -13,37 +13,26 @@ const useStyles = makeStyles(theme => ({
    },
    tagline: {
       ...theme.typography.h3,
-      "fontWeight": 500,
-      "animationDuration": "7s",
-      "animationName": "slidein",
-      "display": "flex",
-      "width": "35%",
-      "textAlign": "left",
-      "justifyContent": "left",
-      "margin": "0 auto",
-      "color": theme.palette.secondary.dark,
-      "position": "absolute",
-      "left": "60%",
-      "fontSize": "2.5em",
-      "maxHeight": "80%",
+      fontWeight: 500,
+      // "animationDuration": "7s",
+      // "animationName": "slidein",
+      display: "flex",
+      width: "35%",
+      textAlign: "left",
+      justifyContent: "left",
+      margin: "0 auto",
+      color: theme.palette.secondary.dark,
+      position: "absolute",
+      left: "60%",
+      fontSize: "2.5em",
+      maxHeight: "80%",
+   },
 
-      "@KeyframeEffect & slidein": {
-         from: {
-            marginLeft: "100%",
-            width: "300%",
-         },
-         to: {
-            marginLeft: "0%",
-            width: "100%",
-         },
-      },
-
-      [theme.breakpoints.down("md")]: {
-         fontSize: "2.0rem",
-      },
-      [theme.breakpoints.down("sm")]: {
-         fontSize: "1.5rem",
-      },
+   [theme.breakpoints.down("md")]: {
+      fontSize: "2.0rem",
+   },
+   [theme.breakpoints.down("sm")]: {
+      fontSize: "0.1rem",
    },
 }));
 
@@ -62,20 +51,20 @@ const Hero = (props: any) => {
       <h3>Connecting developers to people with great ideas.</h3>
    );
    return (
-      <Grid item>
-         <Grid container>
-            <Grid item>
-               <img
-                  className={classes.taglineImage}
-                  src={taglineImage}
-                  alt="tagline"
-               />
-            </Grid>
-            <Grid item className={classes.tagline}>
-               {matches ? mobileTagline : tagline}
-            </Grid>
+      // <Grid item>
+      <Grid container>
+         <Grid item>
+            <img
+               className={classes.taglineImage}
+               src={taglineImage}
+               alt="tagline"
+            />
+         </Grid>
+         <Grid item className={classes.tagline}>
+            {matches ? mobileTagline : tagline}
          </Grid>
       </Grid>
+      // </Grid>
    );
 };
 export default Hero;

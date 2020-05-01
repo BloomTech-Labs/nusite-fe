@@ -3,7 +3,11 @@ import { Grid, makeStyles, useMediaQuery } from "@material-ui/core/";
 import useTheme from "@material-ui/core/styles/useTheme";
 import realtime2 from "../../images/reatime2.svg";
 
-const useStyles = makeStyles(theme => ({}));
+const useStyles = makeStyles(theme => ({
+   image: {
+      maxWidth: "100px",
+   },
+}));
 
 const ProjectOwnersSection = (props: any) => {
    const classes = useStyles();
@@ -23,7 +27,12 @@ const ProjectOwnersSection = (props: any) => {
                according to their needs.
             </p>
             <br />
-            <img src={realtime2} alt="" className="realtime" />
+            <img
+               className={classes.image}
+               src={realtime2}
+               alt=""
+               //className="realtime"
+            />
             <br />
             <p>
                Find someone to build, fix, or add on to your existing site or
