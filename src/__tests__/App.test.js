@@ -44,7 +44,7 @@ const mockGetUsers = {
    request: {
       query: GET_USER,
       variables: {
-         id: 10,
+         user_id: "10",
       },
    },
    result: {
@@ -74,7 +74,7 @@ describe("Test App Routes", () => {
       expect(tagLine.tagName).toMatch(/p/i);
    });
 
-   test("It renders 'Login' component when URL is '/login'", () => {
+   test.only("It renders 'Login' component when URL is '/login'", () => {
       const { getByTestId } = render(
          <MockedProvider mocks={[mockLogin]} addTypename={false}>
             <MemoryRouter initialEntries={["/login"]}>
@@ -104,9 +104,10 @@ describe("Test App Routes", () => {
       expect(registerForm.tagName).toMatch(/form/i);
    });
 
-   test.skip("Renders 'Dashboard' component when URL is '/home'", () => {
-      //set a test token to trick private route into rendering the component
-      localStorage.setItem("token", "test-token");
+   test("Renders 'Dashboard' component when URL is '/home'", () => {
+      //set a test user data
+      localStorage.setItem("username", "johnwick");
+      localStorage.setItem("user_id", "10");
 
       //render the component
       const { getByText } = render(
@@ -119,9 +120,7 @@ describe("Test App Routes", () => {
 
       //run the tests
       const welcomeText = getByText(/Welcome to Your Dashboard/i);
-      expect(welcomeText).not.toBeNull();
-      expect(welcomeText).toBeDefined();
-      expect(welcomeText.tagName).toMatch(/h2/i);
+      expect(welcomeText.tagName).toMatch(/h1/i);
 
       //remove test token
       localStorage.clear();
