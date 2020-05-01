@@ -1,13 +1,15 @@
 import React from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
-import "./Home.css";
+//import "./Home.css";
 import Hero from "./Hero";
 import AboutSection from "./AboutSection";
 import PorjectOwnersSection from "./ProjectOnwersSection";
 import DevelopersSections from "./DevelopersSection";
 const useStyles = makeStyles(theme => ({
-   container: {},
+   container: {
+      width: "100%",
+   },
 }));
 
 const Home = (props: any) => {

@@ -6,10 +6,10 @@ import taglineImage from "../../images/tagline.jpeg";
 const useStyles = makeStyles(theme => ({
    mainContainer: {
       padding: 0,
-      maxWidth: "100%",
+      wdith: "100%",
    },
    taglineImage: {
-      maxWidth: "100%",
+      width: "100%",
    },
    tagline: {
       ...theme.typography.h3,

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Route, Switch } from "react-router-dom";
-import "./App.css";
+//import "./App.css";
 import { Login } from "./views/login/Login";
 import { Registration } from "./views/registration/Registration";
 import Logout from "./views/_shared/Logout";
@@ -8,7 +8,6 @@ import Home from "./views/home/Home";
 import PrivateRoute from "./views/util/PrivateRoute";
 import Dashboard from "./views/dashboard/Dashboard";
 import LoadingScreen from "./views/_shared/LoadingScreen";
-
 import Footer from "./views/_shared/footer/Footer";
 import { InitiateReset } from "./views/reset/InitiateReset";
 import { FinalizeReset } from "./views/reset/FinalizeReset";

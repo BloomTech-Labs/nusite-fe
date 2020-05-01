@@ -15,6 +15,9 @@ const useStyles = makeStyles(theme => ({
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
    },
+   myapp: {
+      maxWidth: "100px",
+   },
 }));
 
 const DevelopersSection = (props: any) => {
@@ -27,7 +30,7 @@ const DevelopersSection = (props: any) => {
          <Grid container direction="column" className={classes.mainContainer}>
             <h2>For Developers </h2>
             <br />
-            <img src={myapp2} alt="" className="myapp" />
+            <img className={classes.myapp} src={myapp2} alt="" />
             <br />
             <br />
             <br />
