@@ -56,7 +56,9 @@ class GoogleOAuth extends Component {
          localStorage.setItem("user_id", response.googleId);
          this.props.history.push("/homeg");
          //debugger;
-         alert("please enter your profile info on the dashboard");
+         alert(
+            "please enter your profile info on the dashboard for future access to your profile!"
+         );
          this.signup(response);
       };
 
