@@ -49,10 +49,11 @@ class GoogleOAuth extends Component {
          var res = response.profileObj;
          console.log(res);
          localStorage.setItem("username", res.familyName);
-         //localStorage.setItem("first_name", res.profileObj.FamilyName);
-         //localStorage.setItem("last_name", res.profileObj.familyName);
+         localStorage.setItem("first_name", res.familyName);
+         localStorage.setItem("last_name", res.familyName);
          localStorage.setItem("email", res.email);
          localStorage.setItem("token", response.googleId);
+         localStorage.setItem("user_id", response.googleId);
          this.props.history.push("/homeg");
          //debugger;
          alert("please enter your profile info on the dashboard");
