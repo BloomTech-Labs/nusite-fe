@@ -25,7 +25,7 @@ class GoogleOAuth extends Component {
    }
 
    render() {
-      const responseGoogle = (response: any) => {
+      const responseGoogle = response => {
          console.log(response);
          let res = response.profileObj;
          console.log(res);
