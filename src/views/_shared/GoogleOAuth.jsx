@@ -48,7 +48,7 @@ class GoogleOAuth extends Component {
          console.log(response);
          var res = response.profileObj;
          console.log(res);
-         localStorage.setItem("username", res.profileObjfamilyName);
+         localStorage.setItem("username", res.familyName);
          //localStorage.setItem("first_name", res.profileObj.FamilyName);
          //localStorage.setItem("last_name", res.profileObj.familyName);
          localStorage.setItem("email", res.email);
