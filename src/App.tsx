@@ -14,7 +14,7 @@ import { FinalizeReset } from "./views/reset/FinalizeReset";
 import DashboardGoogle from "./views/dashboard/DashboardGoogle";
 
 const App = () => (
-   <>
+   <div className="App">
       <Header />
       <Switch>
          <Route exact path="/" component={Home} />
@@ -27,7 +27,7 @@ const App = () => (
          <PrivateRoute exact path="/homeg" component={DashboardGoogle} />
       </Switch>
       <Footer />
-   </>
+   </div>
 );
 
 export default App;
