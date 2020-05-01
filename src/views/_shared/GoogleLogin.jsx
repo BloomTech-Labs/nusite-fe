@@ -2,6 +2,11 @@ import React from "react";
 
 export class GoogleLogin extends React.Component {
    componentDidMount() {
+      //Do not initialize if running unit tests
+      if (process.env.NODE_ENV === "test") {
+         return;
+      }
+
       this.googleSDK();
       console.log("googleSDK");
    }

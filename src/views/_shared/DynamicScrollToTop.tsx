@@ -5,6 +5,11 @@ import { withRouter } from "react-router-dom";
 //unless it is a hash link
 const DynamicScrollToTop = (props: any) => {
    useEffect(() => {
+      //Disable while running unit tests
+      if (process.env.NODE_ENV === "test") {
+         return;
+      }
+
       // Keep default behavior of restoring scroll position when user:
       // - clicked back button
       // - clicked on a link that programmatically calls `history.goBack()`
