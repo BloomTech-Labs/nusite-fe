@@ -12,7 +12,7 @@ const useStyles = makeStyles(theme => ({
       width: "100%",
    },
    tagline: {
-      ...theme.typography.h3,
+      ...theme.typography.h1,
       fontWeight: 500,
       // "animationDuration": "7s",
       // "animationName": "slidein",
@@ -24,15 +24,20 @@ const useStyles = makeStyles(theme => ({
       color: theme.palette.secondary.dark,
       position: "absolute",
       left: "60%",
-      fontSize: "2.5em",
-      maxHeight: "80%",
-   },
-
-   [theme.breakpoints.down("md")]: {
       fontSize: "2.0rem",
-   },
-   [theme.breakpoints.down("sm")]: {
-      fontSize: "0.1rem",
+      maxHeight: "80%",
+      lineHeight: "1.25",
+
+      [theme.breakpoints.down("md")]: {
+         fontSize: "1.75em",
+      },
+      [theme.breakpoints.down("sm")]: {
+         fontSize: "1.1rem",
+         [theme.breakpoints.down("xs")]: {
+            fontSize: "1.0rem",
+            lineHeight: "1.1",
+         },
+      },
    },
 }));
 
@@ -43,12 +48,12 @@ const Hero = (props: any) => {
 
    const tagline = (
       <h3>
-         Connecting web developers to people with great ideas. Old website, new
+         Connecting people with great ideas to web developers. Old website, new
          website, app, or feature, we've got you covered.
       </h3>
    );
    const mobileTagline = (
-      <h3>Connecting developers to people with great ideas.</h3>
+      <h3>Connecting people with great ideas to developers.</h3>
    );
    return (
       // <Grid item>
