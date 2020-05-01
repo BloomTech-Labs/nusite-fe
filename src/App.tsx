@@ -11,6 +11,7 @@ import Header from "./views/_shared/header/Header";
 import Footer from "./views/_shared/footer/Footer";
 import { InitiateReset } from "./views/reset/InitiateReset";
 import { FinalizeReset } from "./views/reset/FinalizeReset";
+import DashboardGoogle from "./views/dashboard/Dashboard";
 
 const App = () => (
    <>
@@ -23,6 +24,7 @@ const App = () => (
          <Route exact path="/initiate" component={InitiateReset} />
          <PrivateRoute exact path="/_reset" component={FinalizeReset} />
          <PrivateRoute exact path="/home" component={Dashboard} />
+         <PrivateRoute exact path="/homeg" component={DashboardGoogle} />
       </Switch>
       <Footer />
    </>
