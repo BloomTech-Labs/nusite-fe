@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import GoogleLogin from "react-google-login";
 // import { LOGIN } from "../../graphql-requests/mutations";
-// import { useMutation } from "@apollo/react-hooks";
-import { Route, withRouter } from "react-router-dom";
+//import { createBrowserHistory } from 'history';
+import { withRouter } from "react-router-dom";
+
+//let history = createBrowserHistory();
 
 class GoogleOAuth extends Component {
    constructor(props) {
@@ -20,33 +22,12 @@ class GoogleOAuth extends Component {
          ProviderId: "Google",
       };
       //debugger;
-
-      //   let [login] = useMutation(LOGIN);
-
-      //   const OAuthSubmit = props => ({
-      //      email = localStorage.getItem("email"),
-      //      password = localStorage.getItem("token"),
-      //   }) => {
-      //      login({ variables: { email: email, password: password } })
-      //         .then(res => {
-      //            console.log(res.data);
-      //            localStorage.setItem("username", res.data.login.user.username);
-      //            localStorage.setItem("user_id", res.data.login.user.id);
-      //            let responseJson = res;
-      //            sessionStorage.setItem("userData", JSON.stringify(res));
-      //         })
-      //         .then(data => {
-      //            props.history.push("/home");
-      //            console.log(`Welcome from skynet...`);
-      //         })
-      //         .catch(err => alert(err.message));
-      //   };
    }
 
    render() {
-      const responseGoogle = response => {
+      const responseGoogle = (response: any) => {
          console.log(response);
-         var res = response.profileObj;
+         let res = response.profileObj;
          console.log(res);
          localStorage.setItem("username", res.familyName);
          localStorage.setItem("first_name", res.familyName);
@@ -57,7 +38,7 @@ class GoogleOAuth extends Component {
          this.props.history.push("/homeg");
          //debugger;
          alert(
-            "please enter your profile info on the dashboard for future access to your profile!"
+            "Please enter your profile info on the dashboard for future access to your profile!"
          );
          this.signup(response);
       };
