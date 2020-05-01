@@ -11,9 +11,9 @@ function DarkMode() {
          <br />
          <Checkbox
             className="darkMode"
-            value={globalTheme.darkMode}
+            //value={globalTheme.darkMode}
             // we can use the darkMode setter provided through the context
-            onChange={e => globalTheme.setDarkMode(e.target.checked)}
+            //onChange={e => globalTheme.setDarkMode(e.target.checked)}
          />
       </>
    );
