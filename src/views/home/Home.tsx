@@ -1,12 +1,13 @@
-import React from "react";
+import React, { lazy, Suspense, Fragment } from "react";
 import Grid from "@material-ui/core/Grid";
 import { makeStyles } from "@material-ui/core/styles";
 //import "./Home.css";
-import Hero from "./Hero";
 import AboutSection from "./AboutSection";
 import PorjectOwnersSection from "./ProjectOnwersSection";
 import DevelopersSections from "./DevelopersSection";
 import Parallax from "./Parallax";
+const Hero = React.lazy(() => import("./Hero"));
+
 const useStyles = makeStyles(theme => ({
    container: {
       width: "100%",
@@ -28,13 +29,15 @@ const Home = (props: any) => {
    const classes = useStyles();
    return (
       <>
-         <Hero className="hero" />
-         <Grid container className={classes.container} direction="column">
-            <AboutSection />
-            <PorjectOwnersSection />
-            <Parallax />
-            <DevelopersSections />
-         </Grid>
+         <Suspense fallback={<React.Fragment />}>
+            <Hero className="hero" />
+            <Grid container className={classes.container} direction="column">
+               <AboutSection />
+               <PorjectOwnersSection />
+               <Parallax />
+               <DevelopersSections />
+            </Grid>
+         </Suspense>
       </>
    );
 };
