@@ -74,7 +74,7 @@ describe("Test App Routes", () => {
       expect(tagLine.tagName).toMatch(/p/i);
    });
 
-   test.only("It renders 'Login' component when URL is '/login'", () => {
+   test("It renders 'Login' component when URL is '/login'", () => {
       const { getByTestId } = render(
          <MockedProvider mocks={[mockLogin]} addTypename={false}>
             <MemoryRouter initialEntries={["/login"]}>
@@ -106,6 +106,7 @@ describe("Test App Routes", () => {
 
    test("Renders 'Dashboard' component when URL is '/home'", () => {
       //set a test user data
+      localStorage.setItem("token", "test-token");
       localStorage.setItem("username", "johnwick");
       localStorage.setItem("user_id", "10");
 
