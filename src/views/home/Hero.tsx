@@ -33,10 +33,10 @@ const useStyles = makeStyles(theme => ({
       },
       [theme.breakpoints.down("sm")]: {
          fontSize: "1.1rem",
-         [theme.breakpoints.down("xs")]: {
-            fontSize: "1.0rem",
-            lineHeight: "1.1",
-         },
+      },
+      [theme.breakpoints.down("xs")]: {
+         fontSize: "1.0rem",
+         lineHeight: "1.1",
       },
    },
 }));

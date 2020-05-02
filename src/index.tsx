@@ -8,7 +8,7 @@ const AppProviders = lazy(() => import("./AppProviders"));
 //import { Loader } from "./views/_shared/Loader";
 
 ReactDOM.render(
-   <Suspense fallback={LoadingScreen}>
+   <Suspense fallback={<LoadingScreen />}>
       <AppProviders />
    </Suspense>,
    document.getElementById("root")

@@ -14,7 +14,7 @@ import { FinalizeReset } from "./views/reset/FinalizeReset";
 const Header = React.lazy(() => import("./views/_shared/header/Header"));
 
 const App = () => (
-   <React.Suspense fallback={LoadingScreen}>
+   <React.Suspense fallback={<LoadingScreen />}>
       <div className="App">
          <Header />
          <Switch>
