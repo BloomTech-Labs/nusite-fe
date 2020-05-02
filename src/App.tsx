@@ -1,4 +1,5 @@
 import * as React from "react";
+import CssBaseline from "@material-ui/core/CssBaseline";
 import { Route, Switch } from "react-router-dom";
 //import "./App.css";
 import { Login } from "./views/login/Login";
@@ -15,6 +16,7 @@ const Header = React.lazy(() => import("./views/_shared/header/Header"));
 
 const App = () => (
    <React.Suspense fallback={<LoadingScreen />}>
+      <CssBaseline />
       <div className="App">
          <Header />
          <Switch>
