@@ -1,10 +1,6 @@
 import React, { Component } from "react";
 import GoogleLogin from "react-google-login";
-// import { LOGIN } from "../../graphql-requests/mutations";
-//import { createBrowserHistory } from 'history';
 import { withRouter } from "react-router-dom";
-
-//let history = createBrowserHistory();
 
 class GoogleOAuth extends Component {
    constructor(props) {
@@ -30,9 +26,6 @@ class GoogleOAuth extends Component {
          let res = response.profileObj;
          console.log(res);
          localStorage.setItem("username", res.familyName);
-         localStorage.setItem("first_name", res.familyName);
-         localStorage.setItem("last_name", res.familyName);
-         localStorage.setItem("email", res.email);
          localStorage.setItem("token", response.googleId);
          localStorage.setItem("user_id", response.googleId);
          this.props.history.push("/homeg");
