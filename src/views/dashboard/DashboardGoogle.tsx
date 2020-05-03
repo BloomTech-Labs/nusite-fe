@@ -35,7 +35,7 @@ const DashboardGoogle: React.FC = (props: any) => {
 
    {
       const [updateUser] = useMutation(UPDATE_USER);
-      let user_id = localStorage.getItem("user_id");
+      //let user_id = localStorage.getItem("user_id");
       const onSubmit = ({
          user_id = localStorage.getItem("user_id"),
          first_name,
