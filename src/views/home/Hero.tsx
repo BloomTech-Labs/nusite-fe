@@ -4,40 +4,41 @@ import useTheme from "@material-ui/core/styles/useTheme";
 import taglineImage from "../../images/tagline.jpeg";
 
 const useStyles = makeStyles(theme => ({
-   mainContainer: {
-      padding: 0,
-      wdith: "100%",
-   },
    taglineImage: {
       width: "100%",
    },
-   tagline: {
+   typography: {
       ...theme.typography.h1,
-      fontWeight: 500,
-      // "animationDuration": "7s",
-      // "animationName": "slidein",
+      color: theme.palette.secondary.dark,
+
+      [theme.breakpoints.down("xl")]: {
+         fontSize: "2.7rem",
+      },
+      [theme.breakpoints.down("lg")]: {
+         fontSize: "2.25rem",
+      },
+      [theme.breakpoints.down("md")]: {
+         fontSize: "1.75rem",
+      },
+      [theme.breakpoints.down("sm")]: {
+         fontSize: "1.3rem",
+      },
+      [theme.breakpoints.between(575, 321)]: {
+         fontSize: "1.2rem",
+      },
+      [theme.breakpoints.down("xs")]: {
+         fontSize: "1.10rem",
+      },
+   },
+   textContainer: {
       display: "flex",
       width: "35%",
       textAlign: "left",
       justifyContent: "left",
       margin: "0 auto",
-      color: theme.palette.secondary.dark,
       position: "absolute",
       left: "60%",
-      fontSize: "2.0rem",
       maxHeight: "80%",
-      lineHeight: "1.25",
-
-      [theme.breakpoints.down("md")]: {
-         fontSize: "1.75em",
-      },
-      [theme.breakpoints.down("sm")]: {
-         fontSize: "1.1rem",
-      },
-      [theme.breakpoints.down("xs")]: {
-         fontSize: "1.0rem",
-         lineHeight: "1.1",
-      },
    },
 }));
 
@@ -47,16 +48,17 @@ const Hero = (props: any) => {
    const matches = useMediaQuery(theme.breakpoints.down("xs"));
 
    const tagline = (
-      <h3>
+      <h1 className={classes.typography}>
          Connecting people with great ideas to web developers. Old website, new
          website, app, or feature, we've got you covered.
-      </h3>
+      </h1>
    );
    const mobileTagline = (
-      <h3>Connecting people with great ideas to developers.</h3>
+      <h1 className={classes.typography}>
+         Connecting people with great ideas to developers.
+      </h1>
    );
    return (
-      // <Grid item>
       <Grid container>
          <Grid item>
             <img
@@ -65,11 +67,10 @@ const Hero = (props: any) => {
                alt="tagline"
             />
          </Grid>
-         <Grid item className={classes.tagline}>
+         <Grid item className={classes.textContainer}>
             {matches ? mobileTagline : tagline}
          </Grid>
       </Grid>
-      // </Grid>
    );
 };
 export default Hero;
