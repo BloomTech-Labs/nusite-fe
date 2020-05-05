@@ -9,28 +9,24 @@ const useStyles = makeStyles(theme => ({
    },
    typography: {
       ...theme.typography.h1,
-      color: theme.palette.secondary.dark,
-
       [theme.breakpoints.down("xl")]: {
-         fontSize: "2.7rem",
+         fontSize: "35px",
       },
       [theme.breakpoints.down("lg")]: {
-         fontSize: "2.25rem",
+         fontSize: "32px",
       },
       [theme.breakpoints.down("md")]: {
-         fontSize: "1.75rem",
+         fontSize: "25px",
       },
       [theme.breakpoints.down("sm")]: {
-         fontSize: "1.3rem",
+         fontSize: "18px",
       },
-      [theme.breakpoints.between(575, 321)]: {
-         fontSize: "1.2rem",
-      },
-      [theme.breakpoints.down("xs")]: {
-         fontSize: "1.10rem",
+      [theme.breakpoints.down(414)]: {
+         fontSize: "16px",
       },
    },
    textContainer: {
+      paddingTop: "2.5%",
       display: "flex",
       width: "35%",
       textAlign: "left",
@@ -39,6 +35,9 @@ const useStyles = makeStyles(theme => ({
       position: "absolute",
       left: "60%",
       maxHeight: "80%",
+      [theme.breakpoints.down("xs")]: {
+         paddingTop: 0,
+      },
    },
 }));
 
