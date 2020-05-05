@@ -1,52 +1,56 @@
 import React from "react";
-import { Grid, makeStyles, useMediaQuery } from "@material-ui/core/";
-import useTheme from "@material-ui/core/styles/useTheme";
+import {
+   Grid,
+   makeStyles,
+   useMediaQuery,
+   Typography,
+   useTheme,
+} from "@material-ui/core/";
 import realtime2 from "../../images/reatime2.svg";
 
 const useStyles = makeStyles(theme => ({
    image: {
-      maxWidth: "100px",
+      maxWidth: "100%",
    },
 }));
 
 const ProjectOwnersSection = (props: any) => {
    const classes = useStyles();
    const theme = useTheme();
-   const matches = useMediaQuery(theme.breakpoints.down("xs"));
+   const matches = useMediaQuery(theme.breakpoints.up("md"));
+
+   const mobileView = "column-reverse";
+   const tabletView = "row";
 
    return (
-      <Grid item>
-         <section>
-            <br />
-            <h2>Project Owners</h2>
-            <br />
-            <p>
-               A marketplace for developers and project owners to meet each
-               other and form partnerships. Developers and project owners can
-               offer their services and projects to one another and be matched
-               according to their needs.
-            </p>
-            <br />
-            <img
-               className={classes.image}
-               src={realtime2}
-               alt=""
-               //className="realtime"
-            />
-            <br />
-            <p>
-               Find someone to build, fix, or add on to your existing site or
-               idea in minutes. Just set up a profile and browse existing
-               projects to get and idea of what you like, pick someone, and/or
-               just let us give your best matches for your project based on
-               developer skills. Take the workload off of yourself and get
-               started today. It's easy.
-            </p>
-            <br />
-            <br />
-            <hr />
-            <br />
-         </section>
+      <Grid item component="section">
+         <Grid
+            container
+            direction={matches ? tabletView : mobileView}
+            spacing={3}
+         >
+            <Grid item lg={4} md={3}>
+               <img
+                  className={classes.image}
+                  src={realtime2}
+                  alt=""
+                  //className="realtime"
+               />
+            </Grid>
+            <Grid item lg={8} md={9}>
+               <Typography variant="h1">Project Owners</Typography>
+               <Typography variant="body1" component="p">
+                  Find someone to build, fix, or add on to your existing site or
+                  idea. Just create an account and start searching for qualified
+                  developers in seconds. You can browse through developer
+                  profiles to to see if a developer is suited for your project
+                  or just let our algorithm do the heavy lifting for you and let
+                  us find you the the best matches based on developer skills or
+                  other preferences. Take the workload off of yourself and get
+                  started today. With Partnerd it's easy find a developer.
+               </Typography>
+            </Grid>
+         </Grid>
       </Grid>
    );
 };
