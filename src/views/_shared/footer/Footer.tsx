@@ -12,6 +12,9 @@ const useStyles = makeStyles(theme => ({
       maxHeight: "100%",
       padding: "5% 20% 2.5% 20%",
       backgroundColor: theme.palette.grey[800],
+      [theme.breakpoints.down("sm")]: {
+         padding: "5% 10% 2.5% 10%",
+      },
    },
 }));
 
