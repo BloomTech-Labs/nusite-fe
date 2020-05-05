@@ -1,35 +1,43 @@
 import React from "react";
-import { Grid, makeStyles, useMediaQuery } from "@material-ui/core/";
-import useTheme from "@material-ui/core/styles/useTheme";
+import { Grid, makeStyles, Typography } from "@material-ui/core/";
 import developersImage from "../../images/developers.svg";
 
 const useStyles = makeStyles(theme => ({
    developersImage: {
-      maxHeight: "100px",
+      maxWidth: "100%",
+      [theme.breakpoints.down("sm")]: {
+         paddingTop: "15%",
+      },
    },
 }));
 
 const AboutSection = (props: any) => {
    const classes = useStyles();
-   const theme = useTheme();
-   const matches = useMediaQuery(theme.breakpoints.down("xs"));
 
    return (
-      <Grid item>
-         <main>
-            <p className="about">
-               We are creating a marketplace for developers and project
-               owners/clients to meet each other and form partnerships.
-               Developers and project owners can offer their services and
-               projects to one another and be matched according to their needs.
-            </p>
-            <img
-               className={classes.developersImage}
-               src={developersImage}
-               alt=""
-               //className="developers"
-            />
-         </main>
+      <Grid item component="main">
+         <Grid container direction="row" spacing={3}>
+            <Grid item lg={8} md={9}>
+               <Typography variant="h1">About Us</Typography>
+               <Typography variant="body1" component="p" className="about">
+                  Welcome to PartNerd. We are a marketplace where clients and
+                  developers can form partnerships. Take the guess work out of
+                  finding a qualified developer for your existing project or
+                  next big idea and let us match you with a developer according
+                  to your needs. Our market place empowers clients to create a
+                  listing for their new or existing project and for developers
+                  to showcase their services to prospective clients.
+               </Typography>
+            </Grid>
+            <Grid item lg={4} md={3}>
+               <img
+                  className={classes.developersImage}
+                  src={developersImage}
+                  alt=""
+                  //className="developers"
+               />
+            </Grid>
+         </Grid>
       </Grid>
    );
 };
