@@ -4,7 +4,6 @@ import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { ThemeProvider } from "@material-ui/styles";
-import { responsiveFontSizes } from "@material-ui/core/styles";
 import theme from "./theme/theme";
 import { BrowserRouter as Router } from "react-router-dom";
 import UserReducer from "./context/user/reducer";
@@ -24,7 +23,7 @@ const AppProviders = () => {
 
    return (
       <ApolloProvider client={client}>
-         <ThemeProvider theme={responsiveFontSizes(theme)}>
+         <ThemeProvider theme={theme}>
             <UserContext.Provider value={{ userData, userDispatch }}>
                <Router>
                   <App />
