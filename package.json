@@ -39,7 +39,8 @@
          "**/*.{js,jsx,ts,tsx}",
          "!**/node_modules/**",
          "!**/vendor/**",
-         "!**/__tests__/**"
+         "!**/__tests__/**",
+         "!**/coverage/**"
       ]
    },
    "eslintConfig": {
