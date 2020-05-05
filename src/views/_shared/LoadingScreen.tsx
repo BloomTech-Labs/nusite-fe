@@ -12,7 +12,10 @@ const LoadingScreen = (props: any) => {
    const classes = useStyles();
    return (
       <div>
-         <LinearProgress className={classes.root}></LinearProgress>
+         <LinearProgress
+            className={classes.root}
+            aria-busy="true"
+         ></LinearProgress>
       </div>
    );
 };
