@@ -2,7 +2,7 @@ import * as React from "react";
 import CssBaseline from "@material-ui/core/CssBaseline";
 import GlobalStyles from "./theme/GlobalStyles";
 import { Route, Switch } from "react-router-dom";
-//import "./App.css";
+import "./App.css";
 import { Login } from "./views/login/Login";
 import { Registration } from "./views/registration/Registration";
 import Logout from "./views/_shared/Logout";
