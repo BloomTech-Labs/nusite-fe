@@ -1,33 +1,26 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
 import { getToken, setToken } from "./useLocalStorage";
+import { useCookies } from "react-cookie";
 
-const getCookieToken = (): string | null => {
-   const searchValue = /(?:(?:^|.*;\s*)JWT\s*\=\s*([^;]*).*$)|^.*$/;
-   const cookieValue = document.cookie.replace(searchValue, "$1");
-
-   if (cookieValue) document.cookie = "JWT=";
-   return cookieValue;
-};
-
-const clearCookieToken = (): void => {};
-
+const LOGIN_TOKEN_KEY = "JWT";
 const PrivateRoute = ({ component: Component, ...rest }: any) => {
+   const [cookies, setCookie, removeCookie] = useCookies([LOGIN_TOKEN_KEY]);
+   const localToken: string | null = getToken();
+   console.log(`Local Token: ${localToken}`);
+   console.log(`Cookie Token: ${JSON.stringify(cookies, null, 3)}`);
+
    return (
       <Route
          {...rest}
          render={(props: any) => {
-            const localToken: string | null = getToken();
-            const cookieToken: string | null = getCookieToken();
-            console.log(`Local Token: ${localToken}`);
-            console.log(`Cookie Token: ${cookieToken}`);
-
             if (localToken) {
                return <Component {...props} />;
             }
 
-            if (cookieToken) {
-               setToken(cookieToken);
+            if (cookies[LOGIN_TOKEN_KEY]) {
+               setToken(cookies[LOGIN_TOKEN_KEY]);
+               removeCookie(LOGIN_TOKEN_KEY);
                return <Component {...props} />;
             }
             return <Redirect to="/" />;
