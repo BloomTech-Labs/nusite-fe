@@ -1,14 +1,33 @@
 import React from "react";
 import { Route, Redirect } from "react-router-dom";
+import { getToken, setToken } from "./useLocalStorage";
+
+const getCookieToken = (): string | null => {
+   const searchValue = /(?:(?:^|.*;\s*)JWT\s*\=\s*([^;]*).*$)|^.*$/;
+   const cookieValue = document.cookie.replace(searchValue, "$1");
+
+   if (cookieValue) document.cookie = "JWT=";
+   return cookieValue;
+};
+
+const clearCookieToken = (): void => {};
 
 const PrivateRoute = ({ component: Component, ...rest }: any) => {
    return (
       <Route
          {...rest}
          render={(props: any) => {
-            // Use a render prop so our component is computed,
-            // allowing our token value to be set and deleted over time
-            if (localStorage.getItem("token") && typeof "token" !== undefined) {
+            const localToken: string | null = getToken();
+            const cookieToken: string | null = getCookieToken();
+            console.log(`Local Token: ${localToken}`);
+            console.log(`Cookie Token: ${cookieToken}`);
+
+            if (localToken) {
+               return <Component {...props} />;
+            }
+
+            if (cookieToken) {
+               setToken(cookieToken);
                return <Component {...props} />;
             }
             return <Redirect to="/" />;

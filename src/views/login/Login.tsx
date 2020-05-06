@@ -28,7 +28,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
             userDispatch({ type: LOGIN_SUCCESS, payload: res.data.login.user });
 
             localStorage.setItem("token", res.data.login.token);
-            localStorage.setItem("username", res.data.login.user.username);
+            // localStorage.setItem("username", res.data.login.user.username);
             localStorage.setItem("user_id", res.data.login.user.id);
          })
          .then(data => {
