@@ -3,8 +3,14 @@ import { Route, Redirect } from "react-router-dom";
 import { getToken, setToken } from "./useLocalStorage";
 import { useCookies } from "react-cookie";
 
+const setupUserContext = (jwToken: string) => {
+   //extract user id from the token and store in local storage
+   //Secret words need to match
+   //store the token in local storage
+};
+
 const LOGIN_TOKEN_KEY = "JWT";
-const PrivateRoute = ({ component: Component, ...rest }: any) => {
+const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
    const [cookies, setCookie, removeCookie] = useCookies([LOGIN_TOKEN_KEY]);
    const localToken: string | null = getToken();
    console.log(`Local Token: ${localToken}`);
@@ -12,14 +18,14 @@ const PrivateRoute = ({ component: Component, ...rest }: any) => {
 
    return (
       <Route
-         {...rest}
+         {...otherProps}
          render={(props: any) => {
             if (localToken) {
                return <Component {...props} />;
             }
 
             if (cookies[LOGIN_TOKEN_KEY]) {
-               setToken(cookies[LOGIN_TOKEN_KEY]);
+               setupUserContext(cookies[LOGIN_TOKEN_KEY]);
                removeCookie(LOGIN_TOKEN_KEY);
                return <Component {...props} />;
             }
@@ -30,18 +36,3 @@ const PrivateRoute = ({ component: Component, ...rest }: any) => {
 };
 
 export default PrivateRoute;
-
-// import React from "react";
-// import { Route, Redirect } from "react-router-dom";
-
-// const PrivateRoute = ({ component, isAuthenticated, ...rest }: any) => {
-//    const routeComponent = (props: any) =>
-//       isAuthenticated ? (
-//          React.createElement(component, props)
-//       ) : (
-//          <Redirect to={{ pathname: "/login" }} />
-//       );
-//    return <Route {...rest} render={routeComponent} />;
-// };
-
-// export default PrivateRoute;
