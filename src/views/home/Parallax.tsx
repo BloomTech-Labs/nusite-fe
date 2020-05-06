@@ -1,26 +1,41 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { Grid, makeStyles, useMediaQuery } from "@material-ui/core/";
-import useTheme from "@material-ui/core/styles/useTheme";
+import { Grid, makeStyles } from "@material-ui/core/";
 
 const useStyles = makeStyles(theme => ({
-   parallaxBrackroung: {
+   parallaxContainer: {
+      padding: "125px 0 125px 0",
+      [theme.breakpoints.down("lg")]: {
+         padding: "100px 0 100px 0",
+      },
+      [theme.breakpoints.down("md")]: {
+         padding: "75px 0 75px 0",
+      },
+   },
+   parallaxBrackround: {
       width: "100%",
-      height: "200px",
+      height: "250px",
       backgroundImage:
          "url('https://images.pexels.com/photos/943096/pexels-photo-943096.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260')",
       backgroundAttachment: "fixed",
       backgroundPosition: "center",
       backgroundRepeat: "no-repeat",
       backgroundSize: "cover",
+      [theme.breakpoints.down("lg")]: {
+         height: "200px",
+      },
+      [theme.breakpoints.down("md")]: {
+         height: "175px",
+      },
    },
 }));
 
 const Parallax = (props: any) => {
    const classes = useStyles();
-   const theme = useTheme();
-   const matches = useMediaQuery(theme.breakpoints.down("xs"));
 
-   return <Grid item className={classes.parallaxBrackroung}></Grid>;
+   return (
+      <Grid item className={classes.parallaxContainer}>
+         <div className={classes.parallaxBrackround}></div>
+      </Grid>
+   );
 };
 export default Parallax;

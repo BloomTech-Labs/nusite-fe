@@ -4,15 +4,22 @@ const styles = (theme: any) => ({
    "@global": {
       ".main-container": {
          width: "100%",
-         padding: "0 20% 2.5% 20%",
+         padding: "10% 20% 7.5% 20%",
+         [theme.breakpoints.down("lg")]: {
+            padding: "7.5% 10% 7.5% 10%",
+         },
          [theme.breakpoints.down("md")]: {
-            padding: "0 15% 2.5% 15%",
+            padding: "5% 5% 5% 5%",
          },
-         [theme.breakpoints.down("sm")]: {
-            padding: "0 5% 2.5% 5%",
+      },
+      ".item-container": {
+         width: "100%",
+         padding: "0 0 125px 0",
+         [theme.breakpoints.down("lg")]: {
+            padding: "0 0 100px 0",
          },
-         [theme.breakpoints.down("xs")]: {
-            padding: "0 2.5% 2.5% 2.5%",
+         [theme.breakpoints.down("md")]: {
+            padding: "0 0 75px 0",
          },
       },
    },

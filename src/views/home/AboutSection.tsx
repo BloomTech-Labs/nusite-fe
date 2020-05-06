@@ -6,7 +6,7 @@ const useStyles = makeStyles(theme => ({
    developersImage: {
       maxWidth: "100%",
       [theme.breakpoints.down("sm")]: {
-         paddingTop: "15%",
+         //paddingTop: "15%",
       },
    },
 }));
@@ -15,7 +15,7 @@ const AboutSection = (props: any) => {
    const classes = useStyles();
 
    return (
-      <Grid item component="main">
+      <Grid item component="main" className="item-container">
          <Grid container direction="row" spacing={3}>
             <Grid item lg={8} md={9}>
                <Typography variant="h1">About Us</Typography>
