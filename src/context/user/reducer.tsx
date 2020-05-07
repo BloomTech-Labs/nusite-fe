@@ -53,11 +53,7 @@ const error: Reducer<UserState, ReducerAction> = (
    action: ReducerAction
 ): UserState => {
    return {
-      ...state,
-      user: {
-         ...state.user,
-      },
-      isAuthorizing: false,
+      ...ANONYMOUS_USER,
       error: action.payload,
    };
 };
