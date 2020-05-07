@@ -2,7 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { Route, Redirect } from "react-router-dom";
 import { getToken } from "./useLocalStorage";
 import { useCookies } from "react-cookie";
-import { verify as verifyJWT } from "jsonwebtoken";
+import { verify as verifyJWT, JsonWebTokenError } from "jsonwebtoken";
 import {
    LOGIN_START,
    LOGIN_SUCCESS,
@@ -17,12 +17,11 @@ interface JwtPayload {
 
 const LOGIN_TOKEN_KEY = "JWT";
 const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
+   const [isLoading, setIsLoading] = useState(true);
    const [isLoggedIn, setIsLoggedIn] = useState(false);
    const { userData, userDispatch } = useContext(UserContext);
    const [cookies, setCookie, removeCookie] = useCookies([LOGIN_TOKEN_KEY]);
    const localToken: string | null = getToken();
-   console.log(`Local Token: ${localToken}`);
-   console.log(`Cookie Token: ${JSON.stringify(cookies, null, 3)}`);
 
    const setupUserContext = (jwToken: string): boolean => {
       console.log("Setting UserContext...");
@@ -35,6 +34,8 @@ const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
             process.env.REACT_APP_JWT_SECRET!
          ) as JwtPayload;
 
+         console.log("Login Successful");
+         console.log(data);
          userDispatch({
             type: LOGIN_SUCCESS,
             payload: {
@@ -43,6 +44,9 @@ const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
             },
          });
       } catch (error) {
+         console.log(
+            `There was a problem decoding the token: ${error.message}`
+         );
          userDispatch({ type: AUTH_ERROR, payload: error });
          return false;
       }
@@ -53,11 +57,14 @@ const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
    useEffect(() => {
       //Does user data exist?
       if (userData.user.id > 0) {
+         console.log("Logging in with User data");
+         console.log(userData);
          setIsLoggedIn(true);
       }
 
       //Does a token exist in local storage?
       else if (localToken) {
+         console.log(`Logging in with local token: ${localToken}`);
          const isSuccessful: boolean = setupUserContext(localToken);
 
          if (isSuccessful) {
@@ -67,6 +74,9 @@ const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
 
       //Does a token exist in cookies?
       else if (cookies[LOGIN_TOKEN_KEY]) {
+         console.log(
+            `Logging in with local token: ${cookies[LOGIN_TOKEN_KEY]}`
+         );
          const isSuccessful: boolean = setupUserContext(
             cookies[LOGIN_TOKEN_KEY]
          );
@@ -79,17 +89,25 @@ const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
 
       //None of the above... Not logged in
       else {
+         console.log("Not Logged in; Redirecting to '/'");
          setIsLoggedIn(false);
       }
+
+      setIsLoading(false);
    }, []);
 
-   return (
+   return isLoading ? (
+      <p>Loading...</p>
+   ) : (
       <Route
          {...otherProps}
          render={props => {
+            console.log("Rendering PrivateRoute...");
             if (isLoggedIn) {
+               console.log("logged in");
                return <Component {...props} />;
             } else {
+               console.log("Not logged in");
                return <Redirect to="/" />;
             }
          }}
