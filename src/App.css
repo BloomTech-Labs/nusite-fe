@@ -115,3 +115,24 @@ body {
    text-align: left;
    width: 100%;
 }
+
+.linkedin-OAuth-image {
+   background-image: url(./images/linkedin/Sign-In-Small---Default.png);
+   background-repeat: no-repeat;
+   width: 100%;
+   height: auto;
+}
+
+.linkedin-OAuth-image:hover {
+   background-image: url(./images/linkedin/Sign-In-Small---Hover.png);
+   background-repeat: no-repeat;
+   width: 100%;
+   height: auto;
+}
+
+.linkedin-OAuth-image:active {
+   background-image: url(./images/linkedin/Sign-In-Small---Active.png);
+   background-repeat: no-repeat;
+   width: 100%;
+   height: auto;
+}
