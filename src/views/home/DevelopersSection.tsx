@@ -1,10 +1,10 @@
 import React from "react";
 import { Grid, makeStyles, Typography } from "@material-ui/core/";
 import myapp2 from "../../images/myapp2.svg";
-
+import GetStartedButton from "../_shared/buttons/GetStartedButton";
 const useStyles = makeStyles(theme => ({
    image: {
-      maxWidth: "100%",
+      width: "100%",
    },
 }));
 
@@ -24,6 +24,9 @@ const DevelopersSection = (props: any) => {
                      projects and let the projects you want get matched with you
                      today.
                   </Typography>
+                  <Grid container justify="center">
+                     <GetStartedButton />
+                  </Grid>
                </Grid>
                <Grid item lg={4} md={3}>
                   <img className={classes.image} src={myapp2} alt="" />

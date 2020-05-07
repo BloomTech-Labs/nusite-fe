@@ -7,7 +7,7 @@ import {
    useTheme,
 } from "@material-ui/core/";
 import realtime2 from "../../images/reatime2.svg";
-
+import GetStartedButton from "../_shared/buttons/GetStartedButton";
 const useStyles = makeStyles(theme => ({
    image: {
       maxWidth: "100%",
@@ -41,10 +41,12 @@ const ProjectOwnersSection = (props: any) => {
                   profiles to to see if a developer is suited for your project
                   or just let our algorithm do the heavy lifting for you and let
                   us find you the the best matches based on developer skills or
-                  other preferences. Take the workload off and get started
-                  today. With Partnerd it's easy to find a developer in not
-                  time.
+                  other preferences of your project. With Partnerd it's easy to
+                  find a developer for your project in no time.
                </Typography>
+               <Grid container justify="center">
+                  <GetStartedButton />
+               </Grid>
             </Grid>
          </Grid>
       </Grid>
