@@ -8,7 +8,9 @@ import {
    SIGNUP_START,
    SIGNUP_SUCCESS,
    AUTH_ERROR,
+   LOGOUT,
 } from "./actions";
+import { anonOperationNotAloneMessage } from "graphql/validation/rules/LoneAnonymousOperation";
 
 const NO_ERRORS = null;
 const start: Reducer<UserState, ReducerAction> = (
@@ -57,6 +59,12 @@ const error: Reducer<UserState, ReducerAction> = (
       error: action.payload,
    };
 };
+const clear: Reducer<UserState, ReducerAction> = (
+   state: UserState,
+   action: ReducerAction
+): UserState => {
+   return { ...ANONYMOUS_USER };
+};
 
 export default createReducer(ANONYMOUS_USER, {
    [LOGIN_START]: start,
@@ -65,4 +73,5 @@ export default createReducer(ANONYMOUS_USER, {
    [SIGNUP_START]: start,
    [SIGNUP_SUCCESS]: success,
    [AUTH_ERROR]: error,
+   [LOGOUT]: clear,
 });

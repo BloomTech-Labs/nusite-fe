@@ -7,6 +7,7 @@ export const LOGIN_END: string = "LOGIN_END";
 export const SIGNUP_START: string = "SIGNUP_START";
 export const SIGNUP_SUCCESS: string = "SIGNUP_SUCCESS";
 export const AUTH_ERROR: string = "AUTH_ERROR";
+export const LOGOUT: string = "LOGOUT";
 
 //== Actions ==//
 // interface LoginCredentials {
