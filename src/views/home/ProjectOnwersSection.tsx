@@ -30,12 +30,7 @@ const ProjectOwnersSection = (props: any) => {
             spacing={3}
          >
             <Grid item lg={4} md={3}>
-               <img
-                  className={classes.image}
-                  src={realtime2}
-                  alt=""
-                  //className="realtime"
-               />
+               <img className={classes.image} src={realtime2} alt="" />
             </Grid>
             <Grid item lg={8} md={9}>
                <Typography variant="h1">Project Owners</Typography>
@@ -47,7 +42,8 @@ const ProjectOwnersSection = (props: any) => {
                   or just let our algorithm do the heavy lifting for you and let
                   us find you the the best matches based on developer skills or
                   other preferences. Take the workload off and get started
-                  today. With Partnerd it's easy to find a developer.
+                  today. With Partnerd it's easy to find a developer in not
+                  time.
                </Typography>
             </Grid>
          </Grid>

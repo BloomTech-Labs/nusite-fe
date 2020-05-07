@@ -34,7 +34,7 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-const MatchesSection = (props: any) => {
+const MatchingSection = (props: any) => {
    const classes = useStyles();
    const theme = useTheme();
    const matches = useMediaQuery(theme.breakpoints.up("md"));
@@ -68,4 +68,4 @@ const MatchesSection = (props: any) => {
       </Grid>
    );
 };
-export default MatchesSection;
+export default MatchingSection;

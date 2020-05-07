@@ -1,6 +1,5 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { Button, Grid, makeStyles, Typography } from "@material-ui/core/";
+import { Grid, makeStyles, Typography } from "@material-ui/core/";
 import myapp2 from "../../images/myapp2.svg";
 
 const useStyles = makeStyles(theme => ({

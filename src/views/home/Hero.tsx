@@ -1,10 +1,13 @@
 import React from "react";
 import { Grid, makeStyles, useMediaQuery } from "@material-ui/core/";
 import useTheme from "@material-ui/core/styles/useTheme";
-import taglineImage from "../../images/tagline.jpeg";
+import heroImage from "../../images/hero.jpeg";
 
 const useStyles = makeStyles(theme => ({
-   taglineImage: {
+   gridContainer: {
+      maxWidth: "1200px",
+   },
+   heroImage: {
       width: "100%",
    },
    typography: {
@@ -29,6 +32,7 @@ const useStyles = makeStyles(theme => ({
       paddingTop: "2.5%",
       display: "flex",
       width: "35%",
+      maxWidth: "400px",
       textAlign: "left",
       justifyContent: "left",
       margin: "0 auto",
@@ -46,28 +50,32 @@ const Hero = (props: any) => {
    const theme = useTheme();
    const matches = useMediaQuery(theme.breakpoints.down("xs"));
 
-   const tagline = (
+   const heroText = (
       <h1 className={classes.typography}>
          Connecting people with great ideas to web developers. Old website, new
          website, app, or feature, we've got you covered.
       </h1>
    );
-   const mobileTagline = (
+   const mobileHeroText = (
       <h1 className={classes.typography}>
          Connecting people with great ideas to developers.
       </h1>
    );
    return (
-      <Grid container>
-         <Grid item>
-            <img
-               className={classes.taglineImage}
-               src={taglineImage}
-               alt="tagline"
-            />
-         </Grid>
-         <Grid item className={classes.textContainer}>
-            {matches ? mobileTagline : tagline}
+      <Grid item className={classes.gridContainer}>
+         <Grid container>
+            <Grid container justify="center">
+               <Grid item>
+                  <img
+                     className={classes.heroImage}
+                     src={heroImage}
+                     alt="man in a desk with a computer extending hand for a handshake"
+                  />
+               </Grid>
+               <Grid item className={classes.textContainer}>
+                  {matches ? mobileHeroText : heroText}
+               </Grid>
+            </Grid>
          </Grid>
       </Grid>
    );
