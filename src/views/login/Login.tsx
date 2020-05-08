@@ -14,6 +14,7 @@ import {
    LOGIN_SUCCESS,
    AUTH_ERROR,
 } from "../../context/user/actions";
+import TextField from "@material-ui/core/TextField";
 import UserContext from "../../context/user/context";
 
 export const Login: React.FC = (props: LoginFormData | any) => {
@@ -49,13 +50,13 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                data-testid="login-form"
                onSubmit={onSubmit}
             >
-               <Input name="email" placeholder="Email" type="email" />
-               <Input
+               <TextField name="email" placeholder="Email" type="email" />
+               <TextField
                   name="password"
                   placeholder="Password"
                   autoComplete="current-password"
                   type="password"
-                  minLength={9}
+                  //minLength={9}
                />
                <br />
                <Link to="/initiate">Forgot your password?</Link>

@@ -70,7 +70,7 @@ describe("Test App Routes", () => {
          </MemoryRouter>
       );
 
-      const tagLine = getByText(/We are creating a marketplace/i);
+      const tagLine = getByText(/Welcome to PartNerd/i);
       expect(tagLine.tagName).toMatch(/p/i);
    });
 
