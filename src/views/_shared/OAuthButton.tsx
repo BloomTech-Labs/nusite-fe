@@ -6,8 +6,13 @@ export const OAuthButton = ({ provider }: Providers) => {
    const url: string = `${process.env.REACT_APP_BASE_URL}/api/auth/${provider}`;
    return (
       <>
-         <div className="large-button" data-testid={`${provider}-OAuth-button`}>
-            <a href={url} className={`${provider}-OAuth-button`}>
+         <div className="OAuth-button-container">
+            <div className={`${provider}OAuth-icon-container`}></div>
+            <a
+               href={url}
+               data-testid={`${provider} OAuth-button`}
+               className={`${provider} OAuth-button`}
+            >
                Login with {provider}
             </a>
          </div>
