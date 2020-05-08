@@ -15,6 +15,7 @@ const useStyles = makeStyles(theme => ({
       flexWrap: "wrap",
       width: "55%",
       justifyContent: "center",
+      alignItems: "center",
       fontSize: "1.2rem",
       padding: "2rem",
    },
@@ -22,7 +23,7 @@ const useStyles = makeStyles(theme => ({
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
       width: 200,
-      alignItems: "center",
+      alignItems: "left",
       textAlign: "center",
    },
    button: {
