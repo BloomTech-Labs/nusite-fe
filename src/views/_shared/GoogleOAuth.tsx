@@ -30,7 +30,7 @@ export default class GoogleOAuth extends React.Component {
       const responseGoogle = (response: any) => {
          //console.log(response);
          let res = response.profileObj;
-         console.log(res);
+         //console.log(res);
          localStorage.setItem("username", res.familyName);
          localStorage.setItem("token", response.googleId);
          localStorage.setItem("user_id", response.googleId);
