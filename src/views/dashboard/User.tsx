@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Query, QueryResult } from "react-apollo";
 import { GET_USER } from "../../graphql-requests/queries";
-import "../home/Home.css";
+import "../../App.css";
 //import { makeStyles } from "@material-ui/core/styles";
 
 //let user_id = localStorage.getItem("user_id");
