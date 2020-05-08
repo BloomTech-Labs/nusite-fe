@@ -22,6 +22,8 @@ const useStyles = makeStyles(theme => ({
    container: {
       display: "flex",
       flexWrap: "wrap",
+      backGroundFilter: "blur(10px)",
+      backdropFilter: "blur(10px)",
    },
    textField: {
       marginLeft: theme.spacing(1),
