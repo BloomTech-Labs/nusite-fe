@@ -8,10 +8,11 @@
    border: 0.1rem solid black;
 }
 
-.OAuth-icon-container {
+.Linkedin-icon-container {
    width: 2.5rem;
    height: 2.5rem;
    background-color: palegoldenrod;
+   border: 0.1rem solid green;
 }
 
 .OAuth-button {
@@ -36,15 +37,15 @@
    background-size: auto;
 }
 
-.Google-OAuth-button {
+.Google {
    color: black;
 }
 
-.Github-OAuth-button {
+.Github {
    color: black;
 }
 
-.Facebook-OAuth-button {
+.Facebook {
    color: black;
 }
 

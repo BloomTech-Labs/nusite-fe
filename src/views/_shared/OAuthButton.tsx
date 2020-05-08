@@ -7,7 +7,7 @@ export const OAuthButton = ({ provider }: Providers) => {
    return (
       <>
          <div className="OAuth-button-container">
-            <div className={`${provider}OAuth-icon-container`}></div>
+            <div className={`${provider}-icon-container`}></div>
             <a
                href={url}
                data-testid={`${provider} OAuth-button`}
