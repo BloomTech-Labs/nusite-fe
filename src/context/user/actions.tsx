@@ -19,6 +19,16 @@ export const loginSuccess: (payload: UserType) => UserAction = (
    return { type: LOGIN_SUCCESS, payload };
 };
 
+export const signupStart: () => UserAction = () => {
+   return { type: SIGNUP_START, payload: null };
+};
+
+export const signupSuccess: (payload: UserType) => UserAction = (
+   payload: UserType
+) => {
+   return { type: SIGNUP_SUCCESS, payload };
+};
+
 export const authError: (payload: Error) => UserAction = (payload: Error) => {
    return { type: AUTH_ERROR, payload };
 };

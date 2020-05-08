@@ -8,9 +8,9 @@ import "./Registration.css";
 import Loader from "../_shared/Loader";
 import { RegistrationFormData } from "../../types/FormTypes";
 import {
-   SIGNUP_START,
-   SIGNUP_SUCCESS,
-   AUTH_ERROR,
+   signupStart,
+   signupSuccess,
+   authError,
 } from "../../context/user/actions";
 import UserContext from "../../context/user/context";
 
@@ -28,16 +28,13 @@ export const Registration: React.FC<RegistrationFormData> = (
       password,
       email,
    }: RegistrationFormData) => {
-      userDispatch({ type: SIGNUP_START, payload: null });
+      userDispatch(signupStart());
 
       signup({
          variables: { first_name, last_name, username, password, email },
       })
          .then(res => {
-            userDispatch({
-               type: SIGNUP_SUCCESS,
-               payload: res.data.signup.user,
-            });
+            userDispatch(signupSuccess(res.data.signup.user));
 
             localStorage.setItem("token", res.data.signup.token);
             localStorage.setItem("username", res.data.signup.user.username);
@@ -46,7 +43,7 @@ export const Registration: React.FC<RegistrationFormData> = (
             console.log("Successfully registered... ");
          })
          .catch(err => {
-            userDispatch({ type: AUTH_ERROR, payload: err });
+            userDispatch(authError(err));
             alert(err.message);
             console.log(err);
          });
