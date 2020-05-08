@@ -10,9 +10,9 @@ import Loader from "../_shared/Loader";
 import { LoginFormData } from "../../types/FormTypes";
 import GoogleLogin from "../_shared/GoogleLogin.jsx";
 import {
-   LOGIN_START,
-   LOGIN_SUCCESS,
-   AUTH_ERROR,
+   loginStart,
+   loginSuccess,
+   authError,
 } from "../../context/user/actions";
 import UserContext from "../../context/user/context";
 
@@ -21,14 +21,14 @@ export const Login: React.FC = (props: LoginFormData | any) => {
    const [login] = useMutation(LOGIN);
 
    const onSubmit = ({ email, password }: LoginFormData) => {
-      userDispatch({ type: LOGIN_START, payload: null });
+      userDispatch(loginStart());
 
       login({ variables: { email: email, password: password } })
          .then(res => {
-            userDispatch({ type: LOGIN_SUCCESS, payload: res.data.login.user });
+            userDispatch(loginSuccess(res.data.login.user));
 
             localStorage.setItem("token", res.data.login.token);
-            localStorage.setItem("username", res.data.login.user.username);
+            // localStorage.setItem("username", res.data.login.user.username);
             localStorage.setItem("user_id", res.data.login.user.id);
          })
          .then(data => {
@@ -36,7 +36,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
             console.log(`Welcome `);
          })
          .catch(err => {
-            userDispatch({ type: AUTH_ERROR, payload: err });
+            userDispatch(authError(err));
             alert(err.message);
          });
    };

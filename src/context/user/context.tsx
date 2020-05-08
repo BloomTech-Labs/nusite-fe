@@ -1,5 +1,10 @@
 import { createContext, Context, Dispatch } from "react";
 
+export interface UserType {
+   id: number;
+   username: string;
+}
+
 export interface UserState {
    user: {
       id: number;
