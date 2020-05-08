@@ -6,10 +6,7 @@ export interface UserType {
 }
 
 export interface UserState {
-   user: {
-      id: number;
-      username: string;
-   };
+   user: UserType;
    isAuthorizing: boolean;
    error: Error | null;
 }
