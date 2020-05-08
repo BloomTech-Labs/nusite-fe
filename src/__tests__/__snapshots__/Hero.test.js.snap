@@ -1,40 +1,72 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SubHeader component tests It displays correctly. 1`] = `
+exports[`Hero component tests It displays correctly. 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
       <div
-        class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+        class="MuiGrid-root makeStyles-gridContainer-1 MuiGrid-item"
       >
-        <img
-          alt="tagline"
-          class="makeStyles-taglineImage-1"
-          src="tagline.jpeg"
-        />
-        <h3
-          class="makeStyles-tagline-2"
+        <div
+          class="MuiGrid-root MuiGrid-container"
         >
-          Connecting web developers to people with great ideas. Old website, new website, app, or feature, we've got you covered.
-        </h3>
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item"
+            >
+              <img
+                alt="man in a desk with a computer extending hand for a handshake"
+                class="makeStyles-heroImage-2"
+                src="hero.jpeg"
+              />
+            </div>
+            <div
+              class="MuiGrid-root makeStyles-textContainer-4 MuiGrid-item"
+            >
+              <h1
+                class="makeStyles-typography-3"
+              >
+                Connecting people with great ideas to web developers. Old website, new website, app, or feature, we've got you covered.
+              </h1>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
     <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+      class="MuiGrid-root makeStyles-gridContainer-1 MuiGrid-item"
     >
-      <img
-        alt="tagline"
-        class="makeStyles-taglineImage-1"
-        src="tagline.jpeg"
-      />
-      <h3
-        class="makeStyles-tagline-2"
+      <div
+        class="MuiGrid-root MuiGrid-container"
       >
-        Connecting web developers to people with great ideas. Old website, new website, app, or feature, we've got you covered.
-      </h3>
+        <div
+          class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <img
+              alt="man in a desk with a computer extending hand for a handshake"
+              class="makeStyles-heroImage-2"
+              src="hero.jpeg"
+            />
+          </div>
+          <div
+            class="MuiGrid-root makeStyles-textContainer-4 MuiGrid-item"
+          >
+            <h1
+              class="makeStyles-typography-3"
+            >
+              Connecting people with great ideas to web developers. Old website, new website, app, or feature, we've got you covered.
+            </h1>
+          </div>
+        </div>
+      </div>
     </div>
   </div>,
   "debug": [Function],

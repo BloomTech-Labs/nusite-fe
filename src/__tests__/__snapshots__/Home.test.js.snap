@@ -1,0 +1,514 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Home component test It displays all Home children components correctly without error. 1`] = `
+Object {
+  "asFragment": [Function],
+  "baseElement": <body>
+    <div>
+      <div
+        class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
+        style="display: none;"
+      >
+        <div
+          class="MuiGrid-root main-container MuiGrid-container MuiGrid-direction-xs-column"
+        >
+          <main
+            class="MuiGrid-root item-container MuiGrid-item"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-9 MuiGrid-grid-lg-8"
+              >
+                <h1
+                  class="MuiTypography-root MuiTypography-h1"
+                >
+                  About Us
+                </h1>
+                <p
+                  class="MuiTypography-root about MuiTypography-body1"
+                >
+                  Welcome to PartNerd. We are a marketplace where clients and developers can form partnerships. Take the guess work out of finding a qualified developer for your existing project or next big idea and let us match you with a developer according to your needs. Our market place empowers clients to create a listing for their new or existing project and for developers to showcase their services to prospective clients.
+                </p>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3 MuiGrid-grid-lg-4"
+              >
+                <img
+                  alt=""
+                  class="makeStyles-developersImage-104"
+                  src="developers.svg"
+                />
+              </div>
+            </div>
+          </main>
+          <section
+            class="MuiGrid-root MuiGrid-item"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-direction-xs-column-reverse"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3 MuiGrid-grid-lg-4"
+              >
+                <img
+                  alt=""
+                  class="makeStyles-image-135"
+                  src="reatime2.svg"
+                />
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-9 MuiGrid-grid-lg-8"
+              >
+                <h1
+                  class="MuiTypography-root MuiTypography-h1"
+                >
+                  Project Owners
+                </h1>
+                <p
+                  class="MuiTypography-root MuiTypography-body1"
+                >
+                  Find someone to build, fix, or add on to your existing site or idea. Just create an account and start searching for qualified developers in seconds. You can browse through developer profiles to to see if a developer is suited for your project or just let our algorithm do the heavy lifting for you and let us find you the the best matches based on developer skills or other preferences of your project. With Partnerd it's easy to find a developer for your project in no time.
+                </p>
+                <div
+                  class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
+                >
+                  <a
+                    aria-disabled="false"
+                    class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-136 MuiButton-containedPrimary"
+                    href="/register"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <span
+                      class="MuiButton-label"
+                    >
+                      <div
+                        class="makeStyles-buttonText-137"
+                      >
+                        Get Started
+                      </div>
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div
+            class="MuiGrid-root makeStyles-parallaxContainer-170 MuiGrid-item"
+          >
+            <div
+              class="MuiGrid-root makeStyles-parallaxBrackround-171 MuiGrid-container MuiGrid-align-content-xs-center"
+            >
+              <span
+                class="makeStyles-typingText-172"
+              >
+                <span />
+                <span
+                  class="typed-cursor"
+                >
+                  |
+                </span>
+              </span>
+            </div>
+          </div>
+          <section
+            class="MuiGrid-root item-container MuiGrid-item"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+              >
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-9 MuiGrid-grid-lg-8"
+                >
+                  <h1
+                    class="MuiTypography-root MuiTypography-h1"
+                  >
+                    For Developers 
+                  </h1>
+                  <p
+                    class="MuiTypography-root MuiTypography-body1"
+                  >
+                    Register as a developer, set up a profile, show off your skills and portfolio as they continue to grow, and get paid projects now. It's that simple, no hiring managers, pick projects and let the projects you want get matched with you today.
+                  </p>
+                  <div
+                    class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
+                  >
+                    <a
+                      aria-disabled="false"
+                      class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-136 MuiButton-containedPrimary"
+                      href="/register"
+                      role="button"
+                      tabindex="0"
+                    >
+                      <span
+                        class="MuiButton-label"
+                      >
+                        <div
+                          class="makeStyles-buttonText-137"
+                        >
+                          Get Started
+                        </div>
+                      </span>
+                      <span
+                        class="MuiTouchRipple-root"
+                      />
+                    </a>
+                  </div>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3 MuiGrid-grid-lg-4"
+                >
+                  <img
+                    alt=""
+                    class="makeStyles-image-173"
+                    src="myapp2.svg"
+                  />
+                </div>
+              </div>
+            </div>
+          </section>
+          <section
+            class="MuiGrid-root item-container MuiGrid-item"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+            >
+              <div
+                class="MuiGrid-root makeStyles-container-174 MuiGrid-container MuiGrid-spacing-xs-3"
+              >
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-9 MuiGrid-grid-lg-8"
+                >
+                  <h1
+                    class="MuiTypography-root MuiTypography-h1"
+                  >
+                    Our Matching Process 
+                  </h1>
+                  <p
+                    class="MuiTypography-root MuiTypography-body1"
+                  >
+                    PartNerd™ provides users a comprehensive recommendation generation. Get Realtime matching based on advanced data analysis.
+                  </p>
+                </div>
+                <div
+                  class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3 MuiGrid-grid-lg-4"
+                >
+                  <img
+                    alt=""
+                    class="makeStyles-image-175"
+                    src="coder.svg"
+                  />
+                </div>
+              </div>
+              <img
+                alt=""
+                class="makeStyles-gif-176"
+                src="userflow.gif"
+              />
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+    <style
+      data-typed-js-css="true"
+      type="text/css"
+    >
+      
+        .typed-cursor{
+          opacity: 1;
+        }
+        .typed-cursor.typed-cursor--blink{
+          animation: typedjsBlink 0.7s infinite;
+          -webkit-animation: typedjsBlink 0.7s infinite;
+                  animation: typedjsBlink 0.7s infinite;
+        }
+        @keyframes typedjsBlink{
+          50% { opacity: 0.0; }
+        }
+        @-webkit-keyframes typedjsBlink{
+          0% { opacity: 1; }
+          50% { opacity: 0.0; }
+          100% { opacity: 1; }
+        }
+      
+    </style>
+  </body>,
+  "container": <div>
+    <div
+      class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
+      style="display: none;"
+    >
+      <div
+        class="MuiGrid-root main-container MuiGrid-container MuiGrid-direction-xs-column"
+      >
+        <main
+          class="MuiGrid-root item-container MuiGrid-item"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-9 MuiGrid-grid-lg-8"
+            >
+              <h1
+                class="MuiTypography-root MuiTypography-h1"
+              >
+                About Us
+              </h1>
+              <p
+                class="MuiTypography-root about MuiTypography-body1"
+              >
+                Welcome to PartNerd. We are a marketplace where clients and developers can form partnerships. Take the guess work out of finding a qualified developer for your existing project or next big idea and let us match you with a developer according to your needs. Our market place empowers clients to create a listing for their new or existing project and for developers to showcase their services to prospective clients.
+              </p>
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3 MuiGrid-grid-lg-4"
+            >
+              <img
+                alt=""
+                class="makeStyles-developersImage-104"
+                src="developers.svg"
+              />
+            </div>
+          </div>
+        </main>
+        <section
+          class="MuiGrid-root MuiGrid-item"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 MuiGrid-direction-xs-column-reverse"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3 MuiGrid-grid-lg-4"
+            >
+              <img
+                alt=""
+                class="makeStyles-image-135"
+                src="reatime2.svg"
+              />
+            </div>
+            <div
+              class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-9 MuiGrid-grid-lg-8"
+            >
+              <h1
+                class="MuiTypography-root MuiTypography-h1"
+              >
+                Project Owners
+              </h1>
+              <p
+                class="MuiTypography-root MuiTypography-body1"
+              >
+                Find someone to build, fix, or add on to your existing site or idea. Just create an account and start searching for qualified developers in seconds. You can browse through developer profiles to to see if a developer is suited for your project or just let our algorithm do the heavy lifting for you and let us find you the the best matches based on developer skills or other preferences of your project. With Partnerd it's easy to find a developer for your project in no time.
+              </p>
+              <div
+                class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
+              >
+                <a
+                  aria-disabled="false"
+                  class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-136 MuiButton-containedPrimary"
+                  href="/register"
+                  role="button"
+                  tabindex="0"
+                >
+                  <span
+                    class="MuiButton-label"
+                  >
+                    <div
+                      class="makeStyles-buttonText-137"
+                    >
+                      Get Started
+                    </div>
+                  </span>
+                  <span
+                    class="MuiTouchRipple-root"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div
+          class="MuiGrid-root makeStyles-parallaxContainer-170 MuiGrid-item"
+        >
+          <div
+            class="MuiGrid-root makeStyles-parallaxBrackround-171 MuiGrid-container MuiGrid-align-content-xs-center"
+          >
+            <span
+              class="makeStyles-typingText-172"
+            >
+              <span />
+              <span
+                class="typed-cursor"
+              >
+                |
+              </span>
+            </span>
+          </div>
+        </div>
+        <section
+          class="MuiGrid-root item-container MuiGrid-item"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+          >
+            <div
+              class="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-9 MuiGrid-grid-lg-8"
+              >
+                <h1
+                  class="MuiTypography-root MuiTypography-h1"
+                >
+                  For Developers 
+                </h1>
+                <p
+                  class="MuiTypography-root MuiTypography-body1"
+                >
+                  Register as a developer, set up a profile, show off your skills and portfolio as they continue to grow, and get paid projects now. It's that simple, no hiring managers, pick projects and let the projects you want get matched with you today.
+                </p>
+                <div
+                  class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
+                >
+                  <a
+                    aria-disabled="false"
+                    class="MuiButtonBase-root MuiButton-root MuiButton-contained makeStyles-button-136 MuiButton-containedPrimary"
+                    href="/register"
+                    role="button"
+                    tabindex="0"
+                  >
+                    <span
+                      class="MuiButton-label"
+                    >
+                      <div
+                        class="makeStyles-buttonText-137"
+                      >
+                        Get Started
+                      </div>
+                    </span>
+                    <span
+                      class="MuiTouchRipple-root"
+                    />
+                  </a>
+                </div>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3 MuiGrid-grid-lg-4"
+              >
+                <img
+                  alt=""
+                  class="makeStyles-image-173"
+                  src="myapp2.svg"
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+        <section
+          class="MuiGrid-root item-container MuiGrid-item"
+        >
+          <div
+            class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
+          >
+            <div
+              class="MuiGrid-root makeStyles-container-174 MuiGrid-container MuiGrid-spacing-xs-3"
+            >
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-9 MuiGrid-grid-lg-8"
+              >
+                <h1
+                  class="MuiTypography-root MuiTypography-h1"
+                >
+                  Our Matching Process 
+                </h1>
+                <p
+                  class="MuiTypography-root MuiTypography-body1"
+                >
+                  PartNerd™ provides users a comprehensive recommendation generation. Get Realtime matching based on advanced data analysis.
+                </p>
+              </div>
+              <div
+                class="MuiGrid-root MuiGrid-item MuiGrid-grid-md-3 MuiGrid-grid-lg-4"
+              >
+                <img
+                  alt=""
+                  class="makeStyles-image-175"
+                  src="coder.svg"
+                />
+              </div>
+            </div>
+            <img
+              alt=""
+              class="makeStyles-gif-176"
+              src="userflow.gif"
+            />
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>,
+  "debug": [Function],
+  "findAllByAltText": [Function],
+  "findAllByDisplayValue": [Function],
+  "findAllByLabelText": [Function],
+  "findAllByPlaceholderText": [Function],
+  "findAllByRole": [Function],
+  "findAllByTestId": [Function],
+  "findAllByText": [Function],
+  "findAllByTitle": [Function],
+  "findByAltText": [Function],
+  "findByDisplayValue": [Function],
+  "findByLabelText": [Function],
+  "findByPlaceholderText": [Function],
+  "findByRole": [Function],
+  "findByTestId": [Function],
+  "findByText": [Function],
+  "findByTitle": [Function],
+  "getAllByAltText": [Function],
+  "getAllByDisplayValue": [Function],
+  "getAllByLabelText": [Function],
+  "getAllByPlaceholderText": [Function],
+  "getAllByRole": [Function],
+  "getAllByTestId": [Function],
+  "getAllByText": [Function],
+  "getAllByTitle": [Function],
+  "getByAltText": [Function],
+  "getByDisplayValue": [Function],
+  "getByLabelText": [Function],
+  "getByPlaceholderText": [Function],
+  "getByRole": [Function],
+  "getByTestId": [Function],
+  "getByText": [Function],
+  "getByTitle": [Function],
+  "mockSpies": Object {
+    "setDarkMode": [MockFunction],
+  },
+  "queryAllByAltText": [Function],
+  "queryAllByDisplayValue": [Function],
+  "queryAllByLabelText": [Function],
+  "queryAllByPlaceholderText": [Function],
+  "queryAllByRole": [Function],
+  "queryAllByTestId": [Function],
+  "queryAllByText": [Function],
+  "queryAllByTitle": [Function],
+  "queryByAltText": [Function],
+  "queryByDisplayValue": [Function],
+  "queryByLabelText": [Function],
+  "queryByPlaceholderText": [Function],
+  "queryByRole": [Function],
+  "queryByTestId": [Function],
+  "queryByText": [Function],
+  "queryByTitle": [Function],
+  "rerender": [Function],
+  "unmount": [Function],
+}
+`;
