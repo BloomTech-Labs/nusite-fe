@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
+//import DarkMode from "../_shared/DarkMode";
 import "../home/Home";
 import { useMutation } from "@apollo/react-hooks";
-import User from "./User";
+import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
-//import "./Dashboard.css";
+//import AddButton from "./AddButton";
+import GoogleOAuth from "../_shared/GoogleOAuth";
 
 const useStyles = makeStyles(theme => ({
    container: {
@@ -23,7 +24,7 @@ const useStyles = makeStyles(theme => ({
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
       width: 250,
-      alignItems: "left",
+      alignItems: "center",
       textAlign: "center",
    },
    button: {
@@ -31,10 +32,9 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-const Dashboard: React.FC = (props: any) => {
+const DashboardGoogle: React.FC = (props: any) => {
    const [name, setName] = useState("");
    const classes = useStyles();
-
    useEffect(() => {
       let username = localStorage.getItem("username");
       if (username) {
@@ -50,7 +50,7 @@ const Dashboard: React.FC = (props: any) => {
    });
 
    const handleChange = (event: any) => {
-      event.preventDefault();
+      // event.preventDefault();
       setUsers({
          ...users,
          [event.target.name]: event.target.value,
@@ -67,15 +67,14 @@ const Dashboard: React.FC = (props: any) => {
          username,
          email,
       }: any) => {
-         console.log(user_id);
+         //console.log(user_id);
          updateUser({
             variables: { user_id, ...users },
          })
             .then(res => {
                console.log(res.data);
-               setName(res.data.updateUser.username);
                localStorage.setItem("username", res.data.updateUser.username);
-               props.history.push("/home");
+               props.history.push("/homeg");
                console.log("Successfully updated.");
             })
             .catch(err => {
@@ -83,18 +82,15 @@ const Dashboard: React.FC = (props: any) => {
                console.log(err);
             });
       };
-
       return (
          <>
-            <div className={classes.container}>
+            <main className={classes.container}>
                <br />
                <h1>Welcome to Your Dashboard {name}</h1>
                <br />
-               <User />
-               <br />
                <p>Update/Change Your Profile</p>
                <br />
-               <div className={classes.container}>
+               <div className="boxedit">
                   <TextField
                      label="username: "
                      name="username"
@@ -134,10 +130,10 @@ const Dashboard: React.FC = (props: any) => {
                   Edit Profile
                </Button>
                <br />
-            </div>
+            </main>
          </>
       );
    }
 };
 
-export default Dashboard;
+export default DashboardGoogle;
