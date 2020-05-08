@@ -5,10 +5,34 @@ import User from "./User";
 import Button from "@material-ui/core/Button";
 import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
-import AddButton from "./AddButton";
+import { makeStyles } from "@material-ui/core/styles";
+//import "./Dashboard.css";
+
+const useStyles = makeStyles(theme => ({
+   container: {
+      display: "flex",
+      flexFlow: "column",
+      flexWrap: "wrap",
+      width: "55%",
+      justifyContent: "center",
+      fontSize: "1.2rem",
+      padding: "2rem",
+   },
+   textField: {
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      width: 200,
+      alignItems: "center",
+      textAlign: "center",
+   },
+   button: {
+      margin: theme.spacing(1),
+   },
+}));
 
 const Dashboard: React.FC = (props: any) => {
    const [name, setName] = useState("");
+   const classes = useStyles();
 
    useEffect(() => {
       let username = localStorage.getItem("username");
@@ -25,7 +49,7 @@ const Dashboard: React.FC = (props: any) => {
    });
 
    const handleChange = (event: any) => {
-      // event.preventDefault();
+      event.preventDefault();
       setUsers({
          ...users,
          [event.target.name]: event.target.value,
@@ -58,9 +82,10 @@ const Dashboard: React.FC = (props: any) => {
                console.log(err);
             });
       };
+
       return (
          <>
-            <main className="dashboard">
+            <div className={classes.container}>
                <br />
                <h1>Welcome to Your Dashboard {name}</h1>
                <br />
@@ -68,7 +93,7 @@ const Dashboard: React.FC = (props: any) => {
                <br />
                <p>Update/Change Your Profile</p>
                <br />
-               <div className="boxedit">
+               <div className={classes.container}>
                   <TextField
                      label="username: "
                      name="username"
@@ -108,10 +133,7 @@ const Dashboard: React.FC = (props: any) => {
                   Edit Profile
                </Button>
                <br />
-               <p>Add Project to Dashboard</p>
-               <AddButton />
-               <br />
-            </main>
+            </div>
          </>
       );
    }

@@ -14,6 +14,7 @@ import Footer from "./views/_shared/footer/Footer";
 import { InitiateReset } from "./views/reset/InitiateReset";
 import { FinalizeReset } from "./views/reset/FinalizeReset";
 import DashboardGoogle from "./views/dashboard/DashboardGoogle";
+//initial other loading component here
 
 const Header = React.lazy(() => import("./views/_shared/header/Header"));
 
@@ -31,6 +32,7 @@ const App = () => (
             <Route exact path="/initiate" component={InitiateReset} />
             <PrivateRoute exact path="/_reset" component={FinalizeReset} />
             <PrivateRoute exact path="/home" component={Dashboard} />
+            <PrivateRoute path="/homeg" component={DashboardGoogle} />
          </Switch>
          <Footer />
       </div>

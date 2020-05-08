@@ -1,16 +1,38 @@
 import React, { useEffect, useState } from "react";
-import DarkMode from "../_shared/DarkMode";
+//import DarkMode from "../_shared/DarkMode";
 import "../home/Home";
 import { useMutation } from "@apollo/react-hooks";
-//import User from "./User";
+import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
-import AddButton from "./AddButton";
+//import AddButton from "./AddButton";
+
+const useStyles = makeStyles(theme => ({
+   container: {
+      display: "flex",
+      flexFlow: "column",
+      flexWrap: "wrap",
+      width: "55%",
+      justifyContent: "center",
+      fontSize: "1.2rem",
+      padding: "2rem",
+   },
+   textField: {
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      width: 200,
+      alignItems: "center",
+      textAlign: "center",
+   },
+   button: {
+      margin: theme.spacing(1),
+   },
+}));
 
 const DashboardGoogle: React.FC = (props: any) => {
    const [name, setName] = useState("");
-
+   const classes = useStyles();
    useEffect(() => {
       let username = localStorage.getItem("username");
       if (username) {
@@ -60,9 +82,7 @@ const DashboardGoogle: React.FC = (props: any) => {
       };
       return (
          <>
-            <main className="dashboard">
-               <br />
-               <DarkMode />
+            <main className={classes.container}>
                <br />
                <h1>Welcome to Your Dashboard {name}</h1>
                <br />
@@ -107,9 +127,6 @@ const DashboardGoogle: React.FC = (props: any) => {
                >
                   Edit Profile
                </Button>
-               <br />
-               <p>Add Project to Dashboard</p>
-               <AddButton />
                <br />
             </main>
          </>

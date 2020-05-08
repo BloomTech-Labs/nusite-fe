@@ -1,0 +1,23 @@
+.App body .boxedit {
+   display: flex;
+   flex-flow: column wrap;
+   background: whitesmoke;
+   border-radius: 2px;
+   color: #111;
+   justify-content: left;
+   align-items: left;
+   text-align: left;
+   padding: 11px;
+}
+
+.App body .dashboard {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   background: whitesmoke;
+   border-radius: 2px;
+   color: #111;
+   text-align: left;
+   padding: 11px;
+   width: 100%;
+}

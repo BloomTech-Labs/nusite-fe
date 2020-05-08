@@ -8,19 +8,37 @@ import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
 import { LoginFormData } from "../../types/FormTypes";
+import { makeStyles } from "@material-ui/core/styles";
 import GoogleOAuth from "../_shared/GoogleOAuth";
 import {
    LOGIN_START,
    LOGIN_SUCCESS,
    AUTH_ERROR,
 } from "../../context/user/actions";
-import TextField from "@material-ui/core/TextField";
+//import TextField from "@material-ui/core/TextField";
 import UserContext from "../../context/user/context";
+
+const useStyles = makeStyles(theme => ({
+   container: {
+      display: "flex",
+      flexWrap: "wrap",
+   },
+   textField: {
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      width: 200,
+      alignItems: "center",
+      textAlign: "center",
+   },
+   button: {
+      margin: theme.spacing(1),
+   },
+}));
 
 export const Login: React.FC = (props: LoginFormData | any) => {
    const { userData, userDispatch } = useContext(UserContext);
    const [login] = useMutation(LOGIN);
-
+   const classes = useStyles();
    const onSubmit = ({ email, password }: LoginFormData) => {
       userDispatch({ type: LOGIN_START, payload: null });
 
@@ -46,17 +64,19 @@ export const Login: React.FC = (props: LoginFormData | any) => {
       <>
          <div className="box">
             <Form
-               className="login-form"
+               className={classes.container}
                data-testid="login-form"
                onSubmit={onSubmit}
             >
-               <TextField name="email" placeholder="Email" type="email" />
-               <TextField
+               {/*<TextField id="filled-basic" className={classes.textField}>*/}
+               <Input name="email" placeholder="Email" type="email" />
+               {/*<TextField id="filled-basic" className={classes.textField}>*/}
+               <Input
                   name="password"
                   placeholder="Password"
                   autoComplete="current-password"
                   type="password"
-                  //minLength={9}
+                  minLength={9}
                />
                <br />
                <Link to="/initiate">Forgot your password?</Link>
