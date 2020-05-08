@@ -7,6 +7,7 @@ import {
    LOGIN_END,
    SIGNUP_START,
    SIGNUP_SUCCESS,
+   LOGOUT,
    AUTH_ERROR,
 } from "./actions";
 
@@ -24,6 +25,7 @@ const start: Reducer<UserState, ReducerAction> = (
       error: NO_ERRORS,
    };
 };
+
 const success: Reducer<UserState, ReducerAction> = (
    state: UserState,
    action: ReducerAction
@@ -35,6 +37,7 @@ const success: Reducer<UserState, ReducerAction> = (
       error: NO_ERRORS,
    };
 };
+
 const end: Reducer<UserState, ReducerAction> = (
    state: UserState,
    action: ReducerAction
@@ -48,18 +51,22 @@ const end: Reducer<UserState, ReducerAction> = (
       error: NO_ERRORS,
    };
 };
+
 const error: Reducer<UserState, ReducerAction> = (
    state: UserState,
    action: ReducerAction
 ): UserState => {
    return {
-      ...state,
-      user: {
-         ...state.user,
-      },
-      isAuthorizing: false,
+      ...ANONYMOUS_USER,
       error: action.payload,
    };
+};
+
+const clear: Reducer<UserState, ReducerAction> = (
+   state: UserState,
+   action: ReducerAction
+): UserState => {
+   return { ...ANONYMOUS_USER };
 };
 
 export default createReducer(ANONYMOUS_USER, {
@@ -68,5 +75,6 @@ export default createReducer(ANONYMOUS_USER, {
    [LOGIN_END]: end,
    [SIGNUP_START]: start,
    [SIGNUP_SUCCESS]: success,
+   [LOGOUT]: clear,
    [AUTH_ERROR]: error,
 });
