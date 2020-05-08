@@ -13,7 +13,7 @@ const useStyles = makeStyles(theme => ({
       display: "flex",
       flexFlow: "column",
       flexWrap: "wrap",
-      width: "55%",
+      width: "90%",
       justifyContent: "center",
       alignItems: "center",
       fontSize: "1.2rem",
