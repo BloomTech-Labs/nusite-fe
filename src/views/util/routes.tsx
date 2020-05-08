@@ -1,4 +1,4 @@
-import { getToken } from "./TokenHelpers";
+import { getToken } from "./useLocalStorage";
 
 //this custom hook returns on array of routes if the user is logged in.
 //it should use state management instead of checking for a token.
