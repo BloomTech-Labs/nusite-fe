@@ -1,13 +1,16 @@
-import React from "react";
+import React, { useContext, useEffect } from "react";
 import { Redirect } from "react-router-dom";
+import { logout } from "../../context/user/actions";
+import UserContext from "../../context/user/context";
 
 const Logout = (props: any) => {
-   // Nothing has to happen on the server to log out,
-   // just delete the token
-   localStorage.removeItem("token");
-   localStorage.removeItem("username");
-   localStorage.removeItem("user_id");
-   localStorage.clear();
+   const { userDispatch } = useContext(UserContext);
+
+   useEffect(() => {
+      userDispatch(logout());
+      localStorage.clear();
+   }, []);
+
    return <Redirect to="/login" />;
 };
 

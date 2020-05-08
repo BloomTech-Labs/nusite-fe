@@ -6,6 +6,7 @@ export const LOGIN_SUCCESS: string = "LOGIN_SUCCESS";
 export const LOGIN_END: string = "LOGIN_END";
 export const SIGNUP_START: string = "SIGNUP_START";
 export const SIGNUP_SUCCESS: string = "SIGNUP_SUCCESS";
+export const LOGOUT: string = "LOGOUT";
 export const AUTH_ERROR: string = "AUTH_ERROR";
 
 //== Action Creators ==//
@@ -27,6 +28,10 @@ export const signupSuccess: (payload: UserType) => UserAction = (
    payload: UserType
 ) => {
    return { type: SIGNUP_SUCCESS, payload };
+};
+
+export const logout: () => UserAction = () => {
+   return { type: LOGOUT, payload: null };
 };
 
 export const authError: (payload: Error) => UserAction = (payload: Error) => {
