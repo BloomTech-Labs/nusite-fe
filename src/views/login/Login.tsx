@@ -8,7 +8,7 @@ import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
 import { LoginFormData } from "../../types/FormTypes";
-import GoogleOAuth from "../_shared/GoogleOAuth.jsx";
+import GoogleOAuth from "../_shared/GoogleOAuth";
 import {
    LOGIN_START,
    LOGIN_SUCCESS,
