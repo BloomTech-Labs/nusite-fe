@@ -7,6 +7,7 @@ import Button from "@material-ui/core/Button";
 import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
 //import AddButton from "./AddButton";
+import GoogleOAuth from "../_shared/GoogleOAuth";
 
 const useStyles = makeStyles(theme => ({
    container: {
@@ -66,7 +67,7 @@ const DashboardGoogle: React.FC = (props: any) => {
          username,
          email,
       }: any) => {
-         console.log(user_id);
+         //console.log(user_id);
          updateUser({
             variables: { user_id, ...users },
          })

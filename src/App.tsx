@@ -32,7 +32,7 @@ const App = () => (
             <Route exact path="/initiate" component={InitiateReset} />
             <PrivateRoute exact path="/_reset" component={FinalizeReset} />
             <PrivateRoute exact path="/home" component={Dashboard} />
-            <PrivateRoute path="/homeg" component={DashboardGoogle} />
+            <PrivateRoute exact path="/homeg" component={DashboardGoogle} />
          </Switch>
          <Footer />
       </div>
