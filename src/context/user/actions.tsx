@@ -1,4 +1,3 @@
-import { Dispatch } from "react";
 import { UserAction, UserType } from "./context";
 
 export const LOGIN_START: string = "LOGIN_START";

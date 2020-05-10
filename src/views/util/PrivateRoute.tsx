@@ -8,7 +8,7 @@ import UserContext from "../../context/user/context";
 const LOGIN_TOKEN_KEY = "JWT";
 const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
    const { userData } = useContext(UserContext);
-   const [cookies, setCookie, removeCookie] = useCookies([LOGIN_TOKEN_KEY]);
+   const [cookies, , removeCookie] = useCookies([LOGIN_TOKEN_KEY]);
 
    const localToken: string | null = getToken();
    const cookieToken: string | undefined = cookies[LOGIN_TOKEN_KEY];

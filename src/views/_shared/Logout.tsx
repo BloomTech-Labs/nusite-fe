@@ -9,7 +9,7 @@ const Logout = (props: any) => {
    useEffect(() => {
       userDispatch(logout());
       localStorage.clear();
-   }, []);
+   }, [userDispatch]);
 
    return <Redirect to="/login" />;
 };
