@@ -1,36 +1,5 @@
 import styled from "styled-components";
-// import L_Default from "../../../images/OAuth-Images/Linkedin-Default.png";
-// import L_Hover from "../../../images/OAuth-Images/Linkedin-Hover.png";
-// import L_Active from "../../../images/OAuth-Images/Linkedin-Active.png";
-import path from "path";
-
-// class Provider {
-//    constructor(...images) {
-//       this.default = images[0];
-//       this.hover = images[1];
-//       this.active = images[2];
-//    }
-//    getDefault() {
-//       return this.default;
-//    }
-//    getHover() {
-//       return this.hover;
-//    }
-//    getActive() {
-//       return this.active;
-//    }
-// }
-
-// const LinkedIn = new Provider(L_Default, L_Hover, L_Active);
-
-console.log("observe path module: ", path.dirname("/src/images/OAuth-Images/"));
-
-// const base = path.dirname("src/images/../images/OAuth-Images/");
-
-const background = (provider, state) => {
-   console.log("background source: ", provider, ": ", state);
-   return `url("../../../images/OAuth-Images/${provider}-${state}.png")`;
-};
+import { LinkedIn, Google } from "../OAuth/OAuthProviders";
 
 export const OAuthContainer = styled.div`
    width: 20rem;
@@ -44,12 +13,13 @@ export const OAuthContainer = styled.div`
 `;
 
 export const OAuthTag = styled.a`
-   background-image: ${props => background(props.provider, "Default")};
+   background-image: url(${LinkedIn.getDefault()});
+
    &:hover {
-      background-image: ${props => background(props.provider, "Hover")};
+      background-image: url(${LinkedIn.getHover()});
    }
    &:active {
-      background-image: ${props => background(props.provider, "Active")};
+      background-image: url(${LinkedIn.getActive()});
    }
 
    display: flex;
@@ -69,17 +39,3 @@ export const OAuthTag = styled.a`
    background-size: auto;
    cursor: pointer;
 `;
-
-// export const OAuthTag = styled.a`
-//    ${props =>
-//       props.provider &&
-//       css`
-//       background-image: url("../../../images/OAuth-Images/${props.provider}-Default.png");
-//          :hover {
-//             background-image: url("../../../images/OAuth-Images/${props.provider}-Hover.png");
-//          }
-//          :active {
-//             background-image: url("../../../images/OAuth-Images/${props.provider}-Active.png");
-//          }
-//       `}}
-// `;
