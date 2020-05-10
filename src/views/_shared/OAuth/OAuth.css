@@ -1,116 +1,34 @@
-.OAuth-button-container {
-   width: 20rem;
-   display: flex;
-   flex-direction: column;
-   margin: 0 auto;
-   justify-content: center;
-   align-items: center;
-   border: 0.1rem solid black;
-}
-
-.Linkedin-icon-container {
-   width: 2.5rem;
-   height: 2.5rem;
-   background-color: palegoldenrod;
-   border: 0.1rem solid green;
-}
-
 .OAuth-button {
    display: flex;
-   width: 11.4rem;
+   width: 12.5rem;
    height: 2.5rem;
-   background-color: royalblue;
    color: white;
-   margin: 1rem;
+   margin: 0.5rem;
    padding: 1rem;
-   padding-right: 0.2rem;
+   padding-top: 1.25rem;
+   padding-right: 0.55rem;
    border-radius: 0.2rem;
    text-decoration: none;
    font-size: 1rem;
    justify-content: flex-end;
    align-items: center;
+   background-repeat: no-repeat;
+   background-size: auto;
+   cursor: pointer;
 }
 
 .LinkedIn {
-   background-image: url("../../../images/linkedin/Sign-In-Small---Default.png");
-   background-repeat: no-repeat;
-   background-size: auto;
+   background-image: url("../../../images/OAuth-Images/LinkedIn-Default.png");
 }
 
 .Google {
-   color: black;
+   background-image: url("../../../images/OAuth-Images/LinkedIn-Default.png");
 }
 
 .Github {
-   color: black;
+   background-image: url("../../../images/OAuth-Images/LinkedIn-Default.png");
 }
 
 .Facebook {
-   color: black;
+   background-image: url("../../../images/OAuth-Images/LinkedIn-Default.png");
 }
-
-/* 
-.google-btn {
-   width: 210px;
-   height: 42px;
-   margin: 0 auto;
-   background-color: #45a29e;
-   border-radius: 2px;
-   cursor: pointer;
-}
-.google-btn .google-icon-wrapper {
-   position: absolute;
-   margin-top: 1px;
-   margin-left: 1px;
-   width: 45px;
-   height: 40px;
-   border-radius: 2px;
-   background-color: #fff;
-   cursor: pointer;
-}
-.google-btn .google-icon {
-   position: absolute;
-   margin-top: 11px;
-   width: 17px;
-   height: 20px;
-}
-.google-btn .btn-text {
-   float: right;
-   margin: 11px 11px 0 0;
-   color: #fff;
-   font-size: 14px;
-   letter-spacing: 0.2px;
-   font-family: "Roboto";
-}
-.github-btn {
-   width: 210px;
-   height: 42px;
-   margin: 0 auto;
-   background-color: #333;
-   border-radius: 2px;
-   cursor: pointer;
-}
-.github-btn .github-icon-wrapper {
-   position: absolute;
-   margin-top: 1px;
-   margin-left: 1px;
-   width: 45px;
-   height: 40px;
-   border-radius: 2px;
-   background-color: #fff;
-   cursor: pointer;
-}
-.github-btn .github-icon {
-   position: absolute;
-   margin-top: 11px;
-   width: 17px;
-   height: 20px;
-}
-.github-btn .btn-text {
-   float: right;
-   margin: 11px 11px 0 0;
-   color: #fff;
-   font-size: 14px;
-   letter-spacing: 0.2px;
-   font-family: "Roboto";
-} */
