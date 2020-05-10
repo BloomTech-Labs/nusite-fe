@@ -6,7 +6,6 @@ import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
 import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
-//import AddButton from "./AddButton";
 //import GoogleOAuth from "../_shared/GoogleOAuth";
 
 const useStyles = makeStyles(theme => ({
@@ -23,7 +22,7 @@ const useStyles = makeStyles(theme => ({
    textField: {
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
-      width: 250,
+      width: "70%",
       alignItems: "center",
       textAlign: "center",
    },
@@ -32,7 +31,7 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-const DashboardGoogle: React.FC = (props: any) => {
+const DashboardProfile: React.FC = (props: any) => {
    const [name, setName] = useState("");
    const classes = useStyles();
    useEffect(() => {
@@ -74,7 +73,7 @@ const DashboardGoogle: React.FC = (props: any) => {
             .then(res => {
                console.log(res.data);
                localStorage.setItem("username", res.data.updateUser.username);
-               props.history.push("/homeg");
+               props.history.push("/homeprof");
                console.log("Successfully updated.");
             })
             .catch(err => {
@@ -136,4 +135,4 @@ const DashboardGoogle: React.FC = (props: any) => {
    }
 };
 
-export default DashboardGoogle;
+export default DashboardProfile;

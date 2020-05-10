@@ -23,7 +23,7 @@ const User: React.FC = (props: any) => {
             {({ error, data, loading }: QueryResult) => {
                if (error) {
                   console.log(error);
-                  return <Redirect to="/homeg" />;
+                  return <Redirect to="/homeprof" />;
                }
 
                if (loading) return <p>Loading...</p>;
