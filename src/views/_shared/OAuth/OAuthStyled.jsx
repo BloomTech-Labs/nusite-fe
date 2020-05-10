@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import { LinkedIn, Google } from "../OAuth/OAuthProviders";
 
 export const OAuthContainer = styled.div`
    width: 20rem;
@@ -13,13 +12,19 @@ export const OAuthContainer = styled.div`
 `;
 
 export const OAuthTag = styled.a`
-   background-image: url(${LinkedIn.getDefault()});
+   background-image: url(${props =>
+      props.provider &&
+      require(`../../../images/OAuth-Images/${props.provider}-Default.png`)});
 
    &:hover {
-      background-image: url(${LinkedIn.getHover()});
+      background-image: url(${props =>
+         props.provider &&
+         require(`../../../images/OAuth-Images/${props.provider}-Hover.png`)});
    }
    &:active {
-      background-image: url(${LinkedIn.getActive()});
+      background-image: url(${props =>
+         props.provider &&
+         require(`../../../images/OAuth-Images/${props.provider}-Active.png`)});
    }
 
    display: flex;
