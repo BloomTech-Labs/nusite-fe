@@ -13,8 +13,6 @@ import {
    AUTH_ERROR,
 } from "../../context/user/actions";
 import UserContext from "../../context/user/context";
-import GoogleOAuth from "../_shared/GoogleOAuth";
-//
 
 export const Registration: React.FC<RegistrationFormData> = (
    props: RegistrationFormData | any
@@ -85,7 +83,6 @@ export const Registration: React.FC<RegistrationFormData> = (
                   </Button>
                )}
             </Form>
-            <GoogleOAuth />
          </div>
       </>
    );

@@ -37,18 +37,12 @@ const GoogleOAuth: React.FC = (props: any) => {
 
    return (
       <>
-         <div className="row">
-            <div style={{ paddingTop: "20px" }} className="col-sm-12">
-               <div className="col-sm-4">
-                  <GoogleLogin
-                     clientId="403619985302-kcu2rduts2gj7oolnvjd89aj5lhgnkf5.apps.googleusercontent.com"
-                     buttonText="Login with Google"
-                     onSuccess={responseGoogle}
-                     onFailure={responseGoogle}
-                  ></GoogleLogin>
-               </div>
-            </div>
-         </div>
+         <GoogleLogin
+            clientId="403619985302-kcu2rduts2gj7oolnvjd89aj5lhgnkf5.apps.googleusercontent.com"
+            buttonText=""
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+         ></GoogleLogin>
       </>
    );
 };

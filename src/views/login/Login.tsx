@@ -9,7 +9,6 @@ import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
 import { LoginFormData } from "../../types/FormTypes";
 import { makeStyles } from "@material-ui/core/styles";
-import GoogleOAuth from "../_shared/GoogleOAuth";
 import {
    LOGIN_START,
    LOGIN_SUCCESS,
@@ -17,6 +16,7 @@ import {
 } from "../../context/user/actions";
 //import TextField from "@material-ui/core/TextField";
 import UserContext from "../../context/user/context";
+import OAuthLogin from "../_shared/OAuthLogin";
 
 const useStyles = makeStyles(theme => ({
    container: {
@@ -96,8 +96,8 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   </Button>
                )}
                <br />
+               <OAuthLogin />
             </Form>
-            <GoogleOAuth />
             <br />
          </div>
       </>
