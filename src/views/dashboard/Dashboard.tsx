@@ -11,7 +11,7 @@ const Dashboard: React.FC = (props: any) => {
    const [name, setName] = useState("");
 
    useEffect(() => {
-      let username = localStorage.getItem("username");
+      let username = localStorage.getItem("username") || "Anonymous";
       if (username) {
          setName(username);
       }
