@@ -1,5 +1,6 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
+import { Redirect, withRouter } from "react-router-dom";
 
 const GoogleOAuth: React.FC = (props: any) => {
    function signup(res: any) {
@@ -13,36 +14,38 @@ const GoogleOAuth: React.FC = (props: any) => {
          ProviderId: "Google",
       };
       //debugger;
+      return <Redirect to="/homeprof" />;
    }
 
    const responseGoogle = (response: any) => {
       //console.log(response);
       let res = response.profileObj;
-      //console.log(res);
+      console.log(res);
       localStorage.setItem("username", res.familyName);
       localStorage.setItem("token", response.googleId);
       localStorage.setItem("user_id", response.googleId);
       //debugger;
       alert(
-         "Please enter your profile info on the dashboard if you want to build a profile!"
+         "Please enter your profile info on the dashboard to build a user profile."
       );
       signup(response);
-      props.history.push("/homeg");
+      function DashRedir(props: any) {
+         props.history.push("/homeprof");
+      }
+      DashRedir(props);
    };
 
    return (
       <>
-         <div className="App">
-            <div className="row">
-               <div style={{ paddingTop: "20px" }} className="col-sm-12">
-                  <div className="col-sm-4">
-                     <GoogleLogin
-                        clientId="403619985302-kcu2rduts2gj7oolnvjd89aj5lhgnkf5.apps.googleusercontent.com"
-                        buttonText="Login with Google"
-                        onSuccess={responseGoogle}
-                        onFailure={responseGoogle}
-                     ></GoogleLogin>
-                  </div>
+         <div className="row">
+            <div style={{ paddingTop: "20px" }} className="col-sm-12">
+               <div className="col-sm-4">
+                  <GoogleLogin
+                     clientId="403619985302-kcu2rduts2gj7oolnvjd89aj5lhgnkf5.apps.googleusercontent.com"
+                     buttonText="Login with Google"
+                     onSuccess={responseGoogle}
+                     onFailure={responseGoogle}
+                  ></GoogleLogin>
                </div>
             </div>
          </div>
@@ -50,4 +53,4 @@ const GoogleOAuth: React.FC = (props: any) => {
    );
 };
 
-export default GoogleOAuth;
+export default withRouter(GoogleOAuth);
