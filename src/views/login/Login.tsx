@@ -15,6 +15,7 @@ import {
    authError,
 } from "../../context/user/actions";
 import UserContext from "../../context/user/context";
+import { setToken, setUserId } from "../util/useLocalStorage";
 
 export const Login: React.FC = (props: LoginFormData | any) => {
    const { userData, userDispatch } = useContext(UserContext);
@@ -27,9 +28,9 @@ export const Login: React.FC = (props: LoginFormData | any) => {
          .then(res => {
             userDispatch(loginSuccess(res.data.login.user));
 
-            localStorage.setItem("token", res.data.login.token);
+            setToken(res.data.login.token);
             // localStorage.setItem("username", res.data.login.user.username);
-            localStorage.setItem("user_id", res.data.login.user.id);
+            setUserId(res.data.login.user.id);
          })
          .then(data => {
             props.history.push("/home");

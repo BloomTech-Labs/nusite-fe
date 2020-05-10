@@ -6,6 +6,7 @@ import { Input } from "../_shared/Input";
 import { useMutation } from "@apollo/react-hooks";
 import { INITIATE_RESET } from "../../graphql-requests/mutations";
 import { InitiateResetData } from "../../types/FormTypes";
+import { setToken } from "../util/useLocalStorage";
 
 export const InitiateReset: React.FC<InitiateResetData> = (
    props: InitiateResetData
@@ -20,7 +21,7 @@ export const InitiateReset: React.FC<InitiateResetData> = (
          variables: { email },
       })
          .then(res => {
-            localStorage.setItem("token", res.data.initiateReset.token);
+            setToken(res.data.initiateReset.token);
             alert(res.data.initiateReset.message);
             props.history.push("/login");
          })

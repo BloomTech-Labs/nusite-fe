@@ -1,16 +1,15 @@
 import React, { useState, useEffect } from "react";
 import { Query, QueryResult } from "react-apollo";
 import { GET_USER } from "../../graphql-requests/queries";
+import { getUserId } from "../util/useLocalStorage";
 import "../../App.css";
 //import { makeStyles } from "@material-ui/core/styles";
-
-//let user_id = localStorage.getItem("user_id");
 
 const User: React.FC = (props: any) => {
    const [user_id, setUser] = useState("");
 
    useEffect(() => {
-      let user_id = localStorage.getItem("user_id");
+      const user_id = getUserId();
       if (user_id) {
          setUser(user_id);
       }

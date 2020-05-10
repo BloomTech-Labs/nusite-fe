@@ -13,13 +13,13 @@ import {
    authError,
 } from "../../context/user/actions";
 import UserContext from "../../context/user/context";
+import { setToken, setUserId } from "../util/useLocalStorage";
 
 export const Registration: React.FC<RegistrationFormData> = (
    props: RegistrationFormData | any
 ) => {
    const { userData, userDispatch } = useContext(UserContext);
 
-   //localStorage.clear();
    const [signup] = useMutation(SIGNUP);
    const onSubmit = ({
       first_name,
@@ -36,9 +36,9 @@ export const Registration: React.FC<RegistrationFormData> = (
          .then(res => {
             userDispatch(signupSuccess(res.data.signup.user));
 
-            localStorage.setItem("token", res.data.signup.token);
-            localStorage.setItem("username", res.data.signup.user.username);
-            localStorage.setItem("user_id", res.data.signup.user.id);
+            setToken(res.data.signup.token);
+            // localStorage.setItem("username", res.data.signup.user.username);
+            setUserId(res.data.signup.user.id);
             props.history.push("/home");
             console.log("Successfully registered... ");
          })
