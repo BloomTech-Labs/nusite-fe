@@ -96,6 +96,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   </Button>
                )}
                <br />
+               <h4>-OR-</h4>
                <OAuthLogin />
             </Form>
             <br />

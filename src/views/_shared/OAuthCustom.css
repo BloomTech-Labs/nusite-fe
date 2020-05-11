@@ -22,6 +22,32 @@
    text-align: center;
 }
 
+.btnLinkedin {
+   width: 165px;
+   height: 52px;
+   border-radius: 4px;
+   background: #3b5998;
+   color: white;
+   border: 0px transparent;
+   text-align: center;
+   margin: 5px;
+   display: inline-block;
+   font-size: 0.8rem;
+}
+
+.btnGithub {
+   width: 165px;
+   height: 52px;
+   border-radius: 4px;
+   background: #222;
+   color: white;
+   border: 0px transparent;
+   text-align: center;
+   margin: 5px;
+   display: inline-block;
+   font-size: 0.8rem;
+}
+
 .btnFacebook:hover {
    background: #3b5998;
    opacity: 0.8;
@@ -30,6 +56,18 @@
 
 .btnGoogle:hover {
    background: #db3236;
+   opacity: 0.8;
+   cursor: pointer;
+}
+
+.btnLinkedin:hover {
+   background: #3b5998;
+   opacity: 0.8;
+   cursor: pointer;
+}
+
+.btnGithub:hover {
+   background: #222;
    opacity: 0.8;
    cursor: pointer;
 }

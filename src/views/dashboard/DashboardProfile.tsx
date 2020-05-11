@@ -11,7 +11,7 @@ const useStyles = makeStyles(theme => ({
       display: "flex",
       flexFlow: "column",
       flexWrap: "wrap",
-      width: "90%",
+      width: "100%",
       justifyContent: "center",
       alignItems: "center",
       fontSize: "1.2rem",
@@ -88,7 +88,7 @@ const DashboardProfile: React.FC = (props: any) => {
                <br />
                <h1>Welcome to Your Dashboard {name}</h1>
                <br />
-               <p>Update/Change Your Profile</p>
+               <p>Get started Building Your Profile!</p>
                <br />
                <div className="boxedit">
                   <TextField
@@ -125,6 +125,13 @@ const DashboardProfile: React.FC = (props: any) => {
                      variant="filled"
                      type="password"
                      value={users.password}
+                     onChange={handleChange}
+                  />
+                  <br />
+                  <TextField
+                     label="upload image url: "
+                     name="image"
+                     variant="filled"
                      onChange={handleChange}
                   />
                </div>
