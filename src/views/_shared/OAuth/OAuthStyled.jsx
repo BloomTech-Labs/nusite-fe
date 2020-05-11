@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Providers } from "../../../types/OAuthTypes";
 
 export const OAuthContainer = styled.div`
    width: 20rem;
@@ -30,7 +31,7 @@ export const OAuthTag = styled.a`
    display: flex;
    width: 12.5rem;
    height: 2.5rem;
-   color: white;
+   color: ${props => (props.provider === "Google" ? `black` : `white`)}};
    margin: 0.5rem;
    padding: 1rem;
    padding-top: 1.25rem;

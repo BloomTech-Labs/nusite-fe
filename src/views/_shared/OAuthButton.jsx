@@ -4,7 +4,6 @@ import { OAuthTag } from "./OAuth/OAuthStyled";
 
 export const OAuthButton = ({ provider }) => {
    const url = `${process.env.REACT_APP_BASE_URL}/api/auth/${provider}`;
-
    // export const OAuthButton = ({ provider }: Providers) => {
    //    const url: string = `${process.env.REACT_APP_BASE_URL}/api/auth/${provider}`;
    return (
