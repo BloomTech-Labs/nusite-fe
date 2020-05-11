@@ -4,7 +4,7 @@ import GoogleLogin from "react-google-login";
 import FacebookLogin from "react-facebook-login";
 import "./OAuthCustom.css";
 //import LinkedinSDK from "react-linkedin-sdk";
-import GitHubLogin from "react-github-login";
+//import GitHubLogin from "react-github-login";
 
 const OAuthLogin: React.FC = (props: any) => {
    const responseFacebook = (response: any) => {
@@ -71,6 +71,7 @@ const OAuthLogin: React.FC = (props: any) => {
             >
                <i className="fa fa-linkedin-in" />
             </LinkedinSDK> */}
+            {/* 
             <GitHubLogin
                clientId="d4b9f0f59bca638e0c80"
                onSuccess={onSuccess}
@@ -79,7 +80,7 @@ const OAuthLogin: React.FC = (props: any) => {
             >
                <i className="fa fa-github" style={{ marginLeft: "5px" }} />
                <span>&nbsp;&nbsp;Sign In with Github</span>
-            </GitHubLogin>
+            </GitHubLogin> */}
             <FacebookLogin
                appId="2279221172374748"
                autoLoad={false}

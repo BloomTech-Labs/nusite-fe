@@ -1,6 +1,6 @@
 .btnFacebook {
    width: 165px;
-   height: 52px;
+   height: 53px;
    border-radius: 4px;
    background: #3b5998;
    color: white;
@@ -14,7 +14,7 @@
 .btnGoogle {
    margin: 5px;
    width: 165px;
-   height: 52px;
+   height: 48px;
    border-radius: 4px;
    background: #db3236;
    color: white;
@@ -37,9 +37,9 @@
 
 .btnGithub {
    width: 165px;
-   height: 52px;
+   height: 59px;
    border-radius: 4px;
-   background: #222;
+   background: #333;
    color: white;
    border: 0px transparent;
    text-align: center;
