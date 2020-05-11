@@ -23,19 +23,15 @@ const Uploader = () => {
    };
 
    return (
-      <div className="container">
+      <form onSubmit={onSubmit}>
          <div>
-            <form onSubmit={onSubmit}>
-               <div>
-                  {/* Input type file to allow the browse option on a computer */}
-                  <input type="file" onChange={onFileChange} />
-               </div>
-               <div>
-                  <button type="submit">Upload</button>
-               </div>
-            </form>
+            {/* Input type file to allow the browse option on a computer */}
+            <input type="file" onChange={onFileChange} />
          </div>
-      </div>
+         <div>
+            <button type="submit">Upload</button>
+         </div>
+      </form>
    );
 };
 
