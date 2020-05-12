@@ -91,88 +91,89 @@ export const Registration: React.FC<RegistrationFormData> = (
    };
 
    return (
-      <>
+      <Grid
+         container
+         direction="column"
+         alignItems="center"
+         className={`main-container ${classes.container}`}
+      >
          <Grid
             container
             direction="column"
+            className={classes.registerContainer}
             alignItems="center"
-            className={`main-container ${classes.container}`}
          >
-            <Grid
-               container
-               direction="column"
-               className={classes.registerContainer}
-               alignItems="center"
-               margin-bottom={8}
+            <Grid item>
+               <Typography variant="h1" align="center">
+                  Register
+               </Typography>
+            </Grid>
+            <Form
+               className={classes.formContainer}
+               data-testid="register-form"
+               onSubmit={onSubmit}
             >
-               <Grid item>
-                  <Typography variant="h1" align="center">
-                     Register
-                  </Typography>
+               <Input
+                  type="text"
+                  name="first_name"
+                  label="First Name"
+                  required
+                  className={classes.textField}
+               />
+               <Input
+                  type="text"
+                  name="last_name"
+                  label="Last Name"
+                  required
+                  className={classes.textField}
+               />
+               <Input
+                  type="text"
+                  name="username"
+                  label="Username"
+                  required
+                  fullWidth
+                  autoComplete="username"
+                  className={classes.textField}
+               />
+               <Input
+                  name="password"
+                  label="Password"
+                  autoComplete="current-password"
+                  type="password"
+                  required
+                  fullWidth
+                  minLength={9}
+                  className={classes.textField}
+                  helperText="password must be at least 9 characters"
+               />
+               <Input
+                  name="email"
+                  label="Email"
+                  type="email"
+                  required
+                  fullWidth
+                  className={classes.textField}
+               />
+               <Grid container justify="center" alignItems="center">
+                  {userData.isAuthorizing ? (
+                     <Loader />
+                  ) : (
+                     <Button variant="contained" color="primary" type="submit">
+                        <Typography variant="body1" color="secondary">
+                           Submit
+                        </Typography>
+                     </Button>
+                  )}
                </Grid>
-               <Form
-                  className={classes.formContainer}
-                  data-testid="register-form"
-                  onSubmit={onSubmit}
-               >
-                  <Input
-                     type="text"
-                     name="first_name"
-                     label="First Name"
-                     className={classes.textField}
-                  />
-                  <Input
-                     type="text"
-                     name="last_name"
-                     label="Last Name"
-                     className={classes.textField}
-                  />
-                  <Input
-                     type="text"
-                     name="username"
-                     label="Username"
-                     fullWidth
-                     autoComplete="username"
-                     className={classes.textField}
-                  />
-                  <Input
-                     name="password"
-                     label="Password"
-                     autoComplete="current-password"
-                     type="password"
-                     fullWidth
-                     minLength={9}
-                     className={classes.textField}
-                  />
-                  <Input
-                     name="email"
-                     label="Email"
-                     type="email"
-                     fullWidth
-                     className={classes.textField}
-                  />
-                  <Grid container justify="center" alignItems="center">
-                     {userData.isAuthorizing ? (
-                        <Loader />
-                     ) : (
-                        <Button
-                           variant="contained"
-                           color="primary"
-                           type="submit"
-                        >
-                           <Typography variant="body1" color="secondary">
-                              Submit
-                           </Typography>
-                        </Button>
-                     )}
-                  </Grid>
-               </Form>
-
-               <Grid className={classes.oAuthButton}>
-                  <GoogleOAuth />
-               </Grid>
+            </Form>
+            <Grid item>
+               <Typography variant="body1"> or signup with </Typography>
+            </Grid>
+            <Grid item className={classes.oAuthButton}>
+               <GoogleOAuth />
             </Grid>
          </Grid>
-      </>
+      </Grid>
    );
 };
