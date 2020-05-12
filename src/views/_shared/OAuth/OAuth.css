@@ -1,90 +1,34 @@
-#linkedin-OAuth-button {
-   display: block;
-   width: 11.9rem;
+.OAuth-button {
+   display: flex;
+   width: 12.5rem;
    height: 2.5rem;
-   background-color: white;
-   border-color: 1px solid yellow;
+   color: white;
+   margin: 0.5rem;
+   padding: 1rem;
+   padding-top: 1.25rem;
+   padding-right: 0.55rem;
+   border-radius: 0.2rem;
+   text-decoration: none;
+   font-size: 1rem;
+   justify-content: flex-end;
+   align-items: center;
+   background-repeat: no-repeat;
+   background-size: auto;
+   cursor: pointer;
 }
 
-#google-OAuth-button {
-   border: 1px solid red;
-   background-color: white;
-   color: black;
+.LinkedIn {
+   background-image: url("../../../images/OAuth-Images/LinkedIn-Default.png");
 }
 
-#github-OAuth-button {
-   border: 1px solid red;
-   background-color: white;
-   color: black;
+.Google {
+   background-image: url("../../../images/OAuth-Images/LinkedIn-Default.png");
 }
 
-#facebook-OAuth-button {
-   border: 1px solid red;
-   background-color: white;
-   color: black;
+.Github {
+   background-image: url("../../../images/OAuth-Images/LinkedIn-Default.png");
 }
-/* 
-.google-btn {
-   width: 210px;
-   height: 42px;
-   margin: 0 auto;
-   background-color: #45a29e;
-   border-radius: 2px;
-   cursor: pointer;
+
+.Facebook {
+   background-image: url("../../../images/OAuth-Images/LinkedIn-Default.png");
 }
-.google-btn .google-icon-wrapper {
-   position: absolute;
-   margin-top: 1px;
-   margin-left: 1px;
-   width: 45px;
-   height: 40px;
-   border-radius: 2px;
-   background-color: #fff;
-   cursor: pointer;
-}
-.google-btn .google-icon {
-   position: absolute;
-   margin-top: 11px;
-   width: 17px;
-   height: 20px;
-}
-.google-btn .btn-text {
-   float: right;
-   margin: 11px 11px 0 0;
-   color: #fff;
-   font-size: 14px;
-   letter-spacing: 0.2px;
-   font-family: "Roboto";
-}
-.github-btn {
-   width: 210px;
-   height: 42px;
-   margin: 0 auto;
-   background-color: #333;
-   border-radius: 2px;
-   cursor: pointer;
-}
-.github-btn .github-icon-wrapper {
-   position: absolute;
-   margin-top: 1px;
-   margin-left: 1px;
-   width: 45px;
-   height: 40px;
-   border-radius: 2px;
-   background-color: #fff;
-   cursor: pointer;
-}
-.github-btn .github-icon {
-   position: absolute;
-   margin-top: 11px;
-   width: 17px;
-   height: 20px;
-}
-.github-btn .btn-text {
-   float: right;
-   margin: 11px 11px 0 0;
-   color: #fff;
-   font-size: 14px;
-   letter-spacing: 0.2px;
-   font-family: "Roboto";
-} */
