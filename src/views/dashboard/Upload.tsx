@@ -28,11 +28,15 @@ const Uploader = () => {
 
    return (
       <Fab>
-         <form onSubmit={onSubmit}>
+         <form onSubmit={onSubmit} className="uploadform">
             {/* Input type file to allow the browse option on a computer */}
             <div>
                <AddIcon />
-               <input type="file" onChange={onFileChange} />
+               <input
+                  type="file"
+                  className="uploadinput"
+                  onChange={onFileChange}
+               />
             </div>
             <div>
                <Button type="submit">Upload Image</Button>
