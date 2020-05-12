@@ -39,7 +39,7 @@ export const Registration: React.FC<RegistrationFormData> = (
             userDispatch(signupSuccess(res.data.signup.user));
 
             setToken(res.data.signup.token);
-            // localStorage.setItem("username", res.data.signup.user.username);
+            localStorage.setItem("username", res.data.signup.user.username);
             setUserId(res.data.signup.user.id);
             props.history.push("/home");
             console.log("Successfully registered... ");

@@ -50,7 +50,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
             userDispatch(loginSuccess(res.data.login.user));
 
             setToken(res.data.login.token);
-            // localStorage.setItem("username", res.data.login.user.username);
+            localStorage.setItem("username", res.data.login.user.username);
             setUserId(res.data.login.user.id);
          })
          .then(data => {

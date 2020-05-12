@@ -1,8 +1,7 @@
-import React, { useContext } from "react";
+import React from "react";
 import Button from "@material-ui/core/Button";
 import Avatar from "@material-ui/core/Avatar";
 import { makeStyles } from "@material-ui/core/styles";
-import UserContext from "../../../context/user/context";
 
 const useStyles = makeStyles(theme => ({
    button: {
@@ -15,11 +14,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const HeaderAvatar = () => {
-   const {
-      userData: {
-         user: { username },
-      },
-   } = useContext(UserContext);
+   const username = localStorage.getItem("username");
    const classes = useStyles();
 
    return (
