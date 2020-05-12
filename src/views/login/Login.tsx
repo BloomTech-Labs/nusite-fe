@@ -16,7 +16,6 @@ import {
 } from "../../context/user/actions";
 //import TextField from "@material-ui/core/TextField";
 import UserContext from "../../context/user/context";
-import OAuthLogin from "../_shared/OAuthLogin";
 
 const useStyles = makeStyles(theme => ({
    container: {
@@ -97,7 +96,6 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                )}
                <br />
                <h4>-OR-</h4>
-               <OAuthLogin />
             </Form>
             <br />
          </div>
