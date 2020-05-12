@@ -12,10 +12,11 @@ import {
    authError,
 } from "../../context/user/actions";
 import UserContext from "../../context/user/context";
-import GoogleOAuth from "../_shared/GoogleOAuth";
 import { setToken, setUserId } from "../util/useLocalStorage";
 import { OAuthContainer } from "../_shared/OAuth/OAuthStyled";
 import { OAuthButton } from "../_shared/OAuthButton";
+import { providers } from "../../types/OAuthTypes";
+
 const useStyles = makeStyles(theme => ({
    container: {
       height: "1000px",
@@ -171,16 +172,13 @@ export const Registration: React.FC<RegistrationFormData> = (
             <Grid item>
                <Typography variant="body1"> or signup with </Typography>
             </Grid>
-            <Grid item className={classes.oAuthButton}>
-               <GoogleOAuth />
-            </Grid>
-            {/* <Grid item>
+            <Grid item>
                <OAuthContainer>
-                  <OAuthButton providers="LinkedIn" />
-                  <OAuthButton providers="Google" />
-                  <OAuthButton providers="Facebook" />
+                  <OAuthButton provider={providers.LINKEDIN} />
+                  <OAuthButton provider={providers.FACEBOOK} />
+                  <OAuthButton provider={providers.GOOGLE} />
                </OAuthContainer>
-            </Grid> */}
+            </Grid>
          </Grid>
       </Grid>
    );

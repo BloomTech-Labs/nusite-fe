@@ -136,20 +136,17 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   </Button>
                )}
             </Form>
-            <Grid item >
+            <Grid item>
                <Typography variant="body1">-OR-</Typography>
             </Grid>
             <Grid item>
-            <OAuthContainer>
-               <OAuthButton provider={providers.LINKEDIN} />
-               <OAuthButton provider={providers.FACEBOOK} />
-               <OAuthButton provider={providers.GOOGLE} />
-            </OAuthContainer>
+               <OAuthContainer>
+                  <OAuthButton provider={providers.LINKEDIN} />
+                  <OAuthButton provider={providers.FACEBOOK} />
+                  <OAuthButton provider={providers.GOOGLE} />
+               </OAuthContainer>
+            </Grid>
          </Grid>
-         </Grid>
-         </Grid>
-           
-         </Grid>
-      </>
+      </Grid>
    );
 };
