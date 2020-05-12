@@ -1,20 +1,17 @@
 import React, { useEffect, useState } from "react";
-//import DarkMode from "../_shared/DarkMode";
 import "../home/Home";
 import { useMutation } from "@apollo/react-hooks";
 import { makeStyles } from "@material-ui/core/styles";
 import Button from "@material-ui/core/Button";
-import { UPDATE_USER } from "../../graphql-requests/mutations";
+import { SIGNUP } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
-//import AddButton from "./AddButton";
-import GoogleOAuth from "../_shared/GoogleOAuth";
 
 const useStyles = makeStyles(theme => ({
    container: {
       display: "flex",
       flexFlow: "column",
       flexWrap: "wrap",
-      width: "90%",
+      width: "100%",
       justifyContent: "center",
       alignItems: "center",
       fontSize: "1.2rem",
@@ -23,7 +20,7 @@ const useStyles = makeStyles(theme => ({
    textField: {
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
-      width: 250,
+      width: "70%",
       alignItems: "center",
       textAlign: "center",
    },
@@ -32,13 +29,13 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-const DashboardGoogle: React.FC = (props: any) => {
+const DashboardProfile: React.FC = (props: any) => {
    const [name, setName] = useState("");
    const classes = useStyles();
    useEffect(() => {
-      let username = localStorage.getItem("username");
-      if (username) {
-         setName(username);
+      let name = localStorage.getItem("username");
+      if (name) {
+         setName(name);
       }
    }, []);
 
@@ -47,10 +44,11 @@ const DashboardGoogle: React.FC = (props: any) => {
       email: "",
       first_name: "",
       last_name: "",
+      password: "",
    });
 
    const handleChange = (event: any) => {
-      // event.preventDefault();
+      event.preventDefault();
       setUsers({
          ...users,
          [event.target.name]: event.target.value,
@@ -58,23 +56,25 @@ const DashboardGoogle: React.FC = (props: any) => {
    };
 
    {
-      const [updateUser] = useMutation(UPDATE_USER);
+      const [signup] = useMutation(SIGNUP);
       //let user_id = localStorage.getItem("user_id");
       const onSubmit = ({
-         user_id = localStorage.getItem("user_id"),
          first_name,
          last_name,
          username,
          email,
+         password,
       }: any) => {
-         //console.log(user_id);
-         updateUser({
-            variables: { user_id, ...users },
+         //console.log(onSubmit);
+         signup({
+            variables: { ...users },
          })
             .then(res => {
                console.log(res.data);
-               localStorage.setItem("username", res.data.updateUser.username);
-               props.history.push("/homeg");
+               localStorage.setItem("username", res.data.signup.username);
+               localStorage.setItem("user_id", res.data.signup.id);
+               alert("Last step, Now verify your new credentials");
+               props.history.push("/login");
                console.log("Successfully updated.");
             })
             .catch(err => {
@@ -88,7 +88,7 @@ const DashboardGoogle: React.FC = (props: any) => {
                <br />
                <h1>Welcome to Your Dashboard {name}</h1>
                <br />
-               <p>Update/Change Your Profile</p>
+               <p>Get started Building Your Profile!</p>
                <br />
                <div className="boxedit">
                   <TextField
@@ -119,6 +119,21 @@ const DashboardGoogle: React.FC = (props: any) => {
                      value={users.last_name}
                      onChange={handleChange}
                   />
+                  <TextField
+                     label="password: "
+                     name="password"
+                     variant="filled"
+                     type="password"
+                     value={users.password}
+                     onChange={handleChange}
+                  />
+                  <br />
+                  <TextField
+                     label="upload image url: "
+                     name="image"
+                     variant="filled"
+                     onChange={handleChange}
+                  />
                </div>
                <br />
                <Button
@@ -127,7 +142,7 @@ const DashboardGoogle: React.FC = (props: any) => {
                   type="submit"
                   onClick={onSubmit}
                >
-                  Edit Profile
+                  Submit Profile
                </Button>
                <br />
             </main>
@@ -136,4 +151,4 @@ const DashboardGoogle: React.FC = (props: any) => {
    }
 };
 
-export default DashboardGoogle;
+export default DashboardProfile;

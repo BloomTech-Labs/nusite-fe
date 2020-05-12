@@ -6,14 +6,15 @@ import Button from "@material-ui/core/Button";
 import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-//import "./Dashboard.css";
+import { getUserId } from "../util/useLocalStorage";
+import Upload from "./Upload";
 
 const useStyles = makeStyles(theme => ({
    container: {
       display: "flex",
       flexFlow: "column",
       flexWrap: "wrap",
-      width: "90%",
+      width: "100%",
       justifyContent: "center",
       alignItems: "center",
       fontSize: "1.2rem",
@@ -59,9 +60,8 @@ const Dashboard: React.FC = (props: any) => {
 
    {
       const [updateUser] = useMutation(UPDATE_USER);
-      //let user_id = localStorage.getItem("user_id");
       const onSubmit = ({
-         user_id = localStorage.getItem("user_id"),
+         user_id = getUserId(),
          first_name,
          last_name,
          username,
@@ -123,6 +123,11 @@ const Dashboard: React.FC = (props: any) => {
                      value={users.last_name}
                      onChange={handleChange}
                   />
+                  <br />
+                  <Upload />
+                  <br />
+                  <br />
+                  <br />
                </div>
                <br />
                <Button

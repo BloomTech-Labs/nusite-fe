@@ -7,12 +7,13 @@ import { Button, Grid, makeStyles, Typography } from "@material-ui/core/";
 import Loader from "../_shared/Loader";
 import { RegistrationFormData } from "../../types/FormTypes";
 import {
-   SIGNUP_START,
-   SIGNUP_SUCCESS,
-   AUTH_ERROR,
+   signupStart,
+   signupSuccess,
+   authError,
 } from "../../context/user/actions";
 import UserContext from "../../context/user/context";
 import GoogleOAuth from "../_shared/GoogleOAuth";
+import { setToken, setUserId } from "../util/useLocalStorage";
 
 const useStyles = makeStyles(theme => ({
    container: {
@@ -68,25 +69,22 @@ export const Registration: React.FC<RegistrationFormData> = (
       password,
       email,
    }: RegistrationFormData) => {
-      userDispatch({ type: SIGNUP_START, payload: null });
+      userDispatch(signupStart());
 
       signup({
          variables: { first_name, last_name, username, password, email },
       })
          .then(res => {
-            userDispatch({
-               type: SIGNUP_SUCCESS,
-               payload: res.data.signup.user,
-            });
+            userDispatch(signupSuccess(res.data.signup.user));
 
-            localStorage.setItem("token", res.data.signup.token);
+            setToken(res.data.signup.token);
             localStorage.setItem("username", res.data.signup.user.username);
-            localStorage.setItem("user_id", res.data.signup.user.id);
+            setUserId(res.data.signup.user.id);
             props.history.push("/home");
             console.log("Successfully registered... ");
          })
          .catch(err => {
-            userDispatch({ type: AUTH_ERROR, payload: err });
+            userDispatch(authError(err));
             alert(err.message);
             console.log(err);
          });

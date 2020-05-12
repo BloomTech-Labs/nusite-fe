@@ -11,7 +11,7 @@ describe("DarkMode Component Tests", () => {
       expect(container.innerHTML).toMatch(/Click for Night Mode/);
    });
 
-   test("It updates darkmode context onChange ", () => {
+   test.skip("It updates darkmode context onChange ", () => {
       const {
          container,
          mockSpies: { setDarkMode },

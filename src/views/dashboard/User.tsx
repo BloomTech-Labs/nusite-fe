@@ -1,17 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { Query, QueryResult } from "react-apollo";
 import { GET_USER } from "../../graphql-requests/queries";
-import { Redirect } from "react-router-dom";
+import { getUserId } from "../util/useLocalStorage";
+//import { Redirect } from "react-router-dom";
 import "../../App.css";
 //import { makeStyles } from "@material-ui/core/styles";
-
-//let user_id = localStorage.getItem("user_id");
 
 const User: React.FC = (props: any) => {
    const [user_id, setUser] = useState("");
 
    useEffect(() => {
-      let user_id = localStorage.getItem("user_id");
+      const user_id = getUserId();
       if (user_id) {
          setUser(user_id);
       }
@@ -23,7 +22,7 @@ const User: React.FC = (props: any) => {
             {({ error, data, loading }: QueryResult) => {
                if (error) {
                   console.log(error);
-                  return <Redirect to="/homeg" />;
+                  //return <Redirect to="/homeprof" />;
                }
 
                if (loading) return <p>Loading...</p>;
