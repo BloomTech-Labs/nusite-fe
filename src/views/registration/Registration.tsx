@@ -110,7 +110,6 @@ export const Registration: React.FC<RegistrationFormData> = (
                      Register
                   </Typography>
                </Grid>
-
                <Form
                   className={classes.formContainer}
                   data-testid="register-form"
