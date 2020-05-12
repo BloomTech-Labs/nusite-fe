@@ -1,5 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
+import AddIcon from "@material-ui/icons/Add";
+import Fab from "@material-ui/core/Fab";
+import Button from "@material-ui/core/Button";
+import "./Upload.css";
 
 const Uploader = () => {
    const [upload, setUpload] = useState({ project_avatar: "" });
@@ -23,15 +27,22 @@ const Uploader = () => {
    };
 
    return (
-      <form onSubmit={onSubmit}>
-         <div>
+      <Fab>
+         <form onSubmit={onSubmit} className="uploadform">
             {/* Input type file to allow the browse option on a computer */}
-            <input type="file" onChange={onFileChange} />
-         </div>
-         <div>
-            <button type="submit">Upload</button>
-         </div>
-      </form>
+            <div>
+               <AddIcon />
+               <input
+                  type="file"
+                  className="uploadinput"
+                  onChange={onFileChange}
+               />
+            </div>
+            <div>
+               <Button type="submit">Upload Image</Button>
+            </div>
+         </form>
+      </Fab>
    );
 };
 

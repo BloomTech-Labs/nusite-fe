@@ -9,7 +9,6 @@ import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
 import { LoginFormData } from "../../types/FormTypes";
 import { makeStyles } from "@material-ui/core/styles";
-import GoogleOAuth from "../_shared/GoogleOAuth";
 import {
    loginStart,
    loginSuccess,
@@ -29,7 +28,7 @@ const useStyles = makeStyles(theme => ({
    textField: {
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
-      width: 200,
+      width: 280,
       alignItems: "center",
       textAlign: "center",
    },
@@ -97,8 +96,8 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   </Button>
                )}
                <br />
+               <h4>-OR-</h4>
             </Form>
-            <GoogleOAuth />
             <br />
          </div>
       </>
