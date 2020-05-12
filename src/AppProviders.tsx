@@ -5,6 +5,7 @@ import ApolloClient from "apollo-boost";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./theme/theme";
+import { CookiesProvider } from "react-cookie";
 import { BrowserRouter as Router } from "react-router-dom";
 import UserReducer from "./context/user/reducer";
 import UserContext, { ANONYMOUS_USER } from "./context/user/context";
@@ -25,9 +26,11 @@ const AppProviders = () => {
       <ApolloProvider client={client}>
          <ThemeProvider theme={theme}>
             <UserContext.Provider value={{ userData, userDispatch }}>
-               <Router>
-                  <App />
-               </Router>
+               <CookiesProvider>
+                  <Router>
+                     <App />
+                  </Router>
+               </CookiesProvider>
             </UserContext.Provider>
          </ThemeProvider>
       </ApolloProvider>

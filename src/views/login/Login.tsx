@@ -11,12 +11,13 @@ import { LoginFormData } from "../../types/FormTypes";
 import { makeStyles } from "@material-ui/core/styles";
 import GoogleOAuth from "../_shared/GoogleOAuth";
 import {
-   LOGIN_START,
-   LOGIN_SUCCESS,
-   AUTH_ERROR,
+   loginStart,
+   loginSuccess,
+   authError,
 } from "../../context/user/actions";
 //import TextField from "@material-ui/core/TextField";
 import UserContext from "../../context/user/context";
+import { setToken, setUserId } from "../util/useLocalStorage";
 
 const useStyles = makeStyles(theme => ({
    container: {
@@ -42,22 +43,22 @@ export const Login: React.FC = (props: LoginFormData | any) => {
    const [login] = useMutation(LOGIN);
    const classes = useStyles();
    const onSubmit = ({ email, password }: LoginFormData) => {
-      userDispatch({ type: LOGIN_START, payload: null });
+      userDispatch(loginStart());
 
       login({ variables: { email: email, password: password } })
          .then(res => {
-            userDispatch({ type: LOGIN_SUCCESS, payload: res.data.login.user });
+            userDispatch(loginSuccess(res.data.login.user));
 
-            localStorage.setItem("token", res.data.login.token);
+            setToken(res.data.login.token);
             localStorage.setItem("username", res.data.login.user.username);
-            localStorage.setItem("user_id", res.data.login.user.id);
+            setUserId(res.data.login.user.id);
          })
          .then(data => {
             props.history.push("/home");
             console.log(`Welcome `);
          })
          .catch(err => {
-            userDispatch({ type: AUTH_ERROR, payload: err });
+            userDispatch(authError(err));
             alert(err.message);
          });
    };
