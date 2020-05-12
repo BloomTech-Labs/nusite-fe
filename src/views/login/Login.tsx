@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
-import Button from "@material-ui/core/Button";
-import "./Login.css";
+import { Button, Grid } from "@material-ui/core/";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
@@ -64,25 +63,21 @@ export const Login: React.FC = (props: LoginFormData | any) => {
 
    return (
       <>
-         <div className="box">
+         <Grid>
             <Form
                className={classes.container}
                data-testid="login-form"
                onSubmit={onSubmit}
             >
-               {/*<TextField id="filled-basic" className={classes.textField}>*/}
-               <Input name="email" placeholder="Email" type="email" />
-               {/*<TextField id="filled-basic" className={classes.textField}>*/}
+               <Input name="email" label="Email" type="email" />
                <Input
                   name="password"
-                  placeholder="Password"
+                  label="Password"
                   autoComplete="current-password"
                   type="password"
                   minLength={9}
                />
-               <br />
                <Link to="/initiate">Forgot your password?</Link>
-               <br />
                {userData.isAuthorizing ? (
                   <Loader />
                ) : (
@@ -95,11 +90,9 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                      Login
                   </Button>
                )}
-               <br />
             </Form>
             <GoogleOAuth />
-            <br />
-         </div>
+         </Grid>
       </>
    );
 };
