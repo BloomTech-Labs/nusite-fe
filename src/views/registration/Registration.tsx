@@ -14,7 +14,8 @@ import {
 import UserContext from "../../context/user/context";
 import GoogleOAuth from "../_shared/GoogleOAuth";
 import { setToken, setUserId } from "../util/useLocalStorage";
-
+import { OAuthContainer } from "../_shared/OAuth/OAuthStyled";
+import { OAuthButton } from "../_shared/OAuthButton";
 const useStyles = makeStyles(theme => ({
    container: {
       height: "1000px",
@@ -173,6 +174,13 @@ export const Registration: React.FC<RegistrationFormData> = (
             <Grid item className={classes.oAuthButton}>
                <GoogleOAuth />
             </Grid>
+            {/* <Grid item>
+               <OAuthContainer>
+                  <OAuthButton providers="LinkedIn" />
+                  <OAuthButton providers="Google" />
+                  <OAuthButton providers="Facebook" />
+               </OAuthContainer>
+            </Grid> */}
          </Grid>
       </Grid>
    );
