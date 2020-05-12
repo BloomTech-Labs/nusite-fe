@@ -1,40 +1,40 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`SubHeader component tests It displays correctly. 1`] = `
+exports[`Loading Screen test It displays a loading screen correctly without error. 1`] = `
 Object {
   "asFragment": [Function],
   "baseElement": <body>
     <div>
-      <div
-        class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
-      >
-        <img
-          alt="tagline"
-          class="makeStyles-taglineImage-1"
-          src="tagline.jpeg"
-        />
-        <h3
-          class="makeStyles-tagline-2"
+      <div>
+        <div
+          aria-busy="true"
+          class="MuiLinearProgress-root MuiLinearProgress-colorPrimary makeStyles-root-1 MuiLinearProgress-indeterminate"
+          role="progressbar"
         >
-          Connecting web developers to people with great ideas. Old website, new website, app, or feature, we've got you covered.
-        </h3>
+          <div
+            class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Indeterminate"
+          />
+          <div
+            class="MuiLinearProgress-bar MuiLinearProgress-bar2Indeterminate MuiLinearProgress-barColorPrimary"
+          />
+        </div>
       </div>
     </div>
   </body>,
   "container": <div>
-    <div
-      class="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column"
-    >
-      <img
-        alt="tagline"
-        class="makeStyles-taglineImage-1"
-        src="tagline.jpeg"
-      />
-      <h3
-        class="makeStyles-tagline-2"
+    <div>
+      <div
+        aria-busy="true"
+        class="MuiLinearProgress-root MuiLinearProgress-colorPrimary makeStyles-root-1 MuiLinearProgress-indeterminate"
+        role="progressbar"
       >
-        Connecting web developers to people with great ideas. Old website, new website, app, or feature, we've got you covered.
-      </h3>
+        <div
+          class="MuiLinearProgress-bar MuiLinearProgress-barColorPrimary MuiLinearProgress-bar1Indeterminate"
+        />
+        <div
+          class="MuiLinearProgress-bar MuiLinearProgress-bar2Indeterminate MuiLinearProgress-barColorPrimary"
+        />
+      </div>
     </div>
   </div>,
   "debug": [Function],
@@ -72,6 +72,7 @@ Object {
   "getByTitle": [Function],
   "mockSpies": Object {
     "setDarkMode": [MockFunction],
+    "userDispatch": [MockFunction],
   },
   "queryAllByAltText": [Function],
   "queryAllByDisplayValue": [Function],

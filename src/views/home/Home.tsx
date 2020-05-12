@@ -1,7 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import Grid from "@material-ui/core/Grid";
 import AboutSection from "./AboutSection";
-import PorjectOwnersSection from "./ProjectOnwersSection";
+import ProjectOwnersSection from "./ProjectOnwersSection";
 import DevelopersSections from "./DevelopersSection";
 import MatchingSection from "./MatchingSection";
 import Parallax from "./Parallax";
@@ -15,7 +15,7 @@ const Home = (props: any) => {
                <Hero className="hero" />
                <Grid container className="main-container" direction="column">
                   <AboutSection />
-                  <PorjectOwnersSection />
+                  <ProjectOwnersSection />
                   <Parallax />
                   <DevelopersSections />
                   <MatchingSection />

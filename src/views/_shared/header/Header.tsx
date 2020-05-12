@@ -7,7 +7,7 @@ import useTheme from "@material-ui/core/styles/useTheme";
 import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { Link, withRouter } from "react-router-dom";
 import logo from "../../../images/logo.svg";
-import { getToken } from "../../util/TokenHelpers";
+import { getToken } from "../../util/useLocalStorage";
 import ElevationScroll from "../ElevationScroll";
 import HeaderAvatar from "./HeaderAvatar";
 import HeaderTabs from "./HeaderTabs";
