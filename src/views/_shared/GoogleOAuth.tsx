@@ -1,19 +1,9 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
-//import { withRouter } from "react-router-dom";
-//import { Redirect } from "react-router-dom";
-import { History } from "history";
+import { Redirect, withRouter } from "react-router-dom";
 
-interface Props {
-   history: History;
-}
-
-export default class GoogleOAuth extends React.Component {
-   constructor(props: any) {
-      super(props);
-      this.state = {};
-   }
-   signup(res: any) {
+const GoogleOAuth: React.FC = (props: any) => {
+   function signup(res: any) {
       const googleresponse = {
          username: res.profileObj.name,
          first_name: res.profileObj.name,
@@ -24,48 +14,37 @@ export default class GoogleOAuth extends React.Component {
          ProviderId: "Google",
       };
       //debugger;
+      return <Redirect to="/homeprof" />;
    }
 
-   render() {
-      const responseGoogle = (response: any) => {
-         console.log(response);
-         let res = response.profileObj;
-         console.log(res);
-         localStorage.setItem("username", res.familyName);
-         localStorage.setItem("token", response.googleId);
-         localStorage.setItem("user_id", response.googleId);
-         //this.props.history.push("/homeg");
-         //debugger;
-         alert(
-            "Please enter your profile info on the dashboard for future access to your profile!"
-         );
-         this.signup(response);
-      };
-
-      return (
-         <>
-            <div className="App">
-               <div className="row">
-                  <div className="col-sm-12 btn btn-info"></div>
-               </div>
-               <div className="row">
-                  <div style={{ paddingTop: "20px" }} className="col-sm-12">
-                     <div className="col-sm-4"></div>
-                     <div className="col-sm-4">
-                        <GoogleLogin
-                           clientId="403619985302-kcu2rduts2gj7oolnvjd89aj5lhgnkf5.apps.googleusercontent.com"
-                           buttonText="Login with Google"
-                           onSuccess={responseGoogle}
-                           onFailure={responseGoogle}
-                        ></GoogleLogin>
-                     </div>
-                     <div className="col-sm-4"></div>
-                  </div>
-               </div>
-            </div>
-         </>
+   const responseGoogle = (response: any) => {
+      //console.log(response);
+      let res = response.profileObj;
+      console.log(res);
+      localStorage.setItem("username", res.familyName);
+      localStorage.setItem("token", response.googleId);
+      localStorage.setItem("user_id", response.googleId);
+      //debugger;
+      alert(
+         "Please enter your profile info on the dashboard to build a user profile."
       );
-   }
-}
+      signup(response);
+      function DashRedir(props: any) {
+         props.history.push("/homeprof");
+      }
+      DashRedir(props);
+   };
 
-//export default withRouter(GoogleOAuth);
+   return (
+      <>
+         <GoogleLogin
+            clientId="403619985302-kcu2rduts2gj7oolnvjd89aj5lhgnkf5.apps.googleusercontent.com"
+            buttonText=""
+            onSuccess={responseGoogle}
+            onFailure={responseGoogle}
+         ></GoogleLogin>
+      </>
+   );
+};
+
+export default withRouter(GoogleOAuth);

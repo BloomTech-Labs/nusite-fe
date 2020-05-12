@@ -53,4 +53,5 @@ input {
    -webkit-backdrop-filter: blur(10px);
    backdrop-filter: blur(10px);
    height: 100%;
+   padding: 2rem;
 }

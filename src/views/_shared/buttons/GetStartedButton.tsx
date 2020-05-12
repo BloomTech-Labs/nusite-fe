@@ -6,8 +6,8 @@ const useStyles = makeStyles(theme => ({
    button: {
       ...theme.overrides?.MuiTypography?.body1,
       borderRadius: "50px",
-      height: "50px",
-      margin: "50px",
+      height: "54px",
+      margin: "54px",
    },
    buttonText: {
       color: theme.palette.secondary.main,

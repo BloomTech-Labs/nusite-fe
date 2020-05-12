@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Query, QueryResult } from "react-apollo";
 import { GET_USER } from "../../graphql-requests/queries";
 import { getUserId } from "../util/useLocalStorage";
-import { Redirect } from "react-router-dom";
+//import { Redirect } from "react-router-dom";
 import "../../App.css";
 //import { makeStyles } from "@material-ui/core/styles";
 
@@ -22,7 +22,7 @@ const User: React.FC = (props: any) => {
             {({ error, data, loading }: QueryResult) => {
                if (error) {
                   console.log(error);
-                  return <Redirect to="/homeg" />;
+                  //return <Redirect to="/homeprof" />;
                }
 
                if (loading) return <p>Loading...</p>;

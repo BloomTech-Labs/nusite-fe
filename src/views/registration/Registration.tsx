@@ -14,8 +14,6 @@ import {
 } from "../../context/user/actions";
 import UserContext from "../../context/user/context";
 import { setToken, setUserId } from "../util/useLocalStorage";
-import GoogleOAuth from "../_shared/GoogleOAuth";
-//
 
 export const Registration: React.FC<RegistrationFormData> = (
    props: RegistrationFormData | any
@@ -83,7 +81,6 @@ export const Registration: React.FC<RegistrationFormData> = (
                   </Button>
                )}
             </Form>
-            <GoogleOAuth />
          </div>
       </>
    );
