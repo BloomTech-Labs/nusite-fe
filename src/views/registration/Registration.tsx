@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
       },
    },
    registerContainer: {
-      backgroundColor: "white",
+      backgroundColor: theme.palette.common.white,
       width: "500px",
       border: "1px",
       color: theme.palette.primary.light,
