@@ -16,6 +16,9 @@ import {
 //import TextField from "@material-ui/core/TextField";
 import UserContext from "../../context/user/context";
 import { setToken, setUserId } from "../util/useLocalStorage";
+import { OAuthContainer } from "../_shared/OAuth/OAuthStyled";
+import { OAuthButton } from "../_shared/OAuthButton";
+import { providers } from "../../types/OAuthTypes";
 
 const useStyles = makeStyles(theme => ({
    container: {
@@ -133,8 +136,20 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   </Button>
                )}
             </Form>
-            {/* <GoogleOAuth /> */}
+            <Grid item >
+               <Typography variant="body1">-OR-</Typography>
+            </Grid>
+            <Grid item>
+            <OAuthContainer>
+               <OAuthButton provider={providers.LINKEDIN} />
+               <OAuthButton provider={providers.FACEBOOK} />
+               <OAuthButton provider={providers.GOOGLE} />
+            </OAuthContainer>
          </Grid>
-      </Grid>
+         </Grid>
+         </Grid>
+           
+         </Grid>
+      </>
    );
 };
