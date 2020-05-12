@@ -6,7 +6,7 @@ import Button from "@material-ui/core/Button";
 import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-//import "./Dashboard.css";
+import { getUserId } from "../util/useLocalStorage";
 
 const useStyles = makeStyles(theme => ({
    container: {
@@ -59,9 +59,8 @@ const Dashboard: React.FC = (props: any) => {
 
    {
       const [updateUser] = useMutation(UPDATE_USER);
-      //let user_id = localStorage.getItem("user_id");
       const onSubmit = ({
-         user_id = localStorage.getItem("user_id"),
+         user_id = getUserId(),
          first_name,
          last_name,
          username,

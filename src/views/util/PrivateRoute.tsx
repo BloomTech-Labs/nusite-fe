@@ -1,35 +1,42 @@
-import React from "react";
+import React, { useContext, Suspense } from "react";
 import { Route, Redirect } from "react-router-dom";
+import LoadingScreen from "../_shared/LoadingScreen";
+import { getToken, setToken } from "./useLocalStorage";
+import { useCookies } from "react-cookie";
+import UserContext from "../../context/user/context";
 
-const PrivateRoute = ({ component: Component, ...rest }: any) => {
+const LOGIN_TOKEN_KEY = "JWT";
+const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
+   const { userData } = useContext(UserContext);
+   const [cookies, , removeCookie] = useCookies([LOGIN_TOKEN_KEY]);
+
+   const localToken: string | null = getToken();
+   const cookieToken: string | undefined = cookies[LOGIN_TOKEN_KEY];
+
    return (
-      <Route
-         {...rest}
-         render={(props: any) => {
-            // Use a render prop so our component is computed,
-            // allowing our token value to be set and deleted over time
-            if (localStorage.getItem("token") && typeof "token" !== undefined) {
-               return <Component {...props} />;
-            }
-            return <Redirect to="/home" />;
-         }}
-      />
+      <Suspense fallback={<LoadingScreen />}>
+         <Route
+            {...otherProps}
+            render={props => {
+               console.log("Rendering PrivateRoute...");
+               if (userData.user.id > 0 || localToken) {
+                  console.log("logged in");
+                  return <Component {...props} />;
+               }
+
+               if (cookieToken) {
+                  console.log("logged in");
+                  setToken(cookieToken);
+                  removeCookie(LOGIN_TOKEN_KEY);
+                  return <Component {...props} />;
+               }
+
+               console.log("Not logged in");
+               return <Redirect to="/login" />;
+            }}
+         />
+      </Suspense>
    );
 };
 
 export default PrivateRoute;
-
-// import React from "react";
-// import { Route, Redirect } from "react-router-dom";
-
-// const PrivateRoute = ({ component, isAuthenticated, ...rest }: any) => {
-//    const routeComponent = (props: any) =>
-//       isAuthenticated ? (
-//          React.createElement(component, props)
-//       ) : (
-//          <Redirect to={{ pathname: "/login" }} />
-//       );
-//    return <Route {...rest} render={routeComponent} />;
-// };
-
-// export default PrivateRoute;
