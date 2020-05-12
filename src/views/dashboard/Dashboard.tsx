@@ -7,6 +7,7 @@ import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { getUserId } from "../util/useLocalStorage";
+import Upload from "./Upload";
 
 const useStyles = makeStyles(theme => ({
    container: {
@@ -22,7 +23,7 @@ const useStyles = makeStyles(theme => ({
    textField: {
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
-      width: 250,
+      width: 350,
       alignItems: "left",
       textAlign: "center",
    },
@@ -122,6 +123,11 @@ const Dashboard: React.FC = (props: any) => {
                      value={users.last_name}
                      onChange={handleChange}
                   />
+                  <br />
+                  <Upload />
+                  <br />
+                  <br />
+                  <br />
                </div>
                <br />
                <Button
