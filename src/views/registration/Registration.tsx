@@ -19,7 +19,7 @@ import { providers } from "../../types/OAuthTypes";
 
 const useStyles = makeStyles(theme => ({
    container: {
-      height: "1000px",
+      height: "1200px",
       backgroundImage: `url(${require("../../images/register.jpeg")})`,
       backgroundSize: "cover",
 
