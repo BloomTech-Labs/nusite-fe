@@ -141,7 +141,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
             <Grid item>
                <OAuthContainer>
                   <OAuthButton provider={providers.LINKEDIN} />
-                  <OAuthButton provider={providers.FACEBOOK} />
+                  {/* <OAuthButton provider={providers.FACEBOOK} /> */}
                   <OAuthButton provider={providers.GOOGLE} />
                </OAuthContainer>
             </Grid>
