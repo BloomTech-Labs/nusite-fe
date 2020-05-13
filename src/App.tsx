@@ -31,8 +31,8 @@ const App = () => (
             <Route exact path="/logout" component={Logout} />
             <Route exact path="/initiate" component={InitiateReset} />
             <PrivateRoute exact path="/_reset" component={FinalizeReset} />
-            <PrivateRoute exact path="/home" component={Dashboard} />
             <PrivateRoute exact path="/homeprof" component={DashboardProfile} />
+            <PrivateRoute path="/home" component={Dashboard} />
          </Switch>
          <Footer />
       </div>

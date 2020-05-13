@@ -1,17 +1,24 @@
 import React, { useContext, Suspense } from "react";
 import { Route, Redirect } from "react-router-dom";
 import LoadingScreen from "../_shared/LoadingScreen";
-import { getToken, setToken } from "./useLocalStorage";
-import { useCookies } from "react-cookie";
+import { getToken, setToken, setUserId } from "./useLocalStorage";
 import UserContext from "../../context/user/context";
+import { useLocation } from "react-router";
 
 const LOGIN_TOKEN_KEY = "JWT";
+const useQuery = () => {
+   return new URLSearchParams(useLocation().search);
+};
+
 const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
    const { userData } = useContext(UserContext);
-   const [cookies, , removeCookie] = useCookies([LOGIN_TOKEN_KEY]);
+   const queries = useQuery();
+   const tokenQuery = queries.get("token");
+   const idQuery = queries.get("query");
 
    const localToken: string | null = getToken();
-   const cookieToken: string | undefined = cookies[LOGIN_TOKEN_KEY];
+   console.log(`Token Query: ${tokenQuery}`);
+   console.log(`Id Query: ${idQuery}`);
 
    return (
       <Suspense fallback={<LoadingScreen />}>
@@ -24,11 +31,11 @@ const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
                   return <Component {...props} />;
                }
 
-               if (cookieToken) {
+               if (tokenQuery) {
                   console.log("logged in");
-                  setToken(cookieToken);
-                  removeCookie(LOGIN_TOKEN_KEY);
-                  return <Component {...props} />;
+                  setToken(tokenQuery);
+                  setUserId(Number(idQuery));
+                  return <Redirect to="/home" />;
                }
 
                console.log("Not logged in");
