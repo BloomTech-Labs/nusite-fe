@@ -52,9 +52,6 @@ const useStyles = makeStyles(theme => ({
          width: "100%",
       },
    },
-   oAuthButton: {
-      marginBottom: "3em",
-   },
 }));
 
 export const Registration: React.FC<RegistrationFormData> = (
