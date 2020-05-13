@@ -22,6 +22,26 @@ const styles = (theme: any) => ({
             padding: "0 0 75px 0",
          },
       },
+      ".form-border": {
+         backgroundColor: theme.palette.common.white,
+         width: "500px",
+         border: "1px",
+         color: theme.palette.primary.light,
+         borderStyle: "solid",
+         borderRadius: "25px",
+         [theme.breakpoints.down("md")]: {
+            maxWidth: "100%",
+         },
+      },
+      ".form-container": {
+         padding: "50px",
+      },
+      ".text-field": {
+         marginBottom: "3em",
+         [theme.breakpoints.down("md")]: {
+            width: "100%",
+         },
+      },
    },
 });
 
