@@ -4,7 +4,7 @@ const styles = (theme: any) => ({
    "@global": {
       ".main-container": {
          width: "100%",
-         padding: "10% 20% 7.5% 20%",
+         padding: "100px 20% 7.5% 20%",
          [theme.breakpoints.down("lg")]: {
             padding: "7.5% 10% 7.5% 10%",
          },
