@@ -27,6 +27,31 @@ const useStyles = makeStyles(theme => ({
          backgroundPosition: "bottom",
       },
    },
+   registerContainer: {
+      backgroundColor: theme.palette.common.white,
+      width: "500px",
+      border: "1px",
+      color: theme.palette.primary.light,
+      borderStyle: "solid",
+      borderRadius: "25px",
+      [theme.breakpoints.down("md")]: {
+         maxWidth: "100%",
+      },
+   },
+   formContainer: {
+      padding: "50px",
+      flexDirection: "column",
+      display: "flex",
+      alignItems: "center",
+      justify: "center",
+      alignContent: "center",
+   },
+   textField: {
+      marginBottom: "3em",
+      [theme.breakpoints.down("md")]: {
+         width: "100%",
+      },
+   },
 }));
 
 export const Registration: React.FC<RegistrationFormData> = (
@@ -74,7 +99,7 @@ export const Registration: React.FC<RegistrationFormData> = (
          <Grid
             container
             direction="column"
-            className="form-border"
+            className={classes.registerContainer}
             alignItems="center"
          >
             <Grid item>
@@ -83,7 +108,7 @@ export const Registration: React.FC<RegistrationFormData> = (
                </Typography>
             </Grid>
             <Form
-               className="form-container"
+               className={classes.formContainer}
                data-testid="register-form"
                onSubmit={onSubmit}
             >
@@ -92,22 +117,14 @@ export const Registration: React.FC<RegistrationFormData> = (
                   name="first_name"
                   label="First Name"
                   required
-                  className="text-field"
+                  className={classes.textField}
                />
                <Input
                   type="text"
                   name="last_name"
                   label="Last Name"
                   required
-                  className="text-field"
-               />
-               <Input
-                  name="email"
-                  label="Email"
-                  type="email"
-                  required
-                  fullWidth
-                  className="text-field"
+                  className={classes.textField}
                />
                <Input
                   type="text"
@@ -116,7 +133,7 @@ export const Registration: React.FC<RegistrationFormData> = (
                   required
                   fullWidth
                   autoComplete="username"
-                  className="text-field"
+                  className={classes.textField}
                />
                <Input
                   name="password"
@@ -126,10 +143,17 @@ export const Registration: React.FC<RegistrationFormData> = (
                   required
                   fullWidth
                   minLength={9}
-                  className="text-field"
+                  className={classes.textField}
                   helperText="password must be at least 9 characters"
                />
-
+               <Input
+                  name="email"
+                  label="Email"
+                  type="email"
+                  required
+                  fullWidth
+                  className={classes.textField}
+               />
                <Grid container justify="center" alignItems="center">
                   {userData.isAuthorizing ? (
                      <Loader />

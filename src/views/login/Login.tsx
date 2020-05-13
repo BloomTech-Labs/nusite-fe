@@ -30,6 +30,31 @@ const useStyles = makeStyles(theme => ({
          backgroundPosition: "top right",
       },
    },
+   loginContainer: {
+      backgroundColor: theme.palette.common.white,
+      width: "500px",
+      border: "1px",
+      color: theme.palette.primary.light,
+      borderStyle: "solid",
+      borderRadius: "25px",
+      [theme.breakpoints.down("md")]: {
+         maxWidth: "100%",
+      },
+   },
+   formContainer: {
+      padding: "50px",
+      flexDirection: "column",
+      display: "flex",
+      alignItems: "center",
+      justify: "center",
+      alignContent: "center",
+   },
+   textField: {
+      marginBottom: "3em",
+      [theme.breakpoints.down("md")]: {
+         width: "100%",
+      },
+   },
 }));
 
 export const Login: React.FC = (props: LoginFormData | any) => {
@@ -67,7 +92,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
          <Grid
             container
             direction="column"
-            className="form-border"
+            className={classes.loginContainer}
             alignItems="center"
          >
             <Grid item>
@@ -76,7 +101,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                </Typography>
             </Grid>
             <Form
-               className="form-container"
+               className={classes.formContainer}
                data-testid="login-form"
                onSubmit={onSubmit}
             >
@@ -86,7 +111,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   type="email"
                   required
                   fullWidth
-                  className="text-field"
+                  className={classes.textField}
                />
                <Input
                   name="password"
@@ -96,7 +121,7 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   minLength={9}
                   fullWidth
                   required
-                  className="text-field"
+                  className={classes.textField}
                   helperText="password must be at least 9 characters"
                />
                <Link to="/initiate">Forgot your password?</Link>
