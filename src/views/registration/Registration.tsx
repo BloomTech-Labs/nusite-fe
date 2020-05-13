@@ -172,7 +172,7 @@ export const Registration: React.FC<RegistrationFormData> = (
             <Grid item>
                <OAuthContainer>
                   <OAuthButton provider={providers.LINKEDIN} />
-                  <OAuthButton provider={providers.FACEBOOK} />
+                  {/* <OAuthButton provider={providers.FACEBOOK} /> */}
                   <OAuthButton provider={providers.GOOGLE} />
                </OAuthContainer>
             </Grid>
