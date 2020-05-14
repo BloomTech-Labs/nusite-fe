@@ -2,81 +2,150 @@ import React, { useContext } from "react";
 import { Link } from "react-router-dom";
 import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
-import Button from "@material-ui/core/Button";
-import "./Login.css";
+import { Button, Grid, Typography } from "@material-ui/core/";
 import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
 import { LoginFormData } from "../../types/FormTypes";
-import GoogleLogin from "../_shared/GoogleLogin.jsx";
+import { makeStyles } from "@material-ui/core/styles";
 import {
-   LOGIN_START,
-   LOGIN_SUCCESS,
-   AUTH_ERROR,
+   loginStart,
+   loginSuccess,
+   authError,
 } from "../../context/user/actions";
 import UserContext from "../../context/user/context";
+import { setToken, setUserId } from "../util/useLocalStorage";
+import { OAuthContainer } from "../_shared/OAuth/OAuthStyled";
+import { OAuthButton } from "../_shared/OAuthButton";
+import { providers } from "../../types/OAuthTypes";
+
+const useStyles = makeStyles(theme => ({
+   container: {
+      height: "1000px",
+      backgroundImage: `url(${require("../../images/register.jpeg")})`,
+      backgroundSize: "cover",
+      backgroundPosition: "right",
+      [theme.breakpoints.down("md")]: {
+         height: "700px",
+         backgroundPosition: "top right",
+      },
+   },
+   loginContainer: {
+      backgroundColor: theme.palette.common.white,
+      width: "500px",
+      border: "1px",
+      color: theme.palette.primary.light,
+      borderStyle: "solid",
+      borderRadius: "25px",
+      [theme.breakpoints.down("md")]: {
+         maxWidth: "100%",
+      },
+   },
+   formContainer: {
+      padding: "50px",
+      flexDirection: "column",
+      display: "flex",
+      alignItems: "center",
+      justify: "center",
+      alignContent: "center",
+   },
+   textField: {
+      marginBottom: "3em",
+      [theme.breakpoints.down("md")]: {
+         width: "100%",
+      },
+   },
+}));
 
 export const Login: React.FC = (props: LoginFormData | any) => {
    const { userData, userDispatch } = useContext(UserContext);
    const [login] = useMutation(LOGIN);
-
+   const classes = useStyles();
    const onSubmit = ({ email, password }: LoginFormData) => {
-      userDispatch({ type: LOGIN_START, payload: null });
+      userDispatch(loginStart());
 
       login({ variables: { email: email, password: password } })
          .then(res => {
-            userDispatch({ type: LOGIN_SUCCESS, payload: res.data.login.user });
+            userDispatch(loginSuccess(res.data.login.user));
 
-            localStorage.setItem("token", res.data.login.token);
+            setToken(res.data.login.token);
             localStorage.setItem("username", res.data.login.user.username);
-            localStorage.setItem("user_id", res.data.login.user.id);
+            setUserId(res.data.login.user.id);
          })
          .then(data => {
             props.history.push("/home");
             console.log(`Welcome `);
          })
          .catch(err => {
-            userDispatch({ type: AUTH_ERROR, payload: err });
+            userDispatch(authError(err));
             alert(err.message);
          });
    };
 
    return (
-      <>
-         <div className="box">
+      <Grid
+         container
+         direction="column"
+         alignItems="center"
+         className={`main-container ${classes.container}`}
+      >
+         <Grid
+            container
+            direction="column"
+            className={classes.loginContainer}
+            alignItems="center"
+         >
+            <Grid item>
+               <Typography variant="h1" align="center">
+                  Login
+               </Typography>
+            </Grid>
             <Form
-               className="login-form"
+               className={classes.formContainer}
                data-testid="login-form"
                onSubmit={onSubmit}
             >
-               <Input name="email" placeholder="Email" type="email" />
+               <Input
+                  name="email"
+                  label="Email"
+                  type="email"
+                  required
+                  fullWidth
+                  className={classes.textField}
+               />
                <Input
                   name="password"
-                  placeholder="Password"
+                  label="Password"
                   autoComplete="current-password"
                   type="password"
                   minLength={9}
+                  fullWidth
+                  required
+                  className={classes.textField}
+                  helperText="password must be at least 9 characters"
                />
-               <br />
                <Link to="/initiate">Forgot your password?</Link>
-               <br />
                {userData.isAuthorizing ? (
                   <Loader />
                ) : (
-                  <Button
-                     variant="contained"
-                     color="secondary"
-                     type="submit"
-                     value="submit"
-                  >
-                     Login
+                  <Button variant="contained" color="primary" type="submit">
+                     <Typography variant="body1" color="secondary">
+                        Login
+                     </Typography>
                   </Button>
                )}
-               <br />
             </Form>
-            <GoogleLogin />
-            <br />
-         </div>
-      </>
+            <Grid item>
+               <Typography variant="body1">-OR-</Typography>
+            </Grid>
+            <Grid item>
+               <OAuthContainer>
+                  <OAuthButton provider={providers.LINKEDIN} />
+                  {/* <OAuthButton provider={providers.FACEBOOK} /> */}
+                  <OAuthButton provider={providers.GOOGLE} />
+               </OAuthContainer>
+            </Grid>
+         </Grid>
+      </Grid>
    );
 };

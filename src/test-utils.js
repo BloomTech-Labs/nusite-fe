@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "@testing-library/react";
-
 import { ThemeContext } from "./context/contexts";
+import UserContext, { ANONYMOUS_USER } from "./context/user/context";
 
 function MutationObserver(callback) {
    this.observe = jest.fn();
@@ -12,13 +12,21 @@ global.MutationObserver = jest.fn(MutationObserver);
 
 const mockSpies = {
    setDarkMode: jest.fn(),
+   userDispatch: jest.fn(),
 };
 
 const AllTheProviders = ({ children }) => (
    <ThemeContext.Provider
       value={{ darkMode: false, setDarkMode: mockSpies.setDarkMode }}
    >
-      {children}
+      <UserContext.Provider
+         value={{
+            userData: ANONYMOUS_USER,
+            userDispatch: mockSpies.userDispatch,
+         }}
+      >
+         {children}
+      </UserContext.Provider>
    </ThemeContext.Provider>
 );
 

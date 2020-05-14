@@ -1,0 +1,73 @@
+.btnFacebook {
+   width: 165px;
+   height: 53px;
+   border-radius: 4px;
+   background: #3b5998;
+   color: white;
+   border: 0px transparent;
+   text-align: center;
+   margin: 5px;
+   display: inline-block;
+   font-size: 0.8rem;
+}
+
+.btnGoogle {
+   margin: 5px;
+   width: 165px;
+   height: 48px;
+   border-radius: 4px;
+   background: #db3236;
+   color: white;
+   border: 0px transparent;
+   text-align: center;
+}
+
+.btnLinkedin {
+   width: 165px;
+   height: 52px;
+   border-radius: 4px;
+   background: #3b5998;
+   color: white;
+   border: 0px transparent;
+   text-align: center;
+   margin: 5px;
+   display: inline-block;
+   font-size: 0.8rem;
+}
+
+.btnGithub {
+   width: 165px;
+   height: 59px;
+   border-radius: 4px;
+   background: #333;
+   color: white;
+   border: 0px transparent;
+   text-align: center;
+   margin: 5px;
+   display: inline-block;
+   font-size: 0.8rem;
+}
+
+.btnFacebook:hover {
+   background: #3b5998;
+   opacity: 0.8;
+   cursor: pointer;
+}
+
+.btnGoogle:hover {
+   background: #db3236;
+   opacity: 0.8;
+   cursor: pointer;
+}
+
+.btnLinkedin:hover {
+   background: #3b5998;
+   opacity: 0.8;
+   cursor: pointer;
+}
+
+.btnGithub:hover {
+   background: #222;
+   opacity: 0.8;
+   cursor: pointer;
+}

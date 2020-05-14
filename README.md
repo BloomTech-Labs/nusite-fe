@@ -279,16 +279,19 @@ For all content - images, icons, etc, use this table to document permission of u
 
 # Testing
 
-Document what you used for testing and why
+| Package               | NPM name                    | Why                                                                                                      |
+| --------------------- | --------------------------- | -------------------------------------------------------------------------------------------------------- |
+| React Testing Library | @testing-library/react      | Main library for testing React Components in Jest                                                        |
+| Apollo React Testing  | @apollo/react-testing       | Used to mock the Apollo Provider                                                                         |
+| Jest Dom              | @testing-library/jest-dom   | A companion to React Testing library that provides DOM element matchers for Jest                         |
+| User-Event            | @testing-library/user-event | A library that tries to simulate user events more accurately than `fireEvent` from React Testing Library |
 
 ## Other Scripts
 
-🚫replace these examples with your own
-
-    * typecheck - runs the TypeScript compiler
     * build - creates a build of the application
     * start - starts the production server after a build is created
-    * test - runs tests in **tests** directory \* eject - copy the configuration files and dependencies into the project so you have full control over them
+    * test - runs all of the tests in __tests__ directory and prints out a test coverage report
+    * testDev - runs tests with `--watch`, so devs can get immediate feedback on changes
 
 #### Pull Request Guidelines
 

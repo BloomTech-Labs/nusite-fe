@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "../home/Home";
 import { useMutation } from "@apollo/react-hooks";
-import User from "./User";
-import Button from "@material-ui/core/Button";
-import { UPDATE_USER } from "../../graphql-requests/mutations";
-import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
-import { getUserId } from "../util/useLocalStorage";
-import Upload from "./Upload";
+import Button from "@material-ui/core/Button";
+import { SIGNUP } from "../../graphql-requests/mutations";
+import TextField from "@material-ui/core/TextField";
 
 const useStyles = makeStyles(theme => ({
    container: {
@@ -23,8 +20,8 @@ const useStyles = makeStyles(theme => ({
    textField: {
       marginLeft: theme.spacing(1),
       marginRight: theme.spacing(1),
-      width: 250,
-      alignItems: "left",
+      width: "70%",
+      alignItems: "center",
       textAlign: "center",
    },
    button: {
@@ -32,14 +29,13 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-const Dashboard: React.FC = (props: any) => {
+const DashboardProfile: React.FC = (props: any) => {
    const [name, setName] = useState("");
    const classes = useStyles();
-
    useEffect(() => {
-      let username = localStorage.getItem("username");
-      if (username) {
-         setName(username);
+      let name = localStorage.getItem("username");
+      if (name) {
+         setName(name);
       }
    }, []);
 
@@ -48,6 +44,7 @@ const Dashboard: React.FC = (props: any) => {
       email: "",
       first_name: "",
       last_name: "",
+      password: "",
    });
 
    const handleChange = (event: any) => {
@@ -59,23 +56,25 @@ const Dashboard: React.FC = (props: any) => {
    };
 
    {
-      const [updateUser] = useMutation(UPDATE_USER);
+      const [signup] = useMutation(SIGNUP);
+      //let user_id = localStorage.getItem("user_id");
       const onSubmit = ({
-         user_id = getUserId(),
          first_name,
          last_name,
          username,
          email,
+         password,
       }: any) => {
-         console.log(user_id);
-         updateUser({
-            variables: { user_id, ...users },
+         //console.log(onSubmit);
+         signup({
+            variables: { ...users },
          })
             .then(res => {
                console.log(res.data);
-               setName(res.data.updateUser.username);
-               localStorage.setItem("username", res.data.updateUser.username);
-               props.history.push("/home");
+               localStorage.setItem("username", res.data.signup.username);
+               localStorage.setItem("user_id", res.data.signup.id);
+               alert("Last step, Now verify your new credentials");
+               props.history.push("/login");
                console.log("Successfully updated.");
             })
             .catch(err => {
@@ -83,18 +82,15 @@ const Dashboard: React.FC = (props: any) => {
                console.log(err);
             });
       };
-
       return (
          <>
-            <div className={classes.container}>
+            <main className={classes.container}>
                <br />
                <h1>Welcome to Your Dashboard {name}</h1>
                <br />
-               <User />
+               <p>Get started Building Your Profile!</p>
                <br />
-               <p>Update/Change Your Profile</p>
-               <br />
-               <div className={classes.container}>
+               <div className="boxedit">
                   <TextField
                      label="username: "
                      name="username"
@@ -123,11 +119,21 @@ const Dashboard: React.FC = (props: any) => {
                      value={users.last_name}
                      onChange={handleChange}
                   />
+                  <TextField
+                     label="password: "
+                     name="password"
+                     variant="filled"
+                     type="password"
+                     value={users.password}
+                     onChange={handleChange}
+                  />
                   <br />
-                  <Upload />
-                  <br />
-                  <br />
-                  <br />
+                  <TextField
+                     label="upload image url: "
+                     name="image"
+                     variant="filled"
+                     onChange={handleChange}
+                  />
                </div>
                <br />
                <Button
@@ -136,13 +142,13 @@ const Dashboard: React.FC = (props: any) => {
                   type="submit"
                   onClick={onSubmit}
                >
-                  Edit Profile
+                  Submit Profile
                </Button>
                <br />
-            </div>
+            </main>
          </>
       );
    }
 };
 
-export default Dashboard;
+export default DashboardProfile;

@@ -67,3 +67,9 @@
 .loginBtn--google:focus {
    background: #e74b37;
 }
+
+.App_dark .edit {
+   background: #aaa;
+   color: #111;
+   border-radius: 2px;
+}

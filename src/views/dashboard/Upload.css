@@ -1,10 +1,10 @@
-form {
+.uploadform {
    display: flex;
    flex-flow: column wrap;
    max-width: 500px;
    margin: 0 auto;
-   background: #168995;
-   color: white;
+   background: whitesmoke;
+   color: #222;
    border-radius: 4px;
    justify-content: center;
    font-family: "Roboto";
@@ -15,8 +15,8 @@ form {
    font-size: 1rem;
 }
 
-input {
-   width: 200px;
+.uploadinput {
+   width: 390px;
    background: #aaa;
    border-radius: 4px;
    justify-content: center;
@@ -24,13 +24,4 @@ input {
    padding: 16px;
    margin: 11px;
    font-size: 1rem;
-}
-
-.box {
-   background-color: rgba(41, 39, 39, 0.3);
-   font-family: "Roboto", sans-serif;
-   text-align: center;
-   -webkit-backdrop-filter: blur(10px);
-   backdrop-filter: blur(10px);
-   height: 100%;
 }
