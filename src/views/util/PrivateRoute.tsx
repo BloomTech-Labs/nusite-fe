@@ -35,7 +35,7 @@ const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
                   console.log("logged in");
                   setToken(tokenQuery);
                   setUserId(Number(idQuery));
-                  return <Redirect to="/home" />;
+                  return <Component {...props} />;
                }
 
                console.log("Not logged in");

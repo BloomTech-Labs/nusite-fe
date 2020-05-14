@@ -33,6 +33,7 @@ const App = () => (
             <PrivateRoute exact path="/_reset" component={FinalizeReset} />
             <PrivateRoute exact path="/homeprof" component={DashboardProfile} />
             <PrivateRoute path="/home" component={Dashboard} />
+            <Route render={() => <p>*** Page Not Found!! ***</p>} />
          </Switch>
          <Footer />
       </div>
