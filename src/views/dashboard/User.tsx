@@ -20,11 +20,12 @@ const User: React.FC = (props: any) => {
       <>
          <Query query={GET_USER} variables={{ user_id }}>
             {({ error, data, loading }: QueryResult) => {
-               if (error) {
-                  console.log(error);
-                  //return <Redirect to="/homeprof" />;
-               }
+               // if (error) {
+               //    console.error(error);
+               //    //return <Redirect to="/homeprof" />;
+               // }
 
+               if (error) return <p>Error: {error}</p>;
                if (loading) return <p>Loading...</p>;
 
                return (
