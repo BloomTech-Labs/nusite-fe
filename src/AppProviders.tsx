@@ -14,7 +14,7 @@ import UserContext, { ANONYMOUS_USER } from "./context/user/context";
 const cache = new InMemoryCache();
 
 const client = new ApolloClient({
-   uri: apolloURIConfig[process.env.NODE_ENV],
+   uri: apolloURIConfig[process.env.NODE_ENV || "development"],
    cache,
 });
 
