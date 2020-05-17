@@ -21,28 +21,28 @@ const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
    console.log(`Id Query: ${idQuery}`);
 
    return (
-      <Suspense fallback={<LoadingScreen />}>
-         <Route
-            {...otherProps}
-            render={props => {
-               console.log("Rendering PrivateRoute...");
-               if (userData.user.id > 0 || localToken) {
-                  console.log("logged in");
-                  return <Component {...props} />;
-               }
+      // <Suspense fallback={<LoadingScreen />}>
+      <Route
+         {...otherProps}
+         render={props => {
+            console.log("Rendering PrivateRoute...");
+            if (userData.user.id > 0 || localToken) {
+               console.log("logged in");
+               return <Component {...props} />;
+            }
 
-               if (tokenQuery) {
-                  console.log("logged in");
-                  setToken(tokenQuery);
-                  setUserId(Number(idQuery));
-                  return <Redirect to="/home" />;
-               }
+            if (tokenQuery) {
+               console.log("logged in");
+               setToken(tokenQuery);
+               setUserId(Number(idQuery));
+               return <Component {...props} />;
+            }
 
-               console.log("Not logged in");
-               return <Redirect to="/login" />;
-            }}
-         />
-      </Suspense>
+            console.log("Not logged in");
+            return <Redirect to="/login" />;
+         }}
+      />
+      // </Suspense>
    );
 };
 
