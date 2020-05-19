@@ -44,13 +44,13 @@ const mockGetUsers = {
    request: {
       query: GET_USER,
       variables: {
-         user_id: "10",
+         user_id: 10,
       },
    },
    result: {
       data: {
          user: {
-            id: "10",
+            id: 10,
             username: "johnwick",
             email: "johnwick@johnwick.com",
             first_name: "John",
