@@ -17,7 +17,7 @@ export function clearToken() {
 }
 
 export function getUserId() {
-   return localStorage.getItem(USER_ID);
+   return Number(localStorage.getItem(USER_ID));
 }
 
 export function setUserId(id: number) {

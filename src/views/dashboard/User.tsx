@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
 import { Query, QueryResult } from "react-apollo";
 import { GET_USER } from "../../graphql-requests/queries";
 import { getUserId } from "../util/useLocalStorage";
@@ -7,7 +7,10 @@ import "../../App.css";
 //import { makeStyles } from "@material-ui/core/styles";
 
 const User: React.FC = (props: any) => {
-   const [user_id, setUser] = useState("");
+   const [user_id, setUser]: [
+      number,
+      Dispatch<SetStateAction<number>>
+   ] = useState(0);
 
    useEffect(() => {
       const user_id = getUserId();
@@ -20,13 +23,22 @@ const User: React.FC = (props: any) => {
       <>
          <Query query={GET_USER} variables={{ user_id }}>
             {({ error, data, loading }: QueryResult) => {
-               if (error) {
-                  console.log(error);
-                  //return <Redirect to="/homeprof" />;
-               }
+               // if (error) {
+               //    console.error(error);
+               //    //return <Redirect to="/homeprof" />;
+               // }
 
+               if (error)
+                  return (
+                     <p>
+                        Error:{" "}
+                        {error.message ||
+                           "There was a problem Querying the database"}
+                     </p>
+                  );
                if (loading) return <p>Loading...</p>;
 
+               console.log(data);
                return (
                   <>
                      <p>Your Profile</p>

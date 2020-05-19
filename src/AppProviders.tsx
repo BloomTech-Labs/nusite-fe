@@ -2,6 +2,7 @@ import React, { useReducer } from "react";
 import App from "./App";
 import { ApolloProvider } from "@apollo/react-hooks";
 import ApolloClient from "apollo-boost";
+import apolloURIConfig from "./graphql-requests/clientConfig";
 import { InMemoryCache } from "apollo-cache-inmemory";
 import { ThemeProvider } from "@material-ui/styles";
 import theme from "./theme/theme";
@@ -13,15 +14,18 @@ import UserContext, { ANONYMOUS_USER } from "./context/user/context";
 const cache = new InMemoryCache();
 
 const client = new ApolloClient({
-   uri:
-      process.env.STAGING_LINK ||
-      "https://partnerd-staging.herokuapp.com/graphql",
+   uri: apolloURIConfig[process.env.REACT_APP_NODE_ENV || "development"],
    cache,
 });
 
 const AppProviders = () => {
    const [userData, userDispatch] = useReducer(UserReducer, ANONYMOUS_USER);
 
+   console.log(
+      `Client URL: ${
+         apolloURIConfig[process.env.REACT_APP_NODE_ENV || "development"]
+      }`
+   );
    return (
       <ApolloProvider client={client}>
          <ThemeProvider theme={theme}>
