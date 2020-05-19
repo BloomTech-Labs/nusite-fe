@@ -28,7 +28,14 @@ const User: React.FC = (props: any) => {
                //    //return <Redirect to="/homeprof" />;
                // }
 
-               if (error) return <p>Error: {error}</p>;
+               if (error)
+                  return (
+                     <p>
+                        Error:{" "}
+                        {error.message ||
+                           "There was a problem Querying the database"}
+                     </p>
+                  );
                if (loading) return <p>Loading...</p>;
 
                console.log(data);
