@@ -57,7 +57,7 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-export const Login: React.FC = (props: LoginFormData | any) => {
+export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
    const { userData, userDispatch } = useContext(UserContext);
    const [login] = useMutation(LOGIN);
    const classes = useStyles();
