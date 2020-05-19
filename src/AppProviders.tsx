@@ -14,13 +14,18 @@ import UserContext, { ANONYMOUS_USER } from "./context/user/context";
 const cache = new InMemoryCache();
 
 const client = new ApolloClient({
-   uri: apolloURIConfig[process.env.NODE_ENV || "development"],
+   uri: apolloURIConfig[process.env.REACT_APP_NODE_ENV || "development"],
    cache,
 });
 
 const AppProviders = () => {
    const [userData, userDispatch] = useReducer(UserReducer, ANONYMOUS_USER);
 
+   console.log(
+      `Client URL: ${
+         apolloURIConfig[process.env.REACT_APP_NODE_ENV || "development"]
+      }`
+   );
    return (
       <ApolloProvider client={client}>
          <ThemeProvider theme={theme}>
