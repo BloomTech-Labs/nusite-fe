@@ -179,12 +179,15 @@ div.main-header__heading {
    height: 444px;
 }
 
-@media only screen and (max-width: 993px) {
+@media only screen and (max-width: 768px) {
    /* Show the sidenav off */
    .grid-container {
       display: flex;
       grid-template-areas: "sidenav main";
+      grid-template-columns: 1fr 1fr;
+      height: 200vh;
    }
+
    .avatar {
       display: none;
    }
@@ -203,17 +206,17 @@ div.main-header__heading {
 
    .card:nth-child(2) {
       height: 160px;
+      line-height: 1.9rem;
    }
 
    .card:nth-child(3) {
-      height: 444px;
+      height: 435px;
    }
 }
 
-/* Medium-sized screen breakpoint (tablet, 1050px) */
 @media only screen and (max-width: 993px) {
    /* Break out main cards into two columns */
    .main-cards {
-      column-count: 1;
+      column-count: 2;
    }
 }
