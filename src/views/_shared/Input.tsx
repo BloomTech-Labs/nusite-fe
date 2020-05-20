@@ -29,6 +29,12 @@ export const Input = ({ register, errors, name, ...rest }: any) => {
                   ? true
                   : errors.password && name === "password"
                   ? true
+                  : errors.first_name && name === "first_name"
+                  ? true
+                  : errors.last_name && name === "last_name"
+                  ? true
+                  : errors.username && name === "username"
+                  ? true
                   : false
             }
             {...rest}
