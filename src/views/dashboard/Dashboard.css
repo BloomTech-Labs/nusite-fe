@@ -119,7 +119,7 @@ aside {
 
 /* Force varying heights to simulate dynamic content */
 .card:first-child {
-   height: 770px;
+   height: 725px;
 }
 
 .card:nth-child(2) {
