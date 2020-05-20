@@ -78,7 +78,7 @@ aside {
    justify-content: space-between;
    margin: 20px;
    padding: 20px;
-   height: 140px; /* Force our height since we don't have actual content yet */
+   height: 160px; /* Force our height since we don't have actual content yet */
    background-color: whitesmoke;
    color: slategray;
 }
@@ -151,7 +151,7 @@ aside {
    }
 
    .card:nth-child(2) {
-      height: 160px;
+      height: 170px;
    }
 
    .card:nth-child(3) {

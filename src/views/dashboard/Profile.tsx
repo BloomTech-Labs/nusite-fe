@@ -92,20 +92,20 @@ const Profile: React.FC = (props: any) => {
       return (
          <>
             <div className="grid-container">
-               <div className="headertop">
+               {/* <div className="headertop">
                   <h2 style={{ color: "#444" }}>
                      Welcome to Your Profile {name}
                   </h2>
-               </div>
+               </div> */}
                <main className="main">
                   <div className="main-header">
                      <div className="main-header__heading">
                         <h2 style={{ color: "#444" }}>
-                           Hello there, <br /> complete to your profile here!
+                           Hello there, you can complete your profile here!
                         </h2>
-                        {/* <Link to="/chat" style={{ color: "#444" }}>
+                        <Link to="/chat" style={{ color: "#444" }}>
                            <p>(Chat)</p>
-                        </Link> */}
+                        </Link>
                      </div>
                      <div className="main-header__updates">
                         <h2 style={{ color: "#444" }}>
