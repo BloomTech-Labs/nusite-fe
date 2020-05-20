@@ -103,9 +103,9 @@ const Profile: React.FC = (props: any) => {
                         <h2 style={{ color: "#444" }}>
                            Hello there, <br /> complete to your profile here!
                         </h2>
-                        <Link to="/chat" style={{ color: "#444" }}>
+                        {/* <Link to="/chat" style={{ color: "#444" }}>
                            <p>(Chat)</p>
-                        </Link>
+                        </Link> */}
                      </div>
                      <div className="main-header__updates">
                         <h2 style={{ color: "#444" }}>
