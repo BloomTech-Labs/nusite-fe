@@ -213,11 +213,9 @@ div.main-header__heading {
       height: 435px;
    }
 }
-
-/* Medium-sized screen breakpoint (tablet, 993px) */
-@media only screen and (max-width: 993px) {
-   /* Break out main cards into two columns */
+@media only screen and (max-width: 768px) {
+   /* Break out main cards into one column */
    .main-cards {
-      column-count: 2;
+      column-count: 1;
    }
 }
