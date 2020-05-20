@@ -32,9 +32,9 @@ const User: React.FC = (props: any) => {
                   );
 
                if (loading) return <p>Loading...</p>;
-               console.log(error);
-               const userdata = { data };
-               console.log(userdata);
+               //console.log(error);
+               //const userdata = { data };
+               //console.log(userdata);
                return (
                   <>
                      <h2>Your Profile</h2>

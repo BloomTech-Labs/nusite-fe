@@ -120,7 +120,7 @@ export const Dashboard: React.FC = (props: any) => {
                   <div className="main-cards">
                      <div className="card">
                         <h2 style={{ color: "#444" }}>
-                           Update/Finish your Profile
+                           Welcome to your dashboard {name}
                         </h2>
                         <img src={reatime2} className="reatime2" alt="" />
                         <User />
