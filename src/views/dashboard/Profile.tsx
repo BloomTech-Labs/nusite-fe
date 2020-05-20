@@ -118,7 +118,7 @@ const Profile: React.FC = (props: any) => {
                   <br />
                   <div className="main-cards">
                      <div className="card">
-                        <h2 style={{ color: "#444" }}>
+                        <h2 style={{ color: "#222" }}>
                            Update/Finish your Profile
                         </h2>
                         <img src={reatime2} className="reatime2" alt="" />
@@ -135,7 +135,8 @@ const Profile: React.FC = (props: any) => {
                               label="username: "
                               name="username"
                               variant="filled"
-                              value={users.username}
+                              defaultValue={localStorage.getItem("username")}
+                              //value={users.username}
                               onChange={handleChange}
                            />
                            <TextField
@@ -143,7 +144,8 @@ const Profile: React.FC = (props: any) => {
                               label="email: "
                               name="email"
                               variant="filled"
-                              value={users.email}
+                              defaultValue={localStorage.getItem("email")}
+                              //value={users.email}
                               onChange={handleChange}
                            />
                            <TextField
@@ -151,7 +153,8 @@ const Profile: React.FC = (props: any) => {
                               label="first name: "
                               name="first_name"
                               variant="filled"
-                              value={users.first_name}
+                              defaultValue={localStorage.getItem("first_name")}
+                              //value={users.first_name}
                               onChange={handleChange}
                            />
                            <TextField
@@ -159,7 +162,8 @@ const Profile: React.FC = (props: any) => {
                               label="last name: "
                               name="last_name"
                               variant="filled"
-                              value={users.last_name}
+                              defaultValue={localStorage.getItem("last_name")}
+                              //value={users.last_name}
                               onChange={handleChange}
                            />
                            <br />

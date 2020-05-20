@@ -86,7 +86,14 @@ export const Dashboard: React.FC = (props: any) => {
                console.log(res.data);
                setName(res.data.updateUser.username);
                localStorage.setItem("username", res.data.updateUser.username);
+               localStorage.setItem(
+                  "first_name",
+                  res.data.updateUser.first_name
+               );
+               localStorage.setItem("last_name", res.data.updateUser.last_name);
+               localStorage.setItem("email", res.data.updateUser.email);
                props.history.push("/home");
+               //let userinfo = res.data;
                console.log("Successfully updated.");
             })
             .catch(err => {
@@ -102,10 +109,7 @@ export const Dashboard: React.FC = (props: any) => {
                <main className="main">
                   <div className="main-header">
                      <div className="main-header__heading">
-                        <h2 style={{ color: "#25274d" }}>
-                           Hi {name}! <br />
-                           What is your agenda today?
-                        </h2>
+                        <h2 style={{ color: "#25274d" }}>Hi {name}!</h2>
                         <Link to="/chat" style={{ color: "#444" }}>
                            <p>(Chat)</p>
                         </Link>
@@ -120,8 +124,8 @@ export const Dashboard: React.FC = (props: any) => {
                   <br />
                   <div className="main-cards">
                      <div className="card">
-                        <h2 style={{ color: "#444" }}>
-                           Welcome to your dashboard {name}
+                        <h2 style={{ color: "#222" }}>
+                           Welcome to your dashboard
                         </h2>
                         <img src={reatime2} className="reatime2" alt="" />
                         <User />
@@ -137,7 +141,8 @@ export const Dashboard: React.FC = (props: any) => {
                               label="username: "
                               name="username"
                               variant="filled"
-                              value={users.username}
+                              defaultValue={localStorage.getItem("username")}
+                              //value={users.username}
                               onChange={handleChange}
                            />
                            <TextField
@@ -145,6 +150,7 @@ export const Dashboard: React.FC = (props: any) => {
                               label="email: "
                               name="email"
                               variant="filled"
+                              //defaultValue={localStorage.getItem("email")}
                               value={users.email}
                               onChange={handleChange}
                            />
@@ -153,6 +159,7 @@ export const Dashboard: React.FC = (props: any) => {
                               label="first name: "
                               name="first_name"
                               variant="filled"
+                              //defaultValue={localStorage.getItem("first_name")}
                               value={users.first_name}
                               onChange={handleChange}
                            />
@@ -161,6 +168,7 @@ export const Dashboard: React.FC = (props: any) => {
                               label="last name: "
                               name="last_name"
                               variant="filled"
+                              //defaultValue={localStorage.getItem("last_name")}
                               value={users.last_name}
                               onChange={handleChange}
                            />
