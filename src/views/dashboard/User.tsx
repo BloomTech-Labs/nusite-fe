@@ -4,7 +4,31 @@ import { GET_USER } from "../../graphql-requests/queries";
 import { getUserId } from "../util/useLocalStorage";
 //import { Redirect } from "react-router-dom";
 import "../../App.css";
-//import { makeStyles } from "@material-ui/core/styles";
+import TextField from "@material-ui/core/TextField";
+import { makeStyles } from "@material-ui/core/styles";
+
+const useStyles = makeStyles(theme => ({
+   container: {
+      display: "flex",
+      flexFlow: "column",
+      flexWrap: "wrap",
+      width: "100%",
+      justifyContent: "center",
+      alignItems: "center",
+      fontSize: "1.2rem",
+      padding: "2rem",
+   },
+   textField: {
+      marginLeft: theme.spacing(1),
+      marginRight: theme.spacing(1),
+      width: 250,
+      alignItems: "left",
+      textAlign: "center",
+   },
+   button: {
+      margin: theme.spacing(1),
+   },
+}));
 
 const User: React.FC = (props: any) => {
    const [user_id, setUser]: [
@@ -39,6 +63,7 @@ const User: React.FC = (props: any) => {
                if (loading) return <p>Loading...</p>;
 
                console.log(data);
+               const userdata = { data };
                return (
                   <>
                      <h2>Your Profile</h2>

@@ -96,6 +96,7 @@ const Dashboard: React.FC = (props: any) => {
                <User />
                <br />
                <h2>Update/Change Your Profile</h2>
+               <p></p>
                <div className={classes.container}>
                   <TextField
                      label="username: "
