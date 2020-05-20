@@ -185,7 +185,9 @@ div.main-header__heading {
       display: flex;
       grid-template-areas: "sidenav main";
    }
-
+   .avatar {
+      display: none;
+   }
    .sidenav {
       display: none;
       flex-direction: column;
@@ -212,6 +214,6 @@ div.main-header__heading {
 @media only screen and (min-width: 65.625em) {
    /* Break out main cards into two columns */
    .main-cards {
-      column-count: 2;
+      column-count: 1;
    }
 }
