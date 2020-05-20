@@ -31,6 +31,9 @@ const useStyles = makeStyles(theme => ({
    },
    formContainer: {
       padding: "50px",
+      [theme.breakpoints.down("md")]: {
+         padding: "25px",
+      },
    },
    textField: {
       marginBottom: "3em",
@@ -51,6 +54,7 @@ export const FinalizeReset: React.FC<FinalizeResetData> = ({
    }
    const [finalize] = useMutation(FINALIZE_RESET);
    const onSubmit = ({ email, password }: FinalizeResetData) => {
+      submitForm();
       finalize({
          variables: { email, password },
       })
@@ -59,8 +63,9 @@ export const FinalizeReset: React.FC<FinalizeResetData> = ({
             alert("Password successfully changed. Please log in.");
          })
          .catch(err => {
-            // alert(err.message);
+            alert(err.message);
             console.log(err.message);
+            setState({ ...state, loading: false });
          });
    };
 
@@ -114,15 +119,19 @@ export const FinalizeReset: React.FC<FinalizeResetData> = ({
                      className={classes.textField}
                   />
                   <Grid container justify="center" alignItems="center">
-                     <Button
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                        onClick={submitForm}
-                     >
-                        {!state.loading && "Confirm New Password"}
-                        {state.loading && <Loader />}
-                     </Button>
+                     {state.loading ? (
+                        <Loader />
+                     ) : (
+                        <Button
+                           variant="contained"
+                           color="primary"
+                           type="submit"
+                        >
+                           <Typography variant="body1" color="secondary">
+                              Confirm Password
+                           </Typography>
+                        </Button>
+                     )}
                   </Grid>
                </Form>
             </Grid>

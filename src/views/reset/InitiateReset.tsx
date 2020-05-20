@@ -32,6 +32,9 @@ const useStyles = makeStyles(theme => ({
    },
    formContainer: {
       padding: "50px",
+      [theme.breakpoints.down("md")]: {
+         padding: "25px",
+      },
    },
    textField: {
       marginBottom: "3em",
@@ -51,6 +54,7 @@ export const InitiateReset: React.FC<InitiateResetData> = (
    }
    const [reset] = useMutation(INITIATE_RESET);
    const onSubmit = ({ email }: InitiateResetData) => {
+      submitForm();
       reset({
          variables: { email },
       })
@@ -62,6 +66,7 @@ export const InitiateReset: React.FC<InitiateResetData> = (
          .catch(err => {
             alert(err.message);
             console.log(err);
+            setState({ ...state, loading: false });
          });
    };
 
@@ -106,15 +111,19 @@ export const InitiateReset: React.FC<InitiateResetData> = (
                      label="Email"
                   />
                   <Grid container justify="center" alignItems="center">
-                     <Button
-                        variant="contained"
-                        color="primary"
-                        type="submit"
-                        onClick={submitForm}
-                     >
-                        {!state.loading && "Reset Password"}
-                        {state.loading && <Loader />}
-                     </Button>
+                     {state.loading ? (
+                        <Loader />
+                     ) : (
+                        <Button
+                           variant="contained"
+                           color="primary"
+                           type="submit"
+                        >
+                           <Typography variant="body1" color="secondary">
+                              Reset Password
+                           </Typography>
+                        </Button>
+                     )}
                   </Grid>
                </Form>
             </Grid>
