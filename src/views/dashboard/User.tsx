@@ -32,13 +32,13 @@ const User: React.FC = (props: any) => {
                   );
 
                if (loading) return <p>Loading...</p>;
-               //console.log(error);
-               //const userdata = { data };
-               //console.log(userdata);
-               //localStorage.setItem("username", data.user.username);
-               localStorage.setItem("first_name", data.user.first_name);
-               localStorage.setItem("last_name", data.user.last_name);
-               localStorage.setItem("email", data.user.email);
+               console.log(error);
+               const userdata = { data };
+               console.log(userdata);
+               // localStorage.setItem("username", data.user.username);
+               // localStorage.setItem("first_name", data.user.first_name);
+               // localStorage.setItem("last_name", data.user.last_name);
+               // localStorage.setItem("email", data.user.email);
                return (
                   <>
                      <div className="boxedit">

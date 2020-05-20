@@ -185,7 +185,7 @@ div.main-header__heading {
       display: flex;
       grid-template-areas: "sidenav main";
       grid-template-columns: 1fr 1fr;
-      height: 200vh;
+      height: 211vh;
    }
 
    .avatar {
