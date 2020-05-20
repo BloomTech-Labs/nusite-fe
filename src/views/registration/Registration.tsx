@@ -40,11 +40,6 @@ const useStyles = makeStyles(theme => ({
    },
    formContainer: {
       padding: "50px",
-      flexDirection: "column",
-      display: "flex",
-      alignItems: "center",
-      justify: "center",
-      alignContent: "center",
    },
    textField: {
       marginBottom: "3em",
