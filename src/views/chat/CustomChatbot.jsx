@@ -14,7 +14,8 @@ const theme = {
    //    botFontColor: "#fff",
    //    userBubbleColor: "#fff",
    //    userFontColor: "#4a4a4a",
-   height: "190px",
+   height: "160px",
+   width: "150px",
    display: "flex",
    justifyContent: "center",
    alignItems: "center",
@@ -42,7 +43,7 @@ class Review extends Component {
       const { name, role, experience } = this.state;
       return (
          <>
-            <div style={{ width: "50%" }}>
+            <div style={{ width: "35%" }}>
                <h3>Summary</h3>
                <table>
                   <tbody>
@@ -189,7 +190,8 @@ const steps = [
    },
    {
       id: "end-message",
-      message: "Thanks! Your data was submitted successfully!",
+      message:
+         "Thanks! Your data was submitted successfully! We'l get back to you soon.",
       end: true,
    },
 ];

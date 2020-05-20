@@ -128,6 +128,7 @@ const Profile: React.FC = (props: any) => {
                      </div>
                      <div className={classes.container}>
                         <TextField
+                           required
                            label="username: "
                            name="username"
                            variant="filled"
@@ -135,6 +136,7 @@ const Profile: React.FC = (props: any) => {
                            onChange={handleChange}
                         />
                         <TextField
+                           required
                            label="email: "
                            name="email"
                            variant="filled"
@@ -142,6 +144,7 @@ const Profile: React.FC = (props: any) => {
                            onChange={handleChange}
                         />
                         <TextField
+                           required
                            label="first name: "
                            name="first_name"
                            variant="filled"
@@ -149,6 +152,7 @@ const Profile: React.FC = (props: any) => {
                            onChange={handleChange}
                         />
                         <TextField
+                           required
                            label="last name: "
                            name="last_name"
                            variant="filled"

@@ -78,7 +78,7 @@ aside {
    justify-content: space-between;
    margin: 20px;
    padding: 20px;
-   height: 160px; /* Force our height since we don't have actual content yet */
+   height: 165px; /* Force our height since we don't have actual content yet */
    background-color: whitesmoke;
    color: slategray;
 }
