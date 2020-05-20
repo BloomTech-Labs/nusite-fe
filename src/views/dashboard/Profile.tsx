@@ -126,7 +126,7 @@ const Profile: React.FC = (props: any) => {
                      </div>
                      <div className="card">
                         <h2>Update/Change Your Profile</h2>
-                        <h4>(Empty fields won't update!)</h4>
+                        <h4>(Required fields must be filled!)</h4>
                      </div>
                      <div className="formcontainer">
                         <div className={classes.container}>
@@ -135,8 +135,8 @@ const Profile: React.FC = (props: any) => {
                               label="username: "
                               name="username"
                               variant="filled"
-                              defaultValue={localStorage.getItem("username")}
-                              //value={users.username}
+                              //defaultValue={localStorage.getItem("username")}
+                              value={users.username}
                               onChange={handleChange}
                            />
                            <TextField

@@ -193,7 +193,7 @@ div.main-header__heading {
       flex-direction: column;
    }
    .card:first-child {
-      height: 715px;
+      height: 725px;
       line-height: 1.5rem;
    }
    .card:first-child h1 {
@@ -202,7 +202,7 @@ div.main-header__heading {
    }
 
    .card:nth-child(2) {
-      height: 170px;
+      height: 160px;
    }
 
    .card:nth-child(3) {
@@ -211,7 +211,7 @@ div.main-header__heading {
 }
 
 /* Medium-sized screen breakpoint (tablet, 1050px) */
-@media only screen and (min-width: 65.625em) {
+@media only screen and (max-width: 993px) {
    /* Break out main cards into two columns */
    .main-cards {
       column-count: 1;
