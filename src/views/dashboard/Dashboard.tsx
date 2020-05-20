@@ -174,21 +174,21 @@ export const Dashboard: React.FC = (props: any) => {
                            />
                            <br />
                            <TextField
-                              label="Company Name: "
+                              label="Company: "
                               name="company"
                               variant="filled"
                               value={users.company}
                               onChange={handleChange}
                            />
                            <TextField
-                              label="Years Experience: "
+                              label="Yrs Experience: "
                               name="dev_experience"
                               variant="filled"
                               value={users.dev_experience}
                               onChange={handleChange}
                            />
                            <TextField
-                              label="Years Education: "
+                              label="Yrs Education: "
                               name="dev_education"
                               variant="filled"
                               value={users.dev_education}

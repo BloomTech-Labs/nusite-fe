@@ -144,8 +144,8 @@ const Profile: React.FC = (props: any) => {
                               label="email: "
                               name="email"
                               variant="filled"
-                              defaultValue={localStorage.getItem("email")}
-                              //value={users.email}
+                              //defaultValue={localStorage.getItem("email")}
+                              value={users.email}
                               onChange={handleChange}
                            />
                            <TextField
@@ -153,8 +153,8 @@ const Profile: React.FC = (props: any) => {
                               label="first name: "
                               name="first_name"
                               variant="filled"
-                              defaultValue={localStorage.getItem("first_name")}
-                              //value={users.first_name}
+                              //defaultValue={localStorage.getItem("first_name")}
+                              value={users.first_name}
                               onChange={handleChange}
                            />
                            <TextField
@@ -162,27 +162,27 @@ const Profile: React.FC = (props: any) => {
                               label="last name: "
                               name="last_name"
                               variant="filled"
-                              defaultValue={localStorage.getItem("last_name")}
-                              //value={users.last_name}
+                              //defaultValue={localStorage.getItem("last_name")}
+                              value={users.last_name}
                               onChange={handleChange}
                            />
                            <br />
                            <TextField
-                              label="Company Name: "
+                              label="Company: "
                               name="company"
                               variant="filled"
                               value={users.company}
                               onChange={handleChange}
                            />
                            <TextField
-                              label="Years Experience: "
+                              label="Yrs Experience: "
                               name="dev_experience"
                               variant="filled"
                               value={users.dev_experience}
                               onChange={handleChange}
                            />
                            <TextField
-                              label="Years Education: "
+                              label="Yrs Education: "
                               name="dev_education"
                               variant="filled"
                               value={users.dev_education}
