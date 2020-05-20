@@ -191,7 +191,7 @@ const steps = [
    {
       id: "end-message",
       message:
-         "Thanks! Your data was submitted successfully! We'l get back to you soon.",
+         "Thanks! Your data was submitted successfully! We'll get back to you soon via email.",
       end: true,
    },
 ];

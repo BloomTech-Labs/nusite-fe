@@ -101,11 +101,14 @@ export const Dashboard: React.FC = (props: any) => {
                <main className="main">
                   <div className="main-header">
                      <div className="main-header__heading">
-                        <h2 style={{ color: "#444" }}>Hi {name}!</h2>
+                        <h2 style={{ color: "#25274d" }}>
+                           Hi {name}! <br />
+                           What is your agenda for today?
+                        </h2>
                         <Link to="/chat" style={{ color: "#444" }}>
                            <p>(Chat)</p>
                         </Link>
-                        <Link to="/profile" style={{ color: "#444" }}>
+                        <Link to="/profile" style={{ color: "#222" }}>
                            <p>(Profile)</p>
                         </Link>
                      </div>
