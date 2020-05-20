@@ -7,6 +7,7 @@ export const Form = ({
    defaultValues,
    reValidateMode,
    mode,
+   getValues,
    children,
    onSubmit,
    ...props
@@ -20,12 +21,10 @@ export const Form = ({
       submitFocusError: true,
    });
    const { handleSubmit } = methods;
-   // const errObj = methods.control.errorsRef;
-   // console.log("errors: ", errObj.current);
-
-   //console.log("Methods: ", methods);
+   console.log(methods);
 
    //if there's an error, disable the button by dynamically adding the "disabled" prop to the button.
+
    return (
       <>
          <form onSubmit={handleSubmit(onSubmit)} {...props}>
@@ -38,6 +37,7 @@ export const Form = ({
                                register: methods.register,
                                errors: methods.errors,
                                key: child.props.name,
+                               values: methods.getValues(),
                             })
                           : child;
                     })

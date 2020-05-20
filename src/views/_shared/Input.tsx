@@ -3,23 +3,23 @@ import { useForm } from "react-hook-form";
 import { TextField } from "@material-ui/core";
 
 export const Input = ({ register, name, ...rest }: any) => {
-   console.log("name: ", name);
    const { errors } = useForm();
-   console.log("see the errors object: ", errors);
-   // console.log(TextField);
-   const errObj = rest;
-   console.log("rest: ", errObj);
+   const propsObj = rest;
+   console.log("props obj: ", propsObj);
    return (
       <>
          <TextField
-            label={rest.label}
             name={name}
+            type={rest.type}
+            {...console.log("check to see the type: ", rest.type)}
+            label={rest.label}
             inputRef={register({
-               required: true || null,
+               required: "This field is required.",
                minLength: rest.minLength || null,
             })}
             variant="outlined"
-            error={errors.type}
+            errormsg={errors}
+            error={propsObj.errors && propsObj.errors.password ? true : false}
             {...rest}
          />
       </>
