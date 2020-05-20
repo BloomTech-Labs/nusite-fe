@@ -103,6 +103,7 @@ export const InitiateReset: React.FC<InitiateResetData> = (
                      fullWidth
                      className={classes.textField}
                      required
+                     label="Email"
                   />
                   <Grid container justify="center" alignItems="center">
                      <Button
