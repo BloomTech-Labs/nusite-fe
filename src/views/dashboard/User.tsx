@@ -41,7 +41,7 @@ const User: React.FC = (props: any) => {
                console.log(data);
                return (
                   <>
-                     <p>Your Profile</p>
+                     <h2>Your Profile</h2>
                      <div className="boxedit">
                         <label>username: </label>
                         <p>{data.user.username}</p>
