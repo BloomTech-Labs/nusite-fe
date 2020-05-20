@@ -32,14 +32,16 @@ aside {
    background-color: white;
 }
 
-/* .headertop {
+.headertop {
    display: flex;
    align-items: center;
    justify-content: space-between;
-   padding: 0 16px;
+   padding: 26px;
    background-color: whitesmoke;
-   color: #aaa;
-} */
+   color: #444;
+   justify-content: center;
+   text-align: center;
+}
 
 .sidenav {
    display: block; /* Will be hidden on mobile */

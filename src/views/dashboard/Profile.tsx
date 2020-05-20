@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import "./DashboardChat.css";
+import React, { useEffect, useState } from "react";
+import "../home/Home";
 import { useMutation } from "@apollo/react-hooks";
 import User from "./User";
 import Button from "@material-ui/core/Button";
@@ -7,7 +7,6 @@ import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { getUserId } from "../util/useLocalStorage";
-import Upload from "./Upload";
 import reatime2 from "../../images/reatime2.svg";
 import { Link } from "react-router-dom";
 
@@ -35,7 +34,7 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-export const Dashboard: React.FC = (props: any) => {
+const Profile: React.FC = (props: any) => {
    const [name, setName] = useState("");
    const classes = useStyles();
 
@@ -58,7 +57,6 @@ export const Dashboard: React.FC = (props: any) => {
 
    const handleChange = (event: any) => {
       event.preventDefault();
-      //event.stopPropagation();
       setUsers({
          ...users,
          [event.target.name]: event.target.value,
@@ -69,15 +67,12 @@ export const Dashboard: React.FC = (props: any) => {
       const [updateUser] = useMutation(UPDATE_USER);
       const onSubmit = ({
          user_id = getUserId(),
-         first_name,
-         last_name,
-         username,
-         email,
-         company,
-         dev_experience,
-         dev_education,
-      }: any) => {
-         //console.log(user_id);
+      }: //  first_name,
+      //  last_name,
+      //  username,
+      //  email,
+      any) => {
+         console.log(user_id);
          updateUser({
             variables: { user_id, ...users },
          })
@@ -89,33 +84,35 @@ export const Dashboard: React.FC = (props: any) => {
                console.log("Successfully updated.");
             })
             .catch(err => {
-               //alert(err.message);
+               alert(err.message);
                console.log(err);
-               console.log(err.message);
             });
       };
 
       return (
          <>
             <div className="grid-container">
+               <div className="headertop">
+                  <h2>Welcome to Your Profile {name}</h2>
+               </div>
                <main className="main">
                   <div className="main-header">
                      <div className="main-header__heading">
                         <h2>
-                           Hi {name}, <br /> whats on your agenda today?
+                           Hello there, <br /> complete to your profile here!
                         </h2>
                         <Link to="/chat" style={{ color: "#444" }}>
                            <p>(Chat)</p>
                         </Link>
                      </div>
                      <div className="main-header__updates">
-                        <Upload />
+                        <h2>Go to your dashboard to upload images...</h2>
                      </div>
                   </div>
                   <br />
                   <div className="main-cards">
                      <div className="card">
-                        <h1>Welcome to Your Dashboard</h1>
+                        <h2>Update/Finish your Profile</h2>
                         <img src={reatime2} className="reatime2" alt="" />
                         <User />
                      </div>
@@ -210,4 +207,5 @@ export const Dashboard: React.FC = (props: any) => {
       );
    }
 };
-export default Dashboard;
+
+export default Profile;
