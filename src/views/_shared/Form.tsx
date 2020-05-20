@@ -17,11 +17,12 @@ export const Form = ({
       mode: "onChange",
       reValidateMode: "onChange",
       validationSchema: undefined,
-      validateCriteriaMode: "firstError",
+      validateCriteriaMode: "all",
       submitFocusError: true,
    });
    const { handleSubmit } = methods;
-   console.log(methods);
+   const { errors } = methods;
+   // console.log(methods);
 
    //if there's an error, disable the button by dynamically adding the "disabled" prop to the button.
 
@@ -35,7 +36,7 @@ export const Form = ({
                           ? React.createElement(child.type, {
                                ...child.props,
                                register: methods.register,
-                               errors: methods.errors,
+                               errors,
                                key: child.props.name,
                                values: methods.getValues(),
                             })

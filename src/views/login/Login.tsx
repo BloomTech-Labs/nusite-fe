@@ -30,7 +30,6 @@ export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
       login({ variables: { email: email, password: password } })
          .then(res => {
             userDispatch(loginSuccess(res.data.login.user));
-
             setToken(res.data.login.token);
             localStorage.setItem("username", res.data.login.user.username);
             setUserId(res.data.login.user.id);
@@ -64,7 +63,6 @@ export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
                </Typography>
             </Grid>
             <Form
-               {...console.log(props)}
                className={classes.formContainer}
                data-testid="login-form"
                onSubmit={onSubmit}
@@ -73,8 +71,8 @@ export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
                   name="email"
                   label="Email"
                   type="email"
-                  required={true}
                   fullWidth
+                  required
                   className={classes.textField}
                   helperText="Please provide a valid email address."
                />
@@ -85,7 +83,7 @@ export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
                   type="password"
                   minLength={9}
                   fullWidth
-                  required={true}
+                  required
                   className={classes.textField}
                   helperText="Password must be at least 9 characters"
                />

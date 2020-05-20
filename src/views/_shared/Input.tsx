@@ -2,24 +2,35 @@ import React from "react";
 import { useForm } from "react-hook-form";
 import { TextField } from "@material-ui/core";
 
-export const Input = ({ register, name, ...rest }: any) => {
-   const { errors } = useForm();
-   const propsObj = rest;
-   console.log("props obj: ", propsObj);
+export const Input = ({ register, errors, name, ...rest }: any) => {
+   // console.log(name);
+   console.log("updated errors object: ", errors);
+   console.log(`inherited ${name} props: `, rest);
    return (
       <>
          <TextField
             name={name}
             type={rest.type}
-            {...console.log("check to see the type: ", rest.type)}
             label={rest.label}
             inputRef={register({
-               required: "This field is required.",
-               minLength: rest.minLength || null,
+               required: {
+                  value: rest.required || null,
+                  message: "This field is required",
+               },
+               minLength: {
+                  value: rest.minLength || null,
+                  message: `This field must be at least ${rest.minLength} characters long.`,
+               },
             })}
             variant="outlined"
-            errormsg={errors}
-            error={propsObj.errors && propsObj.errors.password ? true : false}
+            errors={errors}
+            error={
+               errors.email && name === "email"
+                  ? true
+                  : errors.password && name === "password"
+                  ? true
+                  : false
+            }
             {...rest}
          />
       </>
