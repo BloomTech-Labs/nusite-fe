@@ -101,7 +101,7 @@ export const Dashboard: React.FC = (props: any) => {
                <main className="main">
                   <div className="main-header">
                      <div className="main-header__heading">
-                        <h2>
+                        <h2 style={{ color: "#444" }}>
                            Hi {name}, <br /> whats on your agenda today?
                         </h2>
                         <Link to="/chat" style={{ color: "#444" }}>
@@ -121,7 +121,7 @@ export const Dashboard: React.FC = (props: any) => {
                      </div>
                      <div className="card">
                         <h2>Update/Change Your Profile</h2>
-                        <h5>(Empty fields won't update!)</h5>
+                        <h4>(Empty fields won't update!)</h4>
                      </div>
                      <div className={classes.container}>
                         <TextField

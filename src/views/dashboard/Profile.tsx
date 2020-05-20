@@ -93,12 +93,14 @@ const Profile: React.FC = (props: any) => {
          <>
             <div className="grid-container">
                <div className="headertop">
-                  <h2>Welcome to Your Profile {name}</h2>
+                  <h2 style={{ color: "#444" }}>
+                     Welcome to Your Profile {name}
+                  </h2>
                </div>
                <main className="main">
                   <div className="main-header">
                      <div className="main-header__heading">
-                        <h2>
+                        <h2 style={{ color: "#444" }}>
                            Hello there, <br /> complete to your profile here!
                         </h2>
                         <Link to="/chat" style={{ color: "#444" }}>
@@ -106,19 +108,23 @@ const Profile: React.FC = (props: any) => {
                         </Link>
                      </div>
                      <div className="main-header__updates">
-                        <h2>Go to your dashboard to upload images...</h2>
+                        <h2 style={{ color: "#444" }}>
+                           Go to your dashboard to upload images...
+                        </h2>
                      </div>
                   </div>
                   <br />
                   <div className="main-cards">
                      <div className="card">
-                        <h2>Update/Finish your Profile</h2>
+                        <h2 style={{ color: "#444" }}>
+                           Update/Finish your Profile
+                        </h2>
                         <img src={reatime2} className="reatime2" alt="" />
                         <User />
                      </div>
                      <div className="card">
                         <h2>Update/Change Your Profile</h2>
-                        <h5>(Empty fields won't update!)</h5>
+                        <h4>(Empty fields won't update!)</h4>
                      </div>
                      <div className={classes.container}>
                         <TextField
