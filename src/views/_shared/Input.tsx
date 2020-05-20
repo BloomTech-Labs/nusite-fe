@@ -1,20 +1,16 @@
 import React from "react";
+import { useForm } from "react-hook-form";
 import { TextField } from "@material-ui/core";
 
-export const Input = ({ register, errors, name, ...rest }: any) => {
-   // console.log("see the errors object: ", errors);
+export const Input = ({ register, name, ...rest }: any) => {
+   console.log("name: ", name);
+   const { errors } = useForm();
+   console.log("see the errors object: ", errors);
    // console.log(TextField);
-   console.log("rest: ", rest);
+   const errObj = rest;
+   console.log("rest: ", errObj);
    return (
       <>
-         {errors.name && errors.name.type === "required" && (
-            <p> This field is required. </p>
-         )}
-         {errors.name && errors.name.type === "minLength" && (
-            <p>
-               {name} must be at least {rest.minLength} characters long
-            </p>
-         )}
          <TextField
             label={rest.label}
             name={name}
@@ -23,7 +19,7 @@ export const Input = ({ register, errors, name, ...rest }: any) => {
                minLength: rest.minLength || null,
             })}
             variant="outlined"
-            error={errors.name}
+            error={errors.type}
             {...rest}
          />
       </>

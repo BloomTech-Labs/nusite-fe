@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Grid } from "@material-ui/core";
-// import { DevTool } from "react-hook-form-devtools";
 export const Form = ({
    control,
    direction,
@@ -21,7 +20,9 @@ export const Form = ({
       submitFocusError: true,
    });
    const { handleSubmit } = methods;
-   console.log(methods.control.errorsRef);
+   // const errObj = methods.control.errorsRef;
+   // console.log("errors: ", errObj.current);
+
    //console.log("Methods: ", methods);
 
    //if there's an error, disable the button by dynamically adding the "disabled" prop to the button.
