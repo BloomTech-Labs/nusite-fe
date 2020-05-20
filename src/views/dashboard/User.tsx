@@ -43,6 +43,15 @@ const User: React.FC = (props: any) => {
       }
    }, []);
 
+   const [name, setName] = useState("");
+
+   useEffect(() => {
+      let username = localStorage.getItem("username");
+      if (username) {
+         setName(username);
+      }
+   }, []);
+
    return (
       <>
          <Query query={GET_USER} variables={{ user_id }}>
