@@ -55,7 +55,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export const Registration: React.FC<RegistrationFormData> = (
-   props: RegistrationFormData | any
+   props: RegistrationFormData
 ) => {
    const { userData, userDispatch } = useContext(UserContext);
    const classes = useStyles();
