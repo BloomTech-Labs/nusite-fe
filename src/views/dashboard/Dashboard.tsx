@@ -21,7 +21,7 @@ const useStyles = makeStyles(theme => ({
       alignItems: "center",
       fontSize: "1.2rem",
       padding: "2rem",
-      background: "whitesmoke",
+      background: "white",
       textAlign: "left",
    },
    textField: {
@@ -109,7 +109,7 @@ export const Dashboard: React.FC = (props: any) => {
                <main className="main">
                   <div className="main-header">
                      <div className="main-header__heading">
-                        <h2 style={{ color: "#25274d" }}>Hi {name}!</h2>
+                        <h2 style={{ color: "#25274d" }}>Hello {name}!</h2>
                         <Link to="/chat" style={{ color: "#444" }}>
                            <p>(Chat)</p>
                         </Link>

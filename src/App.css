@@ -1,4 +1,4 @@
-.boxedit {
+div.boxedit {
    display: flex;
    flex-flow: column wrap;
    background: whitesmoke;
@@ -10,7 +10,9 @@
    line-height: 0.7rem;
    padding: 4px;
 }
-
+.boxedit h2 {
+   background: whitesmoke;
+}
 /* .dashboard {
    display: flex;
    justify-content: center;

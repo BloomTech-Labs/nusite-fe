@@ -32,14 +32,16 @@ aside {
    background-color: white;
 }
 
-/* .headertop {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0 16px;
-    background-color: whitesmoke;
-    color: #aaa;
- } */
+.headertop {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   padding: 26px;
+   background-color: white;
+   color: #444;
+   justify-content: center;
+   text-align: center;
+}
 
 .sidenav {
    display: block; /* Will be hidden on mobile */
@@ -71,24 +73,61 @@ aside {
    text-decoration: none;
 }
 
+.main-header__updates {
+   text-align: left;
+   justify-content: left;
+   align-items: left;
+}
+
 .main-header {
    display: flex;
    justify-content: space-between;
    margin: 20px;
    padding: 20px;
-   height: 140px; /* Force our height since we don't have actual content yet */
-   background-color: whitesmoke;
+   height: 175px; /* Force our height since we don't have actual content yet */
+   background-color: white;
    color: slategray;
+   box-shadow: 0 0.9px 1.2px rgba(0, 0, 0, 0.034),
+      0 1.7px 2.3px rgba(0, 0, 0, 0.048), 0 1.5px 2px rgba(0, 0, 0, 0.06),
+      0 1.3px 2.7px rgba(0, 0, 0, 0.052), 0 0.8px 2.5px rgba(0, 0, 0, 0.048),
+      0 1px 2px rgba(0, 0, 0, 0.12);
+   border-radius: 2px;
+   text-align: left;
+}
+
+div.main-header__updates {
+   background: whitesmoke;
+   border-radius: 2px;
+   padding: 8px;
+}
+div.main-header__heading {
+   background: whitesmoke;
+   border-radius: 2px;
+   padding: 8px;
+}
+.card h2 {
+   background: whitesmoke;
 }
 
 .main-overview {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(165px, 1fr));
-   grid-auto-rows: 94px;
+   grid-auto-rows: 95px;
    grid-gap: 20px;
    margin: 20px;
 }
 
+.formcontainer {
+   box-shadow: 0 0.9px 1.2px rgba(0, 0, 0, 0.034),
+      0 1.7px 2.3px rgba(0, 0, 0, 0.048), 0 1.5px 2px rgba(0, 0, 0, 0.06),
+      0 1.3px 2.7px rgba(0, 0, 0, 0.052), 0 0.8px 2.5px rgba(0, 0, 0, 0.048),
+      0 1px 2px rgba(0, 0, 0, 0.12);
+}
+
+.card h1 {
+   background: whitesmoke;
+   border-radius: 2px;
+}
 .overviewcard {
    display: flex;
    align-items: center;
@@ -108,16 +147,21 @@ aside {
    flex-direction: column;
    align-items: center;
    width: 100%;
-   background-color: whitesmoke;
+   background-color: white;
    margin-bottom: 20px;
    -webkit-column-break-inside: avoid;
    padding: 24px;
    box-sizing: border-box;
+   box-shadow: 0 0.9px 1.2px rgba(0, 0, 0, 0.034),
+      0 1.7px 2.3px rgba(0, 0, 0, 0.048), 0 1.5px 2px rgba(0, 0, 0, 0.06),
+      0 1.3px 2.7px rgba(0, 0, 0, 0.052), 0 0.8px 2.5px rgba(0, 0, 0, 0.048),
+      0 1px 2px rgba(0, 0, 0, 0.12);
+   border-radius: 2px;
 }
 
 /* Force varying heights to simulate dynamic content */
 .card:first-child {
-   height: 770px;
+   height: 725px;
 }
 
 .card:nth-child(2) {
@@ -140,7 +184,7 @@ aside {
       flex-direction: column;
    }
    .card:first-child {
-      height: 700px;
+      height: 715px;
       line-height: 1.5rem;
    }
    .card:first-child h1 {
@@ -149,17 +193,11 @@ aside {
    }
 
    .card:nth-child(2) {
-      display: none;
+      height: 170px;
    }
-   .chatcard {
-      display: none;
-   }
-   .chatprofile {
-      display: none;
-   }
-   .chat {
-      width: 450px;
-      z-index: 1;
+
+   .card:nth-child(3) {
+      height: 444px;
    }
 }
 
@@ -167,6 +205,6 @@ aside {
 @media only screen and (min-width: 65.625em) {
    /* Break out main cards into two columns */
    .main-cards {
-      column-count: 1;
+      column-count: 2;
    }
 }

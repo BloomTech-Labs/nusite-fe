@@ -20,7 +20,7 @@ const useStyles = makeStyles(theme => ({
       alignItems: "center",
       fontSize: "1.2rem",
       padding: "2rem",
-      background: "whitesmoke",
+      background: "white",
       textAlign: "left",
    },
    textField: {
@@ -102,8 +102,8 @@ const Profile: React.FC = (props: any) => {
                   <div className="main-header">
                      <div className="main-header__heading">
                         <h2 style={{ color: "#25274d" }}>
-                           Hello there, <br />
-                           you can complete your profile here!
+                           Hello {name}, <br />
+                           you can complete your profile here
                         </h2>
                         <Link to="/chat" style={{ color: "#222" }}>
                            <p>(Chat)</p>
