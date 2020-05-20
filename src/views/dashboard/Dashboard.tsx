@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./DashboardChat.css";
+//import "./DashboardChat.css";
 import { useMutation } from "@apollo/react-hooks";
 import User from "./User";
 import Button from "@material-ui/core/Button";
@@ -103,7 +103,7 @@ export const Dashboard: React.FC = (props: any) => {
                      <div className="main-header__heading">
                         <h2 style={{ color: "#25274d" }}>
                            Hi {name}! <br />
-                           What is your agenda for today?
+                           What is your agenda today?
                         </h2>
                         <Link to="/chat" style={{ color: "#444" }}>
                            <p>(Chat)</p>
@@ -117,10 +117,11 @@ export const Dashboard: React.FC = (props: any) => {
                      </div>
                   </div>
                   <br />
-                  <br />
                   <div className="main-cards">
                      <div className="card">
-                        <h1>Welcome to Your Dashboard</h1>
+                        <h2 style={{ color: "#444" }}>
+                           Update/Finish your Profile
+                        </h2>
                         <img src={reatime2} className="reatime2" alt="" />
                         <User />
                      </div>
