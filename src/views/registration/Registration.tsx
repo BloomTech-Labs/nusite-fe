@@ -144,7 +144,7 @@ export const Registration: React.FC<RegistrationFormData> = (
                   fullWidth
                   minLength={9}
                   className={classes.textField}
-                  helperText="password must be at least 9 characters"
+                  helperText="Password must be at least 9 characters"
                />
                <Input
                   name="email"
