@@ -101,6 +101,7 @@ export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
                </Typography>
             </Grid>
             <Form
+               {...console.log(props)}
                className={classes.formContainer}
                data-testid="login-form"
                onSubmit={onSubmit}
@@ -109,7 +110,7 @@ export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
                   name="email"
                   label="Email"
                   type="email"
-                  required
+                  required={true}
                   fullWidth
                   className={classes.textField}
                />
@@ -120,9 +121,9 @@ export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
                   type="password"
                   minLength={9}
                   fullWidth
-                  required
+                  required={true}
                   className={classes.textField}
-                  helperText="password must be at least 9 characters"
+                  helperText="Password must be at least 9 characters"
                />
                <Link to="/initiate">Forgot your password?</Link>
                {userData.isAuthorizing ? (
@@ -141,7 +142,6 @@ export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
             <Grid item>
                <OAuthContainer>
                   <OAuthButton provider={providers.LINKEDIN} />
-                  {/* <OAuthButton provider={providers.FACEBOOK} /> */}
                   <OAuthButton provider={providers.GOOGLE} />
                </OAuthContainer>
             </Grid>
