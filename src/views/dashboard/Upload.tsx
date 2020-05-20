@@ -6,10 +6,10 @@ import Button from "@material-ui/core/Button";
 import "./Upload.css";
 
 const Uploader = () => {
-   const [upload, setUpload] = useState({ project_avatar: "" });
+   const [upload, setUpload] = useState({ user_avatar: "" });
 
    const onFileChange = (e: { target: { files: any } }) => {
-      setUpload({ project_avatar: e.target.files[0] });
+      setUpload({ user_avatar: e.target.files[0] });
    };
 
    const onSubmit = (e: { preventDefault: () => void }) => {
@@ -17,7 +17,7 @@ const Uploader = () => {
       //formdata is built in which helps sets a key/value in form fields
       const formData = new FormData();
       // the key value is picture, which is the key from multer on the back end
-      formData.append("picture", upload.project_avatar);
+      formData.append("picture", upload.user_avatar);
       // updating the 'project_avatar' with the link from cloudinary
       axios
          .put(`${process.env.REACT_APP_BASE_URL}/upload/:id/`, formData, {})
