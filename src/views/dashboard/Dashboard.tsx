@@ -8,6 +8,8 @@ import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { getUserId } from "../util/useLocalStorage";
 import Upload from "./Upload";
+import reatime2 from "../../images/reatime2.svg";
+import "./Dashboard.css";
 
 const useStyles = makeStyles(theme => ({
    container: {
@@ -89,11 +91,12 @@ const Dashboard: React.FC = (props: any) => {
             <div className={classes.container}>
                <br />
                <h1>Welcome to Your Dashboard {name}</h1>
+               <img src={reatime2} className="reatime2" alt="" />
                <br />
                <User />
                <br />
-               <p>Update/Change Your Profile</p>
-               <br />
+               <h2>Update/Change Your Profile</h2>
+               <p></p>
                <div className={classes.container}>
                   <TextField
                      label="username: "
@@ -126,17 +129,14 @@ const Dashboard: React.FC = (props: any) => {
                   <br />
                   <Upload />
                   <br />
-                  <br />
-                  <br />
                </div>
-               <br />
                <Button
                   variant="contained"
                   color="primary"
                   type="submit"
                   onClick={onSubmit}
                >
-                  Edit Profile
+                  Update Profile
                </Button>
                <br />
             </div>
