@@ -29,7 +29,7 @@ const Uploader = () => {
    return (
       <form onSubmit={onSubmit} className="uploadform">
          {/* Input type file to allow the browse option on a computer */}
-         <Button type="submit">Upload Images</Button>
+         <Button type="submit">Click to Upload Images</Button>
          <div>
             <input
                type="file"
