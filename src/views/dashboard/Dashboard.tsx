@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-//import "./Dashboard.css";
+import myapp2 from "../../images/myapp2.svg";
 import { useMutation } from "@apollo/react-hooks";
 import User from "./User";
 import Button from "@material-ui/core/Button";
@@ -117,6 +117,7 @@ export const Dashboard: React.FC = (props: any) => {
                            <p>(Profile)</p>
                         </Link>
                      </div>
+                     <img src={myapp2} className="avatar" alt="" />
                      <div className="main-header__updates">
                         <Upload />
                      </div>
