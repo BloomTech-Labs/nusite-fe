@@ -4,31 +4,31 @@ import { GET_USER } from "../../graphql-requests/queries";
 import { getUserId } from "../util/useLocalStorage";
 //import { Redirect } from "react-router-dom";
 import "../../App.css";
-import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
+//import TextField from "@material-ui/core/TextField";
+//import { makeStyles } from "@material-ui/core/styles";
 
-const useStyles = makeStyles(theme => ({
-   container: {
-      display: "flex",
-      flexFlow: "column",
-      flexWrap: "wrap",
-      width: "100%",
-      justifyContent: "center",
-      alignItems: "center",
-      fontSize: "1.2rem",
-      padding: "2rem",
-   },
-   textField: {
-      marginLeft: theme.spacing(1),
-      marginRight: theme.spacing(1),
-      width: 250,
-      alignItems: "left",
-      textAlign: "center",
-   },
-   button: {
-      margin: theme.spacing(1),
-   },
-}));
+// const useStyles = makeStyles(theme => ({
+//    container: {
+//       display: "flex",
+//       flexFlow: "column",
+//       flexWrap: "wrap",
+//       width: "100%",
+//       justifyContent: "center",
+//       alignItems: "center",
+//       fontSize: "1.2rem",
+//       padding: "2rem",
+//    },
+//    textField: {
+//       marginLeft: theme.spacing(1),
+//       marginRight: theme.spacing(1),
+//       width: 250,
+//       alignItems: "left",
+//       textAlign: "center",
+//    },
+//    button: {
+//       margin: theme.spacing(1),
+//    },
+// }));
 
 const User: React.FC = (props: any) => {
    const [user_id, setUser]: [
@@ -51,6 +51,7 @@ const User: React.FC = (props: any) => {
                //    console.error(error);
                //    //return <Redirect to="/homeprof" />;
                // }
+               if (loading) return <p>Loading...</p>;
 
                if (error)
                   return (
@@ -60,10 +61,9 @@ const User: React.FC = (props: any) => {
                            "There was a problem Querying the database"}
                      </p>
                   );
-               if (loading) return <p>Loading...</p>;
 
                console.log(data);
-               const userdata = { data };
+               //const userdata = { data };
                return (
                   <>
                      <h2>Your Profile</h2>
@@ -76,6 +76,12 @@ const User: React.FC = (props: any) => {
                         <p>{data.user.first_name}</p>
                         <label>last name: </label>
                         <p>{data.user.last_name}</p>
+                        <label>company: </label>
+                        <p>{data.user.company}</p>
+                        <label>years experience: </label>
+                        <p>{data.user.dev_experience}</p>
+                        <label>years education: </label>
+                        <p>{data.user.dev_education}</p>
                      </div>
                   </>
                );

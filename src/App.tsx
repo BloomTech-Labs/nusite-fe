@@ -14,7 +14,7 @@ import Footer from "./views/_shared/footer/Footer";
 import { InitiateReset } from "./views/reset/InitiateReset";
 import { FinalizeReset } from "./views/reset/FinalizeReset";
 import DashboardProfile from "./views/dashboard/DashboardProfile";
-//initial other loading component here
+import DashboardChat from "./views/dashboard/DashboardChat";
 
 const Header = React.lazy(() => import("./views/_shared/header/Header"));
 
@@ -33,6 +33,7 @@ const App = () => (
             <PrivateRoute exact path="/_reset" component={FinalizeReset} />
             <PrivateRoute exact path="/homeprof" component={DashboardProfile} />
             <PrivateRoute path="/home" component={Dashboard} />
+            <PrivateRoute path="/chat" component={DashboardChat} />
             <Route render={() => <p>*** Page Not Found!! ***</p>} />
          </Switch>
          <Footer />

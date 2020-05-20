@@ -1,11 +1,11 @@
-import React, { useContext, Suspense } from "react";
+import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
-import LoadingScreen from "../_shared/LoadingScreen";
+//import LoadingScreen from "../_shared/LoadingScreen";
 import { getToken, setToken, setUserId } from "./useLocalStorage";
 import UserContext from "../../context/user/context";
 import { useLocation } from "react-router";
 
-const LOGIN_TOKEN_KEY = "JWT";
+//const LOGIN_TOKEN_KEY = "JWT";
 const useQuery = () => {
    return new URLSearchParams(useLocation().search);
 };
