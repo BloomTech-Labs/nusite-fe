@@ -21,6 +21,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: "1.2rem",
       padding: "2rem",
       background: "whitesmoke",
+      textAlign: "left",
    },
    textField: {
       marginLeft: theme.spacing(1),
@@ -101,14 +102,15 @@ const Profile: React.FC = (props: any) => {
                   <div className="main-header">
                      <div className="main-header__heading">
                         <h2 style={{ color: "#25274d" }}>
-                           Hello there, you can complete your profile here!
+                           Hello there, <br />
+                           you can complete your profile here!
                         </h2>
                         <Link to="/chat" style={{ color: "#222" }}>
                            <p>(Chat)</p>
                         </Link>
                      </div>
                      <div className="main-header__updates">
-                        <h2 style={{ color: "#25274d" }}>
+                        <h2 style={{ textAlign: "left", color: "#25274d" }}>
                            Go to your dashboard to upload images...
                         </h2>
                      </div>
@@ -126,70 +128,72 @@ const Profile: React.FC = (props: any) => {
                         <h2>Update/Change Your Profile</h2>
                         <h4>(Empty fields won't update!)</h4>
                      </div>
-                     <div className={classes.container}>
-                        <TextField
-                           required
-                           label="username: "
-                           name="username"
-                           variant="filled"
-                           value={users.username}
-                           onChange={handleChange}
-                        />
-                        <TextField
-                           required
-                           label="email: "
-                           name="email"
-                           variant="filled"
-                           value={users.email}
-                           onChange={handleChange}
-                        />
-                        <TextField
-                           required
-                           label="first name: "
-                           name="first_name"
-                           variant="filled"
-                           value={users.first_name}
-                           onChange={handleChange}
-                        />
-                        <TextField
-                           required
-                           label="last name: "
-                           name="last_name"
-                           variant="filled"
-                           value={users.last_name}
-                           onChange={handleChange}
-                        />
-                        <br />
-                        <TextField
-                           label="Company Name: "
-                           name="company"
-                           variant="filled"
-                           value={users.company}
-                           onChange={handleChange}
-                        />
-                        <TextField
-                           label="Years Experience: "
-                           name="dev_experience"
-                           variant="filled"
-                           value={users.dev_experience}
-                           onChange={handleChange}
-                        />
-                        <TextField
-                           label="Years Education: "
-                           name="dev_education"
-                           variant="filled"
-                           value={users.dev_education}
-                           onChange={handleChange}
-                        />
-                        <br />
-                        <Button
-                           variant="contained"
-                           color="primary"
-                           type="submit"
-                           onClick={onSubmit}
-                        >
-                           Update Profile
-                        </Button>
+                     <div className="formcontainer">
+                        <div className={classes.container}>
+                           <TextField
+                              required
+                              label="username: "
+                              name="username"
+                              variant="filled"
+                              value={users.username}
+                              onChange={handleChange}
+                           />
+                           <TextField
+                              required
+                              label="email: "
+                              name="email"
+                              variant="filled"
+                              value={users.email}
+                              onChange={handleChange}
+                           />
+                           <TextField
+                              required
+                              label="first name: "
+                              name="first_name"
+                              variant="filled"
+                              value={users.first_name}
+                              onChange={handleChange}
+                           />
+                           <TextField
+                              required
+                              label="last name: "
+                              name="last_name"
+                              variant="filled"
+                              value={users.last_name}
+                              onChange={handleChange}
+                           />
+                           <br />
+                           <TextField
+                              label="Company Name: "
+                              name="company"
+                              variant="filled"
+                              value={users.company}
+                              onChange={handleChange}
+                           />
+                           <TextField
+                              label="Years Experience: "
+                              name="dev_experience"
+                              variant="filled"
+                              value={users.dev_experience}
+                              onChange={handleChange}
+                           />
+                           <TextField
+                              label="Years Education: "
+                              name="dev_education"
+                              variant="filled"
+                              value={users.dev_education}
+                              onChange={handleChange}
+                           />
+                           <br />
+                           <Button
+                              variant="contained"
+                              color="primary"
+                              type="submit"
+                              onClick={onSubmit}
+                           >
+                              Update Profile
+                           </Button>
+                        </div>
                      </div>
                   </div>
                </main>

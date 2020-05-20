@@ -37,8 +37,9 @@ const User: React.FC = (props: any) => {
                //console.log(userdata);
                return (
                   <>
-                     <h2>Your Profile</h2>
                      <div className="boxedit">
+                        <h2>Your Profile</h2>
+                        <br />
                         <label>username: </label>
                         <p>{data.user.username}</p>
                         <label>email: </label>

@@ -57,8 +57,11 @@ export const DashboardChat: React.FC = (props: any) => {
                      <img src={reatime2} className="reatime2" alt="" />
                   </div>
                   <br />
-                  <div className="chatprofile">
-                     <User />
+                  <div className="formcontainer">
+                     <div className="chatprofile">
+                        <br />
+                        <User />
+                     </div>
                   </div>
                </div>
             </main>

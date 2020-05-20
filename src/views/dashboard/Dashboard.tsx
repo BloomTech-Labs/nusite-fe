@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-//import "./DashboardChat.css";
+//import "./Dashboard.css";
 import { useMutation } from "@apollo/react-hooks";
 import User from "./User";
 import Button from "@material-ui/core/Button";
@@ -22,6 +22,7 @@ const useStyles = makeStyles(theme => ({
       fontSize: "1.2rem",
       padding: "2rem",
       background: "whitesmoke",
+      textAlign: "left",
    },
    textField: {
       marginLeft: theme.spacing(1),
@@ -129,70 +130,72 @@ export const Dashboard: React.FC = (props: any) => {
                         <h2>Update/Change Your Profile</h2>
                         <h4>(Empty fields won't update!)</h4>
                      </div>
-                     <div className={classes.container}>
-                        <TextField
-                           required
-                           label="username: "
-                           name="username"
-                           variant="filled"
-                           value={users.username}
-                           onChange={handleChange}
-                        />
-                        <TextField
-                           required
-                           label="email: "
-                           name="email"
-                           variant="filled"
-                           value={users.email}
-                           onChange={handleChange}
-                        />
-                        <TextField
-                           required
-                           label="first name: "
-                           name="first_name"
-                           variant="filled"
-                           value={users.first_name}
-                           onChange={handleChange}
-                        />
-                        <TextField
-                           required
-                           label="last name: "
-                           name="last_name"
-                           variant="filled"
-                           value={users.last_name}
-                           onChange={handleChange}
-                        />
-                        <br />
-                        <TextField
-                           label="Company Name: "
-                           name="company"
-                           variant="filled"
-                           value={users.company}
-                           onChange={handleChange}
-                        />
-                        <TextField
-                           label="Years Experience: "
-                           name="dev_experience"
-                           variant="filled"
-                           value={users.dev_experience}
-                           onChange={handleChange}
-                        />
-                        <TextField
-                           label="Years Education: "
-                           name="dev_education"
-                           variant="filled"
-                           value={users.dev_education}
-                           onChange={handleChange}
-                        />
-                        <br />
-                        <Button
-                           variant="contained"
-                           color="primary"
-                           type="submit"
-                           onClick={onSubmit}
-                        >
-                           Update Profile
-                        </Button>
+                     <div className="formcontainer">
+                        <div className={classes.container}>
+                           <TextField
+                              required
+                              label="username: "
+                              name="username"
+                              variant="filled"
+                              value={users.username}
+                              onChange={handleChange}
+                           />
+                           <TextField
+                              required
+                              label="email: "
+                              name="email"
+                              variant="filled"
+                              value={users.email}
+                              onChange={handleChange}
+                           />
+                           <TextField
+                              required
+                              label="first name: "
+                              name="first_name"
+                              variant="filled"
+                              value={users.first_name}
+                              onChange={handleChange}
+                           />
+                           <TextField
+                              required
+                              label="last name: "
+                              name="last_name"
+                              variant="filled"
+                              value={users.last_name}
+                              onChange={handleChange}
+                           />
+                           <br />
+                           <TextField
+                              label="Company Name: "
+                              name="company"
+                              variant="filled"
+                              value={users.company}
+                              onChange={handleChange}
+                           />
+                           <TextField
+                              label="Years Experience: "
+                              name="dev_experience"
+                              variant="filled"
+                              value={users.dev_experience}
+                              onChange={handleChange}
+                           />
+                           <TextField
+                              label="Years Education: "
+                              name="dev_education"
+                              variant="filled"
+                              value={users.dev_education}
+                              onChange={handleChange}
+                           />
+                           <br />
+                           <Button
+                              variant="contained"
+                              color="primary"
+                              type="submit"
+                              onClick={onSubmit}
+                           >
+                              Update Profile
+                           </Button>
+                        </div>
                      </div>
                   </div>
                </main>
