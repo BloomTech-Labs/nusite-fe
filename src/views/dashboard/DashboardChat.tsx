@@ -6,29 +6,6 @@ import CustomChatbot from "../chat/CustomChatbot";
 //import TextField from "@material-ui/core/TextField";
 import User from "../dashboard/User";
 
-// const useStyles = makeStyles(theme => ({
-//    container: {
-//       display: "flex",
-//       flexFlow: "column",
-//       flexWrap: "wrap",
-//       width: "100%",
-//       justifyContent: "center",
-//       alignItems: "center",
-//       fontSize: "1.2rem",
-//       padding: "2rem",
-//    },
-//    textField: {
-//       marginLeft: theme.spacing(1),
-//       marginRight: theme.spacing(1),
-//       width: 250,
-//       alignItems: "left",
-//       textAlign: "center",
-//    },
-//    button: {
-//       margin: theme.spacing(1),
-//    },
-// }));
-
 export const DashboardChat: React.FC = (props: any) => {
    const [name, setName] = useState("");
    //const classes = useStyles();

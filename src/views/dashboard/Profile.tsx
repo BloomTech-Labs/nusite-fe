@@ -93,11 +93,6 @@ const Profile: React.FC = (props: any) => {
       return (
          <>
             <div className="grid-container">
-               {/* <div className="headertop">
-                  <h2 style={{ color: "#444" }}>
-                     Welcome to Your Profile {name}
-                  </h2>
-               </div> */}
                <main className="main">
                   <div className="main-header">
                      <div className="main-header__heading">

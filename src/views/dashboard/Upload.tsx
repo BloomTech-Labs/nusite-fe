@@ -22,7 +22,13 @@ const Uploader = () => {
       axios
          .put(`${process.env.REACT_APP_BASE_URL}/upload/:id/`, formData, {})
          .then(res => {
-            console.log(res);
+            console.log(res.data);
+            console.log(res.data.url);
+            let pict = res.data.url;
+            console.log(pict);
+         })
+         .catch(err => {
+            console.log(err);
          });
    };
 

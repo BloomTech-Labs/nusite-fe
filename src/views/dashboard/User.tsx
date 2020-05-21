@@ -3,7 +3,6 @@ import { Query, QueryResult } from "react-apollo";
 import { GET_USER } from "../../graphql-requests/queries";
 import { getUserId } from "../util/useLocalStorage";
 import "../../App.css";
-//import { Redirect } from "react-router-dom";
 
 const User: React.FC = (props: any) => {
    const [user_id, setUser]: [
@@ -32,13 +31,7 @@ const User: React.FC = (props: any) => {
                   );
 
                if (loading) return <p>Loading...</p>;
-               //console.log(error);
-               //const userdata = { data };
-               //console.log(userdata);
-               // localStorage.setItem("username", data.user.username);
-               // localStorage.setItem("first_name", data.user.first_name);
-               // localStorage.setItem("last_name", data.user.last_name);
-               // localStorage.setItem("email", data.user.email);
+               console.log(error);
                return (
                   <>
                      <div className="boxedit">
