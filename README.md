@@ -22,7 +22,7 @@ You can find the official version of this deployed project at [PartNerd](https:/
 
 ## Contributors
 
-|[Bradley Pitts](https://github.com/BPitts8019)| [Stephen Tanksley](https://github.com/StephenTanksley) | [Joe Medrano](https://github.com/JoeLorenzo) | [Andrew Speer](https://github.com/nottolivc) | [Tara Sherman](https://github.com/taraSherman)| [Danielle Baxter](https://github.com/danibaxx)| [Raymond Thurman](https://github.com/raythurman2386)|
+|[Bradley Pitts](https://github.com/BPitts8019)| [Stephen Tanksley](https://github.com/StephenTanksley) | [Joe Medrano](https://github.com/JoeLorenzo) | [Andrew Speer](https://github.com/nottolivc) | [Adam Pennman](https://github.com/adampenman1)| [Danielle Baxter](https://github.com/danibaxx)| [Raymond Thurman](https://github.com/raythurman2386)|
 <br>
 <br>
 

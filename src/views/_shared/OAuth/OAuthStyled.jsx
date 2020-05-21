@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { Providers } from "../../../types/OAuthTypes";
+//import { Providers } from "../../../types/OAuthTypes";
 
 export const OAuthContainer = styled.div`
    width: 20rem;

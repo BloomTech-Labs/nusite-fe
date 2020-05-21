@@ -8,6 +8,9 @@ export const GET_USER = gql`
          email
          first_name
          last_name
+         company
+         dev_experience
+         dev_education
       }
    }
 `;

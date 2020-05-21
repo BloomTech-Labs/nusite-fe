@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from "react";
-import myapp2 from "../../images/myapp2.svg";
+import React, { useEffect, useState } from "react";
+import "../home/Home";
 import { useMutation } from "@apollo/react-hooks";
 import User from "./User";
 import Button from "@material-ui/core/Button";
@@ -7,7 +7,6 @@ import { UPDATE_USER } from "../../graphql-requests/mutations";
 import TextField from "@material-ui/core/TextField";
 import { makeStyles } from "@material-ui/core/styles";
 import { getUserId } from "../util/useLocalStorage";
-import Upload from "./Upload";
 import reatime2 from "../../images/reatime2.svg";
 import { Link } from "react-router-dom";
 
@@ -36,7 +35,7 @@ const useStyles = makeStyles(theme => ({
    },
 }));
 
-export const Dashboard: React.FC = (props: any) => {
+const Profile: React.FC = (props: any) => {
    const [name, setName] = useState("");
    const classes = useStyles();
 
@@ -59,7 +58,6 @@ export const Dashboard: React.FC = (props: any) => {
 
    const handleChange = (event: any) => {
       event.preventDefault();
-      //event.stopPropagation();
       setUsers({
          ...users,
          [event.target.name]: event.target.value,
@@ -70,15 +68,12 @@ export const Dashboard: React.FC = (props: any) => {
       const [updateUser] = useMutation(UPDATE_USER);
       const onSubmit = ({
          user_id = getUserId(),
-         first_name,
-         last_name,
-         username,
-         email,
-         company,
-         dev_experience,
-         dev_education,
-      }: any) => {
-         //console.log(user_id);
+      }: //  first_name,
+      //  last_name,
+      //  username,
+      //  email,
+      any) => {
+         console.log(user_id);
          updateUser({
             variables: { user_id, ...users },
          })
@@ -86,53 +81,51 @@ export const Dashboard: React.FC = (props: any) => {
                console.log(res.data);
                setName(res.data.updateUser.username);
                localStorage.setItem("username", res.data.updateUser.username);
-               localStorage.setItem(
-                  "first_name",
-                  res.data.updateUser.first_name
-               );
-               localStorage.setItem("last_name", res.data.updateUser.last_name);
-               localStorage.setItem("email", res.data.updateUser.email);
                props.history.push("/home");
-               //let userinfo = res.data;
                console.log("Successfully updated.");
             })
             .catch(err => {
-               //alert(err.message);
+               alert(err.message);
                console.log(err);
-               console.log(err.message);
             });
       };
 
       return (
          <>
             <div className="grid-container">
+               {/* <div className="headertop">
+                  <h2 style={{ color: "#444" }}>
+                     Welcome to Your Profile {name}
+                  </h2>
+               </div> */}
                <main className="main">
                   <div className="main-header">
                      <div className="main-header__heading">
-                        <h2 style={{ color: "#25274d" }}>Hello {name}!</h2>
-                        <Link to="/chat" style={{ color: "#444" }}>
+                        <h2 style={{ color: "#25274d" }}>
+                           Hello {name}, <br />
+                           complete your profile
+                        </h2>
+                        <Link to="/chat" style={{ color: "#222" }}>
                            <p>(Chat)</p>
                         </Link>
-                        <Link to="/profile" style={{ color: "#222" }}>
-                           <p>(Profile)</p>
-                        </Link>
                      </div>
-                     <img src={myapp2} className="avatar" alt="" />
                      <div className="main-header__updates">
-                        <Upload />
+                        <h2 style={{ textAlign: "left", color: "#25274d" }}>
+                           Go to your dashboard to upload images...
+                        </h2>
                      </div>
                   </div>
                   <br />
                   <div className="main-cards">
                      <div className="card">
                         <h2 style={{ color: "#222" }}>
-                           Welcome to your dashboard
+                           Update/Finish your Profile
                         </h2>
                         <img src={reatime2} className="reatime2" alt="" />
                         <User />
                      </div>
                      <div className="card">
-                        <h2>Update/Change Your Info</h2>
+                        <h2>Update/Change Your Profile</h2>
                         <h4>(Required fields must be filled!)</h4>
                      </div>
                      <div className="formcontainer">
@@ -232,4 +225,5 @@ export const Dashboard: React.FC = (props: any) => {
       );
    }
 };
-export default Dashboard;
+
+export default Profile;

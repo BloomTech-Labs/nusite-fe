@@ -213,6 +213,7 @@ div.main-header__heading {
       height: 435px;
    }
 }
+
 @media only screen and (max-width: 768px) {
    /* Break out main cards into one column */
    .main-cards {

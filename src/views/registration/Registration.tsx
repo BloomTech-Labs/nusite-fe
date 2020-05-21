@@ -73,6 +73,9 @@ export const Registration: React.FC<RegistrationFormData> = (
 
             setToken(res.data.signup.token);
             localStorage.setItem("username", res.data.signup.user.username);
+            // localStorage.setItem("first_name", res.data.signup.user.first_name);
+            // localStorage.setItem("last_name", res.data.signup.user.last_name);
+            // localStorage.setItem("email", res.data.signup.user.email);
             setUserId(res.data.signup.user.id);
             props.history.push("/home");
             console.log("Successfully registered... ");

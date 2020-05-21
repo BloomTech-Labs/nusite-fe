@@ -1,4 +1,4 @@
-.boxedit {
+div.boxedit {
    display: flex;
    flex-flow: column wrap;
    background: whitesmoke;
@@ -7,10 +7,13 @@
    justify-content: left;
    align-items: left;
    text-align: left;
-   padding: 11px;
+   line-height: 0.7rem;
+   padding: 4px;
 }
-
-.dashboard {
+.boxedit h2 {
+   background: whitesmoke;
+}
+/* .dashboard {
    display: flex;
    justify-content: center;
    align-items: center;
@@ -19,7 +22,7 @@
    color: #111;
    text-align: left;
    width: 100%;
-}
+} */
 /* Google */
 .loginBtn {
    box-sizing: border-box;
