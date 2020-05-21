@@ -7,7 +7,8 @@ import { LOGIN } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
 import Loader from "../_shared/Loader";
 import { LoginFormData } from "../../types/FormTypes";
-import { makeStyles } from "@material-ui/core/styles";
+// import { makeStyles } from "@material-ui/core/styles";
+import { useStyles } from "./LoginTheme";
 import {
    loginStart,
    loginSuccess,
@@ -19,45 +20,7 @@ import { OAuthContainer } from "../_shared/OAuth/OAuthStyled";
 import { OAuthButton } from "../_shared/OAuthButton";
 import { providers } from "../../types/OAuthTypes";
 
-const useStyles = makeStyles(theme => ({
-   container: {
-      height: "1000px",
-      backgroundImage: `url(${require("../../images/register.jpeg")})`,
-      backgroundSize: "cover",
-      backgroundPosition: "right",
-      [theme.breakpoints.down("md")]: {
-         height: "700px",
-         backgroundPosition: "top right",
-      },
-   },
-   loginContainer: {
-      backgroundColor: theme.palette.common.white,
-      width: "500px",
-      border: "1px",
-      color: theme.palette.primary.light,
-      borderStyle: "solid",
-      borderRadius: "25px",
-      [theme.breakpoints.down("md")]: {
-         maxWidth: "100%",
-      },
-   },
-   formContainer: {
-      padding: "50px",
-      flexDirection: "column",
-      display: "flex",
-      alignItems: "center",
-      justify: "center",
-      alignContent: "center",
-   },
-   textField: {
-      marginBottom: "3em",
-      [theme.breakpoints.down("md")]: {
-         width: "100%",
-      },
-   },
-}));
-
-export const Login: React.FC = (props: LoginFormData | any) => {
+export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
    const { userData, userDispatch } = useContext(UserContext);
    const [login] = useMutation(LOGIN);
    const classes = useStyles();
@@ -67,7 +30,6 @@ export const Login: React.FC = (props: LoginFormData | any) => {
       login({ variables: { email: email, password: password } })
          .then(res => {
             userDispatch(loginSuccess(res.data.login.user));
-
             setToken(res.data.login.token);
             localStorage.setItem("username", res.data.login.user.username);
             setUserId(res.data.login.user.id);
@@ -109,9 +71,10 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   name="email"
                   label="Email"
                   type="email"
-                  required
                   fullWidth
+                  required
                   className={classes.textField}
+                  helperText="Please provide a valid email address."
                />
                <Input
                   name="password"
@@ -122,13 +85,18 @@ export const Login: React.FC = (props: LoginFormData | any) => {
                   fullWidth
                   required
                   className={classes.textField}
-                  helperText="password must be at least 9 characters"
+                  helperText="Password must be at least 9 characters"
                />
                <Link to="/initiate">Forgot your password?</Link>
                {userData.isAuthorizing ? (
                   <Loader />
                ) : (
-                  <Button variant="contained" color="primary" type="submit">
+                  <Button
+                     variant="contained"
+                     color="primary"
+                     type="submit"
+                     // {...Form.children ? "disabled" : ""}
+                  >
                      <Typography variant="body1" color="secondary">
                         Login
                      </Typography>
@@ -141,7 +109,6 @@ export const Login: React.FC = (props: LoginFormData | any) => {
             <Grid item>
                <OAuthContainer>
                   <OAuthButton provider={providers.LINKEDIN} />
-                  {/* <OAuthButton provider={providers.FACEBOOK} /> */}
                   <OAuthButton provider={providers.GOOGLE} />
                </OAuthContainer>
             </Grid>

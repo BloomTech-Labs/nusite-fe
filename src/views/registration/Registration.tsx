@@ -40,11 +40,6 @@ const useStyles = makeStyles(theme => ({
    },
    formContainer: {
       padding: "50px",
-      flexDirection: "column",
-      display: "flex",
-      alignItems: "center",
-      justify: "center",
-      alignContent: "center",
    },
    textField: {
       marginBottom: "3em",
@@ -55,7 +50,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 export const Registration: React.FC<RegistrationFormData> = (
-   props: RegistrationFormData | any
+   props: RegistrationFormData
 ) => {
    const { userData, userDispatch } = useContext(UserContext);
    const classes = useStyles();
@@ -130,6 +125,14 @@ export const Registration: React.FC<RegistrationFormData> = (
                   className={classes.textField}
                />
                <Input
+                  name="email"
+                  label="Email"
+                  type="email"
+                  required
+                  fullWidth
+                  className={classes.textField}
+               />
+               <Input
                   type="text"
                   name="username"
                   label="Username"
@@ -147,16 +150,9 @@ export const Registration: React.FC<RegistrationFormData> = (
                   fullWidth
                   minLength={9}
                   className={classes.textField}
-                  helperText="password must be at least 9 characters"
+                  helperText="Password must be at least 9 characters"
                />
-               <Input
-                  name="email"
-                  label="Email"
-                  type="email"
-                  required
-                  fullWidth
-                  className={classes.textField}
-               />
+
                <Grid container justify="center" alignItems="center">
                   {userData.isAuthorizing ? (
                      <Loader />
