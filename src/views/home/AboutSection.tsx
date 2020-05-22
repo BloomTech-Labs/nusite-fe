@@ -24,9 +24,12 @@ const AboutSection = (props: any) => {
                   developers can form partnerships. Take the guess work out of
                   finding a qualified developer for your existing project or
                   next big idea and let us match you with a developer according
-                  to your needs. Our market place empowers clients to create a
-                  listing for their new or existing project and for developers
-                  to showcase their services to prospective clients.
+                  to your needs.
+                  <br />
+                  <br />
+                  Our market place empowers clients to create a listing for
+                  their new or existing project and for developers to showcase
+                  their services to prospective clients.
                </Typography>
             </Grid>
             <Grid item lg={4} md={3}>

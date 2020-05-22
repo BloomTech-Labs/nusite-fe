@@ -16,7 +16,7 @@ import { FinalizeReset } from "./views/reset/FinalizeReset";
 import Profile from "./views/dashboard/Profile";
 import DashboardChat from "./views/dashboard/DashboardChat";
 import NotFound from "./views/_shared/NotFound";
-//initial other loading component here
+import Marketplace from "./views/dashboard/Marketplace";
 
 const Header = React.lazy(() => import("./views/_shared/header/Header"));
 
@@ -36,6 +36,7 @@ const App = () => (
             <PrivateRoute exact path="/_reset" component={FinalizeReset} />
             <PrivateRoute path="/profile" component={Profile} />
             <PrivateRoute path="/chat" component={DashboardChat} />
+            <PrivateRoute path="/marketplace" component={Marketplace} />
             <Route render={() => <NotFound />} />
          </Switch>
          <Footer />

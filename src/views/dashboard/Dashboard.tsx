@@ -219,12 +219,12 @@ export const Dashboard: React.FC = (props: any) => {
                      <Link to="/chat">
                         <li className="sidenav__list-item">Chat</li>
                      </Link>
-                     {/* <Link to="/marketplace">
+                     <Link to="/marketplace">
                         <li className="sidenav__list-item">Marketplace</li>
-                     </Link> */}
-                     <Link to="/">
-                        <li className="sidenav__list-item">Homepage</li>
                      </Link>
+                     {/* <Link to="/">
+                        <li className="sidenav__list-item">Homepage</li>
+                     </Link> */}
                   </ul>
                </aside>
             </div>
