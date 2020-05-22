@@ -20,7 +20,7 @@ export const Marketplace: React.FC = (props: any) => {
             <header className="header">
                <div className="header__search">
                   <i className="fa fa-search" aria-hidden="true">
-                     <h4> Search... </h4>
+                     {/* <h4> Search... </h4> */}
                   </i>
                </div>
             </header>
