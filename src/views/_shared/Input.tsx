@@ -2,12 +2,7 @@ import React from "react";
 import { TextField } from "@material-ui/core";
 
 export const Input = ({ register, errors, name, ...rest }: any) => {
-   console.log("updated errors object: ", errors);
-   console.log(`inherited ${name} props: `, rest);
    const { email, password, first_name, last_name, username } = errors;
-   console.log("email error: ", email);
-   console.log("password error: ", password);
-
    return (
       <>
          <TextField
