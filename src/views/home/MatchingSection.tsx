@@ -8,7 +8,7 @@ import {
 import useTheme from "@material-ui/core/styles/useTheme";
 import coder from "../../images/coder.svg";
 import userflow from "../../images/userflow.gif";
-
+import Market from "../../images/market.png";
 const useStyles = makeStyles(theme => ({
    container: {
       padding: "0 0 125px 0",
@@ -63,7 +63,13 @@ const MatchingSection = (props: any) => {
                   <img className={classes.image} src={coder} alt="" />
                </Grid>
             </Grid>
+            <br />
             <img className={classes.gif} src={userflow} alt="" />
+            {/* <h2>Our marketplace</h2> */}
+            <br />
+            <br />
+            <br />
+            <img src={Market} width="820px" alt="" />
          </Grid>
       </Grid>
    );
