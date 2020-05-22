@@ -2,7 +2,6 @@ import React from "react";
 import { TextField } from "@material-ui/core";
 
 export const Input = ({ register, errors, name, ...rest }: any) => {
-   const { email, password, first_name, last_name, username } = errors;
    return (
       <>
          <TextField
@@ -21,44 +20,8 @@ export const Input = ({ register, errors, name, ...rest }: any) => {
             })}
             variant="outlined"
             errors={errors}
-            error={
-               email && name === "email"
-                  ? true
-                  : password && name === "password"
-                  ? true
-                  : first_name && name === "first_name"
-                  ? true
-                  : last_name && name === "last_name"
-                  ? true
-                  : username && name === "username"
-                  ? true
-                  : false
-            }
-            helperText={
-               email && email.type === "required" && name === "email"
-                  ? email.message
-                  : password &&
-                    password.type === "required" &&
-                    name === "password"
-                  ? password.message
-                  : password &&
-                    name === "password" &&
-                    password.type === "minLength"
-                  ? password.message
-                  : first_name &&
-                    first_name.type === "required" &&
-                    name === "first_name"
-                  ? first_name.message
-                  : last_name &&
-                    last_name.type === "required" &&
-                    name === "last_name"
-                  ? last_name.message
-                  : username &&
-                    username.type === "required" &&
-                    name === "username"
-                  ? username.message
-                  : null
-            }
+            error={!!errors[name]}
+            helperText={errors[name]?.message}
             {...rest}
          />
       </>
