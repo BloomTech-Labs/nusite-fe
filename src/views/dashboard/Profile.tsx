@@ -97,14 +97,19 @@ const Profile: React.FC = (props: any) => {
                   <div className="main-header">
                      <div className="main-header__heading">
                         <h2 style={{ color: "#25274d" }}>
-                           Hello {name}, <br />
-                           complete your profile
+                           Hello, here's your profile
                         </h2>
                         <Link
                            to="/chat"
                            style={{ color: "#222", lineHeight: "0.4rem" }}
                         >
                            <p>(Chat)</p>
+                        </Link>
+                        <Link
+                           to="/marketplace"
+                           style={{ color: "#222", lineHeight: "0.4rem" }}
+                        >
+                           (Marketplace)
                         </Link>
                      </div>
                      <div className="main-header__updates">
