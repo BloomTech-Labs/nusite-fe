@@ -121,7 +121,7 @@ describe("Test App Routes", () => {
 
       //run the tests
       const welcomeText = getByText(/Welcome to Your Dashboard/i);
-      expect(welcomeText.tagName).toMatch(/h1/i);
+      expect(welcomeText.tagName).toMatch(/h2/i);
 
       //remove test token
       localStorage.clear();
