@@ -122,6 +122,13 @@ div.main-header__heading {
    justify-content: space-around;
 }
 
+.header__search {
+   font-size: 1.2rem;
+   color: #444;
+   padding: 20px;
+   cursor: pointer;
+}
+
 .main-overview {
    display: grid;
    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));

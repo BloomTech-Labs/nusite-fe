@@ -4,7 +4,7 @@ import Card2 from "./Card2";
 import Card3 from "./Card3";
 import { Link } from "react-router-dom";
 
-export const DashboardChat: React.FC = (props: any) => {
+export const Marketplace: React.FC = (props: any) => {
    const [name, setName] = useState("");
 
    useEffect(() => {
@@ -17,6 +17,13 @@ export const DashboardChat: React.FC = (props: any) => {
    return (
       <>
          <div className="grid-container">
+            <header className="header">
+               <div className="header__search">
+                  <i className="fa fa-search" aria-hidden="true">
+                     <h4> Search... </h4>
+                  </i>
+               </div>
+            </header>
             <main className="main">
                <h1 className="marketplace">
                   Welcome to the Marketplace {/*  {name} */}
@@ -53,4 +60,4 @@ export const DashboardChat: React.FC = (props: any) => {
    );
 };
 
-export default DashboardChat;
+export default Marketplace;

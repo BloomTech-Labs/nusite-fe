@@ -93,7 +93,7 @@ export default function RecipeReviewCard() {
                <Typography paragraph>Projects: </Typography>
                <Typography variant="body2" color="textSecondary" component="p">
                   The Partnerd project, match-making for web developers. Contact
-                  us if you like what you see!
+                  us if you like what you see! https://www.partnerd.dev/
                </Typography>
             </CardContent>
          </Collapse>
