@@ -104,6 +104,7 @@ div.main-header__heading {
    background: whitesmoke;
    border-radius: 2px;
    padding: 8px;
+   line-height: 1.4rem;
 }
 .card h2 {
    background: whitesmoke;

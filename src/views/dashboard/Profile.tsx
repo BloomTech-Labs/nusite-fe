@@ -100,7 +100,10 @@ const Profile: React.FC = (props: any) => {
                            Hello {name}, <br />
                            complete your profile
                         </h2>
-                        <Link to="/chat" style={{ color: "#222" }}>
+                        <Link
+                           to="/chat"
+                           style={{ color: "#222", lineHeight: "0.4rem" }}
+                        >
                            <p>(Chat)</p>
                         </Link>
                      </div>

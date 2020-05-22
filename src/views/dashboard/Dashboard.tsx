@@ -110,10 +110,16 @@ export const Dashboard: React.FC = (props: any) => {
                   <div className="main-header">
                      <div className="main-header__heading">
                         <h2 style={{ color: "#25274d" }}>Hello {name}!</h2>
-                        <Link to="/chat" style={{ color: "#444" }}>
+                        <Link
+                           to="/chat"
+                           style={{ color: "#444", lineHeight: "0.7rem" }}
+                        >
                            <p>(Chat)</p>
                         </Link>
-                        <Link to="/profile" style={{ color: "#222" }}>
+                        <Link
+                           to="/profile"
+                           style={{ color: "#222", lineHeight: "0.7rem" }}
+                        >
                            <p>(Profile)</p>
                         </Link>
                      </div>
