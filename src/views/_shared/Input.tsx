@@ -2,9 +2,12 @@ import React from "react";
 import { TextField } from "@material-ui/core";
 
 export const Input = ({ register, errors, name, ...rest }: any) => {
-   // console.log(name);
    console.log("updated errors object: ", errors);
    console.log(`inherited ${name} props: `, rest);
+   const { email, password, first_name, last_name, username } = errors;
+   console.log("email error: ", email);
+   console.log("password error: ", password);
+
    return (
       <>
          <TextField
@@ -24,17 +27,42 @@ export const Input = ({ register, errors, name, ...rest }: any) => {
             variant="outlined"
             errors={errors}
             error={
-               errors.email && name === "email"
+               email && name === "email"
                   ? true
-                  : errors.password && name === "password"
+                  : password && name === "password"
                   ? true
-                  : errors.first_name && name === "first_name"
+                  : first_name && name === "first_name"
                   ? true
-                  : errors.last_name && name === "last_name"
+                  : last_name && name === "last_name"
                   ? true
-                  : errors.username && name === "username"
+                  : username && name === "username"
                   ? true
                   : false
+            }
+            helperText={
+               email && email.type === "required" && name === "email"
+                  ? email.message
+                  : password &&
+                    password.type === "required" &&
+                    name === "password"
+                  ? password.message
+                  : password &&
+                    name === "password" &&
+                    password.type === "minLength"
+                  ? password.message
+                  : first_name &&
+                    first_name.type === "required" &&
+                    name === "first_name"
+                  ? first_name.message
+                  : last_name &&
+                    last_name.type === "required" &&
+                    name === "last_name"
+                  ? last_name.message
+                  : username &&
+                    username.type === "required" &&
+                    name === "username"
+                  ? username.message
+                  : null
             }
             {...rest}
          />

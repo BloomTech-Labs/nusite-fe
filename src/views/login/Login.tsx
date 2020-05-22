@@ -74,7 +74,7 @@ export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
                   fullWidth
                   required
                   className={classes.textField}
-                  helperText="Please provide a valid email address."
+                  // helperText="Please provide a valid email address."
                />
                <Input
                   name="password"
@@ -85,7 +85,7 @@ export const Login: React.FC<LoginFormData> = (props: LoginFormData) => {
                   fullWidth
                   required
                   className={classes.textField}
-                  helperText="Password must be at least 9 characters"
+                  // helperText="Password must be at least 9 characters"
                />
                <Link to="/initiate">Forgot your password?</Link>
                {userData.isAuthorizing ? (
