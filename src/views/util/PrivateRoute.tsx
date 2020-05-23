@@ -1,11 +1,9 @@
 import React, { useContext } from "react";
 import { Route, Redirect } from "react-router-dom";
-//import LoadingScreen from "../_shared/LoadingScreen";
 import { getToken, setToken, setUserId } from "./useLocalStorage";
 import UserContext from "../../context/user/context";
 import { useLocation } from "react-router";
 
-//const LOGIN_TOKEN_KEY = "JWT";
 const useQuery = () => {
    return new URLSearchParams(useLocation().search);
 };
@@ -21,7 +19,6 @@ const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
    console.log(`Id Query: ${idQuery}`);
 
    return (
-      // <Suspense fallback={<LoadingScreen />}>
       <Route
          {...otherProps}
          render={props => {
@@ -42,7 +39,6 @@ const PrivateRoute = ({ component: Component, ...otherProps }: any) => {
             return <Redirect to="/login" />;
          }}
       />
-      // </Suspense>
    );
 };
 

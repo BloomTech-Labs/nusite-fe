@@ -216,9 +216,6 @@ export const Dashboard: React.FC = (props: any) => {
                </main>
                <aside className="sidenav">
                   <ul className="sidenav__list">
-                     <Link to="/home">
-                        <li className="sidenav__list-item">Dashboard</li>
-                     </Link>
                      <Link to="/profile">
                         <li className="sidenav__list-item">Profile</li>
                      </Link>
@@ -228,9 +225,6 @@ export const Dashboard: React.FC = (props: any) => {
                      <Link to="/marketplace">
                         <li className="sidenav__list-item">Marketplace</li>
                      </Link>
-                     {/* <Link to="/">
-                        <li className="sidenav__list-item">Homepage</li>
-                     </Link> */}
                   </ul>
                </aside>
             </div>

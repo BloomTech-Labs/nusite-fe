@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { BASE_URL } from "../../clientConfig";
 //import AddIcon from "@material-ui/icons/Add";
 //import Fab from "@material-ui/core/Fab";
 import Button from "@material-ui/core/Button";
@@ -20,7 +21,7 @@ const Uploader = () => {
       formData.append("picture", upload.user_avatar);
       // updating the 'project_avatar' with the link from cloudinary
       axios
-         .put(`${process.env.REACT_APP_BASE_URL}/upload/:id/`, formData, {})
+         .put(`${BASE_URL}/upload/:id/`, formData, {})
          .then(res => {
             console.log(res.data);
             console.log(res.data.url);

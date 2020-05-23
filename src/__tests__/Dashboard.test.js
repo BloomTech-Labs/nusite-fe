@@ -1,5 +1,6 @@
 import React from "react";
-import { render, cleanup, fireEvent } from "../test-utils";
+import { MemoryRouter } from "react-router-dom";
+import { render, cleanup } from "../test-utils";
 import { MockedProvider } from "@apollo/react-testing";
 import { GET_USER } from "../graphql-requests/queries";
 import "@testing-library/jest-dom/extend-expect";
@@ -29,7 +30,7 @@ const mockGetUsers = {
 afterEach(cleanup);
 
 describe("Dashboard component tests", () => {
-   test("It should render Welcome message with User's name", () => {
+   test("It should render Welcome message", () => {
       //set a test user data
       localStorage.setItem("username", "johnwick");
       localStorage.setItem("user_id", "10");
@@ -37,13 +38,15 @@ describe("Dashboard component tests", () => {
       //render the component
       const { getByText } = render(
          <MockedProvider mocks={[mockGetUsers]} addTypename={false}>
-            <Dashboard />
+            <MemoryRouter>
+               <Dashboard />
+            </MemoryRouter>
          </MockedProvider>
       );
 
       //run the tests
-      const welcomeText = getByText(/Welcome to Your Dashboard johnwick/);
-      expect(welcomeText.tagName).toMatch(/h1/i);
+      const welcomeText = getByText(/Welcome to Your Dashboard/i);
+      expect(welcomeText.tagName).toMatch(/h2/i);
 
       //test that User component and welcome message have same username
 
