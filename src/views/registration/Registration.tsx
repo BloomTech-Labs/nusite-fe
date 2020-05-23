@@ -150,7 +150,6 @@ export const Registration: React.FC<RegistrationFormData> = (
                   fullWidth
                   minLength={9}
                   className={classes.textField}
-                  helperText="Password must be at least 9 characters"
                />
 
                <Grid container justify="center" alignItems="center">
@@ -171,7 +170,6 @@ export const Registration: React.FC<RegistrationFormData> = (
             <Grid item>
                <OAuthContainer>
                   <OAuthButton provider={providers.LINKEDIN} />
-                  {/* <OAuthButton provider={providers.FACEBOOK} /> */}
                   <OAuthButton provider={providers.GOOGLE} />
                </OAuthContainer>
             </Grid>
