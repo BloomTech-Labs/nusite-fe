@@ -69,7 +69,7 @@ const MatchingSection = (props: any) => {
             <br />
             <br />
             <br />
-            <img src={Market} width="820px" alt="" />
+            <img src={Market} className="market" alt="market" />
          </Grid>
       </Grid>
    );
