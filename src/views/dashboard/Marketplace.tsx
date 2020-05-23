@@ -1,14 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./DashboardChat.css";
-import reatime2 from "../../images/reatime2.svg";
+import Card from "./Card";
+import Card2 from "./Card2";
+import Card3 from "./Card3";
 import { Link } from "react-router-dom";
-import CustomChatbot from "../chat/CustomChatbot";
-//import TextField from "@material-ui/core/TextField";
-import User from "../dashboard/User";
 
-export const DashboardChat: React.FC = (props: any) => {
+export const Marketplace: React.FC = (props: any) => {
    const [name, setName] = useState("");
-   //const classes = useStyles();
 
    useEffect(() => {
       let username = localStorage.getItem("username");
@@ -20,26 +17,23 @@ export const DashboardChat: React.FC = (props: any) => {
    return (
       <>
          <div className="grid-container">
+            <header className="header">
+               <div className="header__search">
+                  <i className="fa fa-search" aria-hidden="true">
+                     {/* <h4> Search... </h4> */}
+                  </i>
+               </div>
+            </header>
             <main className="main">
-               <div className="main-cards">
-                  <div className="card">
-                     <h1>Chat with us {name}</h1>
-                     <div className="chat">
-                        <br />
-                        <CustomChatbot />
-                     </div>
-                  </div>
-                  <div className="card">
-                     <h2 className="chatcard">PartNerd Chat</h2>
-                     <img src={reatime2} className="reatime2" alt="" />
-                  </div>
+               <h1 className="marketplace">
+                  Welcome to the Marketplace {/*  {name} */}
+               </h1>
+               <div className="marketplace">
+                  <Card />
                   <br />
-                  <div className="formcontainer">
-                     <div className="chatprofile">
-                        <br />
-                        <User />
-                     </div>
-                  </div>
+                  <Card2 />
+                  <br />
+                  <Card3 />
                </div>
             </main>
             <aside className="sidenav">
@@ -66,4 +60,4 @@ export const DashboardChat: React.FC = (props: any) => {
    );
 };
 
-export default DashboardChat;
+export default Marketplace;
