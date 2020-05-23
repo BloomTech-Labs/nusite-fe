@@ -76,3 +76,14 @@ div.boxedit {
    color: #111;
    border-radius: 2px;
 }
+
+.market {
+   width: 99%;
+}
+
+@media only screen and (max-width: 768px) {
+   /* Shift size of image */
+   .market {
+      width: 99%;
+   }
+}

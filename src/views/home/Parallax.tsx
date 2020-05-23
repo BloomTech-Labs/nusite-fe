@@ -59,7 +59,7 @@ const Parallax = (props: any) => {
                   "I need to build a new website",
                   "I need to build a web application",
                   "I need to revamp my old website",
-                  "I need a page for my buinsness",
+                  "I need a page for my business",
                   "I need a personal landing page",
                ]}
                typeSpeed={40}

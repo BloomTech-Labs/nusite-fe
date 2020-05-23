@@ -41,8 +41,7 @@ const ProjectOwnersSection = (props: any) => {
                   profiles to to see if a developer is suited for your project
                   or just let our algorithm do the heavy lifting for you and let
                   us find you the the best matches based on developer skills or
-                  other preferences of your project. With Partnerd it's easy to
-                  find a developer for your project in no time.
+                  other preferences of your project in no time.
                </Typography>
                <Grid container justify="center">
                   <GetStartedButton />
