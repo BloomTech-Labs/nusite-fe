@@ -29,7 +29,10 @@ Object {
                 <p
                   class="MuiTypography-root about MuiTypography-body1"
                 >
-                  Welcome to PartNerd. We are a marketplace where clients and developers can form partnerships. Take the guess work out of finding a qualified developer for your existing project or next big idea and let us match you with a developer according to your needs. Our market place empowers clients to create a listing for their new or existing project and for developers to showcase their services to prospective clients.
+                  Welcome to PartNerd. We are a marketplace where clients and developers can form partnerships. Take the guess work out of finding a qualified developer for your existing project or next big idea and let us match you with a developer according to your needs.
+                  <br />
+                  <br />
+                  Our market place empowers clients to create a listing for their new or existing project and for developers to showcase their services to prospective clients.
                 </p>
               </div>
               <div
@@ -69,7 +72,7 @@ Object {
                 <p
                   class="MuiTypography-root MuiTypography-body1"
                 >
-                  Find someone to build, fix, or add on to your existing site or idea. Just create an account and start searching for qualified developers in seconds. You can browse through developer profiles to to see if a developer is suited for your project or just let our algorithm do the heavy lifting for you and let us find you the the best matches based on developer skills or other preferences of your project. With Partnerd it's easy to find a developer for your project in no time.
+                  Find someone to build, fix, or add on to your existing site or idea. Just create an account and start searching for qualified developers in seconds. You can browse through developer profiles to to see if a developer is suited for your project or just let our algorithm do the heavy lifting for you and let us find you the the best matches based on developer skills or other preferences of your project in no time.
                 </p>
                 <div
                   class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
@@ -208,10 +211,19 @@ Object {
                   />
                 </div>
               </div>
+              <br />
               <img
                 alt=""
                 class="makeStyles-gif-176"
                 src="userflow.gif"
+              />
+              <br />
+              <br />
+              <br />
+              <img
+                alt="market"
+                class="market"
+                src="market.png"
               />
             </div>
           </section>
@@ -267,7 +279,10 @@ Object {
               <p
                 class="MuiTypography-root about MuiTypography-body1"
               >
-                Welcome to PartNerd. We are a marketplace where clients and developers can form partnerships. Take the guess work out of finding a qualified developer for your existing project or next big idea and let us match you with a developer according to your needs. Our market place empowers clients to create a listing for their new or existing project and for developers to showcase their services to prospective clients.
+                Welcome to PartNerd. We are a marketplace where clients and developers can form partnerships. Take the guess work out of finding a qualified developer for your existing project or next big idea and let us match you with a developer according to your needs.
+                <br />
+                <br />
+                Our market place empowers clients to create a listing for their new or existing project and for developers to showcase their services to prospective clients.
               </p>
             </div>
             <div
@@ -307,7 +322,7 @@ Object {
               <p
                 class="MuiTypography-root MuiTypography-body1"
               >
-                Find someone to build, fix, or add on to your existing site or idea. Just create an account and start searching for qualified developers in seconds. You can browse through developer profiles to to see if a developer is suited for your project or just let our algorithm do the heavy lifting for you and let us find you the the best matches based on developer skills or other preferences of your project. With Partnerd it's easy to find a developer for your project in no time.
+                Find someone to build, fix, or add on to your existing site or idea. Just create an account and start searching for qualified developers in seconds. You can browse through developer profiles to to see if a developer is suited for your project or just let our algorithm do the heavy lifting for you and let us find you the the best matches based on developer skills or other preferences of your project in no time.
               </p>
               <div
                 class="MuiGrid-root MuiGrid-container MuiGrid-justify-xs-center"
@@ -446,10 +461,19 @@ Object {
                 />
               </div>
             </div>
+            <br />
             <img
               alt=""
               class="makeStyles-gif-176"
               src="userflow.gif"
+            />
+            <br />
+            <br />
+            <br />
+            <img
+              alt="market"
+              class="market"
+              src="market.png"
             />
           </div>
         </section>
