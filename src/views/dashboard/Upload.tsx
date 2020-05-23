@@ -21,7 +21,7 @@ const Uploader = () => {
       formData.append("picture", upload.user_avatar);
       // updating the 'project_avatar' with the link from cloudinary
       axios
-         .put(`${process.env.REACT_APP_BASE_URL}/upload/:id/`, formData, {})
+         .put(`${BASE_URL}/upload/:id/`, formData, {})
          .then(res => {
             console.log(res.data);
             console.log(res.data.url);
