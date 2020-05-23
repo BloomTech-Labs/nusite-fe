@@ -210,9 +210,6 @@ export const Dashboard: React.FC = (props: any) => {
                </main>
                <aside className="sidenav">
                   <ul className="sidenav__list">
-                     <Link to="/home">
-                        <li className="sidenav__list-item">Dashboard</li>
-                     </Link>
                      <Link to="/profile">
                         <li className="sidenav__list-item">Profile</li>
                      </Link>
