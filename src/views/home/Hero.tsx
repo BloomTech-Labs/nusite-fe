@@ -1,6 +1,5 @@
 import React from "react";
-import { Grid, makeStyles, useMediaQuery } from "@material-ui/core/";
-import useTheme from "@material-ui/core/styles/useTheme";
+import { Grid, makeStyles, useMediaQuery, useTheme } from "@material-ui/core";
 import heroImage from "../../images/hero.jpeg";
 
 const useStyles = makeStyles(theme => ({

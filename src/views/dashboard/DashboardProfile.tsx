@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "../home/Home";
 import { useMutation } from "@apollo/react-hooks";
-import { makeStyles } from "@material-ui/core/styles";
-import Button from "@material-ui/core/Button";
 import { SIGNUP } from "../../graphql-requests/mutations";
-import TextField from "@material-ui/core/TextField";
+import { makeStyles, Button, TextField } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
    container: {

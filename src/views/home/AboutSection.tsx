@@ -5,9 +5,7 @@ import developersImage from "../../images/developers.svg";
 const useStyles = makeStyles(theme => ({
    developersImage: {
       maxWidth: "100%",
-      [theme.breakpoints.down("sm")]: {
-         //paddingTop: "15%",
-      },
+      [theme.breakpoints.down("sm")]: {},
    },
 }));
 

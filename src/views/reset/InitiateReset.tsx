@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, makeStyles, Grid, Typography } from "@material-ui/core/";
+import { Button, makeStyles, Grid, Typography } from "@material-ui/core";
 import Loader from "../_shared/Loader";
 import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";

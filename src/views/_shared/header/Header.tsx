@@ -1,10 +1,4 @@
 import React, { useState, useEffect } from "react";
-import AppBar from "@material-ui/core/AppBar";
-import Toolbar from "@material-ui/core/Toolbar";
-import Button from "@material-ui/core/Button";
-import { makeStyles } from "@material-ui/core/styles";
-import useTheme from "@material-ui/core/styles/useTheme";
-import useMediaQuery from "@material-ui/core/useMediaQuery";
 import { Link, withRouter } from "react-router-dom";
 import logo from "../../../images/logo.svg";
 import { getToken } from "../../util/useLocalStorage";
@@ -14,9 +8,15 @@ import HeaderTabs from "./HeaderTabs";
 import HeaderDrawer from "./HeaderDrawer";
 import { useRoutes } from "../../util/routes";
 import DynamicScrollToTop from "../DynamicScrollToTop";
-//import { ThemeContext } from "../../context/contexts";
+import {
+   useMediaQuery,
+   makeStyles,
+   useTheme,
+   AppBar,
+   Toolbar,
+   Button,
+} from "@material-ui/core";
 
-//styling
 const useStyles = makeStyles(theme => ({
    //This will give the navigation bar some extra padding bellow it.
    toolbarMargin: {

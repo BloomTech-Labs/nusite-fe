@@ -3,7 +3,7 @@ import { Form } from "../_shared/Form";
 import { Input } from "../_shared/Input";
 import { SIGNUP } from "../../graphql-requests/mutations";
 import { useMutation } from "@apollo/react-hooks";
-import { Button, Grid, makeStyles, Typography } from "@material-ui/core/";
+import { Button, Grid, makeStyles, Typography } from "@material-ui/core";
 import Loader from "../_shared/Loader";
 import { RegistrationFormData } from "../../types/FormTypes";
 import {

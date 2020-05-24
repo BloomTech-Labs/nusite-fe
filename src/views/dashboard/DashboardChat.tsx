@@ -3,7 +3,6 @@ import "./DashboardChat.css";
 import reatime2 from "../../images/reatime2.svg";
 import { Link } from "react-router-dom";
 import CustomChatbot from "../chat/CustomChatbot";
-//import TextField from "@material-ui/core/TextField";
 import User from "../dashboard/User";
 
 export const DashboardChat: React.FC = (props: any) => {
