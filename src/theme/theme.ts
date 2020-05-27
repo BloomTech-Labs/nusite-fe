@@ -2,6 +2,7 @@ import { createMuiTheme } from "@material-ui/core/styles";
 import { deepOrange } from "@material-ui/core/colors";
 import createBreakpoints from "@material-ui/core/styles/createBreakpoints";
 
+//A helper fucntion to turn pixel font size into rem
 function pxToRem(value: number) {
    return `${value / 16}rem`;
 }

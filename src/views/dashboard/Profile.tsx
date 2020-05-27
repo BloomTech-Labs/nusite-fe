@@ -2,13 +2,11 @@ import React, { useEffect, useState } from "react";
 import "../home/Home";
 import { useMutation } from "@apollo/react-hooks";
 import User from "./User";
-import Button from "@material-ui/core/Button";
 import { UPDATE_USER } from "../../graphql-requests/mutations";
-import TextField from "@material-ui/core/TextField";
-import { makeStyles } from "@material-ui/core/styles";
 import { getUserId } from "../util/useLocalStorage";
 import reatime2 from "../../images/reatime2.svg";
 import { Link } from "react-router-dom";
+import { makeStyles, TextField, Button } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
    container: {

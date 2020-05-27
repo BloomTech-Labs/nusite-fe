@@ -1,7 +1,5 @@
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
-import Tabs from "@material-ui/core/Tabs";
-import Tab from "@material-ui/core/Tab";
+import { makeStyles, Tabs, Tab } from "@material-ui/core";
 import { Link } from "react-router-dom";
 
 const useStyles = makeStyles(theme => ({

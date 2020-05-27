@@ -4,8 +4,8 @@ import {
    makeStyles,
    useMediaQuery,
    Typography,
-} from "@material-ui/core/";
-import useTheme from "@material-ui/core/styles/useTheme";
+   useTheme,
+} from "@material-ui/core";
 import coder from "../../images/coder.svg";
 import userflow from "../../images/userflow.gif";
 import Market from "../../images/market.png";
