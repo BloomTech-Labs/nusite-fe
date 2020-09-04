@@ -5,7 +5,7 @@
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://choosealicense.com/licenses/mit/)
-You can find the official version of this deployed project at [PartNerd](https://partnerd.dev).
+You can find the current version of this deployed project at [PartNerd](https://staging.d1q97okbcd2s3b.amplifyapp.com/).
 
 ---
 
