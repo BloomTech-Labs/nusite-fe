@@ -12,6 +12,8 @@ You can find the current version of this deployed project at [PartNerd](https://
 **PartNerd** is an application that allows **project owners** and people with great ideas to add new projects to a database, an algorithmic controlled marketplace in order to match them with registered **web developers** who've built their matching profiles.
 
 [Deployed Front End (Staging)](https://staging.d1q97okbcd2s3b.amplifyapp.com/)
+<br />
+[Deployed Front End (Master)](https://www.partnerd.dev/)
 
 <br />
 
